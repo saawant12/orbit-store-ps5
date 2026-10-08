@@ -4,6 +4,8 @@ Orbit Zero downloads on your computer and transfers the file to your PS5 over th
 
 **Available with Orbit Store 1.0.0.** Download the desktop app and matching PS5 files from the [1.0.0 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0). For a console without internet, follow the [offline PS5 setup guide](orbit-zero-offline-ps5.md).
 
+**Slow downloads or transfers?** Optional **1.0.1 speed-optimized builds** are available on the same release page, alongside the originals. Choose a file labelled `speed-optimized` and follow the [installation and receiver update steps](orbit-zero-installation.md#optional-speed-optimized-builds).
+
 The full-screen screenshots show the desktop interface. Connection, storage and transfer values are illustrative.
 
 ![Orbit Zero Discover with a featured game and illustrated catalogue rows](../assets/orbit-zero-development/discover.jpg)
@@ -15,7 +17,7 @@ The full-screen screenshots show the desktop interface. Connection, storage and 
 - A computer with internet access and enough free space to cache the full download, plus writable storage on the PS5.
 - A PS5 with its jailbreak and Payload Manager or a compatible ELF loader already running, or the matching Orbit receiver already started. Zero does not jailbreak the console.
 - Both devices on the same reachable home network. Wi-Fi, Ethernet, or a mixture of both work. Use the PS5's local IPv4 address.
-- Orbit Zero and the matching Orbit Store 1.0.0 service. Native TV controls also require this release’s FFPKG.
+- Orbit Zero and its included Orbit Store service: 1.0.0 for the original desktop build, or 1.0.1 for the speed-optimized build. Native TV controls use the FFPKG from the 1.0.0 release with either version.
 
 Downloads are available for **ARM64 and x64 on macOS, Windows and Linux**; 32-bit x86 is not supported. Mac builds use Developer ID signing but are not notarized; Windows and Linux packages are unsigned. The initial desktop interface is English-only.
 
@@ -42,7 +44,7 @@ The normal Orbit service port is **34177**. Payload Manager's web interface defa
 
 On macOS, allow Orbit Zero to access the local network when prompted. If access was denied, enable it in **System Settings → Privacy & Security → Local Network**, then reconnect.
 
-Pairing is saved using the computer's encrypted credential store. After reopening Zero, select **Console → Reconnect** to unlock it; macOS or Linux may request permission at that point. Opening or browsing Zero does not unlock the credential store. Zero never receives your computer password, and refuses to save an unencrypted pairing if secure storage is unavailable. Keep the original pairing to resume unfinished transfers.
+Pairing is saved using the computer's encrypted credential store. The speed-optimized build reconnects to your saved PS5 when you reopen it; macOS or Linux may ask to unlock saved pairing after the console responds. In the original build, or if reconnection fails, select **Console → Reconnect**. Zero never receives your computer password, and refuses to save an unencrypted pairing if secure storage is unavailable. Keep the original pairing to resume unfinished transfers.
 
 ![Orbit Zero Console showing connection, download preference, storage and active transfer panels](../assets/orbit-zero-development/console.jpg)
 

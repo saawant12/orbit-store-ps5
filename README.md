@@ -25,6 +25,8 @@ Download on your computer and transfer to your PS5 at the same time. **Works ove
 
 [Install on Mac, Windows or Linux](https://github.com/saawant12/orbit-store-ps5/blob/main/guides/orbit-zero-installation.md) · [Set up a PS5 without internet](https://github.com/saawant12/orbit-store-ps5/blob/main/guides/orbit-zero-offline-ps5.md)
 
+**Experiencing slow downloads or transfers?** Try the optional **speed-optimized Orbit Zero builds** on the same release page. The [installation guide](guides/orbit-zero-installation.md#optional-speed-optimized-builds) covers the correct file for your computer and starting the updated PS5 receiver. The original builds remain available.
+
 ### Discover on your computer
 
 Explore Discover with full game artwork, find a game in Browse and save your favourites. Choose the source and PS5 destination before starting a download.
