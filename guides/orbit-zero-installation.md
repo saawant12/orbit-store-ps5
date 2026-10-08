@@ -83,17 +83,37 @@ sudo chmod 4755 chrome-sandbox
 
 ## Connect your PS5
 
-1. Keep the computer and PS5 on the same reachable home network. Avoid guest Wi-Fi or network isolation that prevents devices from reaching one another. Keep both devices awake during transfers.
-2. On the PS5, start its jailbreak and **Payload Manager** or your usual ELF loader. Orbit Zero does not jailbreak the console.
-3. Open **Console** in Orbit Zero and enter the PS5's local IP address.
-4. If Orbit is not running, expand **Start Orbit on PS5** and choose the method you use:
+Keep the computer and PS5 on the same reachable home network. Wi-Fi and Ethernet both work; no internet connection is needed on the PS5. Avoid guest Wi-Fi or network isolation that prevents devices from reaching one another. Keep both devices awake during transfers.
+
+The full-screen examples below show the setup flow. Use your own PS5 address and pairing code; the connection and storage values shown are illustrative.
+
+### Start Orbit on your PS5
+
+1. On the PS5, start its jailbreak and **Payload Manager** or your usual ELF loader. Orbit Zero does not jailbreak the console.
+2. Open **Console** in Orbit Zero and enter the PS5's local IP address. Leave **Orbit port** at **34177** unless you changed it.
+3. **Start Orbit on PS5** opens automatically while disconnected. Choose the method you use:
    - **Payload Manager → Upload and start Orbit** for its web interface, normally on port **8084**.
    - **ELF loader → Send to ELF loader** for a raw loader, normally on port **9021**.
 
-   Zero supplies the compatible Orbit payload automatically; you do not need to find an ELF yourself. Use **Advanced** only if you changed your loader's port or want to select a custom file. If the compatible Orbit service is already running, skip starting it again.
-5. Select **Connect to Orbit**. Its normal service port is **34177**.
-6. Select **Show code on PS5**, enter the six-digit code from the console notification, then select **Pair with PS5**. If you miss the notification, request it again after the countdown or open **Pair devices** in Orbit on the PS5.
-7. Open a game, choose a source and destination, and start the download. **Downloads** shows the computer download and PS5 transfer separately.
+![Full-screen Orbit Zero Console with the PS5 address and Upload and start Orbit controls](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/release/orbit-zero-1.0.0-draft/assets/orbit-zero-development/connect-start.jpg)
+
+Zero supplies the compatible Orbit payload automatically; you do not need to find an ELF yourself. Use **Advanced** only if you changed your loader's port or want to select a custom file. Once the upload finishes, Zero waits for Orbit to start and connects automatically. If Orbit is already running, select **Connect to Orbit** instead of uploading it again.
+
+### Pair with your PS5
+
+1. When **Pairing required** appears, select **Show code on PS5**.
+2. Enter the six-digit code from the console notification, then select **Pair with PS5**. If you miss the notification, request it again after the countdown or open **Pair devices** in Orbit on the PS5.
+3. Allow access to your computer's credential store if prompted, so Zero can save the pairing securely.
+
+![Full-screen Orbit Zero pairing screen with Show code on PS5 and Pair with PS5 controls](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/release/orbit-zero-1.0.0-draft/assets/orbit-zero-development/connect-pair.jpg)
+
+If you have already paired this console, Zero restores that pairing when it connects. You do not need a new code unless the pairing has been removed or is no longer valid.
+
+### Check your connection and storage
+
+When the status changes to **Connected**, your available PS5 drives appear under **Storage**. Open a game, choose a source and destination, and start the download. **Downloads** shows the computer download and PS5 transfer separately.
+
+![Full-screen Orbit Zero Console after pairing, showing Connected, download preference and available storage](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/release/orbit-zero-1.0.0-draft/assets/orbit-zero-development/connect-ready.jpg)
 
 Leave **Console → Download preference → Computer** selected to download through your computer, whether or not the PS5 has internet. Choose **Prefer PS5** to use direct console downloads when the PS5 can reach that source, with the computer as the fallback. This preference applies to new downloads.
 
