@@ -95,7 +95,9 @@ For your existing collection, the [Library guide](guides/library.md) explains in
 
 ## Beta status
 
-**Orbit Store 0.9.0 is an experimental beta.** [Download the beta](https://github.com/saawant12/orbit-store-ps5/releases/tag/v0.9.0).
+**Orbit Store 0.9.1 is an experimental beta.** [Download the beta](https://github.com/saawant12/orbit-store-ps5/releases/tag/v0.9.1).
+
+**Internal and M.2 storage restored.** Version 0.9.1 fixes drives missing after the 0.9.0 update and checks write access when downloads start or resume. Update both the download service and native TV app if you use it.
 
 **More games and download choices.** Explore 705 games with single-file FFPFSC, exFAT and FPKG options. Compare sources, use TorBox where supported, and choose your destination before downloading. Installation and launching are separate.
 
@@ -111,10 +113,10 @@ Orbit 0.8.0 and later receive new games and updated links through the current ca
 
 ## Using the beta
 
-The [0.9.0 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v0.9.0) includes:
+The [0.9.1 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v0.9.1) includes:
 
-- [PPSA99177.ffpkg](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.0/PPSA99177.ffpkg), the native TV app, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.0/PPSA99177.ffpkg.sha256).
-- [orbit_store.elf](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.0/orbit_store.elf), the download service and browser interface, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.0/orbit_store.elf.sha256).
+- [PPSA99177.ffpkg](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.1/PPSA99177.ffpkg), the native TV app, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.1/PPSA99177.ffpkg.sha256).
+- [orbit_store.elf](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.1/orbit_store.elf), the download service and browser interface, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.1/orbit_store.elf.sha256).
 - The complete source and licence bundle for both apps and their open-source components, with build instructions.
 
 Put each download beside its `.sha256` file and run `shasum -a 256 -c <filename>.sha256`. To install the TV app from Orbit 0.6.0 or later, use **App settings → TV app** in the browser version. See the [installation guide](guides/getting-started.md) for both options.
@@ -223,7 +225,7 @@ Orbit does **not** extract RAR/7z archives, directly install game packages, laun
 
 When reporting a bug, follow the [bug report format](.github/ISSUE_TEMPLATE/bug_report.md) and [open a bug report](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md). Include your setup, the exact error and a diagnostic report when available, and complete the sections relevant to your issue.
 
-- **No storage:** attach a writable drive to the PS5 and refresh storage. A drive connected to your computer is not PS5 storage.
+- **No storage:** if internal storage or your M.2 SSD disappeared in 0.9.0, update to 0.9.1, restart Orbit and refresh storage. For external drives, check that the drive is connected to the PS5. A drive connected to your computer is not PS5 storage.
 - **Drive disconnected:** reconnect the original destination. Orbit will not silently switch to internal storage.
 - **Not enough space:** free space on the selected destination before retrying.
 - **Source changed:** preserve the partial file until you decide to remove it and restart. Orbit will not append a different file to it.

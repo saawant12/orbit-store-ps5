@@ -28,6 +28,14 @@ Use Orbit 0.5.0 or later and enable Vikingfile in Sources. Select the desired op
 
 If the session times out, the provider page changes or the browser restarts, return to Orbit and try that option again. Cancel an existing session before starting another. A file that does not match the selected option is not queued. Provider links may become unavailable.
 
+## Internal storage or an M.2 SSD is missing
+
+If the drive disappeared after updating to 0.9.0, install **Orbit 0.9.1**, restart the download service and refresh storage. Native app users should also update the TV app to **1.2.2**, which includes the fixed service. Replacing the FFPKG alone does not replace a service that is already running.
+
+An available drive appears even if its `homebrew` folder has not been created yet. Orbit creates the folder when needed and checks actual write access when a download starts or resumes. If the destination cannot be written, the download stops and existing partial data is kept.
+
+If the drive still does not appear, include your firmware, Orbit and ShadowMount versions and a fresh diagnostic report in your bug report.
+
 ## A download fails or is slow
 
 - **Provider returned a page:** update Orbit, restart it and retry from Downloads. For browser-only Vikingfile options, repeat the provider step. Orbit still rejects an actual error or verification page returned instead of file data.
