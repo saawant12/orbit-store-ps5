@@ -96,7 +96,7 @@ Use **Active**, **Finished**, **Failed**, and **Cancelled** to find a transfer. 
 
 *The TV app and paired phone show the same queue, illustrated here with sample paused and queued jobs.*
 
-New supported large downloads use four connections. Existing partials retain their original layout. Speed depends on the provider, network and drive. Pause, Resume and Cancel control the whole file.
+New supported large downloads use up to eight connections. Existing partials retain their original layout. Speed depends on the provider, network and drive. Pause, Resume and Cancel control the whole file.
 
 After deleting a cancelled partial, you can start the download again from its game page. If you kept the partial, resume it from Downloads.
 

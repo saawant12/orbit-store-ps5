@@ -14,7 +14,7 @@ Start with **705 games** from Archive.org and Vikingfile. New games and correcte
 
 ## Orbit Zero for Mac, Windows and Linux
 
-**Coming in Orbit Store 1.0.0.** Orbit Zero is our desktop companion. Its downloads will be available with the 1.0.0 release; the current 0.9.1 release does not include it.
+**Available with Orbit Store 1.0.0.** Orbit Zero is our desktop companion for Mac, Windows and Linux. [Download Orbit Zero](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0), open **Console**, enter your PS5’s local IP address and choose **Start Orbit on PS5**.
 
 Download on your computer and transfer to your PS5 at the same time. **Works over your local network: Wi-Fi or Ethernet. Your PS5 does not need internet access.** Keep both devices connected to your home network while the computer handles online downloads.
 
@@ -23,9 +23,9 @@ Download on your computer and transfer to your PS5 at the same time. **Works ove
 - **Choose where downloads run.** Use **Computer** to download through your computer, or **Prefer PS5** to download directly when the console can reach the source. Save your preference once.
 - **Follow both stages.** See the download and PS5 transfer rates separately, with controls to pause, resume and reconnect.
 
-[Install on Mac, Windows or Linux](https://github.com/saawant12/orbit-store-ps5/blob/release/orbit-zero-1.0.0-draft/guides/orbit-zero-installation.md) · [Set up a PS5 without internet](https://github.com/saawant12/orbit-store-ps5/blob/release/orbit-zero-1.0.0-draft/guides/orbit-zero-offline-ps5.md)
+[Install on Mac, Windows or Linux](https://github.com/saawant12/orbit-store-ps5/blob/main/guides/orbit-zero-installation.md) · [Set up a PS5 without internet](https://github.com/saawant12/orbit-store-ps5/blob/main/guides/orbit-zero-offline-ps5.md)
 
-### Browse from your desktop
+### Discover on your computer
 
 Explore Discover with full game artwork, find a game in Browse and save your favourites. Choose the source and PS5 destination before starting a download.
 
@@ -57,7 +57,7 @@ For direct console downloads, you need a PS5 that can run homebrew ELF payloads,
 
 1. **Choose how to open Orbit.** For the native TV app, download and verify `PPSA99177.ffpkg` from the [latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest), copy it to `/data/homebrew/`, then open Orbit from the Games row. This needs **kstuff and ShadowMountPlus**. For the browser version, run `orbit_store.elf` through your loader and open Orbit from the Media tab.
 2. **Choose your sources.** Choose sources in the TV app’s setup screen or **App settings → Download sources**. Select Archive.org, Vikingfile, or both, and acknowledge the download notice. Your choices apply across both versions.
-3. **Pick a download.** Open a game and select its main download button to review **Download options**. Choose **Source**, **Download using** and **Save to**, then confirm the download. Direct options download from the TV app. Vikingfile browser options open the browser version; your selected game, source and drive carry over. Follow **Open download page on PS5 → Download on Vikingfile → return to Orbit**.
+3. **Pick a download.** Open a game and select its main download button to review **Download options**. Choose **Source**, **Download using** and **Save to**, then confirm the download. Direct options download from the TV app. Vikingfile browser options open the provider page on the PS5, keeping your selected game, source and drive. Choose **Open Vikingfile on PS5** in the native app or **Open download page on PS5** in the browser version, press **Download** on Vikingfile, then return to Orbit.
 4. **Follow your queue.** Open Downloads on the TV or a paired device to check progress, pause or resume.
 
 The TV app includes Orbit's download service and can start it through a compatible ELF loader on **port 9021**. You can also start `orbit_store.elf` yourself. The Media-tab shortcut opens the browser version while the service is running. After a reboot, start your jailbreak before opening Orbit. See the [setup and update guide](guides/getting-started.md) for installation, updates and phone pairing.
@@ -86,7 +86,7 @@ Open Orbit from your Games row and use the controller to browse, explore and cho
 
 ![Native game page with full artwork, description, favourites and download control](assets/0.9.0/native-details.png)
 
-**Choose how and where to download.** Review the source, format, delivery method and drive together. Direct options download from the TV app; Vikingfile browser options carry your choices into Orbit’s browser version. See the [download guide](guides/downloads.md), including [TorBox setup](guides/downloads.md#optional-download-through-torbox).
+**Choose how and where to download.** Review the source, format, delivery method and drive together. Direct options download from the TV app; Vikingfile browser options open the provider page on PS5 and keep your choices when you return. See the [download guide](guides/downloads.md), including [TorBox setup](guides/downloads.md#optional-download-through-torbox).
 
 ![Native Download options with source, delivery and destination controls](assets/0.9.0/native-download-options.png)
 
@@ -124,11 +124,11 @@ For your existing collection, the [Library guide](guides/library.md) explains in
 
 ## Beta status
 
-**Orbit Store 0.9.1 is an experimental beta.** [Download the beta](https://github.com/saawant12/orbit-store-ps5/releases/tag/v0.9.1).
+**Orbit Store 1.0.0 is an experimental beta.** [Download the beta](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0).
 
-**Internal and M.2 storage restored.** Version 0.9.1 fixes drives missing after the 0.9.0 update and checks write access when downloads start or resume. Update both the download service and native TV app if you use it.
+**Introducing Orbit Zero.** Download on your Mac, Windows or Linux computer and transfer to the PS5 over your local network. The PS5 does not need internet. Use the matching 1.0.0 service and native TV app for computer-download controls on the console.
 
-**More games and download choices.** Explore 705 games with single-file FFPFSC, exFAT and FPKG options. Compare sources, use TorBox where supported, and choose your destination before downloading. Installation and launching are separate.
+**Games and download choices.** Explore 705 games with single-file FFPFSC, exFAT and FPKG options. Compare sources, use TorBox where supported, and choose your destination before downloading. Installation and launching are separate.
 
 **A refreshed interface on TV and in the browser.** Explore Latest releases and New on Orbit, filter Browse by region, and review your download choices in one panel. Orbit also improves M.2 storage detection and makes it easier to delete cancelled downloads and start fresh. Keep the PS5 awake while downloading.
 
@@ -142,10 +142,12 @@ Orbit 0.8.0 and later receive new games and updated links through the current ca
 
 ## Using the beta
 
-The [0.9.1 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v0.9.1) includes:
+The [1.0.0 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0) includes:
 
-- [PPSA99177.ffpkg](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.1/PPSA99177.ffpkg), the native TV app, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.1/PPSA99177.ffpkg.sha256).
-- [orbit_store.elf](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.1/orbit_store.elf), the download service and browser interface, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.1/orbit_store.elf.sha256).
+- Orbit Zero for Mac, Windows and Linux, in ARM64 and x64 builds. Follow the [desktop installation guide](guides/orbit-zero-installation.md).
+
+- [PPSA99177.ffpkg](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.0/PPSA99177.ffpkg), the native TV app, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.0/PPSA99177.ffpkg.sha256).
+- [orbit_store.elf](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.0/orbit_store.elf), the download service and browser interface, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.0/orbit_store.elf.sha256).
 - The complete source and licence bundle for both apps and their open-source components, with build instructions.
 
 Put each download beside its `.sha256` file and run `shasum -a 256 -c <filename>.sha256`. To install the TV app from Orbit 0.6.0 or later, use **App settings → TV app** in the browser version. See the [installation guide](guides/getting-started.md) for both options.
@@ -198,7 +200,7 @@ After using TorBox, keep using Orbit 0.8.0 or later while those jobs remain in y
 
 ## Managing your downloads
 
-New large downloads use four connections when the host supports byte ranges and a strong file identity. Existing partials keep their original layout; other downloads use one connection. Pause, Resume and Cancel apply to the entire download. Speed depends on the host, network and storage.
+New large downloads use up to eight connections when the host supports byte ranges and a strong file identity. Existing partials keep their original layout; other downloads use one connection. Pause, Resume and Cancel apply to the entire download. Speed depends on the host, network and storage.
 
 Open **Downloads** and choose **Active**, **Finished**, **Failed** or **Cancelled**. Finished contains only successfully completed downloads; cancelled items have their own view. Move waiting downloads up or down to choose what runs next. Paused items keep their place. A retry countdown tells you when Orbit will try an interrupted download again.
 
@@ -254,7 +256,7 @@ Orbit does **not** extract RAR/7z archives, directly install game packages, laun
 
 When reporting a bug, follow the [bug report format](.github/ISSUE_TEMPLATE/bug_report.md) and [open a bug report](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md). Include your setup, the exact error and a diagnostic report when available, and complete the sections relevant to your issue.
 
-- **No storage:** if internal storage or your M.2 SSD disappeared in 0.9.0, update to 0.9.1, restart Orbit and refresh storage. For external drives, check that the drive is connected to the PS5. A drive connected to your computer is not PS5 storage.
+- **No storage:** if internal storage or your M.2 SSD disappeared in 0.9.0, update to the latest release, restart Orbit and refresh storage. For external drives, check that the drive is connected to the PS5. A drive connected to your computer is not PS5 storage.
 - **Drive disconnected:** reconnect the original destination. Orbit will not silently switch to internal storage.
 - **Not enough space:** free space on the selected destination before retrying.
 - **Source changed:** preserve the partial file until you decide to remove it and restart. Orbit will not append a different file to it.

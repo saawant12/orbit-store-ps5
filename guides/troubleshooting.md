@@ -30,7 +30,7 @@ If the session times out, the provider page changes or the browser restarts, ret
 
 ## Internal storage or an M.2 SSD is missing
 
-If the drive disappeared after updating to 0.9.0, install **Orbit 0.9.1**, restart the download service and refresh storage. Native app users should also update the TV app to **1.2.2**, which includes the fixed service. Replacing the FFPKG alone does not replace a service that is already running.
+If the drive disappeared after updating to 0.9.0, install **Orbit 1.0.0 or later**, restart the download service and refresh storage. Native app users should also update the TV app to **1.3.0 or later**, which includes the fixed service. Replacing the FFPKG alone does not replace a service that is already running.
 
 An available drive appears even if its `homebrew` folder has not been created yet. Orbit creates the folder when needed and checks actual write access when a download starts or resumes. If the destination cannot be written, the download stops and existing partial data is kept.
 
