@@ -8,6 +8,28 @@ This guide accompanies **Orbit Zero 1.0.0**. The Mac app is Developer ID signed 
 
 Get the files from the [Orbit Store 1.0.0 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0).
 
+## Optional speed-optimized builds
+
+If downloads or transfers feel slow, try **Orbit Zero 1.0.1**, labelled `speed-optimized` in the same release's Assets. The original 1.0.0 builds remain available. These optional builds improve the download and local-transfer pipeline and reconnect to your saved PS5 when you reopen the app.
+
+| Computer | Optional file |
+| --- | --- |
+| Mac with an Apple M-series chip | `Orbit-Zero-1.0.1-speed-optimized-mac-arm64.dmg` |
+| Mac with an Intel processor | `Orbit-Zero-1.0.1-speed-optimized-mac-x64.dmg` |
+| Windows on Intel or AMD | `Orbit-Zero-1.0.1-speed-optimized-win-x64.zip` |
+| Windows on ARM | `Orbit-Zero-1.0.1-speed-optimized-win-arm64.zip` |
+| Ubuntu or Debian on Intel or AMD | `Orbit-Zero-1.0.1-speed-optimized-linux-amd64.deb` |
+| Ubuntu or Debian on ARM64 | `Orbit-Zero-1.0.1-speed-optimized-linux-arm64.deb` |
+
+1. Pause active transfers and quit Orbit Zero. Install or extract the optional build using the steps for your operating system below. On Ubuntu or Debian, use the optional file's full name, for example `sudo apt install ./Orbit-Zero-1.0.1-speed-optimized-linux-arm64.deb` from its download folder.
+2. In Orbit Store on the PS5, select **App settings → Update / reinstall → Stop Orbit to restart** to stop the running service.
+3. In the new desktop app, open **Console → Start Orbit on PS5** and upload and start its included **1.0.1 receiver**. This step enables the transfer improvements; your PS5 does not need internet. Keep its Payload Manager or ELF loader running.
+4. Reconnect if needed, then select **Resume** for paused transfers. Pairing, settings and queues stay saved. You can keep the native PS5 app from the 1.0.0 release.
+
+Use `SHA256SUMS-speed-optimized.txt` to verify these optional downloads. The included receiver's matching source and licences are in `orbit-store-1.0.1-source-bundle.zip`. The standard update feeds continue to offer the original release.
+
+The same first-launch permissions apply. With saved pairing, reopening this version can ask to unlock macOS Keychain or the Linux keyring after the PS5 responds; an offline console does not trigger that prompt.
+
 ## Choose your download
 
 | Computer | File |
