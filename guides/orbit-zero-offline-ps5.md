@@ -43,6 +43,8 @@ Allow Orbit Zero through your computer's local-network or firewall prompt. See t
 
 Everything sent to the PS5 in this step travels over your local network. The console does not visit GitHub or a download provider. You do not need to find or select an ELF manually.
 
+If you need to select the ELF yourself, follow the [manual GitHub download and upload steps](orbit-zero-installation.md#manual-fallback-download-the-elf-yourself). Download the file on your computer; the PS5 can stay offline.
+
 If Payload Manager opens at `http://<ps5-ip>:8084/`, choose **Payload Manager**. Its web interface is separate from an ELF loader on port 9021. Use **Advanced** if your loader uses a different port.
 
 If Orbit is already running, select **Connect to Orbit**. When replacing an older running service, stop it through Orbit's **App settings → Update / reinstall → Stop Orbit to restart** before starting the new copy; uploading an ELF alone does not replace the running session.

@@ -105,6 +105,18 @@ The full-screen examples below show the setup flow. Use your own PS5 address and
 
 Zero supplies the compatible Orbit payload automatically; you do not need to find an ELF yourself. Use **Advanced** only if you changed your loader's port or want to select a custom file. Once the upload finishes, Zero waits for Orbit to start and connects automatically. If Orbit is already running, select **Connect to Orbit** instead of uploading it again.
 
+### Manual fallback: download the ELF yourself
+
+If you need to select the payload manually:
+
+1. On your **computer**, open the official [Orbit Store GitHub Releases page](https://github.com/saawant12/orbit-store-ps5/releases/latest). Under **Assets**, download **`orbit_store.elf`** and its matching **`orbit_store.elf.sha256`** checksum. Use the compatible Orbit Store build supplied with your Orbit Zero release; Zero requires Orbit Store 1.0.0 or later.
+2. Keep Payload Manager or your ELF loader running on the PS5. In Orbit Zero, open **Console**, enter the PS5's local IP address, and expand **Start Orbit on PS5**.
+3. Choose **Payload Manager** or **ELF loader**, then expand **Advanced**. Check the loader port: normally **8084** for Payload Manager or **9021** for an ELF loader.
+4. Select **Choose another ELF** and choose the downloaded **`orbit_store.elf`**.
+5. Select **Send custom ELF**. Zero uploads and starts that file, then waits for Orbit to start and connects automatically. Complete the pairing steps below if asked.
+
+The GitHub download happens on your computer; **the PS5 still does not need internet access**. If replacing an older Orbit service that is already running, first use its **App settings → Update / reinstall → Stop Orbit to restart**, then send the new file. Uploading alone does not replace a running session.
+
 ### Pair with your PS5
 
 1. When **Pairing required** appears, select **Show code on PS5**.
