@@ -63,7 +63,7 @@ Zero uses up to eight download connections when the provider supports validated 
 
 *Downloads in Orbit Zero. Progress and rates illustrate the two stages; they are not measured transfer results.*
 
-For Vikingfile, Zero opens a separate browser window on the computer. Complete any provider verification and select the matching file's Download button. Zero captures and checks the final file link before adding it to the queue. Provider logins stay in a separate persistent browser profile on the computer. Premium-account behaviour depends on Vikingfile; Orbit Zero does not guarantee premium features.
+For Vikingfile, Zero opens a separate browser window on the computer. Complete any provider verification and select the matching file's Download button. Zero captures and checks the final file link before adding it to the queue. Provider logins stay in a separate persistent browser profile on the computer.
 
 ## Control it from the PS5
 
