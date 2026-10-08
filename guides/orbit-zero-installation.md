@@ -2,18 +2,20 @@
 
 Download on your computer and transfer to your PS5 over your home network. Wi-Fi and Ethernet both work, including when one device uses Wi-Fi and the other uses a cable. The PS5 does not need internet access for computer downloads.
 
-This guide accompanies **Orbit Zero 0.1.0-dev.1**, a test build. The Mac app is Developer ID signed but is not yet notarized. Windows and Linux packages are unsigned.
+**PS5 has no internet?** Follow [Set up Orbit on a PS5 without internet](https://github.com/saawant12/orbit-store-ps5/blob/release/orbit-zero-1.0.0-draft/guides/orbit-zero-offline-ps5.md) for the full local upload, pairing and optional native-app installation steps.
+
+This guide accompanies **Orbit Zero 1.0.0**. The Mac app is Developer ID signed but is not yet notarized. Windows and Linux packages are unsigned.
 
 ## Choose your download
 
 | Computer | File |
 | --- | --- |
-| Mac with an Apple M-series chip | `Orbit-Zero-0.1.0-dev.1-mac-arm64.dmg` |
-| Mac with an Intel processor | `Orbit-Zero-0.1.0-dev.1-mac-x64.dmg` |
-| Windows on Intel or AMD | `Orbit-Zero-0.1.0-dev.1-win-x64.zip` |
-| Windows on ARM, including Snapdragon | `Orbit-Zero-0.1.0-dev.1-win-arm64.zip` |
-| Ubuntu or Debian on Intel or AMD | `Orbit-Zero-0.1.0-dev.1-linux-amd64.deb` |
-| Ubuntu or Debian on ARM64 | `Orbit-Zero-0.1.0-dev.1-linux-arm64.deb` |
+| Mac with an Apple M-series chip | `Orbit-Zero-1.0.0-mac-arm64.dmg` |
+| Mac with an Intel processor | `Orbit-Zero-1.0.0-mac-x64.dmg` |
+| Windows on Intel or AMD | `Orbit-Zero-1.0.0-win-x64.zip` |
+| Windows on ARM, including Snapdragon | `Orbit-Zero-1.0.0-win-arm64.zip` |
+| Ubuntu or Debian on Intel or AMD | `Orbit-Zero-1.0.0-linux-amd64.deb` |
+| Ubuntu or Debian on ARM64 | `Orbit-Zero-1.0.0-linux-arm64.deb` |
 
 On a Mac, check **Apple menu → About This Mac**. On Windows, check **Settings → System → About → System type**. On Linux, run `uname -m`: `x86_64` needs AMD64/x64; `aarch64` needs ARM64. In a virtual machine, choose the build for the guest operating system. 32-bit x86 is not supported.
 
@@ -22,7 +24,7 @@ On a Mac, check **Apple menu → About This Mac**. On Windows, check **Settings 
 1. Quit any open copy of Orbit Zero.
 2. Open the matching `.dmg` and drag **Orbit Zero** into **Applications**. If updating, choose **Replace**.
 3. Eject the disk image and open **Orbit Zero** from Applications. Keep using this installed copy rather than launching from the disk image.
-4. If macOS says it cannot verify the app, first check that you received this build from Orbit's maintainer. Then open **System Settings → Privacy & Security → Open Anyway** and confirm **Open**. This test build has not been notarized; see [Apple's instructions](https://support.apple.com/en-us/102445).
+4. If macOS says it cannot verify the app, first check that you received this build from Orbit's maintainer. Then open **System Settings → Privacy & Security → Open Anyway** and confirm **Open**. The Mac app has not been notarized; see [Apple's instructions](https://support.apple.com/en-us/102445).
 5. When connecting, allow **Orbit Zero** to access your local network. If you previously denied it, enable Orbit Zero in **System Settings → Privacy & Security → Local Network**, reopen the app, and retry. This permission lets it reach your PS5; it is separate from internet access. [Apple's local-network guidance](https://developer.apple.com/documentation/technotes/tn3179-understanding-local-network-privacy).
 
 Pairing or selecting **Reconnect** may open a Keychain prompt to protect or unlock your saved pairing. Approve the Orbit Zero request if you want to continue; enter your Mac login password only in the macOS prompt if requested. Opening the app just to browse does not unlock Keychain.
@@ -32,7 +34,7 @@ Pairing or selecting **Reconnect** may open a Keychain prompt to protect or unlo
 1. Save the matching ZIP to a folder on the Windows computer, such as **Downloads**.
 2. Right-click it and choose **Extract All**. Keep the complete extracted folder together.
 3. Open **Orbit Zero.exe** from that folder. Do not launch it from inside the ZIP or copy only the EXE out of the folder.
-4. If SmartScreen says **Windows protected your PC**, check that this is the Orbit build you intended to download. For a trusted copy, choose **More info → Run anyway**, if offered. This test build is unsigned. If your organisation or Smart App Control blocks it without that option, contact the maintainer or administrator rather than disabling protection. [Microsoft's SmartScreen guidance](https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/smartscreen-reputation).
+4. If SmartScreen says **Windows protected your PC**, check that this is the Orbit build you intended to download. For a trusted copy, choose **More info → Run anyway**, if offered. The Windows app is unsigned. If your organisation or Smart App Control blocks it without that option, contact the maintainer or administrator rather than disabling protection. [Microsoft's SmartScreen guidance](https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/smartscreen-reputation).
 5. If Windows asks to allow network access, allow **Orbit Zero** on your trusted **Private** home network. This lets the PS5 reach the computer's controls. Firewall approval may require an administrator; the app itself runs as your normal user. [Microsoft's firewall guidance](https://support.microsoft.com/en-us/windows/security/firewall/risks-of-allowing-apps-through-windows-firewall).
 
 There is no installation wizard for the Windows ZIP, and **Run as administrator** is not required. You can create a shortcut to the extracted EXE. To update, quit Orbit Zero, extract the new ZIP into a new folder, and launch that copy. Your saved pairing and queue stay in your Windows user profile.
@@ -48,18 +50,18 @@ Use the `.deb` installer. It adds Orbit Zero to your application menu and sets u
 
    ```sh
    # Intel / AMD 64-bit
-   sudo apt install "$HOME/Downloads/Orbit-Zero-0.1.0-dev.1-linux-amd64.deb"
+   sudo apt install "$HOME/Downloads/Orbit-Zero-1.0.0-linux-amd64.deb"
    ```
 
    ```sh
    # ARM64
-   sudo apt install "$HOME/Downloads/Orbit-Zero-0.1.0-dev.1-linux-arm64.deb"
+   sudo apt install "$HOME/Downloads/Orbit-Zero-1.0.0-linux-arm64.deb"
    ```
 
 3. Enter your Linux password if asked. The installer needs administrator access; characters do not appear while typing the password. Internet access may be needed to install dependencies.
 4. Open **Orbit Zero** from your application menu. Do not run the app itself with `sudo`.
 
-**Saved the installer somewhere else?** Open a terminal in that folder and include `./` before its filename, for example `sudo apt install ./Orbit-Zero-0.1.0-dev.1-linux-arm64.deb`. Without `./` or a full path, apt searches its package repositories and reports **Unable to locate package**. If `uname -m` says `aarch64`, use the ARM64 installer; AMD64 is for Intel/AMD computers.
+**Saved the installer somewhere else?** Open a terminal in that folder and include `./` before its filename, for example `sudo apt install ./Orbit-Zero-1.0.0-linux-arm64.deb`. Without `./` or a full path, apt searches its package repositories and reports **Unable to locate package**. If `uname -m` says `aarch64`, use the ARM64 installer; AMD64 is for Intel/AMD computers.
 
 If you are updating, quit Orbit Zero and install the new `.deb` the same way. Your saved pairing and queue stay in your user profile. When pairing or reconnecting, Ubuntu may ask you to unlock your login keyring; that stores the pairing securely.
 
