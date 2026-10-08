@@ -4,11 +4,11 @@
     {
       "name": "Orbit Store (Beta)",
       "filename": "orbit_store.elf",
-      "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.0/orbit_store.elf",
+      "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.1/orbit_store.elf",
       "description": "A modern PS5 download manager with a native TV app, resumable downloads and phone controls.",
-      "version": "v0.9.0",
+      "version": "v0.9.1",
       "category": "Utilities",
-      "checksum": "aeef769d81507157837a017886a72c169ee7acb472e7c029a1d5e830735762df"
+      "checksum": "a7ff23dfc0ed5cd7d5c4b05c7e0c0a4e1ea2ee2c91742e00d754122917f8f318"
     }
   ]
 }
