@@ -6,11 +6,40 @@ Orbit runs on your PS5. Browse games, compare their available sources and format
 
 Start with **705 games** from Archive.org and Vikingfile. New games and corrected links arrive through catalogue updates, without reinstalling Orbit. You choose which sources to enable and which storage to use.
 
-[Download Orbit](https://github.com/saawant12/orbit-store-ps5/releases/latest) · [Get started](guides/getting-started.md) · [Download guide](guides/downloads.md) · [Library guide](guides/library.md) · [Troubleshooting](guides/troubleshooting.md) · [Bug report format](.github/ISSUE_TEMPLATE/bug_report.md) · [Report a bug](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md) · [Request a feature](https://github.com/saawant12/orbit-store-ps5/issues/new?template=feature_request.md)
+[Download Orbit](https://github.com/saawant12/orbit-store-ps5/releases/latest) · [Orbit Zero](#orbit-zero-for-mac-windows-and-linux) · [Get started](guides/getting-started.md) · [Download guide](guides/downloads.md) · [Library guide](guides/library.md) · [Troubleshooting](guides/troubleshooting.md) · [Bug report format](.github/ISSUE_TEMPLATE/bug_report.md) · [Report a bug](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md) · [Request a feature](https://github.com/saawant12/orbit-store-ps5/issues/new?template=feature_request.md)
 
 > **Official channels:** Orbit Store has no official social media accounts. This GitHub repository is our official source for releases, updates and support. Any social media account claiming to officially represent Orbit Store is an impersonator.
 
 > **Always free.** Orbit Store is free to use and will always remain free. We don’t accept donations or payments. Anyone asking for money on our behalf is not affiliated with the project.
+
+## Orbit Zero for Mac, Windows and Linux
+
+**Coming in Orbit Store 1.0.0.** Orbit Zero is our desktop companion. Its downloads will be available with the 1.0.0 release; the current 0.9.1 release does not include it.
+
+Download on your computer and transfer to your PS5 at the same time. **Works over your local network: Wi-Fi or Ethernet. Your PS5 does not need internet access.** Keep both devices connected to your home network while the computer handles online downloads.
+
+- **Start Orbit from your computer.** Upload and launch the compatible payload without a separate ELF download or manual file selection. Your PS5 must already have its jailbreak and Payload Manager or an ELF loader running.
+- **Control downloads from either device.** Browse and manage the computer’s queue from the desktop or the matching native Orbit app on your PS5.
+- **Choose where downloads run.** Use **Computer** to download through your computer, or **Prefer PS5** to download directly when the console can reach the source. Save your preference once.
+- **Follow both stages.** See the download and PS5 transfer rates separately, with controls to pause, resume and reconnect.
+
+[Install on Mac, Windows or Linux](https://github.com/saawant12/orbit-store-ps5/blob/release/orbit-zero-1.0.0-draft/guides/orbit-zero-installation.md) · [Set up a PS5 without internet](https://github.com/saawant12/orbit-store-ps5/blob/release/orbit-zero-1.0.0-draft/guides/orbit-zero-offline-ps5.md)
+
+### Browse from your desktop
+
+Explore Discover with full game artwork, find a game in Browse and save your favourites. Choose the source and PS5 destination before starting a download.
+
+![Orbit Zero Discover on desktop with featured artwork and game rows](assets/orbit-zero-development/discover.jpg)
+
+### Your PS5, at a glance
+
+The Console page brings your connection, available storage, download preference and active transfers together. Pair once using **Show code on PS5**, then manage the connection from your computer.
+
+![Orbit Zero Console with connection, storage, download preference and separate download and transfer progress](assets/orbit-zero-development/console.jpg)
+
+*Desktop interface previews. Connection, storage and transfer values are illustrative.*
+
+The desktop app supports **ARM64 and x64** computers and starts with an English interface. The existing Orbit Store native and browser apps retain their language support. Keep Orbit Zero and the PS5 awake while transferring; the computer needs internet to fetch new downloads.
 
 ## Built around the console
 
@@ -24,7 +53,7 @@ Start with **705 games** from Archive.org and Vikingfile. New games and correcte
 
 ## Get started
 
-You need a PS5 that can run homebrew ELF payloads, a payload manager or ELF loader, internet access for downloads, and enough writable storage.
+For direct console downloads, you need a PS5 that can run homebrew ELF payloads, a payload manager or ELF loader, internet access on the console, and enough writable storage. For downloads through your computer, see [Orbit Zero](#orbit-zero-for-mac-windows-and-linux) above.
 
 1. **Choose how to open Orbit.** For the native TV app, download and verify `PPSA99177.ffpkg` from the [latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest), copy it to `/data/homebrew/`, then open Orbit from the Games row. This needs **kstuff and ShadowMountPlus**. For the browser version, run `orbit_store.elf` through your loader and open Orbit from the Media tab.
 2. **Choose your sources.** Choose sources in the TV app’s setup screen or **App settings → Download sources**. Select Archive.org, Vikingfile, or both, and acknowledge the download notice. Your choices apply across both versions.
