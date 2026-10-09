@@ -4,7 +4,7 @@
 
 Orbit runs on your PS5. Browse games, compare their available sources and formats, and download a single file directly to the console or an attached drive. Open the native TV app from your Games row, or pair a phone or computer to manage the same queue over your local network.
 
-Start with **705 games** from Archive.org and Vikingfile. New games and corrected links arrive through catalogue updates, without reinstalling Orbit. You choose which sources to enable and which storage to use.
+Start with **720 games** from Archive.org and Vikingfile. New games and corrected links arrive through catalogue updates, without reinstalling Orbit. You choose which sources to enable and which storage to use.
 
 [Download Orbit](https://github.com/saawant12/orbit-store-ps5/releases/latest) · [Orbit Zero](#orbit-zero-for-mac-windows-and-linux) · [Get started](guides/getting-started.md) · [Download guide](guides/downloads.md) · [Library guide](guides/library.md) · [Troubleshooting](guides/troubleshooting.md) · [Bug report format](.github/ISSUE_TEMPLATE/bug_report.md) · [Report a bug](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md) · [Request a feature](https://github.com/saawant12/orbit-store-ps5/issues/new?template=feature_request.md)
 
@@ -132,7 +132,7 @@ For your existing collection, the [Library guide](guides/library.md) explains in
 
 **Introducing Orbit Zero.** Download on your Mac, Windows or Linux computer and transfer to the PS5 over your local network. The PS5 does not need internet. Use the matching 1.0.5 service and native TV app for computer-download controls on the console.
 
-**Games and download choices.** Explore 705 games with single-file FFPFSC, exFAT and FPKG options. Compare sources, use TorBox where supported, and choose your destination before downloading. Installation and launching are separate.
+**Games and download choices.** Explore 720 games with single-file FFPFSC, exFAT and FPKG options. Compare sources, use TorBox where supported, and choose your destination before downloading. Installation and launching are separate.
 
 **A refreshed interface on TV and in the browser.** Explore Latest releases and New on Orbit, filter Browse by region, and review your download choices in one panel. Orbit also improves M.2 storage detection and makes it easier to delete cancelled downloads and start fresh. Keep the PS5 awake while downloading.
 

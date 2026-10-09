@@ -8,7 +8,7 @@ Orbit requires a PS5 environment capable of loading homebrew ELF payloads. Compa
 
 Run orbit_store.elf through a payload manager or ELF loader, then open Orbit Store from the PS5 Media tab. Phone and computer controls are available at http://<ps5-ip>:34177/ on the same local network. Pair devices keeps the code visible on the PS5; Show code on PS5 repeats its notification.
 
-Version 0.8.0 introduced optional TorBox downloads, ten interface languages, Discover as the opening page with Latest releases and a paged All games grid, refined native/browser controls and reconnection after waking from rest mode. Keep the PS5 awake during transfers; this does not add downloads during rest mode. The current native app version is 1.3.2 and includes service 1.0.5. Copy PPSA99177.ffpkg to /data/homebrew/ and open it from the Games row using kstuff and ShadowMountPlus. A compatible ELF loader on port 9021 lets it start the bundled service; restart an older running service to use the new version. Orbit offers 705 games with single-file FFPFSC, exFAT and FPKG options from Archive.org and Vikingfile. Browse sorts by verified release date, newest first, with undated titles afterward.
+Version 0.8.0 introduced optional TorBox downloads, ten interface languages, Discover as the opening page with Latest releases and a paged All games grid, refined native/browser controls and reconnection after waking from rest mode. Keep the PS5 awake during transfers; this does not add downloads during rest mode. The current native app version is 1.3.2 and includes service 1.0.5. Copy PPSA99177.ffpkg to /data/homebrew/ and open it from the Games row using kstuff and ShadowMountPlus. A compatible ELF loader on port 9021 lets it start the bundled service; restart an older running service to use the new version. Orbit offers 720 games with single-file FFPFSC, exFAT and FPKG options from Archive.org and Vikingfile. Browse sorts by verified release date, newest first, with undated titles afterward.
 
 Version 0.9.0 refreshes the native and browser interfaces. The game page opens Download options with Source, Download using and Save to panels. New on Orbit highlights recently added games in release-date order; Browse and Discover’s All games show 96 games per page. It also improves M.2 detection and cancelled-download cleanup and retry. Native app 1.2.1 includes service 0.9.0.
 
@@ -73,3 +73,5 @@ Version 1.0.5 includes the download and transfer improvements in standard Orbit 
 ## Optional
 
 - [Payload Manager custom repository guide](https://github.com/itsPLK/ps5-payload-manager/blob/main/CUSTOM_REPOSITORIES.md): Upstream feed format and source setup instructions.
+
+The 1.0.5 catalogue includes 720 games and 1,174 options. The update adds 15 games and 151 Vikingfile options: 102 exFAT, 46 FPKG and 3 FFPFSC, with new options for 122 existing games. Archive.org retains its existing 245 verified options.
