@@ -1,6 +1,6 @@
 # Find and download a game
 
-Orbit includes 705 games with single-file options from Archive.org and Vikingfile. Each game appears once; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit includes 720 games with single-file options from Archive.org and Vikingfile. Each game appears once; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 ## Browse and choose
 
@@ -59,12 +59,14 @@ Pause and resume from Downloads as usual. Disconnecting TorBox pauses its unfini
 
 ## Vikingfile: open the page on PS5 first
 
-**Starting in the native TV app?** Open **Download options**, choose your source and drive, then select **Open browser version** for a browser-only option. The browser opens your selected game with the same source and destination. Check those choices, then follow the steps below. If the source or drive is no longer available, select an available one explicitly. This does not start the provider step automatically. After Orbit queues the download, you can return to the TV app to follow it.
+**Starting in the native TV app?** Open **Download options**, choose your source and drive, then select **Open Vikingfile on PS5**. Vikingfile opens directly in the PS5 browser. Complete any verification, select **Download** on the provider page, then return to the native Orbit Store app. Orbit checks the file and queues it on your selected drive. You do not need to open Orbit's browser interface first. If the source or drive is no longer available, choose an available one explicitly.
+
+**Downloading through Orbit Zero?** Vikingfile opens on your computer instead. Complete any verification and select **Download** there. See the [Orbit Zero download steps](orbit-zero-installation.md#vikingfile-downloads).
 
 **Requires Orbit 0.5.0 or later.** Older versions keep their Archive.org catalogue and do not receive unsupported Vikingfile options.
 
 1. Select the Vikingfile option and destination drive in Orbit.
-2. Select **Open download page on PS5**. This is the first step; it opens the provider page on the console.
+2. Select **Open download page on PS5** in Orbit's browser interface, or **Open Vikingfile on PS5** in the native app. This opens the provider page on the console.
 3. Complete any verification yourself and select the provider’s **Download** button. Follow the file’s download controls if a redirect opens another Vikingfile page.
 4. Return to Orbit Store and open **Downloads**. Orbit checks that the captured file matches the selected option before adding it to your queue.
 

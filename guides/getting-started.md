@@ -38,7 +38,7 @@ A drive connected to your phone or computer is not a PS5 destination. Attach you
 
 ## Choose your language
 
-**Available in 0.8.0:** English, German, Spanish, French, Italian, Dutch, Polish, Brazilian Portuguese, Russian and Turkish.
+Orbit Store supports **11 interface languages**: English, German, Spanish, French, Hungarian, Italian, Dutch, Polish, Brazilian Portuguese, Russian and Turkish. Hungarian is new in 1.0.5. Orbit Zero's desktop interface remains English-only.
 
 - **Native TV app:** Orbit follows your PS5’s system language when it starts. Change the console language in **Settings → System → Language → Console Language**, then close and reopen Orbit. Unsupported languages use English.
 - **Browser, phone or computer:** open **App settings → Language**. Choose a language, or **Automatic** to follow your browser’s preference. The interface reloads after you choose. This preference is saved for that browser; it does not change other paired devices or the PS5’s system language.
@@ -47,7 +47,7 @@ A drive connected to your phone or computer is not a PS5 destination. Attach you
 
 <img src="../assets/0.9.0/phone-language.jpg" width="300" alt="The Language setting near the top of App settings on a phone">
 
-*Interface previews for Orbit 0.9.0. Scroll the language list to see all ten choices. Game names, descriptions and provider pages may keep their original language. Changing Orbit’s language does not change a downloaded game’s language.*
+*Browser interface previews are from Orbit 0.9.0; Hungarian is also available in 1.0.5. Game names, descriptions and provider pages may keep their original language. Changing Orbit’s language does not change a downloaded game’s language.*
 
 ## Choose a default drive
 
