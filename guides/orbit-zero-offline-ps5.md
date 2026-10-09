@@ -2,9 +2,9 @@
 
 Install **Orbit Zero on your computer**, then use it to upload and start Orbit on your PS5 over your local network. Your computer handles online downloads and sends the files to the console. **The PS5 can keep its internet access blocked throughout setup and use.**
 
-This guide works with the original **Orbit Zero 1.0.0** and the optional **1.0.1 speed-optimized builds** on the [same release page](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0).
+This guide covers **Orbit Zero 1.0.5** and the matching PS5 files from the [Orbit Store release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.5).
 
-**Trying the speed-optimized build?** Download the file labelled `speed-optimized` for your computer, then follow the setup below. It includes the updated **1.0.1 receiver**, which is uploaded over your local network; the PS5 still needs no internet. If Orbit is already running, stop its service before uploading the included receiver. See the [download choices and update steps](orbit-zero-installation.md#optional-speed-optimized-builds). The original downloads remain available.
+The desktop app includes the compatible Orbit service and uploads it over your local network. If an older Orbit service is already running, stop it before starting the new copy. See the [download choices and update steps](orbit-zero-installation.md).
 
 ## What you need
 
@@ -77,7 +77,7 @@ Open a game in Orbit Zero, choose its source and PS5 destination, then start the
 
 For Vikingfile, complete any verification and select the file's Download button in the provider window **on the computer**. Orbit Zero captures the file link and queues the download; the PS5 does not need to open Vikingfile.
 
-Keep **both devices awake** and Orbit Zero open until the transfer finishes. Completed downloads remain in the computer cache until you choose **Remove computer cache**. Removing a completed cache keeps the finished PS5 file.
+Keep **both devices awake** and Orbit Zero open until the transfer finishes. By default, completed downloads remain in the computer cache. In **Downloads → Download settings → Computer cache**, enable **Automatically remove after transfer** for future successful transfers, or use **Clear completed cache** to remove existing completed copies. The finished PS5 files stay in place.
 
 The **Computer** preference chooses where downloads run; it does not change your router or block the PS5's internet access for you.
 
@@ -105,7 +105,7 @@ This is a local page served by the computer, normally on port **34179**. Its cod
 ## Next time you use it
 
 1. After a PS5 reboot, run your jailbreak and start Payload Manager or your ELF loader again.
-2. Open Orbit Zero. If Orbit is not running on the console, use **Start Orbit on PS5**. The speed-optimized build reconnects automatically when the saved console is reachable; otherwise, select **Reconnect**.
+2. Open Orbit Zero. If Orbit is not running on the console, use **Start Orbit on PS5**. Zero reconnects automatically when the saved console is reachable; otherwise, select **Reconnect**.
 3. Your saved pairing is reused when valid. Resume any paused or interrupted downloads explicitly.
 
 You do not need to reinstall the native FFPKG each time. Keep the original pairing when resuming unfinished transfers.

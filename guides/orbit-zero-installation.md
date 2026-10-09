@@ -4,50 +4,30 @@ Download on your computer and transfer to your PS5 over your home network. Wi-Fi
 
 **PS5 has no internet?** Follow [Set up Orbit on a PS5 without internet](https://github.com/saawant12/orbit-store-ps5/blob/main/guides/orbit-zero-offline-ps5.md) for the full local upload, pairing and optional native-app installation steps.
 
-This guide covers the original **Orbit Zero 1.0.0** downloads and the optional **1.0.1 speed-optimized builds**, both available on the same release page. Choose the files labelled `speed-optimized` if you want to try the download and transfer improvements. The Mac app is Developer ID signed but is not yet notarized. Windows and Linux packages are unsigned.
+This guide covers **Orbit Zero 1.0.5**. The download and transfer improvements from the earlier optional builds are now included as standard. The Mac app is Developer ID signed but is not yet notarized. Windows and Linux packages are unsigned.
 
-Get the files from the [Orbit Store 1.0.0 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0).
+Get the files from the [Orbit Store 1.0.5 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.5).
 
-## Optional speed-optimized builds
+## Update Orbit Zero
 
-If downloads or transfers feel slow, try **Orbit Zero 1.0.1**, labelled `speed-optimized` in the same release's Assets. The original 1.0.0 builds remain available. These optional builds improve the download and local-transfer pipeline and reconnect to your saved PS5 when you reopen the app.
+Quit Orbit Zero, then replace it using the installer or archive for your computer below. Your pairing and queue stay saved. In Orbit Store on the PS5, stop the running service under **App settings → Update / reinstall → Stop Orbit to restart**. Then open the new desktop app and use **Console → Start Orbit on PS5** to upload and start its included 1.0.5 service. The PS5 does not need internet for this step. Select **Resume** for any paused transfers.
 
-| Computer | Optional file |
-| --- | --- |
-| Mac with an Apple M-series chip | `Orbit-Zero-1.0.1-speed-optimized-mac-arm64.dmg` |
-| Mac with an Intel processor | `Orbit-Zero-1.0.1-speed-optimized-mac-x64.dmg` |
-| Windows on Intel or AMD | `Orbit-Zero-1.0.1-speed-optimized-win-x64.zip` |
-| Windows on ARM | `Orbit-Zero-1.0.1-speed-optimized-win-arm64.zip` |
-| Ubuntu or Debian on Intel or AMD | `Orbit-Zero-1.0.1-speed-optimized-linux-amd64.deb` |
-| Ubuntu or Debian on ARM64 | `Orbit-Zero-1.0.1-speed-optimized-linux-arm64.deb` |
-
-1. Pause active transfers and quit Orbit Zero. Install or extract the optional build using the steps for your operating system below. On Ubuntu or Debian, use the optional file's full name, for example `sudo apt install ./Orbit-Zero-1.0.1-speed-optimized-linux-arm64.deb` from its download folder.
-2. If Orbit Store is already running on the PS5, select **App settings → Update / reinstall → Stop Orbit to restart** in its browser interface to stop the service.
-3. In the new desktop app, open **Console → Start Orbit on PS5** and upload and start its included **1.0.1 receiver**. This step enables the transfer improvements; your PS5 does not need internet. Keep its Payload Manager or ELF loader running.
-4. Reconnect if needed, then select **Resume** for paused transfers. Pairing, settings and queues stay saved. You can keep the native PS5 app from the 1.0.0 release.
-
-Use `SHA256SUMS-speed-optimized.txt` to verify these optional downloads. The included receiver's matching source and licences are in `orbit-store-1.0.1-source-bundle.zip`. The standard update feeds continue to offer the original release.
-
-The same first-launch permissions apply. With saved pairing, reopening this version can ask to unlock macOS Keychain or the Linux keyring after the PS5 responds; an offline console does not trigger that prompt.
+Install the matching native FFPKG if you use Orbit Store from the PS5 Games row. It carries the same updated service. Uploading a new ELF or replacing the FFPKG does not replace an already-running session.
 
 ## Choose your download
 
-The table below lists the **original 1.0.0 builds**. For the optional builds, use the [speed-optimized filenames and update steps above](#optional-speed-optimized-builds). The installation method for each operating system is the same.
-
 | Computer | File |
 | --- | --- |
-| Mac with an Apple M-series chip | `Orbit-Zero-1.0.0-mac-arm64.dmg` |
-| Mac with an Intel processor | `Orbit-Zero-1.0.0-mac-x64.dmg` |
-| Windows on Intel or AMD | `Orbit-Zero-1.0.0-win-x64.zip` |
-| Windows on ARM, including Snapdragon | `Orbit-Zero-1.0.0-win-arm64.zip` |
-| Ubuntu or Debian on Intel or AMD | `Orbit-Zero-1.0.0-linux-amd64.deb` |
-| Ubuntu or Debian on ARM64 | `Orbit-Zero-1.0.0-linux-arm64.deb` |
+| Mac with an Apple M-series chip | `Orbit-Zero-1.0.5-mac-arm64.dmg` |
+| Mac with an Intel processor | `Orbit-Zero-1.0.5-mac-x64.dmg` |
+| Windows on Intel or AMD | `Orbit-Zero-1.0.5-win-x64.zip` |
+| Windows on ARM, including Snapdragon | `Orbit-Zero-1.0.5-win-arm64.zip` |
+| Ubuntu or Debian on Intel or AMD | `Orbit-Zero-1.0.5-linux-amd64.deb` |
+| Ubuntu or Debian on ARM64 | `Orbit-Zero-1.0.5-linux-arm64.deb` |
 
 On a Mac, check **Apple menu → About This Mac**. On Windows, check **Settings → System → About → System type**. On Linux, run `uname -m`: `x86_64` needs AMD64/x64; `aarch64` needs ARM64. In a virtual machine, choose the build for the guest operating system. 32-bit x86 is not supported.
 
 ## macOS
-
-For the optional build, choose the `1.0.1-speed-optimized` DMG for your Mac's processor from the [download table](#optional-speed-optimized-builds). Follow these same installation steps, then start its included receiver on the PS5.
 
 1. Quit any open copy of Orbit Zero.
 2. Open the matching `.dmg` and drag **Orbit Zero** into **Applications**. If updating, choose **Replace**.
@@ -55,11 +35,9 @@ For the optional build, choose the `1.0.1-speed-optimized` DMG for your Mac's pr
 4. If macOS says it cannot verify the app, first check that you received this build from Orbit's maintainer. Then open **System Settings → Privacy & Security → Open Anyway** and confirm **Open**. The Mac app has not been notarized; see [Apple's instructions](https://support.apple.com/en-us/102445).
 5. When connecting, allow **Orbit Zero** to access your local network. If you previously denied it, enable Orbit Zero in **System Settings → Privacy & Security → Local Network**, reopen the app, and retry. This permission lets it reach your PS5; it is separate from internet access. [Apple's local-network guidance](https://developer.apple.com/documentation/technotes/tn3179-understanding-local-network-privacy).
 
-Pairing or selecting **Reconnect** may open a Keychain prompt to protect or unlock your saved pairing. The speed-optimized build also reconnects automatically on reopening and may request Keychain access after your saved PS5 responds. Approve the Orbit Zero request if you want to continue; enter your Mac login password only in the macOS prompt if requested.
+Pairing or selecting **Reconnect** may open a Keychain prompt to protect or unlock your saved pairing. Approve the Orbit Zero request if you want to continue; enter your Mac login password only in the macOS prompt if requested. Reopening the app checks your saved PS5 and may unlock Keychain to reconnect. An offline console does not trigger a Keychain prompt.
 
 ## Windows
-
-For the optional build, choose the `1.0.1-speed-optimized` ZIP for your processor from the [download table](#optional-speed-optimized-builds). Extract it into a new folder and launch that copy, then start its included receiver on the PS5.
 
 1. Save the matching ZIP to a folder on the Windows computer, such as **Downloads**.
 2. Right-click it and choose **Extract All**. Keep the complete extracted folder together.
@@ -80,40 +58,24 @@ Use the `.deb` installer. It adds Orbit Zero to your application menu and sets u
 
    ```sh
    # Intel / AMD 64-bit
-   sudo apt install "$HOME/Downloads/Orbit-Zero-1.0.0-linux-amd64.deb"
+   sudo apt install "$HOME/Downloads/Orbit-Zero-1.0.5-linux-amd64.deb"
    ```
 
    ```sh
    # ARM64
-   sudo apt install "$HOME/Downloads/Orbit-Zero-1.0.0-linux-arm64.deb"
+   sudo apt install "$HOME/Downloads/Orbit-Zero-1.0.5-linux-arm64.deb"
    ```
 
 3. Enter your Linux password if asked. The installer needs administrator access; characters do not appear while typing the password. Internet access may be needed to install dependencies.
 4. Open **Orbit Zero** from your application menu. Do not run the app itself with `sudo`.
 
-**Installing the speed-optimized build?** Use one of these commands instead, matching your processor:
-
-```sh
-# Intel / AMD 64-bit
-sudo apt install "$HOME/Downloads/Orbit-Zero-1.0.1-speed-optimized-linux-amd64.deb"
-```
-
-```sh
-# ARM64
-sudo apt install "$HOME/Downloads/Orbit-Zero-1.0.1-speed-optimized-linux-arm64.deb"
-```
-
-Then follow the [receiver update steps](#optional-speed-optimized-builds) to enable the PS5 transfer improvements.
-
-**Saved the installer somewhere else?** Open a terminal in that folder and include `./` before its filename, for example `sudo apt install ./Orbit-Zero-1.0.0-linux-arm64.deb`. Without `./` or a full path, apt searches its package repositories and reports **Unable to locate package**. If `uname -m` says `aarch64`, use the ARM64 installer; AMD64 is for Intel/AMD computers.
+**Saved the installer somewhere else?** Open a terminal in that folder and include `./` before its filename, for example `sudo apt install ./Orbit-Zero-1.0.5-linux-arm64.deb`. Without `./` or a full path, apt searches its package repositories and reports **Unable to locate package**. If `uname -m` says `aarch64`, use the ARM64 installer; AMD64 is for Intel/AMD computers.
 
 If you are updating, quit Orbit Zero and install the new `.deb` the same way. Your saved pairing and queue stay in your user profile. When pairing or reconnecting, Ubuntu may ask you to unlock your login keyring; that stores the pairing securely.
 
 ### Other Linux systems or the portable archive
 
 The `linux-x64.tar.gz` and `linux-arm64.tar.gz` files contain the portable app. Distribution compatibility can vary; Ubuntu/Debian users should prefer the installer above.
-
-Optional portable builds are named `Orbit-Zero-1.0.1-speed-optimized-linux-x64.tar.gz` and `Orbit-Zero-1.0.1-speed-optimized-linux-arm64.tar.gz`. Use the same extraction and launch steps below, then [start the included receiver](#optional-speed-optimized-builds).
 
 Extract the **whole archive** onto the Linux filesystem in a path without spaces or parentheses, such as `~/orbit-zero`. From the folder containing the executable, run:
 
@@ -151,7 +113,7 @@ Zero supplies the compatible Orbit payload automatically; you do not need to fin
 
 ### Manual fallback: download the ELF yourself
 
-The separate `orbit_store.elf` release asset is the original **1.0.0** service. For the speed-optimized receiver, use the desktop app's normal **Start Orbit on PS5** flow above; it includes **1.0.1** and does not need a separate ELF download.
+Orbit Zero supplies the matching payload automatically. You can also download and select the ELF yourself:
 
 If you need to select the payload manually:
 
@@ -181,7 +143,7 @@ When the status changes to **Connected**, your available PS5 drives appear under
 
 Leave **Console → Download preference → Computer** selected to download through your computer, whether or not the PS5 has internet. Choose **Prefer PS5** to use direct console downloads when the PS5 can reach that source, with the computer as the fallback. This preference applies to new downloads.
 
-The speed-optimized build reconnects to your saved PS5 when you reopen it. In the original 1.0.0 build, or if automatic reconnection fails, use **Console → Reconnect**. For controls in the native PS5 app, use the **PPSA99177.ffpkg** from the 1.0.0 release with either desktop build, then enable **App settings → Orbit Zero**. Alternatively, open the computer address shown under **Console → How it works** in the PS5 browser.
+After reopening the app, Orbit Zero reconnects to your saved console automatically. If the PS5 is offline or credential access is declined, use **Console → Reconnect** when ready. For controls in the native PS5 app, install the matching Orbit Store FFPKG from the same release, then enable **App settings → Orbit Zero**. Alternatively, open the computer address shown under **Console → How it works** in the PS5 browser.
 
 ## If the connection fails
 
@@ -191,4 +153,40 @@ The speed-optimized build reconnects to your saved PS5 when you reopen it. In th
 - **No drives appear:** confirm the destination is connected and available to Orbit on the PS5, then refresh the Console view.
 - **Transfer stopped after sleep:** wake both devices, reconnect the original console, and select **Resume**. Keep the original pairing to resume unfinished transfers.
 
-For new downloads, leave enough computer space for the full file. Completed files stay in the computer cache until you choose **Remove computer cache**. Keep Orbit Zero open while downloading or transferring.
+For new downloads, leave enough computer space for the full file. Keep Orbit Zero open while downloading or transferring.
+
+## Choose the computer download folder
+
+Open **Console → Computer download folder → Choose folder**, or open the settings icon beside the **Downloads** title and select **Choose folder**. The choice applies to downloads from every source. New downloads and downloads with no saved bytes use the selected folder; existing partial downloads stay in their original folder so they can resume. Keep that drive connected until its downloads and transfers are finished.
+
+## Clear completed computer copies
+
+In **Downloads → Download settings → Computer cache**, turn on **Automatically remove after transfer** to remove future computer copies after the PS5 confirms a successful transfer. This is off by default.
+
+To clear copies already completed, select **Clear completed cache**, review the amount to remove, then confirm. You can also use **Remove computer cache** on one completed download. Files on your PS5, active or paused downloads, unrelated files in the folder and download history are kept. If cleanup fails because a drive is missing or a file is locked, reconnect or unlock it and retry.
+
+![Orbit Zero download settings with the computer folder and optional automatic cache cleanup](../assets/1.0.5/orbit-zero-download-settings.jpg)
+
+*Download settings in Orbit Zero 1.0.5. The folder and free space shown are illustrative.*
+
+## Vikingfile downloads
+
+Select a Vikingfile option on the game's download page. In the window that opens, complete any verification yourself and select **Download**. Orbit Zero captures the generated file link and returns to your queue.
+
+Unwanted popup windows are blocked. Use **Back**, **Reload** or **Return to download page** if you need to return to the file page.
+
+<a id="optional-speed-optimized-builds"></a>
+
+## Coming from the optional speed-optimized builds
+
+The improvements are now part of the standard 1.0.5 packages. Follow **Update Orbit Zero** above; you no longer need a separate speed-optimized download.
+
+## Update checks in Orbit Zero
+
+Select **Updates** in the top navigation to see your installed version or check manually. **Check for updates automatically** is on by default: Orbit Zero checks its official GitHub release on opening and every six hours, reusing a recent check when available. You can turn this off in the same window.
+
+When **Update available** appears, select **Download update**. Zero selects the package for your operating system and processor, then checks its size and SHA-256 before offering **Open installer** (Mac/Linux) or **Open ZIP** (Windows). You can cancel an update download without affecting game transfers.
+
+Installation remains your choice. Finish or pause transfers and quit Orbit Zero before replacing it. On Mac, drag the app from the DMG into Applications. On Windows, extract the ZIP into a new folder and launch Orbit Zero.exe. On Ubuntu/Debian, open the DEB with your package installer; other Linux distributions can use the portable archive on GitHub. Your pairing and queue remain saved.
+
+![Orbit Zero Updates with the installed version, automatic checks and Check for updates button](../assets/1.0.5/orbit-zero-updates.jpg)

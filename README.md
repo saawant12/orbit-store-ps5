@@ -35,7 +35,7 @@ The TV app includes Orbit's download service and can start it through a compatib
 
 ## Orbit Zero for Mac, Windows and Linux
 
-**Available with Orbit Store 1.0.0.** Orbit Zero is our desktop companion for Mac, Windows and Linux. [Download Orbit Zero](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0), open **Console**, enter your PS5’s local IP address and choose **Start Orbit on PS5**.
+**Available with Orbit Store 1.0.5.** Orbit Zero is our desktop companion for Mac, Windows and Linux. [Download Orbit Zero](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.5), open **Console**, enter your PS5’s local IP address and choose **Start Orbit on PS5**.
 
 Download on your computer and transfer to your PS5 at the same time. **Works over your local network: Wi-Fi or Ethernet. Your PS5 does not need internet access.** Keep both devices connected to your home network while the computer handles online downloads.
 
@@ -46,7 +46,7 @@ Download on your computer and transfer to your PS5 at the same time. **Works ove
 
 [Install on Mac, Windows or Linux](https://github.com/saawant12/orbit-store-ps5/blob/main/guides/orbit-zero-installation.md) · [Set up a PS5 without internet](https://github.com/saawant12/orbit-store-ps5/blob/main/guides/orbit-zero-offline-ps5.md)
 
-**Experiencing slow downloads or transfers?** Try the optional **speed-optimized Orbit Zero builds** on the same release page. The [installation guide](guides/orbit-zero-installation.md#optional-speed-optimized-builds) covers the correct file for your computer and starting the updated PS5 receiver. The original builds remain available.
+**Orbit Zero 1.0.5 includes the download and transfer improvements as standard.** It reconnects to your saved PS5 when reopened, lets you choose the computer download folder, and can clear completed computer copies after successful transfers. **Updates** checks for new desktop versions and downloads the correct package when you choose.
 
 ### Discover on your computer
 
@@ -100,11 +100,13 @@ Choose sources, set your default drive, pair a phone and refresh your game catal
 
 ### Orbit in your language
 
-Orbit’s interface supports **English, German, Spanish, French, Italian, Dutch, Polish, Brazilian Portuguese, Russian and Turkish**. The native app follows your PS5’s system language. In the browser version, use **App settings → Language** to choose a language for that device, or leave it on **Automatic** to follow the browser.
+Orbit’s interface supports **English, German, Spanish, French, Hungarian, Italian, Dutch, Polish, Brazilian Portuguese, Russian and Turkish**. The native app follows your PS5’s system language. In the browser version, use **App settings → Language** to choose a language for that device, or leave it on **Automatic** to follow the browser.
 
-![Native Orbit Browse in French, with translated navigation, search and filters](assets/0.9.0/native-browse-fr.png)
+![Native Orbit Settings in Hungarian, with translated storage controls](assets/1.0.5/native-settings-hu.png)
 
-*French interface preview. Language settings change Orbit’s menus; each game keeps its own language settings. See [language settings](guides/getting-started.md#choose-your-language) for instructions and the browser selector.*
+*Native app 1.3.2 rendered locally in Hungarian. Storage values are illustrative.*
+
+Language settings change Orbit’s menus; each game keeps its own language settings. See [language settings](guides/getting-started.md#choose-your-language) for instructions and the browser selector.
 
 ### The same queue on your phone
 
@@ -126,9 +128,9 @@ For your existing collection, the [Library guide](guides/library.md) explains in
 
 ## Beta status
 
-**Orbit Store 1.0.0 is an experimental beta.** [Download the beta](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0).
+**Orbit Store 1.0.5 is an experimental beta.** [Download the beta](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.5).
 
-**Introducing Orbit Zero.** Download on your Mac, Windows or Linux computer and transfer to the PS5 over your local network. The PS5 does not need internet. Use the matching 1.0.0 service and native TV app for computer-download controls on the console.
+**Introducing Orbit Zero.** Download on your Mac, Windows or Linux computer and transfer to the PS5 over your local network. The PS5 does not need internet. Use the matching 1.0.5 service and native TV app for computer-download controls on the console.
 
 **Games and download choices.** Explore 705 games with single-file FFPFSC, exFAT and FPKG options. Compare sources, use TorBox where supported, and choose your destination before downloading. Installation and launching are separate.
 
@@ -144,13 +146,13 @@ Orbit 0.8.0 and later receive new games and updated links through the current ca
 
 ## Using the beta
 
-The [1.0.0 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0) includes:
+The [1.0.5 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.5) includes:
 
 - Orbit Zero for Mac, Windows and Linux, in ARM64 and x64 builds. Follow the [desktop installation guide](guides/orbit-zero-installation.md).
 
-- [PPSA99177.ffpkg](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.0/PPSA99177.ffpkg), the native TV app, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.0/PPSA99177.ffpkg.sha256).
-- [orbit_store.elf](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.0/orbit_store.elf), the download service and browser interface, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.0/orbit_store.elf.sha256).
-- The complete source and licence bundle for both apps and their open-source components, with build instructions.
+- [PPSA99177.ffpkg](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.5/PPSA99177.ffpkg), the native TV app, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.5/PPSA99177.ffpkg.sha256).
+- [orbit_store.elf](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.5/orbit_store.elf), the download service and browser interface, and [its checksum](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.5/orbit_store.elf.sha256).
+- The complete source and licence bundle for the PS5 service, browser interface, native TV app and their open-source components, with build instructions.
 
 Put each download beside its `.sha256` file and run `shasum -a 256 -c <filename>.sha256`. To install the TV app from Orbit 0.6.0 or later, use **App settings → TV app** in the browser version. See the [installation guide](guides/getting-started.md) for both options.
 

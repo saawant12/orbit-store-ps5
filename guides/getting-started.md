@@ -6,7 +6,7 @@ You need a PS5 environment that can run homebrew ELF payloads, an ELF loader or 
 
 **No internet on your PS5?** [Set up Orbit Zero](orbit-zero-offline-ps5.md) to start Orbit and download through your computer over the same local network.
 
-**Using Orbit Zero on your computer?** The [desktop installation guide](orbit-zero-installation.md) covers the original downloads and the optional [speed-optimized builds](orbit-zero-installation.md#optional-speed-optimized-builds) for Mac, Windows and Linux. For the transfer improvements, use the new desktop app to start its included receiver on the PS5. You can keep the native TV app from the 1.0.0 release.
+**Using Orbit Zero on your computer?** The [desktop installation guide](orbit-zero-installation.md) covers Mac, Windows and Linux. Orbit Zero 1.0.5 includes the download and transfer improvements as standard. Update both the desktop app and the matching PS5 service; update the native FFPKG too if you use it.
 
 ## Install the native TV app
 

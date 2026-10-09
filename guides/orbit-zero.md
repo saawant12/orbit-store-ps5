@@ -2,9 +2,9 @@
 
 Orbit Zero downloads on your computer and transfers the file to your PS5 over the local network. The two stages overlap: completed chunks can reach the console while the computer is still downloading. Use the desktop app, a compatible native Orbit TV app, or the local browser controls to browse and manage the queue.
 
-**Available with Orbit Store 1.0.0.** Download the desktop app and matching PS5 files from the [1.0.0 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.0). For a console without internet, follow the [offline PS5 setup guide](orbit-zero-offline-ps5.md).
+**Available with Orbit Store 1.0.5.** Download the desktop app and matching PS5 files from the [1.0.5 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.5). For a console without internet, follow the [offline PS5 setup guide](orbit-zero-offline-ps5.md).
 
-**Slow downloads or transfers?** Optional **1.0.1 speed-optimized builds** are available on the same release page, alongside the originals. Choose a file labelled `speed-optimized` and follow the [installation and receiver update steps](orbit-zero-installation.md#optional-speed-optimized-builds).
+**Download and transfer improvements are included as standard in 1.0.5.** Follow the [installation and update steps](orbit-zero-installation.md) to update the desktop app and PS5 service together.
 
 The full-screen screenshots show the desktop interface. Connection, storage and transfer values are illustrative.
 
@@ -17,7 +17,7 @@ The full-screen screenshots show the desktop interface. Connection, storage and 
 - A computer with internet access and enough free space to cache the full download, plus writable storage on the PS5.
 - A PS5 with its jailbreak and Payload Manager or a compatible ELF loader already running, or the matching Orbit receiver already started. Zero does not jailbreak the console.
 - Both devices on the same reachable home network. Wi-Fi, Ethernet, or a mixture of both work. Use the PS5's local IPv4 address.
-- Orbit Zero and its included Orbit Store service: 1.0.0 for the original desktop build, or 1.0.1 for the speed-optimized build. Native TV controls use the FFPKG from the 1.0.0 release with either version.
+- Orbit Zero and its included Orbit Store 1.0.5 service. For native TV controls, install the matching FFPKG from the same release.
 
 Downloads are available for **ARM64 and x64 on macOS, Windows and Linux**; 32-bit x86 is not supported. Mac builds use Developer ID signing but are not notarized; Windows and Linux packages are unsigned. The initial desktop interface is English-only.
 
@@ -44,7 +44,7 @@ The normal Orbit service port is **34177**. Payload Manager's web interface defa
 
 On macOS, allow Orbit Zero to access the local network when prompted. If access was denied, enable it in **System Settings → Privacy & Security → Local Network**, then reconnect.
 
-Pairing is saved using the computer's encrypted credential store. The speed-optimized build reconnects to your saved PS5 when you reopen it; macOS or Linux may ask to unlock saved pairing after the console responds. In the original build, or if reconnection fails, select **Console → Reconnect**. Zero never receives your computer password, and refuses to save an unencrypted pairing if secure storage is unavailable. Keep the original pairing to resume unfinished transfers.
+Pairing is saved using the computer's encrypted credential store. Zero reconnects to your saved PS5 when you reopen it; macOS or Linux may ask to unlock saved pairing after the console responds. If reconnection fails, select **Console → Reconnect**. Zero never receives your computer password, and refuses to save an unencrypted pairing if secure storage is unavailable. Keep the original pairing to resume unfinished transfers.
 
 ![Orbit Zero Console showing connection, download preference, storage and active transfer panels](../assets/orbit-zero-development/console.jpg)
 
@@ -65,7 +65,7 @@ Zero uses up to eight download connections when the provider supports validated 
 
 *Downloads in Orbit Zero. Progress and rates illustrate the two stages; they are not measured transfer results.*
 
-For Vikingfile, Zero opens a separate browser window on the computer. Complete any provider verification and select the matching file's Download button. Zero captures and checks the final file link before adding it to the queue. Provider logins stay in a separate persistent browser profile on the computer.
+For Vikingfile, Zero opens a separate browser window on the computer. Complete any provider verification and select the matching file's Download button. Zero captures and checks the final file link before adding it to the queue. Provider logins stay in a separate persistent browser profile on the computer. Unwanted popups are blocked; **Back**, **Reload** and **Return to download page** let you get back to the file.
 
 ## Control it from the PS5
 
@@ -73,14 +73,28 @@ After pairing the computer, open **App settings → Orbit Zero → Enable Orbit 
 
 Alternatively, expand **Console → How it works** in the desktop app. Open one of the displayed computer addresses in the PS5 browser and enter the computer's pairing code. This browser pairing code is separate from the console code used to pair the desktop. Keep it private. The desktop's local browser service normally uses port **34179**.
 
+## Choose the computer download folder
+
+In Console, select **Computer download folder → Choose folder**. In Downloads, open the settings icon beside the page title to find the same control. This applies to every source. New downloads use the folder you choose; existing partial files stay in their original location so they can resume.
+
 ## Pause, reconnect and clean up
 
 Keep Orbit Zero open and prevent the computer from sleeping during transfers. Keep the PS5 awake to receive files. If the console disconnects after a transfer starts, the computer can continue downloading into its cache. Reconnect the original console and select **Resume**. Paused or interrupted downloads need an explicit resume after restarting Zero.
 
-The full computer cache remains after completion until you select **Remove computer cache**. Removing that completed cache keeps the finished PS5 file. **Cancel and remove partials** asks for confirmation before deleting the transfer's partial files. Cancelled computer downloads offer **Remove from history**, which removes only the queue entry and keeps files.
+The computer copy is kept by default. **Downloads → Download settings → Computer cache** offers **Automatically remove after transfer** for future successful transfers and **Clear completed cache** for copies already completed. You can still select **Remove computer cache** on an individual download. Cleanup preserves PS5 files, partial downloads and history. **Cancel and remove partials** asks for confirmation before deleting the transfer's partial files. Cancelled computer downloads offer **Remove from history**, which removes only the queue entry and keeps files.
+
+![Orbit Zero download settings with folder and completed-cache controls](../assets/1.0.5/orbit-zero-download-settings.jpg)
+
+*Download settings in Orbit Zero 1.0.5. The folder and free space shown are illustrative.*
 
 To forget the console, use **Console → Connection settings → Unpair PS5**. Finish or cancel unfinished computer transfers first, including paused or interrupted transfers, because they require the original pairing to resume. Unpairing keeps files and download history.
 
 Library is read-only in the first desktop version. Zero transfers files; it does not install or launch games.
+
+## Desktop updates
+
+Open **Updates** in the top navigation. Automatic checks are enabled by default. When an update is available, download the matching verified package and open it when ready to install. Orbit Zero does not replace itself or restart automatically. See [update steps](orbit-zero-installation.md#update-checks-in-orbit-zero).
+
+![Orbit Zero update controls](../assets/1.0.5/orbit-zero-updates.jpg)
 
 Return to the [Orbit Store README](../README.md) for the current release, supported PS5 workflows and third-party content notice.
