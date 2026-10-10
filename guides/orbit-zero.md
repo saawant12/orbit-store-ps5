@@ -54,7 +54,7 @@ Pairing is saved using the computer's encrypted credential store. Zero reconnect
 
 **New on Orbit** appears first in Discover, followed by **Latest releases** and the All games grid. In Browse, use **Platform** to choose PS4, PS5 or both. Platform editions stay separate, with their own images, release dates and download options.
 
-The 1.1.0 catalogue includes 100 PS4 games as single-file PKG/FPKG downloads. Choose a source and PS5 destination just as you would for a PS5 game. The computer-download route also works with the PS5’s internet access blocked. Completed packages need the installation method supported by your PS5 setup; Zero does not install them. See [PS4 games on PS5](downloads.md#ps4-games-on-ps5).
+The 1.1.0 catalogue includes 200 PS4 games as single-file PKG/FPKG downloads. Choose a source and PS5 destination just as you would for a PS5 game. The computer-download route also works with the PS5’s internet access blocked. Completed packages need the installation method supported by your PS5 setup; Zero does not install them. See [PS4 games on PS5](downloads.md#ps4-games-on-ps5).
 
 ## Choose where downloads run
 
