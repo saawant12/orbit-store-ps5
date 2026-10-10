@@ -6,7 +6,7 @@ The official project is https://github.com/saawant12/orbit-store-ps5. Orbit Stor
 
 ## PS4 and PS5 games
 
-Orbit 1.1.0 supports a catalogue of 920 games: 720 PS5 games and 200 PS4 games, with 1,374 single-file download options from Archive.org and Vikingfile. Formats include FFPFSC, exFAT, PKG and FPKG. Sources are opt-in; the available formats depend on the game. Orbit does not extract archives.
+Orbit 1.1.0 supports a catalogue of 930 games: 730 PS5 games and 200 PS4 games, with 1,387 single-file download options from Archive.org and Vikingfile. Formats include FFPFSC, exFAT, PKG and FPKG. Sources are opt-in; the available formats depend on the game. Orbit does not extract archives.
 
 PS4 support requires service/browser version 1.1.0 with native app 1.4.0, or Orbit Zero 1.1.0. Browse has a Platform filter for PS4, PS5 or All platforms. PS4 CUSA and PS5 PPSA editions remain separate, with their own metadata and download choices. PS4 options are single-file .pkg packages, labelled PKG or FPKG. Saving one does not install it; users need the package installation method supported by their PS5 setup. A platform label does not imply a frame-rate patch, DLC or universal compatibility. Orbit's ELF and TV app run on PS5, not PS4 consoles.
 

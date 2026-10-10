@@ -1,6 +1,6 @@
 # Find and download a game
 
-Orbit 1.1.0 includes **920 games: 720 PS5 games and 200 PS4 games**, with single-file options from Archive.org and Vikingfile. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit 1.1.0 includes **930 games: 730 PS5 games and 200 PS4 games**, with single-file options from Archive.org and Vikingfile. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 ## Browse and choose
 
