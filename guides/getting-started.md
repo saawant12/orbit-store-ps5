@@ -6,7 +6,13 @@ You need a PS5 environment that can run homebrew ELF payloads, an ELF loader or 
 
 **No internet on your PS5?** [Set up Orbit Zero](orbit-zero-offline-ps5.md) to start Orbit and download through your computer over the same local network.
 
-**Using Orbit Zero on your computer?** The [desktop installation guide](orbit-zero-installation.md) covers Mac, Windows and Linux. Orbit Zero 1.0.5 includes the download and transfer improvements as standard. Update both the desktop app and the matching PS5 service; update the native FFPKG too if you use it.
+**Using Orbit Zero on your computer?** The [desktop installation guide](orbit-zero-installation.md) covers Mac, Windows and Linux. Orbit Zero 1.1.0 includes PS4 browsing and the same 11 interface languages as Orbit Store. Update both the desktop app and the matching PS5 service; update the native FFPKG too if you use it.
+
+## PS4 and PS5 games
+
+The catalogue includes both platforms. For PS4 games, use **Orbit Store 1.1.0** with **native app 1.4.0**, or **Orbit Zero 1.1.0**. In Browse, choose **Platform → PS4**, **PS5** or **All platforms**. A PS4 and a PS5 edition of the same game have separate download choices.
+
+Orbit itself runs on PS5. Downloading a PS4 PKG/FPKG saves a package to your selected drive; installing and launching it uses the compatible tools for your PS5 setup. See [PS4 games on PS5](downloads.md#ps4-games-on-ps5).
 
 ## Install the native TV app
 
@@ -38,10 +44,11 @@ A drive connected to your phone or computer is not a PS5 destination. Attach you
 
 ## Choose your language
 
-Orbit Store supports **11 interface languages**: English, German, Spanish, French, Hungarian, Italian, Dutch, Polish, Brazilian Portuguese, Russian and Turkish. Hungarian is new in 1.0.5. Orbit Zero's desktop interface remains English-only.
+Orbit Store and Orbit Zero support **11 interface languages**: English, German, Spanish, French, Hungarian, Italian, Dutch, Polish, Brazilian Portuguese, Russian and Turkish.
 
 - **Native TV app:** Orbit follows your PS5’s system language when it starts. Change the console language in **Settings → System → Language → Console Language**, then close and reopen Orbit. Unsupported languages use English.
 - **Browser, phone or computer:** open **App settings → Language**. Choose a language, or **Automatic** to follow your browser’s preference. The interface reloads after you choose. This preference is saved for that browser; it does not change other paired devices or the PS5’s system language.
+- **Orbit Zero desktop:** select the globe-shaped **Language** button in the top bar. Choose a language or **System language**. The choice is saved on that computer, and changing it keeps your downloads running.
 
 ![Browser App settings with the language selector open](../assets/0.9.0/desktop-language.jpg)
 
@@ -107,5 +114,11 @@ The TV app carries a service copy, but replacing the app does not switch the ser
 In the TV app, open **App settings → Pair a device** to see the console address and six-digit code. While Orbit is running, visit `http://<ps5-ip>:34177/` on the same network. Choose **Pair devices** and enter the six-digit code shown on the PS5. On the console, **Pair devices** keeps the code visible; **Show code on PS5** repeats its notification. Do not share the code publicly.
 
 Your paired device controls the console’s queue. For Vikingfile browser verification, use the PS5 screen to complete the provider steps even when you start from your phone.
+
+### Use a local hostname
+
+Orbit Store 1.1.0 also accepts browser addresses whose hostname ends in `.home.arpa`, `.local` or `.localhost`, with the usual port `34177`. For example, if your home network already resolves `ps5.home.arpa` to your console, open `http://ps5.home.arpa:34177/`. Pairing works the same way as with the IP address.
+
+Orbit does not create or advertise these names. Your router or local name service must resolve the hostname to the correct device. `.localhost` normally resolves to the device you are browsing on, so it is generally for local testing rather than a remote PS5. If a name does not resolve, use `http://<ps5-ip>:34177/`. Orbit Zero’s Console connection field still takes the PS5’s local IP address.
 
 [Download guide](downloads.md) · [Library guide](library.md) · [Troubleshooting](troubleshooting.md) · [Project home](../README.md)

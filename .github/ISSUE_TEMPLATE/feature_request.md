@@ -23,7 +23,7 @@ provide a technical implementation.
 
 ## Where would you use it?
 
-Native PS5 app / PS5 browser / paired phone or computer / all
+Native PS5 app / PS5 browser / Orbit Zero desktop / paired phone or computer / all
 
 ## Alternatives or workarounds
 

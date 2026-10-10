@@ -2,7 +2,7 @@
 
 Install **Orbit Zero on your computer**, then use it to upload and start Orbit on your PS5 over your local network. Your computer handles online downloads and sends the files to the console. **The PS5 can keep its internet access blocked throughout setup and use.**
 
-This guide covers **Orbit Zero 1.0.5** and the matching PS5 files from the [Orbit Store release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.5).
+This guide covers **Orbit Zero 1.1.0** and the matching PS5 files from the [Orbit Store release](https://github.com/saawant12/orbit-store-ps5/releases/latest).
 
 The desktop app includes the compatible Orbit service and uploads it over your local network. If an older Orbit service is already running, stop it before starting the new copy. See the [download choices and update steps](orbit-zero-installation.md).
 
@@ -68,7 +68,7 @@ Once **Connected** appears, check that the intended PS5 drive is listed under **
 
 ![Connected Orbit Zero Console showing storage and download preference](../assets/orbit-zero-development/connect-ready.jpg)
 
-Open a game in Orbit Zero, choose its source and PS5 destination, then start the download. The computer downloads the file and transfers completed parts to the PS5 while the download continues.
+In Browse, use **Platform** to choose PS4, PS5 or both. Open a game in Orbit Zero, choose its source and PS5 destination, then start the download. The computer downloads the file and transfers completed parts to the PS5 while the download continues.
 
 **Downloads** shows both stages separately:
 
@@ -80,6 +80,8 @@ For Vikingfile, complete any verification and select the file's Download button 
 Keep **both devices awake** and Orbit Zero open until the transfer finishes. By default, completed downloads remain in the computer cache. In **Downloads → Download settings → Computer cache**, enable **Automatically remove after transfer** for future successful transfers, or use **Clear completed cache** to remove existing completed copies. The finished PS5 files stay in place.
 
 The **Computer** preference chooses where downloads run; it does not change your router or block the PS5's internet access for you.
+
+PS4 PKG/FPKG downloads follow the same computer-to-PS5 route. The PS5 does not need internet for the transfer, but saving a package does not install it. Use the PS4 package installation method supported by your console setup. See [PS4 games on PS5](downloads.md#ps4-games-on-ps5). Orbit’s apps still run on PS5, not PS4 consoles.
 
 ## Optional: use Orbit's native app on the PS5
 

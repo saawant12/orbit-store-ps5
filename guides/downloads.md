@@ -1,14 +1,16 @@
 # Find and download a game
 
-Orbit includes 720 games with single-file options from Archive.org and Vikingfile. Each game appears once; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit 1.1.0 includes **820 games: 720 PS5 games and 100 PS4 games**, with single-file options from Archive.org and Vikingfile. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 ## Browse and choose
 
-**Discover opens first.** Explore the featured game and Latest releases. New on Orbit shows the latest additions to the catalogue, ordered by game release date. Move down to All games for the full collection. Its grid shows 96 games per page, ordered by the largest available download option first. Use Previous and Next to move between pages.
+**Discover opens first.** Explore the featured game and **New on Orbit** first, followed by **Latest releases**. New on Orbit starts with selected highlights, then shows recent additions ordered by game release date. Move down to All games for the full collection. Its grid shows 96 games per page, ordered by the largest available download option first. Use Previous and Next to move between pages.
 
-![Browser Discover All games grid](../assets/0.9.0/desktop-discover-grid.jpg)
+![Native Discover with PS4 games in New on Orbit](../assets/1.1.0/native-discover.png)
 
-Switch to **Browse** when you want search and filters. It defaults to **Release date (newest first)**. Games without a recorded date follow alphabetically. Search by game name or title ID, filter by source, format, region or download size, and change the sort order. **Reset filters** restores the default. Missing dates and other metadata can be added later through catalogue updates.
+*The 1.1.0 native Discover screen, rendered locally from the app. Browser and desktop Discover use the same featured order.*
+
+Switch to **Browse** when you want search and filters. It defaults to **Release date (newest first)**. Games without a recorded date follow alphabetically. Search by game name or title ID, filter by platform, source, format, region or download size, and change the sort order. **Reset filters** restores the default. Missing dates and other metadata can be added later through catalogue updates.
 
 ![Browse with filters and newest-first sorting](../assets/0.9.0/desktop-browse.jpg)
 
@@ -16,7 +18,7 @@ Switch to **Browse** when you want search and filters. It defaults to **Release 
 
 Save a game from its details page to find it under **Favourites** later; favourites are shared with your paired devices.
 
-In the native TV app, use D-pad/left stick to move, Cross to select, Circle to go back and L1/R1 to switch tabs. Select filters with Cross; choose an option with the D-pad and Cross. The controls below apply to the browser version.
+In the native TV app, use D-pad/left stick to move, Cross to select, Circle to go back and L1/R1 to switch tabs. Press **Square** on a game selected in Browse or Discover to add or remove it from Favourites. Select filters with Cross; choose an option with the D-pad and Cross. The controls below apply to the browser version.
 
 | Input | Action |
 |---|---|
@@ -27,6 +29,19 @@ In the native TV app, use D-pad/left stick to move, Cross to select, Circle to g
 | Search: Up | Return to the Browse tab |
 | Search: Left or Right | Edit the text normally |
 | Touch or mouse | Select a control |
+
+## PS4 games on PS5
+
+Use **Orbit Store 1.1.0** and the matching **native app 1.4.0**, or **Orbit Zero 1.1.0**, for PS4 games. Update the apps before refreshing the catalogue. Older apps keep their PS5-compatible catalogue.
+
+1. Open **Browse → Platform → PS4**. Choose **All platforms** to see PS4 and PS5 together.
+2. Open a game and check its **PS4** label, title ID, region and source notes. PS4 title IDs begin with `CUSA`; PS5 IDs begin with `PPSA`. Editions for different platforms stay separate, even when their names match.
+3. Choose a **PKG** or **FPKG** option, its source and the destination drive. Both use a `.pkg` file; the format label describes the available package. A PS4 label does not imply a frame-rate patch, DLC, or compatibility with every PS5 setup. Check the specific option’s notes.
+4. Follow the normal Archive.org or Vikingfile steps below. Orbit Zero can download and transfer these files while the PS5 has no internet access.
+
+Files go to the selected drive’s `homebrew` folder, including `/data/homebrew/` for internal storage. A completed transfer saves the package; it does not install the game. Use the PS4 package installation method supported by your PS5 setup and check its game and firmware requirements. The instructions for installing Orbit’s own `PPSA99177.ffpkg` TV app do not install a downloaded game package.
+
+**Orbit still runs on PS5.** PS4 game support does not make the ELF or TV app compatible with PS4 consoles. See [Library](library.md) for the distinction between downloaded files and installed games.
 
 ## Pick a source, format and drive
 
@@ -108,6 +123,6 @@ Keep the PS5 awake. Closing the TV app or control browser leaves the download wo
 
 ## Get new games and corrected metadata
 
-Orbit checks its catalogue on startup and every six hours. Use **App settings → Game catalogue → Refresh catalogue** for a manual check. You can browse the saved catalogue offline, and queued downloads keep the files you originally chose. New games and corrected release dates arrive without reinstalling Orbit.
+Orbit checks its catalogue on startup and every six hours. Use **App settings → Game catalogue → Refresh catalogue** for a manual check. You can browse the saved catalogue offline, and queued downloads keep the files you originally chose. New games and corrected release dates arrive without reinstalling Orbit, within the platforms supported by your app version. PS4 support itself requires the 1.1.0 app update.
 
 [Getting started](getting-started.md) · [Troubleshooting](troubleshooting.md) · [Project home](../README.md)

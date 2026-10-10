@@ -22,10 +22,11 @@ Describe what should have happened.
 
 - Orbit download service version:
 - Native app version, if used:
+- Orbit Zero version and computer OS/architecture, if used:
 - PS5 firmware:
 - etaHEN version:
 - Payload manager or ELF loader:
-- Where it happens: native app / PS5 browser / paired phone or computer
+- Where it happens: native PS5 app / PS5 browser / Orbit Zero desktop / paired phone or computer
 
 Use “unknown” if you cannot find a version.
 
@@ -33,9 +34,12 @@ Use “unknown” if you cannot find a version.
 
 Complete this section if relevant:
 
-- Game name and title ID:
+- Game name and title ID (CUSA or PPSA):
+- Game platform: PS4 / PS5
 - Source: Archive.org / Vikingfile / other
-- File format:
+- File format: PKG / FPKG / exFAT / FFPFSC / other
+- Download route: direct PS5 / Orbit Zero computer
+- Stage: computer download / transfer to PS5 / download on PS5 / game installation
 - Destination: internal / M.2 / USB
 - Available space:
 - Connection: Wi-Fi / Ethernet

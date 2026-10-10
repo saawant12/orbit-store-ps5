@@ -19,6 +19,12 @@ Library shows installed games and sources available on your drives, using the in
 
 These states can overlap. Search by title, title ID or path, and filter by status, location or format.
 
+## PS4 packages and platform labels
+
+Library uses the inventory reported by ShadowMount, while Browse uses Orbit’s download catalogue. Where a platform is known, PS4 and PS5 editions stay separate. Downloading a PS4 `.pkg` file does not make it an installed game or guarantee that ShadowMount can mount that format.
+
+Use the PS4 package installation method supported by your PS5 setup. Library actions appear only when the provider supports them. See [PS4 games on PS5](downloads.md#ps4-games-on-ps5) before choosing a download.
+
 ## Refresh or scan
 
 **Refresh library** reads the current inventory. It does not scan, mount or install games. **Scan for games** asks ShadowMount to discover sources and may register or mount them after you confirm.

@@ -2,13 +2,13 @@
 
 Orbit Zero downloads on your computer and transfers the file to your PS5 over the local network. The two stages overlap: completed chunks can reach the console while the computer is still downloading. Use the desktop app, a compatible native Orbit TV app, or the local browser controls to browse and manage the queue.
 
-**Available with Orbit Store 1.0.5.** Download the desktop app and matching PS5 files from the [1.0.5 release](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.0.5). For a console without internet, follow the [offline PS5 setup guide](orbit-zero-offline-ps5.md).
+Download the desktop app and matching PS5 files from [Orbit Store releases](https://github.com/saawant12/orbit-store-ps5/releases/latest). PS4 browsing and desktop language selection require Orbit Zero 1.1.0. For a console without internet, follow the [offline PS5 setup guide](orbit-zero-offline-ps5.md).
 
-**Download and transfer improvements are included as standard in 1.0.5.** Follow the [installation and update steps](orbit-zero-installation.md) to update the desktop app and PS5 service together.
+**Download and transfer improvements are included as standard.** Follow the [installation and update steps](orbit-zero-installation.md) to update the desktop app and PS5 service together.
 
 The full-screen screenshots show the desktop interface. Connection, storage and transfer values are illustrative.
 
-![Orbit Zero Discover with a featured game and illustrated catalogue rows](../assets/orbit-zero-development/discover.jpg)
+![Orbit Zero 1.1.0 Discover featuring Red Dead Redemption 2 and PS4 games in New on Orbit](../assets/1.1.0/orbit-zero-discover.jpg)
 
 *Discover in Orbit Zero.*
 
@@ -17,9 +17,9 @@ The full-screen screenshots show the desktop interface. Connection, storage and 
 - A computer with internet access and enough free space to cache the full download, plus writable storage on the PS5.
 - A PS5 with its jailbreak and Payload Manager or a compatible ELF loader already running, or the matching Orbit receiver already started. Zero does not jailbreak the console.
 - Both devices on the same reachable home network. Wi-Fi, Ethernet, or a mixture of both work. Use the PS5's local IPv4 address.
-- Orbit Zero and its included Orbit Store 1.0.5 service. For native TV controls, install the matching FFPKG from the same release.
+- Orbit Zero and its included Orbit Store 1.1.0 service. For native TV controls, install the matching FFPKG from the same release.
 
-Downloads are available for **ARM64 and x64 on macOS, Windows and Linux**; 32-bit x86 is not supported. Mac builds use Developer ID signing but are not notarized; Windows and Linux packages are unsigned. The initial desktop interface is English-only.
+Downloads are available for **ARM64 and x64 on macOS, Windows and Linux**; 32-bit x86 is not supported. Mac builds use Developer ID signing but are not notarized; Windows and Linux packages are unsigned. The interface supports English, German, Spanish, French, Hungarian, Italian, Dutch, Polish, Brazilian Portuguese, Russian and Turkish. Select the globe-shaped **Language** button to choose one, or leave **System language** selected.
 
 ## Install Orbit Zero
 
@@ -50,6 +50,12 @@ Pairing is saved using the computer's encrypted credential store. Zero reconnect
 
 *Console in Orbit Zero. Connection, storage and transfer values are simulated.*
 
+## Browse PS4 and PS5 games
+
+**New on Orbit** appears first in Discover, followed by **Latest releases** and the All games grid. In Browse, use **Platform** to choose PS4, PS5 or both. Platform editions stay separate, with their own images, release dates and download options.
+
+The 1.1.0 catalogue includes 100 PS4 games as single-file PKG/FPKG downloads. Choose a source and PS5 destination just as you would for a PS5 game. The computer-download route also works with the PS5’s internet access blocked. Completed packages need the installation method supported by your PS5 setup; Zero does not install them. See [PS4 games on PS5](downloads.md#ps4-games-on-ps5).
+
 ## Choose where downloads run
 
 | Preference | New downloads |
@@ -59,7 +65,9 @@ Pairing is saved using the computer's encrypted credential store. Zero reconnect
 
 Change this under **Console → Download preference**. It applies to new downloads; running downloads keep their original route. The PS5 needs internet access for direct PS5 downloads. For computer downloads, the computer handles provider access and artwork, so the PS5 only needs its local network connection.
 
-Zero uses up to eight download connections when the provider supports validated byte ranges, with a single-connection fallback. Actual speed depends on the provider, network and storage. **Downloads** shows **Download to computer** and **Transfer to PS5** separately; their rates and progress can differ. A direct PS5 download shows the rate reported by Orbit.
+Zero downloads two games to the computer at a time by default. Open **Downloads → Download settings → Simultaneous computer downloads** to choose **1**, **2** or **3**. Lowering the limit lets current downloads finish before another starts. Files transfer to the PS5 one at a time while computer downloads continue. Each file needs enough computer space for its full cached copy.
+
+Each computer download uses up to eight connections when the provider supports validated byte ranges, with a single-connection fallback. Actual speed depends on the provider, network and storage. **Downloads** shows **Download to computer** and **Transfer to PS5** separately; their rates and progress can differ. A direct PS5 download shows the rate reported by Orbit.
 
 ![Orbit Zero Downloads showing separate computer download and PS5 transfer progress](../assets/orbit-zero-development/downloads.jpg)
 
@@ -80,6 +88,8 @@ In Console, select **Computer download folder → Choose folder**. In Downloads,
 ## Pause, reconnect and clean up
 
 Keep Orbit Zero open and prevent the computer from sleeping during transfers. Keep the PS5 awake to receive files. If the console disconnects after a transfer starts, the computer can continue downloading into its cache. Reconnect the original console and select **Resume**. Paused or interrupted downloads need an explicit resume after restarting Zero.
+
+**Waiting to transfer** means the computer copy is ready for its PS5 turn. If an earlier PS5 transfer is paused or needs attention, resume it, cancel and remove its partials, or choose **Stop transfer** to keep its files and release that turn. Other computer downloads can continue in the meantime.
 
 The computer copy is kept by default. **Downloads → Download settings → Computer cache** offers **Automatically remove after transfer** for future successful transfers and **Clear completed cache** for copies already completed. You can still select **Remove computer cache** on an individual download. Cleanup preserves PS5 files, partial downloads and history. **Cancel and remove partials** asks for confirmation before deleting the transfer's partial files. Cancelled computer downloads offer **Remove from history**, which removes only the queue entry and keeps files.
 

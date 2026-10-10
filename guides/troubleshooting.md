@@ -48,9 +48,15 @@ Parallel connections can help only when supported by the host and file identity.
 
 ## A game or image is missing
 
-Check the enabled Sources and clear Browse’s filters. Then try **App settings → Game catalogue → Refresh catalogue**. Use Orbit 0.8.0 for the current catalogue feed. Older versions keep their bundled or saved catalogue but need an app update to receive new games.
+Check the enabled Sources and clear Browse’s filters. Then try **App settings → Game catalogue → Refresh catalogue**. For PS4 games, use the 1.1.0 service and matching native app 1.4.0, or Orbit Zero 1.1.0. Older supported apps use a PS5-compatible catalogue. Select **Platform → All platforms** or **PS4**, and check the running service version as well as the installed app version.
 
 Artwork comes from external URLs. Orbit tries an available fallback when the primary fails. Network/DNS restrictions or unavailable host images can still prevent artwork from loading. Some dates and other metadata remain missing; corrections arrive through catalogue updates. Undated games appear after dated games in release-date sorting.
+
+## A downloaded PS4 game is not installed
+
+Check the download’s platform, title ID and file format, and wait for the transfer to finish on the PS5. PS4 catalogue options are `.pkg` files labelled PKG or FPKG. Orbit saves them to the chosen drive’s `homebrew` folder; it does not install or launch them. Use the package installer supported by your PS5 setup. Copying a game package to the same folder as Orbit’s native app does not mean it will be registered in the same way.
+
+If you report a problem, include the `CUSA` title ID, source, format, destination, app versions and whether it fails during the computer download, PS5 transfer or package installation. Do not share temporary signed links. See [PS4 games on PS5](downloads.md#ps4-games-on-ps5).
 
 ## Share a diagnostic report
 
