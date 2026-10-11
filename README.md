@@ -135,7 +135,7 @@ The desktop app supports **ARM64 and x64** computers and the same **11 interface
 
 **Introducing Orbit Zero.** Download on your Mac, Windows or Linux computer and transfer to the PS5 over your local network. The PS5 does not need internet. Use the matching 1.1.0 service and native TV app for computer-download controls on the console.
 
-**PS4 and PS5 games in one catalogue.** Explore 920 games with single-file FFPFSC, exFAT, PKG and FPKG options. Compare sources, use TorBox where supported, and choose your destination before downloading. For PS4 packages, follow the [PS4 download guide](guides/downloads.md#ps4-games-on-ps5). Installation and launching are separate.
+**PS4 and PS5 games in one catalogue.** Explore 930 games with single-file FFPFSC, exFAT, PKG and FPKG options. Compare sources, use TorBox where supported, and choose your destination before downloading. For PS4 packages, follow the [PS4 download guide](guides/downloads.md#ps4-games-on-ps5). Installation and launching are separate.
 
 **A refreshed interface on TV and in the browser.** Explore New on Orbit and Latest releases, filter Browse by platform, format or region, and review your download choices in one panel. Orbit also improves M.2 storage detection and makes it easier to delete cancelled downloads and start fresh. Keep the PS5 awake while downloading.
 
