@@ -1,0 +1,2 @@
+# Unified diff context uses a single space for an unchanged blank line.
+contributions/vikingfile-sign-in/*.patch -whitespace

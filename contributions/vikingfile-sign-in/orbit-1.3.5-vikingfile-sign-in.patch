@@ -1,0 +1,993 @@
+diff --git a/app/src/orbit/api.cpp b/app/src/orbit/api.cpp
+index 081e9e2..b3dbb75 100644
+--- a/app/src/orbit/api.cpp
++++ b/app/src/orbit/api.cpp
+@@ -187,9 +187,10 @@ Result<BrowserSession> Client::browser_request(std::string body)
+ 
+ Result<BrowserSession> Client::browser_session() { return browser_request(); }
+ 
+-Result<BrowserSession> Client::start_browser(std::string_view release_id, std::string_view storage_id, std::string_view client_id)
++Result<BrowserSession> Client::start_browser(std::string_view release_id, std::string_view storage_id, std::string_view client_id, bool sign_in)
+ {
+-    std::string body = "{\"action\":\"start\",\"releaseId\":" + json::quote(release_id) +
++    std::string body = sign_in ? "{\"action\":\"sign-in\",\"sourceId\":\"vikingfile\",\"returnTarget\":\"native\""
++        : "{\"action\":\"start\",\"releaseId\":" + json::quote(release_id) +
+                        ",\"storageId\":" + json::quote(storage_id) + ",\"returnTarget\":\"native\"";
+     if (!client_id.empty()) body += ",\"nativeDialog\":true,\"clientId\":" + json::quote(client_id);
+     return browser_request(body + "}");
+diff --git a/app/src/orbit/api.hpp b/app/src/orbit/api.hpp
+index e109ef2..1de9696 100644
+--- a/app/src/orbit/api.hpp
++++ b/app/src/orbit/api.hpp
+@@ -71,7 +71,7 @@ class Client
+     Result<Debrid> debrid();
+     Result<BrowserSession> browser_session();
+     Result<BrowserSession> start_browser(std::string_view release_id, std::string_view storage_id,
+-                                         std::string_view client_id = {});
++                                         std::string_view client_id = {}, bool sign_in = false);
+     Result<BrowserSession> browser_opened(std::string_view session_id, std::string_view client_id);
+     Result<BrowserSession> cancel_browser(std::string_view session_id);
+     Result<std::vector<Release>> catalog();
+diff --git a/app/src/orbit/app.cpp b/app/src/orbit/app.cpp
+index 756d9d3..ce5b54f 100644
+--- a/app/src/orbit/app.cpp
++++ b/app/src/orbit/app.cpp
+@@ -439,7 +439,7 @@ void App::update(const InputFrame &input, float dt, Feedback &feedback)
+ 
+     // Recover active verification after reopening the native app. Historical
+     // terminal results never reopen themselves or undo a dismissal.
+-    if (state.have_browser && state.browser.active && state.browser.id != provider_seen_)
++    if (state.have_browser && state.browser.active && !state.browser.sign_in && state.browser.id != provider_seen_)
+     {
+         provider_seen_ = state.browser.id;
+         // A locally requested start may return after the user closed this
+diff --git a/app/src/orbit/model.cpp b/app/src/orbit/model.cpp
+index 60d66fa..2c91c56 100644
+--- a/app/src/orbit/model.cpp
++++ b/app/src/orbit/model.cpp
+@@ -118,6 +118,8 @@ int status_rank(std::string_view status)
+ BrowserSession parse_browser_session(const json::Value &value)
+ {
+     BrowserSession session;
++    session.sign_in_available = value.flag("signInAvailable");
++    session.sign_in = value.flag("signIn");
+     session.native_dialog_available = value.flag("nativeDialogAvailable");
+     session.dialog_opened = value.flag("dialogOpened");
+     session.client_id = value.text("clientId");
+diff --git a/app/src/orbit/model.hpp b/app/src/orbit/model.hpp
+index 3f2fd8e..232d927 100644
+--- a/app/src/orbit/model.hpp
++++ b/app/src/orbit/model.hpp
+@@ -338,6 +338,7 @@ struct TvAppStatus
+ // receives a public provider page only for its own native-dialog session.
+ struct BrowserSession
+ {
++    bool sign_in_available = false, sign_in = false;
+     bool native_dialog_available = false;
+     bool dialog_opened = false;
+     std::string client_id, page_url;
+diff --git a/app/src/orbit/screens.hpp b/app/src/orbit/screens.hpp
+index 6eb5c85..b463d2c 100644
+--- a/app/src/orbit/screens.hpp
++++ b/app/src/orbit/screens.hpp
+@@ -1014,6 +1014,7 @@ class SettingsScreen final : public Screen
+         open_browser,
+         zero_toggle,
+         archives_toggle,
++        viking_sign_in,
+         archive_sign_in,
+         archive_sign_out, // asks first
+         archive_sign_out_confirm,
+diff --git a/app/src/orbit/settings.cpp b/app/src/orbit/settings.cpp
+index ee2d2b5..00affad 100644
+--- a/app/src/orbit/settings.cpp
++++ b/app/src/orbit/settings.cpp
+@@ -435,6 +435,17 @@ void SettingsScreen::build_sources(Pane &pane) const
+                    ui::ButtonKind::primary, can_save}});
+     pane.fine(tr("Saved for this console and its paired devices."));
+ 
++    if (state.browser.sign_in_available)
++    {
++        pane.rule();
++        pane.heading("Vikingfile");
++        pane.body(tr("Sign in on Vikingfile, then close the page and return to Orbit."));
++        pane.fine(tr("Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download."));
++        pane.buttons({{Kind::viking_sign_in, tr("Sign in"), ui::ButtonKind::secondary,
++                       !state.browser.active && !ctx_.store.browser_action().busy}});
++        if (state.browser.sign_in && state.browser.state == "failed") pane.error(state.browser.message);
++        pane.error(ctx_.store.browser_action().error);
++    }
+     // .archive-account-settings: signing in for login-only Archive.org games.
+     const ArchiveAccount &account = state.archive_account;
+     if (!account.known)
+@@ -1051,6 +1062,9 @@ void SettingsScreen::activate(const Control &control, Intent &intent, Feedback &
+     look::Prefs prefs = look::prefs();
+     switch (control.kind)
+     {
++    case Kind::viking_sign_in:
++        ctx_.store.start_browser({}, {}, true);
++        break;
+     case Kind::archive_sign_in:
+         archive_sign_out_ = false;
+         archive_sign_in_.open();
+diff --git a/app/src/orbit/settings_looks.cpp b/app/src/orbit/settings_looks.cpp
+index ca74c82..b1b2142 100644
+--- a/app/src/orbit/settings_looks.cpp
++++ b/app/src/orbit/settings_looks.cpp
+@@ -67,6 +67,7 @@ std::vector<SettingsScreen::XbEntry> SettingsScreen::section_entries() const
+             out.push_back({'o', i});
+         out.push_back({'a', 0});
+         out.push_back({'v', 0});
++        if (state.browser.sign_in_available) out.push_back({'V', 0});
+         // Signing in to Archive.org, on a download service that has it.
+         if (state.archive_account.known)
+             out.push_back({'O', 0});
+@@ -276,6 +277,17 @@ xb::List SettingsScreen::rows_of(const std::vector<XbEntry> &entries) const
+             row.warn = !row.detail.empty();
+             break;
+         }
++        case 'V':
++            row.icon = icons::Icon::key;
++            row.title = "Vikingfile";
++            row.value = tr("Sign in");
++            row.text = tr("Sign in on Vikingfile, then close the page and return to Orbit.");
++            row.off = state.browser.active || ctx_.store.browser_action().busy;
++            row.detail = ctx_.store.browser_action().error;
++            if (row.detail.empty() && state.browser.sign_in && state.browser.state == "failed")
++                row.detail = state.browser.message;
++            row.warn = !row.detail.empty();
++            break;
+         case 'O':
+         {
+             const ArchiveAccount &account = state.archive_account;
+@@ -994,6 +1006,9 @@ void SettingsScreen::press(const std::string &key, bool off, const InputFrame &i
+     case 'w':
+         act(Kind::open_browser, 0, intent, feedback);
+         break;
++    case 'V':
++        act(Kind::viking_sign_in, 0, intent, feedback);
++        break;
+     case 'O':
+         if (!state.archive_account.signed_in)
+             act(Kind::archive_sign_in, 0, intent, feedback);
+diff --git a/app/src/orbit/store.cpp b/app/src/orbit/store.cpp
+index 8fc468d..bcd0db9 100644
+--- a/app/src/orbit/store.cpp
++++ b/app/src/orbit/store.cpp
+@@ -194,7 +194,7 @@ void Store::set_favourite(const std::string &game_id, bool favourite)
+     signal_.notify();
+ }
+ 
+-void Store::start_browser(const std::string &release_id, const std::string &storage_id)
++void Store::start_browser(const std::string &release_id, const std::string &storage_id, bool sign_in)
+ {
+     if (browser_action_.busy || native_provider_.busy()) return;
+     provider_error_.clear();
+@@ -226,6 +226,7 @@ void Store::start_browser(const std::string &release_id, const std::string &stor
+         Lock lock(mutex_);
+         Command command;
+         command.kind = Command::Kind::browser_start;
++        command.flag = sign_in;
+         command.browser_client = client;
+         command.a = release_id;
+         command.b = storage_id;
+@@ -266,7 +267,7 @@ void Store::poll_browser()
+ void Store::run_browser(Command &command)
+ {
+     auto result = command.kind == Command::Kind::browser_start
+-        ? client_.start_browser(command.a, command.b, command.browser_client)
++        ? client_.start_browser(command.a, command.b, command.browser_client, command.flag)
+         : command.kind == Command::Kind::browser_opened ? client_.browser_opened(command.a, command.browser_client)
+         : client_.cancel_browser(command.a);
+     // A lost POST response may still have started verification. Read status,
+diff --git a/app/src/orbit/store.hpp b/app/src/orbit/store.hpp
+index bf7febf..58c92b0 100644
+--- a/app/src/orbit/store.hpp
++++ b/app/src/orbit/store.hpp
+@@ -192,7 +192,7 @@ class Store
+                   bool torbox = false);
+     void job_action(const std::string &job_id, const std::string &action, bool delete_partial, const std::string &password = {});
+     const ActionState &browser_action() const { return browser_action_; }
+-    void start_browser(const std::string &release_id, const std::string &storage_id);
++    void start_browser(const std::string &release_id, const std::string &storage_id, bool sign_in = false);
+     void set_provider_window(ProviderWindow *window) { native_provider_.set_window(window); }
+     bool provider_dialog_visible() const { return native_provider_.visible(); }
+     void cancel_browser(const std::string &session_id);
+diff --git a/backend/browser.c b/backend/browser.c
+index 2816a7f..c44e328 100644
+--- a/backend/browser.c
++++ b/backend/browser.c
+@@ -12,7 +12,7 @@
+ static struct {
+     pthread_t thread;
+     pthread_cond_t changed;
+-    bool ready, stop, pending, busy, thread_started, return_to_browser, native_dialog, dialog_opened;
++    bool ready, stop, pending, busy, thread_started, return_to_browser, native_dialog, dialog_opened, sign_in;
+     atomic_bool cancel;
+     char id[33], state[16], message[256], job_id[33], title[128], client_id[65];
+     Release release;
+@@ -46,6 +46,7 @@ static void state_locked(const char *state, const char *message) {
+     copy_text(session.message, sizeof session.message, message);
+ }
+ static bool selected_locked(void) {
++    if (session.sign_in) return true; /* Account pages have no selected file. */
+     if (session.refresh_job.id[0]) {
+         const Job *j = job_find(session.refresh_job.id), *p = &session.refresh_job;
+         return job_can_refresh_link(j) && source_enabled_locked(&j->release) &&
+@@ -78,6 +79,39 @@ static int validate_capture(Release *r, char *etag, char *modified, char *error,
+     pthread_mutex_unlock(&orbit.mutex);
+     return result;
+ }
++/* Sign-in belongs entirely to the provider's browser. In particular, do not
++ * call capture(), inspect a browser process, read cookies, or create a job.
++ * Keep the same native dialog/profile used by subsequent provider pages. */
++static void sign_in_page(void) {
++    bool opened = false;
++    if (session.native_dialog) {
++        for (unsigned i = 0; i < 300 && active(); ++i) {
++            pthread_mutex_lock(&orbit.mutex);
++            opened = session.dialog_opened;
++            pthread_mutex_unlock(&orbit.mutex);
++            if (opened) break;
++            delay();
++        }
++    } else if (active()) {
++        opened = probe_browser_open("https://vikingfile.com/login") == 0;
++    }
++    pthread_mutex_lock(&orbit.mutex);
++    if (opened && !atomic_load(&session.cancel))
++        state_locked("waiting", "Sign in on Vikingfile, then close the page and return to Orbit.");
++    pthread_mutex_unlock(&orbit.mutex);
++    /* Native reports its own dialog closing. The browser client exposes Done;
++     * an abandoned session also expires without claiming sign-in succeeded. */
++    for (unsigned i = 0; opened && i < 2400 && active(); ++i) delay();
++    pthread_mutex_lock(&orbit.mutex);
++    state_locked(opened || atomic_load(&session.cancel) ? "cancelled" : "failed",
++        opened || atomic_load(&session.cancel)
++            ? "Vikingfile sign-in session ended. Return to your download."
++            : "The PS5 browser could not open. Return to Orbit and try again.");
++    session.finished_ms = milliseconds() - session.started_ms;
++    session.busy = false;
++    memset(&session.release, 0, sizeof session.release);
++    pthread_mutex_unlock(&orbit.mutex);
++}
+ #ifndef ORBIT_TEST
+ static bool native_active(void *context) {
+     return active() && probe_target_active(context);
+@@ -229,6 +263,12 @@ static void *worker(void *unused) {
+             pthread_cond_wait(&session.changed, &orbit.mutex);
+         if (session.stop) break;
+         session.pending = false;
++        if (session.sign_in) {
++            pthread_mutex_unlock(&orbit.mutex);
++            sign_in_page();
++            pthread_mutex_lock(&orbit.mutex);
++            continue;
++        }
+         Release resolved = session.release;
+         if (session.native_dialog && !session.dialog_opened)
+             state_locked("opening", "Opening the download page in Orbit…");
+@@ -319,6 +359,8 @@ cJSON *browser_status(void) {
+     cJSON_AddBoolToObject(o, "available", session.ready && available() && !session.stop);
+     cJSON_AddBoolToObject(o, "active", session.busy);
+     cJSON_AddBoolToObject(o, "nativeDialogAvailable", session.ready && available() && !session.stop);
++    cJSON_AddBoolToObject(o, "signInAvailable", session.ready && available() && !session.stop);
++    cJSON_AddBoolToObject(o, "signIn", session.sign_in);
+     if (session.native_dialog) {
+         cJSON_AddStringToObject(o, "clientId", session.client_id);
+         cJSON_AddBoolToObject(o, "dialogOpened", session.dialog_opened);
+@@ -358,7 +400,7 @@ int browser_action(const cJSON *input, char *error, size_t cap) {
+             copy_text(error, cap, "This verification session is no longer active."); code = 409;
+         } else {
+             session.dialog_opened = true; /* idempotent acknowledgement */
+-            if (!strcmp(session.state, "opening"))
++            if (!strcmp(session.state, "opening") && !session.sign_in)
+                 state_locked("waiting-link", "Complete verification if shown, then wait for Orbit to check the download link.");
+         }
+     } else if (!strcmp(action, "cancel")) {
+@@ -368,9 +410,11 @@ int browser_action(const cJSON *input, char *error, size_t cap) {
+             copy_text(error, cap, "This verification session is no longer active."); code = 409;
+         } else {
+             atomic_store(&session.cancel, true);
+-            state_locked("cancelled", "Verification cancelled. No download was added.");
++            state_locked("cancelled", session.sign_in
++                ? "Vikingfile sign-in session ended. Return to your download."
++                : "Verification cancelled. No download was added.");
+         }
+-    } else if (strcmp(action, "start") && strcmp(action, "refresh")) {
++    } else if (strcmp(action, "start") && strcmp(action, "refresh") && strcmp(action, "sign-in")) {
+         copy_text(error, cap, "Unknown browser action."); code = 400;
+     } else if (!session.ready || session.stop || !available()) {
+         copy_text(error, cap, "Provider verification is available on the PS5 only."); code = 409;
+@@ -394,21 +438,31 @@ int browser_action(const cJSON *input, char *error, size_t cap) {
+             goto done;
+         }
+         bool refreshing = !strcmp(action, "refresh");
++        bool signing_in = !strcmp(action, "sign-in");
++        if (signing_in && strcmp(json_text(input, "sourceId"), "vikingfile")) {
++            copy_text(error, cap, "Choose Vikingfile to sign in."); code = 400;
++            goto done;
++        }
++        Release account_page = {0};
++        copy_text(account_page.browser_url, sizeof account_page.browser_url, "https://vikingfile.com/login");
++        copy_text(account_page.title, sizeof account_page.title, "Vikingfile");
++        Storage account_storage = {0};
+         Job *job = refreshing ? job_find(json_text(input, "jobId")) : NULL;
+-        Release *r = refreshing ? (job ? &job->release : NULL) : release_find(json_text(input, "releaseId"));
++        Release *r = signing_in ? &account_page : refreshing ? (job ? &job->release : NULL) : release_find(json_text(input, "releaseId"));
+         Storage drives[ORBIT_MAX_STORAGE], *s = NULL;
+-        size_t count = storage_list(drives);
++        size_t count = signing_in ? 0 : storage_list(drives);
++        if (signing_in) s = &account_storage;
+         for (size_t i = 0; i < count; i++)
+             if (!strcmp(drives[i].id, refreshing && job ? job->storage_id : json_text(input, "storageId"))) s = &drives[i];
+         if (refreshing && (!job_can_refresh_link(job) || !source_enabled_locked(&job->release))) {
+             copy_text(error, cap, "Pause the download and enable its source before refreshing its link."); code = 409;
+-        } else if (!r || !provider_browser_supported(r)) {
++        } else if (!r || (!signing_in && !provider_browser_supported(r))) {
+             copy_text(error, cap, "This option has no supported provider browser page."); code = 400;
+         } else if (!s) {
+             copy_text(error, cap, "Reconnect the selected drive first."); code = 409;
+         } else if (refreshing && (strcmp(s->root, job->root) || s->device != job->device || s->inode != job->inode)) {
+             copy_text(error, cap, "Reconnect the original drive first."); code = 409;
+-        } else if ((code = refreshing ? 200 : job_check_capture_locked(r, s, error, cap)) == 200) {
++        } else if ((code = signing_in || refreshing ? 200 : job_check_capture_locked(r, s, error, cap)) == 200) {
+             if (start_worker_locked()) {
+                 copy_text(error, cap, "Provider verification could not start. Try again.");
+                 state_locked("failed", error);
+@@ -416,6 +470,7 @@ int browser_action(const cJSON *input, char *error, size_t cap) {
+                 goto done;
+             }
+             session.release = *r; session.storage = *s;
++            session.sign_in = signing_in;
+             session.native_dialog = cJSON_IsTrue(dialog);
+             session.dialog_opened = false;
+             copy_text(session.client_id, sizeof session.client_id, session.native_dialog ? client : "");
+@@ -432,7 +487,8 @@ int browser_action(const cJSON *input, char *error, size_t cap) {
+             session.candidates = session.browser_processes = 0;
+             session.busy = session.pending = true;
+             atomic_store(&session.cancel, false);
+-            state_locked("opening", "Opening the download page on your PS5…");
++            state_locked("opening", signing_in ? "Opening Vikingfile sign-in on your PS5…"
++                                                : "Opening the download page on your PS5…");
+             pthread_cond_signal(&session.changed);
+             code = 202;
+         }
+@@ -443,7 +499,7 @@ done:
+ }
+ 
+ void browser_source_changed_locked(void) {
+-    if (session.busy && !source_enabled_locked(&session.release)) atomic_store(&session.cancel, true);
++    if (session.busy && !session.sign_in && !source_enabled_locked(&session.release)) atomic_store(&session.cancel, true);
+ }
+ void browser_job_changed_locked(const char *id) {
+     if (session.busy && session.refresh_job.id[0] && !strcmp(session.refresh_job.id, id))
+diff --git a/i18n/de.json b/i18n/de.json
+index 5079a28..476d072 100644
+--- a/i18n/de.json
++++ b/i18n/de.json
+@@ -1002,7 +1002,6 @@
+   "See your PS5’s downloads": "Sieh dir die Downloads deiner PS5 an",
+   "Select": "Auswählen",
+   "Select an option": "Option wählen",
+-  "Select Download, then return to Orbit.": "Wähle Download und kehre zu Orbit zurück.",
+   "Select drive": "Laufwerk wählen",
+   "Select report": "Bericht markieren",
+   "Select storage": "Speicher wählen",
+@@ -1368,5 +1367,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Deine geprüfte Datei wurde zu Downloads hinzugefügt. Kehre zu Orbit zurück, um sie anzusehen.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "ZIP-, 7z- und RAR-Downloads werden nach Abschluss auf dem Laufwerk entpackt. Orbit lehnt passwortgeschützte Archive und alles ab, was keine normalen Dateien und Ordner sind.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "ZIP-, 7z- und RAR-Downloads werden auf dem Laufwerk entpackt. Das Archiv wird gelöscht, sobald seine Dateien an ihrem Platz sind.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "ZIP-, 7z- und RAR-Downloads werden auf dem Laufwerk entpackt. Das Archiv bleibt neben seinen Dateien erhalten."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "ZIP-, 7z- und RAR-Downloads werden auf dem Laufwerk entpackt. Das Archiv bleibt neben seinen Dateien erhalten.",
++  "Choose Vikingfile to sign in.": "Wähle Vikingfile, um dich anzumelden.",
++  "Opening Vikingfile sign-in on your PS5…": "Vikingfile-Anmeldung wird auf deiner PS5 geöffnet…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Melde dich bei Vikingfile an, schließe dann die Seite und kehre zu Orbit zurück.",
++  "Vikingfile sign-in session ended. Return to your download.": "Die Vikingfile-Anmeldesitzung wurde beendet. Kehre zu deinem Download zurück.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "Dein Konto-Hash bleibt auf der Browserseite von Vikingfile. Verwende für deinen Download dieselbe Orbit-Oberfläche."
+ }
+diff --git a/i18n/en.json b/i18n/en.json
+index 74b9681..1fb9f9c 100644
+--- a/i18n/en.json
++++ b/i18n/en.json
+@@ -1367,5 +1367,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Your verified file has been added to Downloads. Return to Orbit to view it.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.",
++  "Choose Vikingfile to sign in.": "Choose Vikingfile to sign in.",
++  "Opening Vikingfile sign-in on your PS5…": "Opening Vikingfile sign-in on your PS5…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Sign in on Vikingfile, then close the page and return to Orbit.",
++  "Vikingfile sign-in session ended. Return to your download.": "Vikingfile sign-in session ended. Return to your download.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download."
+ }
+diff --git a/i18n/es.json b/i18n/es.json
+index 7a908ec..8c6b9ff 100644
+--- a/i18n/es.json
++++ b/i18n/es.json
+@@ -1018,7 +1018,6 @@
+   "See your PS5’s downloads": "Mira las descargas de tu PS5",
+   "Select": "Seleccionar",
+   "Select an option": "Selecciona una opción",
+-  "Select Download, then return to Orbit.": "Selecciona Descargar y vuelve a Orbit.",
+   "Select drive": "Seleccionar unidad",
+   "Select report": "Seleccionar informe",
+   "Select storage": "Selecciona almacenamiento",
+@@ -1385,5 +1384,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Tu archivo verificado se ha añadido a Descargas. Vuelve a Orbit para verlo.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "Las descargas ZIP, 7z y RAR se extraen en la unidad al terminar. Orbit rechaza los archivos comprimidos protegidos con contraseña y todo lo que no sean archivos y carpetas normales.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "Las descargas ZIP, 7z y RAR se extraen en la unidad. El archivo comprimido se elimina cuando sus archivos están en su sitio.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "Las descargas ZIP, 7z y RAR se extraen en la unidad. El archivo comprimido se conserva junto a sus archivos."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "Las descargas ZIP, 7z y RAR se extraen en la unidad. El archivo comprimido se conserva junto a sus archivos.",
++  "Choose Vikingfile to sign in.": "Elige Vikingfile para iniciar sesión.",
++  "Opening Vikingfile sign-in on your PS5…": "Abriendo el inicio de sesión de Vikingfile en tu PS5…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Inicia sesión en Vikingfile, cierra la página y vuelve a Orbit.",
++  "Vikingfile sign-in session ended. Return to your download.": "La sesión de inicio de Vikingfile ha terminado. Vuelve a tu descarga.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "El hash de tu cuenta permanece en la página de Vikingfile. Usa la misma interfaz de Orbit para tu descarga."
+ }
+diff --git a/i18n/fr.json b/i18n/fr.json
+index d81e248..e5e83d4 100644
+--- a/i18n/fr.json
++++ b/i18n/fr.json
+@@ -1018,7 +1018,6 @@
+   "See your PS5’s downloads": "Voir les téléchargements de votre PS5",
+   "Select": "Sélectionner",
+   "Select an option": "Sélectionnez une option",
+-  "Select Download, then return to Orbit.": "Sélectionnez Télécharger, puis revenez à Orbit.",
+   "Select drive": "Sélectionner un disque",
+   "Select report": "Sélectionner le rapport",
+   "Select storage": "Sélectionnez un stockage",
+@@ -1385,5 +1384,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Votre fichier vérifié a été ajouté à Téléchargements. Revenez dans Orbit pour le consulter.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "Les téléchargements ZIP, 7z et RAR sont extraits sur le disque une fois terminés. Orbit refuse les archives protégées par mot de passe et tout ce qui n’est pas un simple fichier ou dossier.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "Les téléchargements ZIP, 7z et RAR sont extraits sur le disque. L’archive est supprimée une fois ses fichiers en place.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "Les téléchargements ZIP, 7z et RAR sont extraits sur le disque. L’archive est conservée à côté de ses fichiers."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "Les téléchargements ZIP, 7z et RAR sont extraits sur le disque. L’archive est conservée à côté de ses fichiers.",
++  "Choose Vikingfile to sign in.": "Choisis Vikingfile pour te connecter.",
++  "Opening Vikingfile sign-in on your PS5…": "Ouverture de la connexion Vikingfile sur ta PS5…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Connecte-toi à Vikingfile, puis ferme la page et reviens à Orbit.",
++  "Vikingfile sign-in session ended. Return to your download.": "La session de connexion Vikingfile est terminée. Reviens à ton téléchargement.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "Le hash de ton compte reste sur la page de Vikingfile. Utilise la même interface Orbit pour ton téléchargement."
+ }
+diff --git a/i18n/hu.json b/i18n/hu.json
+index 0514931..797116b 100644
+--- a/i18n/hu.json
++++ b/i18n/hu.json
+@@ -1002,7 +1002,6 @@
+   "See your PS5’s downloads": "A PS5 letöltéseinek megtekintése",
+   "Select": "Kiválasztás",
+   "Select an option": "Válassz egy lehetőséget",
+-  "Select Download, then return to Orbit.": "Válaszd a Letöltés lehetőséget, majd térj vissza az Orbitba.",
+   "Select drive": "Meghajtó kiválasztása",
+   "Select report": "Jelentés kiválasztása",
+   "Select storage": "Tárhely kiválasztása",
+@@ -1368,5 +1367,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Az ellenőrzött fájl bekerült a Letöltések közé. Térj vissza az Orbitba a megtekintéséhez.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "A ZIP, 7z és RAR letöltések befejezés után a meghajtón kicsomagolódnak. Az Orbit elutasítja a jelszóval védett archívumokat és mindent, ami nem egyszerű fájl vagy mappa.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "A ZIP, 7z és RAR letöltések a meghajtón kicsomagolódnak. Az archívum törlődik, amint a fájljai a helyükre kerültek.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "A ZIP, 7z és RAR letöltések a meghajtón kicsomagolódnak. Az archívum a fájljai mellett megmarad."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "A ZIP, 7z és RAR letöltések a meghajtón kicsomagolódnak. Az archívum a fájljai mellett megmarad.",
++  "Choose Vikingfile to sign in.": "A bejelentkezéshez válaszd a Vikingfile-t.",
++  "Opening Vikingfile sign-in on your PS5…": "A Vikingfile bejelentkezési oldalának megnyitása a PS5-ön…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Jelentkezz be a Vikingfile-ba, majd zárd be az oldalt, és térj vissza az Orbitba.",
++  "Vikingfile sign-in session ended. Return to your download.": "A Vikingfile bejelentkezési munkamenete véget ért. Térj vissza a letöltéshez.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "A fiókod hashazonosítója a Vikingfile böngészőoldalán marad. A letöltéshez ugyanazt az Orbit-felületet használd."
+ }
+diff --git a/i18n/it.json b/i18n/it.json
+index 4e16f9c..06b29d8 100644
+--- a/i18n/it.json
++++ b/i18n/it.json
+@@ -1018,7 +1018,6 @@
+   "See your PS5’s downloads": "Vedi i download della tua PS5",
+   "Select": "Seleziona",
+   "Select an option": "Seleziona un’opzione",
+-  "Select Download, then return to Orbit.": "Seleziona Download e torna a Orbit.",
+   "Select drive": "Seleziona unità",
+   "Select report": "Seleziona rapporto",
+   "Select storage": "Seleziona memoria",
+@@ -1385,5 +1384,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Il file verificato è stato aggiunto a Download. Torna a Orbit per visualizzarlo.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "I download ZIP, 7z e RAR vengono estratti sull’unità al termine. Orbit rifiuta gli archivi protetti da password e tutto ciò che non sia un semplice file o cartella.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "I download ZIP, 7z e RAR vengono estratti sull’unità. L’archivio viene eliminato quando i suoi file sono al loro posto.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "I download ZIP, 7z e RAR vengono estratti sull’unità. L’archivio viene conservato accanto ai suoi file."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "I download ZIP, 7z e RAR vengono estratti sull’unità. L’archivio viene conservato accanto ai suoi file.",
++  "Choose Vikingfile to sign in.": "Scegli Vikingfile per accedere.",
++  "Opening Vikingfile sign-in on your PS5…": "Apertura della pagina di accesso di Vikingfile sulla PS5…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Accedi a Vikingfile, poi chiudi la pagina e torna a Orbit.",
++  "Vikingfile sign-in session ended. Return to your download.": "La sessione di accesso di Vikingfile è terminata. Torna al download.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "L’hash del tuo account rimane nella pagina di Vikingfile. Usa la stessa interfaccia di Orbit per il download."
+ }
+diff --git a/i18n/nl.json b/i18n/nl.json
+index b862e4f..1630949 100644
+--- a/i18n/nl.json
++++ b/i18n/nl.json
+@@ -1002,7 +1002,6 @@
+   "See your PS5’s downloads": "Bekijk de downloads van je PS5",
+   "Select": "Selecteren",
+   "Select an option": "Kies een optie",
+-  "Select Download, then return to Orbit.": "Kies Downloaden en keer terug naar Orbit.",
+   "Select drive": "Schijf kiezen",
+   "Select report": "Rapport selecteren",
+   "Select storage": "Kies opslag",
+@@ -1368,5 +1367,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Je gecontroleerde bestand is toegevoegd aan Downloads. Ga terug naar Orbit om het te bekijken.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "ZIP-, 7z- en RAR-downloads worden na afloop op de schijf uitgepakt. Orbit weigert met een wachtwoord beveiligde archieven en alles wat geen gewone bestanden en mappen zijn.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "ZIP-, 7z- en RAR-downloads worden op de schijf uitgepakt. Het archief wordt verwijderd zodra de bestanden op hun plaats staan.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "ZIP-, 7z- en RAR-downloads worden op de schijf uitgepakt. Het archief blijft naast de bestanden bewaard."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "ZIP-, 7z- en RAR-downloads worden op de schijf uitgepakt. Het archief blijft naast de bestanden bewaard.",
++  "Choose Vikingfile to sign in.": "Kies Vikingfile om in te loggen.",
++  "Opening Vikingfile sign-in on your PS5…": "Vikingfile-aanmelding wordt op je PS5 geopend…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Log in bij Vikingfile, sluit daarna de pagina en keer terug naar Orbit.",
++  "Vikingfile sign-in session ended. Return to your download.": "De Vikingfile-aanmeldsessie is beëindigd. Ga terug naar je download.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "Je accounthash blijft op de browserpagina van Vikingfile. Gebruik dezelfde Orbit-interface voor je download."
+ }
+diff --git a/i18n/pl.json b/i18n/pl.json
+index 9067357..0f404d0 100644
+--- a/i18n/pl.json
++++ b/i18n/pl.json
+@@ -1034,7 +1034,6 @@
+   "See your PS5’s downloads": "Zobacz pobierania na PS5",
+   "Select": "Wybierz",
+   "Select an option": "Wybierz opcję",
+-  "Select Download, then return to Orbit.": "Wybierz Pobierz i wróć do Orbit.",
+   "Select drive": "Wybierz dysk",
+   "Select report": "Zaznacz raport",
+   "Select storage": "Wybierz pamięć",
+@@ -1402,5 +1401,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Zweryfikowany plik dodano do Pobranych. Wróć do Orbit, aby go zobaczyć.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "Pobrania ZIP, 7z i RAR są po zakończeniu wypakowywane na dysku. Orbit odrzuca archiwa chronione hasłem i wszystko, co nie jest zwykłymi plikami i folderami.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "Pobrania ZIP, 7z i RAR są wypakowywane na dysku. Archiwum jest usuwane, gdy jego pliki są już na miejscu.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "Pobrania ZIP, 7z i RAR są wypakowywane na dysku. Archiwum zostaje obok swoich plików."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "Pobrania ZIP, 7z i RAR są wypakowywane na dysku. Archiwum zostaje obok swoich plików.",
++  "Choose Vikingfile to sign in.": "Wybierz Vikingfile, aby się zalogować.",
++  "Opening Vikingfile sign-in on your PS5…": "Otwieranie logowania Vikingfile na PS5…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Zaloguj się do Vikingfile, a następnie zamknij stronę i wróć do Orbit.",
++  "Vikingfile sign-in session ended. Return to your download.": "Sesja logowania Vikingfile została zakończona. Wróć do pobierania.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "Hash konta pozostaje na stronie Vikingfile. Do pobierania użyj tego samego interfejsu Orbit."
+ }
+diff --git a/i18n/pt-BR.json b/i18n/pt-BR.json
+index 49f98bd..31a5d10 100644
+--- a/i18n/pt-BR.json
++++ b/i18n/pt-BR.json
+@@ -1018,7 +1018,6 @@
+   "See your PS5’s downloads": "Veja os downloads do seu PS5",
+   "Select": "Selecionar",
+   "Select an option": "Selecione uma opção",
+-  "Select Download, then return to Orbit.": "Selecione Baixar e volte ao Orbit.",
+   "Select drive": "Selecionar unidade",
+   "Select report": "Selecionar relatório",
+   "Select storage": "Selecione o armazenamento",
+@@ -1385,5 +1384,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Seu arquivo verificado foi adicionado a Downloads. Volte ao Orbit para vê-lo.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "Downloads ZIP, 7z e RAR são extraídos na unidade ao terminar. O Orbit recusa arquivos compactados protegidos por senha e tudo o que não for arquivos e pastas comuns.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "Downloads ZIP, 7z e RAR são extraídos na unidade. O arquivo compactado é excluído quando os arquivos estão no lugar.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "Downloads ZIP, 7z e RAR são extraídos na unidade. O arquivo compactado é mantido ao lado dos arquivos."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "Downloads ZIP, 7z e RAR são extraídos na unidade. O arquivo compactado é mantido ao lado dos arquivos.",
++  "Choose Vikingfile to sign in.": "Escolha Vikingfile para entrar.",
++  "Opening Vikingfile sign-in on your PS5…": "Abrindo o login do Vikingfile no seu PS5…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Entre no Vikingfile, feche a página e volte ao Orbit.",
++  "Vikingfile sign-in session ended. Return to your download.": "A sessão de login do Vikingfile terminou. Volte ao seu download.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "O hash da sua conta fica na página do Vikingfile. Use a mesma interface do Orbit para o download."
+ }
+diff --git a/i18n/ru.json b/i18n/ru.json
+index a176000..a1d4c54 100644
+--- a/i18n/ru.json
++++ b/i18n/ru.json
+@@ -1034,7 +1034,6 @@
+   "See your PS5’s downloads": "Загрузки вашей PS5",
+   "Select": "Выбрать",
+   "Select an option": "Выберите вариант",
+-  "Select Download, then return to Orbit.": "Выберите «Скачать» и вернитесь в Orbit.",
+   "Select drive": "Выбрать накопитель",
+   "Select report": "Выделить отчёт",
+   "Select storage": "Выберите хранилище",
+@@ -1402,5 +1401,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Проверенный файл добавлен в раздел «Загрузки». Вернитесь в Orbit, чтобы увидеть его.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "Загрузки ZIP, 7z и RAR после завершения распаковываются на накопителе. Orbit отклоняет архивы с паролем и всё, что не является обычными файлами и папками.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "Загрузки ZIP, 7z и RAR распаковываются на накопителе. Архив удаляется, когда его файлы окажутся на месте.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "Загрузки ZIP, 7z и RAR распаковываются на накопителе. Архив сохраняется рядом с его файлами."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "Загрузки ZIP, 7z и RAR распаковываются на накопителе. Архив сохраняется рядом с его файлами.",
++  "Choose Vikingfile to sign in.": "Выберите Vikingfile для входа.",
++  "Opening Vikingfile sign-in on your PS5…": "Открывается страница входа Vikingfile на PS5…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Войдите в Vikingfile, затем закройте страницу и вернитесь в Orbit.",
++  "Vikingfile sign-in session ended. Return to your download.": "Сеанс входа Vikingfile завершён. Вернитесь к загрузке.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "Хеш вашей учётной записи остаётся на странице Vikingfile. Для загрузки используйте тот же интерфейс Orbit."
+ }
+diff --git a/i18n/tr.json b/i18n/tr.json
+index 836031b..e716b5e 100644
+--- a/i18n/tr.json
++++ b/i18n/tr.json
+@@ -1002,7 +1002,6 @@
+   "See your PS5’s downloads": "PS5'inizin indirmelerini görün",
+   "Select": "Seç",
+   "Select an option": "Bir seçenek belirleyin",
+-  "Select Download, then return to Orbit.": "İndir’i seçin ve Orbit’e dönün.",
+   "Select drive": "Sürücü seç",
+   "Select report": "Raporu seç",
+   "Select storage": "Depolama seçin",
+@@ -1368,5 +1367,10 @@
+   "Your verified file has been added to Downloads. Return to Orbit to view it.": "Doğrulanan dosyanız İndirilenler’e eklendi. Görmek için Orbit’e dönün.",
+   "ZIP, 7z and RAR downloads are extracted on the drive after they finish. Orbit refuses password-protected archives and anything that isn’t plain files and folders.": "ZIP, 7z ve RAR indirmeleri tamamlandıktan sonra sürücüde çıkarılır. Orbit, parola korumalı arşivleri ve sıradan dosya ve klasör olmayan her şeyi reddeder.",
+   "ZIP, 7z and RAR downloads are extracted on the drive. The archive is deleted once its files are in place.": "ZIP, 7z ve RAR indirmeleri sürücüde çıkarılır. Dosyaları yerine yerleştiğinde arşiv silinir.",
+-  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "ZIP, 7z ve RAR indirmeleri sürücüde çıkarılır. Arşiv, dosyalarının yanında saklanır."
++  "ZIP, 7z and RAR downloads are extracted on the drive. The archive is kept next to its files.": "ZIP, 7z ve RAR indirmeleri sürücüde çıkarılır. Arşiv, dosyalarının yanında saklanır.",
++  "Choose Vikingfile to sign in.": "Giriş yapmak için Vikingfile seç.",
++  "Opening Vikingfile sign-in on your PS5…": "PS5 üzerinde Vikingfile giriş sayfası açılıyor…",
++  "Sign in on Vikingfile, then close the page and return to Orbit.": "Vikingfile'a giriş yap, ardından sayfayı kapat ve Orbit'e dön.",
++  "Vikingfile sign-in session ended. Return to your download.": "Vikingfile giriş oturumu sona erdi. İndirmene dön.",
++  "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.": "Hesap hash'in Vikingfile tarayıcı sayfasında kalır. İndirmen için aynı Orbit arayüzünü kullan."
+ }
+diff --git a/src/BrowserNotice.tsx b/src/BrowserNotice.tsx
+index fa7f721..48fd56c 100644
+--- a/src/BrowserNotice.tsx
++++ b/src/BrowserNotice.tsx
+@@ -38,8 +38,9 @@ export function BrowserNotice({
+       /* Dismissal still works for this view if browser storage is unavailable. */
+     }
+   }
+-  const heading =
+-    session.state === "queued"
++  const heading = session.signIn
++    ? "Vikingfile"
++    : session.state === "queued"
+       ? t("Added to Downloads")
+       : session.state === "failed"
+         ? t("Verification couldn't finish")
+@@ -49,11 +50,11 @@ export function BrowserNotice({
+             ? t("Checking your file")
+             : session.state === "waiting-link"
+               ? t("Waiting for the download link")
+-            : t("Provider verification");
++              : t("Provider verification");
+   return (
+     <aside
+       className="update-notice provider-browser-notice"
+-      aria-label={t("Provider verification")}
++      aria-label={session.signIn ? "Vikingfile" : t("Provider verification")}
+     >
+       <div role="status">
+         <strong>
+@@ -80,8 +81,12 @@ export function BrowserNotice({
+             }}
+           >
+             {pending || session.state === "cancelled"
+-              ? t("Cancelling…")
+-              : t("Cancel verification")}
++              ? session.signIn
++                ? t("Please wait…")
++                : t("Cancelling…")
++              : session.signIn
++                ? t("Done")
++                : t("Cancel verification")}
+           </button>
+         ) : (
+           <>
+@@ -95,9 +100,7 @@ export function BrowserNotice({
+                 {t("View download")}
+               </button>
+             )}
+-            <button onClick={() => dismiss(session.id)}>
+-              {t("Dismiss")}
+-            </button>
++            <button onClick={() => dismiss(session.id)}>{t("Dismiss")}</button>
+           </>
+         )}
+       </div>
+diff --git a/src/Sources.tsx b/src/Sources.tsx
+index 1c488a6..cd9b8ef 100644
+--- a/src/Sources.tsx
++++ b/src/Sources.tsx
+@@ -1,5 +1,6 @@
+ import { useEffect, useRef, useState } from "react";
+ import { Icon } from "./components";
++import { VikingAccount } from "./VikingAccount";
+ import type { SourceId, SourceSettings } from "./types";
+ import { formatNumber, t, tn } from "./i18n";
+ 
+@@ -183,6 +184,7 @@ export function Sources({
+       <p className="fine">
+         {t("Saved for this console and its paired devices.")}
+       </p>
++      <VikingAccount paired={paired} />
+     </form>
+   );
+ }
+diff --git a/src/VikingAccount.tsx b/src/VikingAccount.tsx
+new file mode 100644
+index 0000000..23e0636
+--- /dev/null
++++ b/src/VikingAccount.tsx
+@@ -0,0 +1,78 @@
++import { useEffect, useState } from "react";
++import { api } from "./api";
++import type { BrowserSession } from "./types";
++import { t } from "./i18n";
++
++// Credentials and verification stay on Vikingfile's own page. This panel
++// opens that page on the PS5, including when requested from a paired device.
++export function VikingAccount({ paired }: { paired: boolean }) {
++  const [session, setSession] = useState<BrowserSession | null>(null);
++  const [pending, setPending] = useState(false);
++  const [error, setError] = useState("");
++  useEffect(() => {
++    if (!paired) return;
++    let live = true;
++    const refresh = () => {
++      api<BrowserSession>("/browser").then(
++        (next) => live && setSession(next),
++        () => live && setSession(null),
++      );
++    };
++    refresh();
++    const timer = setInterval(refresh, 2000);
++    return () => {
++      live = false;
++      clearInterval(timer);
++    };
++  }, [paired]);
++  if (!paired || !session?.signInAvailable) return null;
++  const active = session.active && session.signIn;
++  async function act() {
++    setPending(true);
++    setError("");
++    try {
++      setSession(
++        await api<BrowserSession>(
++          "/browser",
++          active
++            ? { action: "cancel", id: session!.id }
++            : {
++                action: "sign-in",
++                sourceId: "vikingfile",
++                returnTarget: "browser",
++              },
++        ),
++      );
++    } catch (e) {
++      setError((e as Error).message);
++    } finally {
++      setPending(false);
++    }
++  }
++  return (
++    <section className="updates-panel" aria-labelledby="viking-account-heading">
++      <h2 id="viking-account-heading">Vikingfile</h2>
++      <p>
++        {t("Sign in on Vikingfile, then close the page and return to Orbit.")}
++      </p>
++      <p className="fine">
++        {t(
++          "Your account hash stays in Vikingfile's browser page. Use the same Orbit interface for your download.",
++        )}
++      </p>
++      {session.signIn && <p role="status">{t(session.message)}</p>}
++      <button
++        type="button"
++        disabled={pending || (session.active && !active)}
++        onClick={() => void act()}
++      >
++        {pending ? t("Please wait…") : active ? t("Done") : t("Sign in")}
++      </button>
++      {error && (
++        <p className="form-error" role="alert">
++          {error}
++        </p>
++      )}
++    </section>
++  );
++}
+diff --git a/src/types.ts b/src/types.ts
+index 276a1a2..b83bd62 100644
+--- a/src/types.ts
++++ b/src/types.ts
+@@ -257,6 +257,8 @@ export const bytes = (n: number) => {
+ };
+ 
+ export interface BrowserSession {
++  signInAvailable?: boolean;
++  signIn?: boolean;
+   available: boolean;
+   active: boolean;
+   id: string;
+diff --git a/tests/viking-sign-in.test.mjs b/tests/viking-sign-in.test.mjs
+new file mode 100644
+index 0000000..60c5779
+--- /dev/null
++++ b/tests/viking-sign-in.test.mjs
+@@ -0,0 +1,31 @@
++import test from "node:test";
++import { mkdtempSync, writeFileSync, rmSync } from "node:fs";
++import { tmpdir } from "node:os";
++import { join } from "node:path";
++import { execFileSync } from "node:child_process";
++
++const run = (command, args) => execFileSync(command, args, { stdio: "inherit" });
++test("Vikingfile sign-in is isolated from download capture; native and browser lifecycles", () => {
++  const build = mkdtempSync(join(tmpdir(), "orbit-viking-sign-in-"));
++  try {
++    writeFileSync(join(build, "network.h"), "#define ORBIT_HTTP_PORT 34177\n");
++    // Keep strict warnings for Orbit; compile vendored cJSON independently.
++    run(process.env.CC || "clang", ["-std=c11", "-w", "-fsanitize=address,undefined",
++      "-I.deps/cjson", "-c", ".deps/cjson/cJSON.c", "-o", join(build, "cJSON.o")]);
++    run(process.env.CC || "clang", ["-std=c11", "-Wall", "-Wextra", "-Werror",
++      "-Wno-misleading-indentation", "-DORBIT_DESKTOP", "-DORBIT_TEST", "-pthread",
++      "-fsanitize=address,undefined", "-g", "-Ibackend", "-I.deps/cjson", `-I${build}`,
++      "backend/browser.c", join(build, "cJSON.o"), "tests/viking_sign_in_driver.c",
++      "-o", join(build, "backend")]);
++    run(join(build, "backend"), []);
++    run(process.env.CXX || "clang++", ["-std=c++20", "-Wall", "-Wextra", "-Werror",
++      "-fsanitize=address,undefined", "-g", "-ffunction-sections", "-fdata-sections",
++      process.platform === "darwin" ? "-Wl,-dead_strip" : "-Wl,--gc-sections",
++      "-Iapp/src", "app/src/orbit/native_provider.cpp", "app/src/orbit/api.cpp",
++      "app/src/orbit/model.cpp", "app/src/orbit/json.cpp",
++      "tests/viking_native_driver.cpp", "-o", join(build, "native")]);
++    run(join(build, "native"), []);
++  } finally {
++    rmSync(build, { recursive: true, force: true });
++  }
++});
+diff --git a/tests/viking_native_driver.cpp b/tests/viking_native_driver.cpp
+new file mode 100644
+index 0000000..99eaea4
+--- /dev/null
++++ b/tests/viking_native_driver.cpp
+@@ -0,0 +1,51 @@
++#include "orbit/native_provider.hpp"
++#include "orbit/api.hpp"
++#include "orbit/i18n.hpp"
++#include <cassert>
++#include <iostream>
++using namespace orbit;
++// The test exercises protocol and dialog ownership independently of language.
++namespace orbit::i18n { const char *tr(const char *text) { return text; } }
++struct Transport : http::Transport {
++    http::Request last;
++    http::Response send(const http::Request &request) override {
++        last=request;
++        http::Response reply;reply.status=202;
++        reply.body=R"({"available":true,"signInAvailable":true,"signIn":true,"active":true,"id":"login","state":"opening"})";
++        return reply;
++    }
++};
++struct Window : ProviderWindow {
++    int state=2,opens=0,closes=0;
++    std::string page;
++    bool open(const std::string &url) override { page=url;++opens;return true; }
++    int status() override { return state; }
++    int close() override { ++closes;return 0; }
++};
++int main() {
++    Transport transport;api::Client client(transport);client.set_token("test-session");
++    const auto login=client.start_browser({}, {}, "owner", true);
++    assert(login.ok() && login.value.sign_in_available && login.value.sign_in);
++    assert(transport.last.body==R"({"action":"sign-in","sourceId":"vikingfile","returnTarget":"native","nativeDialog":true,"clientId":"owner"})");
++    assert(transport.last.path=="/api/v1/browser" && transport.last.bearer=="test-session");
++    assert(client.start_browser("release","internal","owner").ok());
++    assert(transport.last.body==R"({"action":"start","releaseId":"release","storageId":"internal","returnTarget":"native","nativeDialog":true,"clientId":"owner"})");
++    Window window;NativeProvider provider;provider.set_window(&window);
++    BrowserSession s;s.id="login";s.client_id="owner";s.active=true;s.sign_in=true;
++    s.state="opening";s.page_url="https://vikingfile.com/login";
++    provider.begin("owner",0);
++    assert(provider.tick(s,true,1).kind==NativeProvider::Event::opened);
++    assert(window.page==s.page_url && window.opens==1);
++    s.state="waiting";s.dialog_opened=true;provider.tick(s,true,2);assert(window.closes==0);
++    window.state=3;
++    assert(provider.tick(s,true,3).kind==NativeProvider::Event::cancel);
++    assert(!provider.busy() && s.job_id.empty());
++    // A later download uses the very same ProviderWindow/profile.
++    provider.begin("next-owner",4);s.id="download";s.client_id="next-owner";s.sign_in=false;
++    s.state="opening";s.dialog_opened=false;s.page_url="https://vikingfile.com/f/EXAMPLE123";window.state=2;
++    assert(provider.tick(s,true,5).kind==NativeProvider::Event::opened);
++    assert(window.opens==2);s.state="queued";s.job_id="download-job";
++    provider.tick(s,true,6);assert(window.closes==1);
++    window.state=3;assert(provider.tick(s,true,7).kind==NativeProvider::Event::none);
++    std::cout<<"Native sign-in dialog lifecycle checks passed\n";
++}
+diff --git a/tests/viking_sign_in_driver.c b/tests/viking_sign_in_driver.c
+new file mode 100644
+index 0000000..7a19f74
+--- /dev/null
++++ b/tests/viking_sign_in_driver.c
+@@ -0,0 +1,101 @@
++/* Offline browser-session regression tests. No accounts or network required. */
++#include "orbit.h"
++#include "browser_platform.h"
++#include <assert.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <time.h>
++
++Orbit orbit = {.mutex = PTHREAD_MUTEX_INITIALIZER, .changed = PTHREAD_COND_INITIALIZER};
++static atomic_int opens, captures, validations, jobs;
++static int open_result;
++static Release release = {.id="example", .source="vikingfile", .title="Example",
++    .browser_url="https://vikingfile.com/f/EXAMPLE123", .size=1024};
++static Job job;
++void copy_text(char *out, size_t cap, const char *s) { snprintf(out, cap, "%s", s ? s : ""); }
++const char *json_text(const cJSON *o, const char *key) {
++    const cJSON *v=cJSON_GetObjectItemCaseSensitive(o,key);
++    return cJSON_IsString(v) ? v->valuestring : "";
++}
++void random_hex(char *out, size_t bytes) {
++    static unsigned counter;
++    memset(out,'a',bytes*2); out[bytes*2]=0; out[0]=(char)('a'+counter++);
++}
++Release *release_find(const char *id) { return !strcmp(id,release.id) ? &release : NULL; }
++bool source_enabled_locked(const Release *r) { return r == &release || !strcmp(r->id,release.id); }
++bool provider_browser_supported(const Release *r) { return r == &release; }
++bool provider_capture_url(const Release *r, const char *url) {
++    (void)r; (void)url; atomic_fetch_add(&captures,1); return true;
++}
++int probe_browser_open(const char *url) {
++    assert(!strcmp(url,"https://vikingfile.com/login"));
++    atomic_fetch_add(&opens,1); return open_result;
++}
++size_t storage_list(Storage *out) { memset(out,0,sizeof *out); copy_text(out->id,sizeof out->id,"internal");return 1; }
++Job *job_find(const char *id) { return !strcmp(id,job.id) ? &job : NULL; }
++bool job_can_refresh_link(const Job *j) { (void)j;return false; }
++int job_check_capture_locked(const Release *r,const Storage *s,char *e,size_t n) {
++    (void)r;(void)s;(void)e;(void)n;return 200;
++}
++int transfer_validate_capture(Release *r,atomic_bool *c,char *etag,char *modified,char *e,size_t n) {
++    (void)r;(void)c;(void)etag;(void)modified;(void)e;(void)n;
++    atomic_fetch_add(&validations,1);return 0;
++}
++int job_create_captured_locked(const Release *r,const Storage *s,const char *etag,const char *modified,
++                               char *e,size_t n,Job **out) {
++    (void)r;(void)s;(void)etag;(void)modified;(void)e;(void)n;
++    atomic_fetch_add(&jobs,1);copy_text(job.id,sizeof job.id,"created");*out=&job;return 201;
++}
++int job_refresh_link_locked(Job *j,const Release *r,const Storage *s,const char *etag,const char *modified,char *e,size_t n) {
++    (void)j;(void)r;(void)s;(void)etag;(void)modified;(void)e;(void)n;assert(0);return 500;
++}
++static int action(const char *body) {
++    cJSON *o=cJSON_Parse(body);assert(o);char error[256]={0};
++    int result=browser_action(o,error,sizeof error);cJSON_Delete(o);return result;
++}
++static cJSON *wait_state(const char *state, bool active) {
++    for(unsigned i=0;i<300;i++) {
++        cJSON *o=browser_status();
++        if(!strcmp(json_text(o,"state"),state) && cJSON_IsTrue(cJSON_GetObjectItemCaseSensitive(o,"active"))==active) return o;
++        cJSON_Delete(o);struct timespec t={.tv_nsec=10000000};nanosleep(&t,NULL);
++    }
++    fprintf(stderr,"Timed out waiting for %s\n",state);abort();
++}
++static void cancel_current(void) {
++    cJSON *o=browser_status();char body[160];
++    snprintf(body,sizeof body,"{\"action\":\"cancel\",\"id\":\"%s\"}",json_text(o,"id"));
++    cJSON_Delete(o);assert(action(body)==202);cJSON_Delete(wait_state("cancelled",false));
++}
++static void no_downloads(void) { assert(!atomic_load(&captures)&&!atomic_load(&validations)&&!atomic_load(&jobs)); }
++int main(void) {
++    assert(!browser_start());
++    assert(action("{\"action\":\"sign-in\",\"sourceId\":\"other\"}")==400);
++    assert(action("{\"action\":\"sign-in\",\"sourceId\":\"vikingfile\",\"nativeDialog\":true}")==400);
++    /* A caller-supplied address must never choose a sign-in destination. */
++    assert(action("{\"action\":\"sign-in\",\"sourceId\":\"vikingfile\",\"url\":\"http://127.0.0.1/private\"}")==202);
++    cJSON *o=wait_state("waiting",true);
++    assert(cJSON_IsTrue(cJSON_GetObjectItemCaseSensitive(o,"signIn")));cJSON_Delete(o);
++    assert(atomic_load(&opens)==1);no_downloads();
++    assert(action("{\"action\":\"sign-in\",\"sourceId\":\"vikingfile\"}")==409);
++    assert(action("{\"action\":\"cancel\",\"id\":\"stale\"}")==409);
++    pthread_mutex_lock(&orbit.mutex);browser_source_changed_locked();pthread_mutex_unlock(&orbit.mutex);
++    o=browser_status();assert(cJSON_IsTrue(cJSON_GetObjectItemCaseSensitive(o,"active")));cJSON_Delete(o);
++    cancel_current();no_downloads();
++    assert(action("{\"action\":\"sign-in\",\"sourceId\":\"vikingfile\",\"returnTarget\":\"native\",\"nativeDialog\":true,\"clientId\":\"tv-test\"}")==202);
++    o=browser_status();char body[200];
++    assert(!strcmp(json_text(o,"pageUrl"),"https://vikingfile.com/login"));
++    snprintf(body,sizeof body,"{\"action\":\"opened\",\"id\":\"%s\",\"clientId\":\"tv-test\"}",json_text(o,"id"));
++    cJSON_Delete(o);assert(action(body)==202);cJSON_Delete(wait_state("waiting",true));
++    assert(atomic_load(&opens)==1); /* Native owns the dialog; no ShellUI launch. */
++    cancel_current();no_downloads();
++    open_result=-1;
++    assert(action("{\"action\":\"sign-in\",\"sourceId\":\"vikingfile\"}")==202);
++    cJSON_Delete(wait_state("failed",false));no_downloads();
++    /* The ordinary captured-download path still works after a sign-in session. */
++    setenv("ORBIT_TEST_CAPTURE_URL","https://vikingfile.com/d/example/file",1);
++    assert(action("{\"action\":\"start\",\"releaseId\":\"example\",\"storageId\":\"internal\"}")==202);
++    o=wait_state("queued",false);assert(!cJSON_IsTrue(cJSON_GetObjectItemCaseSensitive(o,"signIn")));cJSON_Delete(o);
++    assert(atomic_load(&captures)==1 && atomic_load(&validations)==1 && atomic_load(&jobs)==1);
++    browser_stop();puts("Vikingfile sign-in and download regression checks passed");return 0;
++}
