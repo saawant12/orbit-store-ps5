@@ -6,7 +6,11 @@ Vikingfile identifies an account with an **account hash**: the private code it g
 
 ## On PS5
 
-Open the **Vikingfile** account controls in Orbit’s settings and choose **Open Vikingfile account**. On the official provider page, enter your account code, complete human verification if requested and select **Login**. Return to Orbit and choose **Check sign-in**.
+In the native TV app, open **App settings → Download sources** and scroll to **Vikingfile**. In the browser, open **App settings → Vikingfile** (or **Settings → Vikingfile** in Crossbar, Cinema and Panorama). Choose **Open Vikingfile account**. On the official provider page, enter your account code, complete human verification if requested and select **Login**. Return to Orbit and choose **Check sign-in**.
+
+![Orbit 1.7.0 native Vikingfile settings with Open Vikingfile account and Check sign-in controls](../assets/1.7.0/native-vikingfile-account.png)
+
+*Native app preview before sign-in. No account code is shown.*
 
 Orbit shows **Signed in** only after Vikingfile confirms the session. Opening the page alone does not count. To manage the account or sign out, reopen the same account page. The PS5 browser and native app use separate browser stores, so you may need to sign in once in each interface you use.
 

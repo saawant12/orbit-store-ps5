@@ -242,7 +242,7 @@ For compressed downloads, **Delete archives after extracting** is a separate set
 
 ### Vikingfile downloads
 
-Select a Vikingfile option on the game's download page. In the window that opens, complete any verification yourself, then **wait without pressing Download**. Orbit Zero captures the ready file link, checks it against your selection and closes the provider window. Follow the download in Downloads.
+Select a Vikingfile option on the game's download page. Zero first uses your saved [Vikingfile sign-in](vikingfile.md) to request the file. A matching direct link starts the download without a window. If a provider window opens, complete any verification yourself, then **wait without pressing Download**. Orbit Zero captures the ready file link, checks it against your selection and closes the provider window. Follow the download in Downloads.
 
 Unwanted popup windows are blocked. Use **Back**, **Reload** or **Return to download page** if you need to return to the file page.
 

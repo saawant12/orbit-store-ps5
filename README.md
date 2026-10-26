@@ -61,7 +61,7 @@ For direct console downloads, you need a PS5 that can run homebrew ELF payloads,
 
 1. **Choose how to open Orbit.** Download the files from the [latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest), verify them and follow the table above. Use the Games version, the Media version or both.
 2. **Choose your sources.** Choose sources in the TV app’s setup screen or **App settings → Download sources**. Select the sources you want to use, including Archive.org, Vikingfile and AkiraBox, and acknowledge the download notice. Your choices apply across both versions.
-3. **Pick a download.** Open a game and select its main download button to review **Download options**. Choose **Source**, **Download using** and **Save to**, then confirm the download. Direct options download from the TV app. Vikingfile browser options open the provider page on the PS5, keeping your selected game, source and drive. Choose **Open Vikingfile on PS5** in the native app or **Open download page on PS5** in the browser version. For **Vikingfile and AkiraBox**, complete verification and wait without pressing Download. Orbit captures the matching link and returns to the app automatically.
+3. **Pick a download.** Open a game and select its main download button to review **Download options**. Choose **Source**, **Download using** and **Save to**, then confirm the download. Direct options download from the TV app. Vikingfile first checks for a direct link using your sign-in; options needing verification open the provider page on the PS5, keeping your selected game, source and drive. Choose **Open Vikingfile on PS5** in the native app or **Open download page on PS5** in the browser version. For **Vikingfile and AkiraBox**, complete verification and wait without pressing Download. Orbit captures the matching link and returns to the app automatically.
 4. **Follow your queue.** Open Downloads on the TV or a paired device to check progress, pause or resume.
 
 The TV app includes Orbit's download service and can start it through a compatible ELF loader on **port 9021**. You can also start `orbit_store.elf` yourself. The Media-tab shortcut opens the browser version while the service is running. After a reboot, start your jailbreak before opening Orbit. See the [setup and update guide](guides/getting-started.md) for installation, updates and phone pairing.
@@ -70,7 +70,7 @@ The TV app includes Orbit's download service and can start it through a compatib
 
 Open Orbit from your Games row and use the controller to browse, explore and choose a download. The native app shares your catalogue, favourites and download queue with the browser version.
 
-*The updated previews show the released Orbit 1.5.0 browser and desktop interfaces, rendered locally with the current catalogue. The separate Hungarian example shows the native app.*
+*The previews below were captured for Orbit 1.5.0. The new [Files](guides/files.md), [Saved filters](guides/saved-filters.md), [Vikingfile](guides/vikingfile.md) and [Stream & install](guides/stream-install.md) guides show the 1.7.0 screens.*
 
 ### Discover, browse and choose a download
 
@@ -92,7 +92,7 @@ Open Orbit from your Games row and use the controller to browse, explore and cho
 
 ![Black Myth: Wukong in Orbit Store 1.5.0 with Add-ons and download controls](assets/1.5.0/store-game-details.jpg)
 
-**Choose how and where to download.** Review the source, format, delivery method and drive together. Direct options download from the TV app; Vikingfile browser options open the provider page on PS5 and keep your choices when you return. See the [download guide](guides/downloads.md), including [TorBox setup](guides/downloads.md#optional-download-through-torbox).
+**Choose how and where to download.** Review the source, format, delivery method and drive together. Direct options download from the TV app; Vikingfile uses your saved sign-in when available and opens its provider page if verification is needed, keeping your choices when you return. See the [download guide](guides/downloads.md), including [TorBox setup](guides/downloads.md#optional-download-through-torbox).
 
 ![Orbit Store 1.5.0 download options and automatic Vikingfile link-capture instructions](assets/1.5.0/store-download-options.jpg)
 
@@ -325,7 +325,7 @@ Source choices are saved on the console and shared by paired devices. Turning of
 
 ### Provider download steps
 
-- **Vikingfile on PS5:** open the provider page, complete verification and **wait without pressing Download**. Orbit captures the ready link and returns to the browser or native app automatically. In **Orbit Zero 1.4.0 or later**, complete verification and wait without pressing Download in the computer’s provider window too; Zero captures the matching link and closes the window.
+- **Vikingfile:** Orbit first requests the selected file with your [Vikingfile account session](guides/vikingfile.md), when signed in. A matching direct link starts the download without a provider window. If verification is needed, complete it and **wait without pressing Download**. Orbit captures the ready link and returns to the app. This applies to the current PS5 apps and Orbit Zero; each keeps its own sign-in.
 - **AkiraBox:** open the provider page, complete verification and **wait without pressing Download**. Orbit captures the ready link and returns to the PS5 browser or native app automatically. Orbit Zero closes its provider window when the file is ready.
 
 On a paired phone, these steps open on the PS5. In Orbit Zero, they open on your computer. See the [full provider instructions](guides/downloads.md#akirabox-verify-then-wait).
@@ -358,7 +358,7 @@ In **1.5.0** and later, completed downloads offer **Install on PS5** for PKG/FPK
 
 When reporting a bug, follow the [bug report format](.github/ISSUE_TEMPLATE/bug_report.md) and [open a bug report](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md). Include your setup, the exact error and a diagnostic report when available, and complete the sections relevant to your issue.
 
-- **No storage:** if internal storage or your M.2 SSD disappeared in 0.9.0, update to the latest release, restart Orbit and refresh storage. For external drives, check that the drive is connected to the PS5. A drive connected to your computer is not PS5 storage.
+- **No storage:** if internal storage or your M.2 SSD disappeared in 0.9.0, update to the latest release, restart Orbit and reopen **Library → Files**. Drive information refreshes automatically. For external drives, check that the drive is connected to the PS5. A drive connected to your computer is not PS5 storage.
 - **Drive disconnected:** reconnect the original destination. Orbit will not silently switch to internal storage.
 - **Not enough space:** free space on the selected destination before retrying.
 - **Archive.org asks for an account:** [sign in to Archive.org](guides/downloads.md#archiveorg-sign-in) in the app handling the download, then retry. Signing in cannot restore a file removed by its provider.

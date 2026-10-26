@@ -106,7 +106,7 @@ Download options also show known firmware requirements using the last paired PS5
 
 **1.7.0** adds [Vikingfile account sign-in](vikingfile.md). Zero tries the signed-in session first and opens the provider page when verification is needed.
 
-For Vikingfile, Zero opens a separate browser window on the computer. Complete any provider verification and wait without pressing Download. Zero captures and checks the ready file link, closes its provider window and adds the download to the queue. Provider logins stay in a separate persistent browser profile on the computer. Unwanted popups are blocked; **Back**, **Reload** and **Return to download page** let you get back to the file.
+For Vikingfile, Zero first requests the selected file using your saved [account session](vikingfile.md). A matching direct link starts the download without a window. If verification is needed, Zero opens a separate browser window on the computer. Complete any provider verification and wait without pressing Download. Zero captures and checks the ready file link, closes its provider window and adds the download to the queue. Provider logins stay in a separate persistent browser profile on the computer. Unwanted popups are blocked; **Back**, **Reload** and **Return to download page** let you get back to the file.
 
 For **AkiraBox**, open the provider page, complete verification and wait without pressing Download. Zero captures the ready link and closes the provider window. Supported ZIP, RAR and 7z downloads extract on the computer before transfer; see [archive downloads](downloads.md#zip-rar-and-7z-downloads).
 
@@ -146,7 +146,7 @@ Open **Downloads → Download settings → Download recovery** to choose how oft
 
 ### Accounts for computer downloads
 
-Open **Downloads → Download settings**, or **Settings → Download settings** in Crossbar, Cinema or Panorama. **Archive.org** lets you sign in for account-required downloads; **TorBox** lets you connect your API key and choose TorBox on supported download options. Both connections are kept on the computer and are separate from the accounts configured on your PS5. See [Archive.org setup](downloads.md#archiveorg-sign-in) and [desktop TorBox](downloads.md#torbox-in-orbit-zero).
+Open **Downloads → Download settings**, or **Settings → Download settings** in Crossbar, Cinema or Panorama. **Archive.org** lets you sign in for account-required downloads; **TorBox** lets you connect your API key and choose TorBox on supported download options. **Vikingfile** lets you sign in with your account hash and check or clear the saved session; see [Vikingfile accounts](vikingfile.md). All three connections are kept on the computer and are separate from the accounts configured on your PS5. See [Archive.org setup](downloads.md#archiveorg-sign-in) and [desktop TorBox](downloads.md#torbox-in-orbit-zero).
 
 ### Export a log for bug reports
 

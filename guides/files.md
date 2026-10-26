@@ -4,6 +4,10 @@
 
 Open **Library → Files** in the browser, native TV app or Orbit Zero. Choose internal storage, a connected USB drive or an available M.2/extended drive. Each drive shows its free space.
 
+![Orbit 1.7.0 native Files view with folders, file sizes and separate folder action buttons](../assets/1.7.0/native-files.png)
+
+*Files in the native PS5 app. Select a folder to open it; use its … button for actions.*
+
 ## Browse folders and choose actions
 
 Select a folder to open it. **Circle** or **Escape** returns to its parent folder, then the drive list, then Library. An open dialog or menu closes before you leave the folder. **Up one folder** and **All drives** are also available on screen.

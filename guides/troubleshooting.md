@@ -90,7 +90,7 @@ Orbit automatically tries the [known source passwords](../README.md#automatic-ar
 
 ### Internal storage or an M.2 SSD is missing
 
-If the drive disappeared after updating to 0.9.0, install **Orbit 1.0.0 or later**, restart the download service and refresh storage. Native app users should also update the TV app to **1.3.0 or later**, which includes the fixed service. Replacing the FFPKG alone does not replace a service that is already running.
+Update to the [latest matching Orbit apps](https://github.com/saawant12/orbit-store-ps5/releases/latest), restart the download service and reopen **Library → Files**. Drive information refreshes automatically. Native app users should update the TV app too. Replacing the FFPKG alone does not replace a service that is already running.
 
 An available drive appears even if its `homebrew` folder has not been created yet. Orbit creates the folder when needed and checks actual write access when a download starts or resumes. If the destination cannot be written, the download stops and existing partial data is kept.
 
@@ -122,15 +122,15 @@ In Orbit Zero, open **Downloads → Recover downloads → Choose file** and choo
 
 ### A completed download is missing from Library
 
-For downloads handled by Orbit Store, check **Downloads → Finished → Location** in the browser or native app. Use a file manager to check that exact saved path on the selected drive. Extracted downloads may be a folder containing several files. The recorded path remains in history even if a file is later moved or deleted.
+For downloads handled by Orbit Store, check **Downloads → Finished → Location** in the browser or native app. Open **Library → Files** to check that exact saved path on the selected drive. Extracted downloads may be a folder containing several files. The recorded path remains in history even if a file is later moved or deleted.
 
-Orbit Zero download details also show the full PS5 destination path and the computer path while a cached copy remains. Check the selected PS5 drive's [homebrew folder](downloads.md#where-downloads-are-saved). The computer download finishing is not enough; wait for **Transfer to PS5** to complete too.
+Orbit Zero download details also show the full PS5 destination path and the computer path while a cached copy remains. Check the selected PS5 drive's [homebrew folder](downloads.md#where-downloads-are-saved). For **Send to PS5**, wait for **Transfer to PS5** to complete too. If you used **Stream & install**, check the installation result instead; it does not leave a full package in the PS5 download folder.
 
 If the file exists but does not appear in Library or on the home screen, check its format and the installation or mounting method supported by your console setup. A finished download is not automatically installed, and ShadowMount may not list every format. PKG and FPKG packages need installing first; see [below](#a-downloaded-pkg-or-fpkg-game-doesnt-appear). If the file is absent, include the app, game, source, format, destination and completion screen in your report; do not delete the queue or remaining files while investigating.
 
 ### A downloaded PKG or FPKG game doesn't appear
 
-PKG and FPKG options are `.pkg` packages, for PS4 or PS5 games. Orbit saves them to the chosen drive's `homebrew` folder. In **1.5.0** and later, open the completed download’s **Downloaded files**, select the package and choose **Install on PS5**. With Zero, finish transferring it to the PS5 first. Earlier versions need a compatible package installer. ShadowMountPlus does not mount `.pkg` files, so **Scan for games** is not a substitute for installation.
+PKG and FPKG options are `.pkg` packages, for PS4 or PS5 games. Orbit saves them to the chosen drive's `homebrew` folder. In **1.5.0** and later, open the completed download’s **Downloaded files**, select the package and choose **Install on PS5**. With Zero, either finish transferring it to the PS5 first or use [Stream & install](stream-install.md) from the completed computer copy. Earlier versions need a compatible package installer. ShadowMountPlus does not mount `.pkg` files, so **Scan for games** is not a substitute for installation.
 
 Check installation status separately from download completion. If **Check installation** appears after a restart or lost response, use it and check the PS5 home screen before trying again. Orbit retains the downloaded file if installation fails. See [installation help](install-games.md#if-installation-needs-attention).
 
@@ -174,8 +174,6 @@ You can also save a report as a file. In the browser, choose **App settings → 
 
 When reporting a problem in [Issues](https://github.com/saawant12/orbit-store-ps5/issues), include the Orbit version, PS5 firmware, loader, the steps taken and the displayed error. For a display or navigation problem, include the interface (Store, Crossbar, Cinema or Panorama) and whether you used a controller, keyboard, mouse or touch. Remove any private details before posting. The reported etaHEN payload-toggle interaction remains under investigation.
 
-[Getting started](getting-started.md) · [Download guide](downloads.md) · [Library guide](library.md) · [Appearance guide](appearance.md) · [Project home](../README.md)
-
 ## Files and account checks in 1.7.0
 
 - **A Files action says storage is busy:** pause active downloads/transfers and wait for any current installation or storage operation to finish. Opening folders remains available.
@@ -183,3 +181,5 @@ When reporting a problem in [Issues](https://github.com/saawant12/orbit-store-ps
 - **Circle exits a folder:** it should go to the parent, then all drives, then Library. Update all apps to the matching 1.7.0 build if you still see the old behaviour.
 - **Vikingfile says sign-in could not be confirmed:** use Check sign-in or open its account page. A network error or provider challenge is not proof you signed out. See [account setup](vikingfile.md).
 - **Stream & install is missing:** finish the computer download/extraction, connect the paired PS5 and run the matching receiver. See [streaming installation](stream-install.md).
+
+[Getting started](getting-started.md) · [Download guide](downloads.md) · [Library guide](library.md) · [Appearance guide](appearance.md) · [Project home](../README.md)

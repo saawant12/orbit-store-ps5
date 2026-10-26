@@ -9,6 +9,10 @@
 3. Open the completed item in **Downloads**, choose **Stream & install**, and select the package. For a bundle, choose each package explicitly.
 4. Keep Zero and the PS5 running until the console confirms installation.
 
+![Orbit Zero streaming a completed SteamWorld Dig package to the PS5 installer](../assets/1.7.0/zero-stream-install.png)
+
+*Stream & install in Orbit Zero, showing installation progress separately from the completed computer download.*
+
 The computer copy is kept. Zero prevents idle sleep while sharing, protects that file from cache cleanup, and asks before quitting. Closing a laptop or losing power can still interrupt the connection. Allow Orbit Zero on your private network if your firewall asks.
 
 Downloading, sharing and installation have separate states. **Stream & install** does not rebuild packages or change firmware, licence, base-game or DLC requirements. It is available in Zero’s four interfaces; the standalone ELF/browser and native app continue to install files already on the console.
