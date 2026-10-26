@@ -77,8 +77,6 @@ The TV app includes Orbit's download service and can start it through a compatib
 
 Open Orbit from your Games row and use the controller to browse, explore and choose a download. The native app shares your catalogue, favourites and download queue with the browser version.
 
-*The previews below were captured for Orbit 1.5.0. The new [Files](guides/files.md), [Saved filters](guides/saved-filters.md), [Vikingfile](guides/vikingfile.md) and [Stream & install](guides/stream-install.md) guides show the 1.7.0 screens.*
-
 ### Discover, browse and choose a download
 
 **Start with something new.** Discover opens first. **New on Orbit** brings featured picks and recent additions to the first row, followed by **Latest releases**. Move down to All games to explore a grid that loads more games as you scroll. PS4 and PS5 editions have their own platform labels and download choices.
