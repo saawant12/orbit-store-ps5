@@ -8,7 +8,7 @@ When a game finishes downloading, install it without leaving Orbit. Choose **Ins
 
 **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** brings Orbit to Mac, Windows and Linux. Download games on your computer and send them to your PS5 straight away or later, without your PS5 needing internet access.
 
-Explore **2,045 games: 1,107 PS5 games and 938 PS4 games**, plus **542 DLCs and add-ons for 138 games**, with single-file downloads from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
+Explore **2,090 games: 1,119 PS5 games and 971 PS4 games**, plus **626 DLCs and add-ons for 192 games**, with single-file downloads from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
 
 <p>
   <a href="assets/1.5.0/native-crossbar-discover.jpg?raw=1"><img src="assets/1.5.0/native-crossbar-discover.jpg" width="48%" alt="Native Crossbar Discover with NieR:Automata selected"></a>
@@ -33,13 +33,17 @@ Explore **2,045 games: 1,107 PS5 games and 938 PS4 games**, plus **542 DLCs and 
 - **Archive.org sign-in.** Sign in from the PS5 apps or Orbit Zero to access downloads that require an account. See [account setup](guides/downloads.md#archiveorg-sign-in).
 - **Find the right games.** Select several formats or sources in Browse, hide games already installed or saved on a drive, and use eight [game tags](guides/downloads.md#game-tags), including PlayStation exclusives, local co-op and VR support.
 - **A Library for your drives.** See installed games and available files. Manage compatible sources through ShadowMount.
-- **DLC comes to Orbit.** Browse **542 add-ons for 138 games**, including expansions, content packs, activation packages and bundles. Open **Add-ons** or find extras from a game’s details. Available across the PS5 apps and Orbit Zero in all four interfaces. See the [DLC guide](guides/add-ons.md).
+- **DLC comes to Orbit.** Browse **626 add-ons for 192 games**, including expansions, content packs, activation packages and bundles. Open **Add-ons** or find extras from a game’s details. Available across the PS5 apps and Orbit Zero in all four interfaces. See the [DLC guide](guides/add-ons.md).
 - **Install games without leaving Orbit.** Once a PKG/FPKG is saved on your PS5, open its entry in **Downloads** and choose **Install on PS5**. Compatible images and game folders trigger a ShadowMount scan automatically when it is running. See [installing downloaded games](guides/install-games.md).
 - **Know what your firmware can run.** Download choices show known firmware requirements. Options that do not match your PS5 are listed last with a warning and remain selectable.
 - **Notifications on your phone and PS5.** Choose download, installation and update alerts in **App settings → Notifications**. Use ntfy.sh or your own server to receive them on your phone or computer. See [notification setup](guides/notifications.md).
 - **Control from your phone.** Pair once to browse, queue downloads and check progress on the same PS5.
 - **Updates when you choose.** Orbit tells you when an update is available. Choose **Update Orbit** in Updates to update the TV app and download service together, or **Restart Orbit** to restart only the service. Installation and payload-manager setup remain your choice.
 - **No Orbit account. No telemetry.** Your paired devices connect to Orbit on your local network.
+
+## New in 1.7.0
+
+Orbit 1.7.0 adds [Files](guides/files.md), [shared saved filters](guides/saved-filters.md), [Vikingfile account sign-in](guides/vikingfile.md) and [Stream & install from Zero](guides/stream-install.md). Cinema’s Library and Downloads use Store’s layout in Cinema colours. These changes require the matching new apps; they are not added by refreshing the catalogue.
 
 ## Get started
 
@@ -188,13 +192,13 @@ The desktop app supports **ARM64 and x64** computers and the same **11 interface
 
 ## Beta status
 
-**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.6.0** have these version numbers:
+**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.7.0** have these version numbers:
 
 | Component | Version |
 | --- | --- |
-| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.6.0** |
-| Native TV app (`PPSA99177.ffpkg`) | **1.10.0** |
-| Orbit Zero for desktop | **1.6.0** |
+| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.7.0** |
+| Native TV app (`PPSA99177.ffpkg`) | **1.11.0** |
+| Orbit Zero for desktop | **1.7.0** |
 
 The TV app has its own version number; these files belong to the same release. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
 
@@ -271,10 +275,10 @@ Open **Library** to see installed games and game files reported on your drives, 
 
 Run a compatible **ShadowMount with its v1 local HTTP API enabled** on the same PS5. Orbit reads that local inventory and shows the actions your ShadowMount version supports. It does not start ShadowMount or change its configuration.
 
-- **Refresh** updates the view. **Scan for games** asks ShadowMount to discover sources and may register or mount them after confirmation.
+- Library and drive information refresh automatically, and game sizes are measured in the background. **Scan for games** remains a manual fallback.
 - Open a game to **mount or unmount** its compatible source. Orbit does not launch games or uninstall them.
 - **Copy** keeps the original; **Move** asks ShadowMount to remove it after a successful transfer. Unmount the source first, select the destination and confirm. Pause active and queued Orbit downloads before starting.
-- Open **Storage** to check drive capacity and request game sizes. Follow copy/move progress and cancel while ShadowMount reports it is safe. A storage job can continue if Orbit stops.
+- Open **Library → Files** to browse drives and manage files. Folders open directly; their separate action controls let you copy, move, rename, delete, unpack and install. See the [Files guide](guides/files.md).
 
 If ShadowMount is absent or its API is incompatible, Library explains what is missing. A disconnected source stays distinguishable from an available one; refreshing does not delete files.
 
@@ -342,6 +346,7 @@ For password-protected archives, Orbit automatically tries the supplied password
 - `www.DLPSGAME.COM`
 - `downloadgameps3.com`
 - `hako`
+- `pippo`
 
 Passwords are case-sensitive. If none works, select **Enter archive password** on the download, enter the password provided by its source, then choose **Retry extraction**. Orbit keeps the downloaded archive so you can retry without downloading it again.
 

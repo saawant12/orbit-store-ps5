@@ -175,3 +175,11 @@ You can also save a report as a file. In the browser, choose **App settings → 
 When reporting a problem in [Issues](https://github.com/saawant12/orbit-store-ps5/issues), include the Orbit version, PS5 firmware, loader, the steps taken and the displayed error. For a display or navigation problem, include the interface (Store, Crossbar, Cinema or Panorama) and whether you used a controller, keyboard, mouse or touch. Remove any private details before posting. The reported etaHEN payload-toggle interaction remains under investigation.
 
 [Getting started](getting-started.md) · [Download guide](downloads.md) · [Library guide](library.md) · [Appearance guide](appearance.md) · [Project home](../README.md)
+
+## Files and account checks in 1.7.0
+
+- **A Files action says storage is busy:** pause active downloads/transfers and wait for any current installation or storage operation to finish. Opening folders remains available.
+- **A copied source changed:** keep the original and retry after the program changing it has stopped. Orbit did not publish the incomplete copy.
+- **Circle exits a folder:** it should go to the parent, then all drives, then Library. Update all apps to the matching 1.7.0 build if you still see the old behaviour.
+- **Vikingfile says sign-in could not be confirmed:** use Check sign-in or open its account page. A network error or provider challenge is not proof you signed out. See [account setup](vikingfile.md).
+- **Stream & install is missing:** finish the computer download/extraction, connect the paired PS5 and run the matching receiver. See [streaming installation](stream-install.md).

@@ -17,9 +17,15 @@ In **1.6.0**, enable **App settings → Storage → Installed packages** to dele
 
 Installation needs a compatible PS5 setup. It does not change a game's firmware, licence or jailbreak requirements. Orbit does not launch games or uninstall them.
 
+## Install from Files
+
+In **1.7.0**, open **Library → Files**, select a package or a folder’s **…** menu, and choose **Install on PS5**. Compatible images and game folders use ShadowMount. See [Files](files.md).
+
 ## Install from Orbit Zero
 
 You can download to **This computer** without a connected PS5. When ready, pair or reconnect your PS5 and choose **Send to PS5**. After the transfer finishes, open **Downloaded files** and choose **Install on PS5**.
+
+In **1.7.0**, you can instead choose **Stream & install** for a completed computer package, avoiding the extra PS5 download copy. See [streaming installation](stream-install.md).
 
 Installation runs on the paired PS5, not on your computer. Keep the console awake and its matching Orbit service running. The computer-to-PS5 transfer and installation controls use your local network; downloading new content still requires provider access on the computer.
 
@@ -41,7 +47,7 @@ For a bundle, select and install each package you intend to use. Orbit does not 
 
 ## If installation needs attention
 
-- **The button is missing:** check the running ELF as well as the app version. The file must have finished reaching the PS5. exFAT images and game folders use ShadowMount, not **Install on PS5**.
+- **The button is missing:** check the running ELF as well as the app version. For ordinary installation the file must have finished reaching the PS5; Zero’s **Stream & install** uses the completed computer copy. Images and game folders use ShadowMount, including the **Install on PS5** action in Files.
 - **The original drive is unavailable:** reconnect the drive containing the downloaded file. Orbit keeps the download's original location rather than selecting a different copy.
 - **The installer reports an error:** follow the message and check space, package compatibility and your jailbreak. The downloaded file is kept for another attempt.
 - **Installation status is unconfirmed:** use **Check installation** when offered and check the PS5 home screen. Orbit does not automatically submit an uncertain installation again after a restart or lost response.

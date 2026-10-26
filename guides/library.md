@@ -1,10 +1,10 @@
 # Your Library and storage
 
-Library is available in both the native TV app and browser version. Both read the same ShadowMount inventory and share storage operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
+**For Orbit 1.7.0.** Use the matching ELF, native app and Orbit Zero. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
 
 ![Native TV app Library with installed and on-drive games](../assets/0.9.0/native-library.png)
 
-Library shows installed games and sources available on your drives, using the inventory from a compatible **ShadowMount v1 local API** on the same PS5. It works independently of your download-source choices. Orbit does not start ShadowMount or change its configuration.
+Library shows installed games and sources available on your drives, using a compatible **ShadowMount v1 local API** on the same PS5. Orbit also fills gaps for installed PKG games that older ShadowMount versions omit. It works independently of your download-source choices. Orbit does not start ShadowMount or change its configuration.
 
 ![Library with installed and on-drive status](../assets/0.9.0/desktop-library.jpg)
 
@@ -31,9 +31,9 @@ The **1.5.0** apps provide **Install on PS5** to completed PKG/FPKG downloads, i
 
 The **Add-ons** page is a separate collection. Finding the base game in Library does not mark its DLC as installed or confirm that an add-on matches its edition or version. Check the add-on’s requirements and its own installation status in Downloads. See [the DLC guide](add-ons.md).
 
-## Refresh or scan
+## Automatic Library updates
 
-**Refresh library** reads the current inventory. It does not scan, mount or install games. **Scan for games** asks ShadowMount to discover sources and may register or mount them after you confirm.
+Library and drive information refresh automatically. Game sizes show **Measuring…** until known. When Files puts a compatible game into `homebrew`, or a drive is connected, Orbit requests a ShadowMount scan at most once a minute. **Looking for new games…** appears while the scan is pending. **Try again** appears when the provider is not responding. **Scan for games** remains a manual fallback and may register or mount games after confirmation.
 
 In **1.5.0** and later, a newly completed exFAT, FFPFSC or game-folder download or transfer automatically requests a scan when a compatible ShadowMount version is running. Orbit checks registration separately. If ShadowMount was unavailable, start it and use **Scan with ShadowMount** in the download’s details when offered. Older completed downloads are not all rescanned automatically on upgrade.
 
@@ -45,7 +45,7 @@ Open a Library game to see its available actions. Mount or unmount a compatible 
 
 Copy keeps the original. Move asks the provider to remove the original after a successful transfer. Follow progress in Library and cancel while the provider reports that it is safe. A provider storage job can continue independently if Orbit closes.
 
-Open **Storage** to check free space and measure game sizes. Available actions depend on your ShadowMount version, drive format and free space. If an action is unavailable or fails, check the displayed message and see [Troubleshooting](troubleshooting.md).
+Open **Library → Files** to check free space and manage files and folders. Select a folder to open it; Circle goes back one folder. See the [Files guide](files.md). Game sizes are measured automatically. Available actions depend on your ShadowMount version, drive format and free space. If an action is unavailable or fails, check the displayed message and see [Troubleshooting](troubleshooting.md).
 
 Orbit does not launch games or uninstall them. Downloads and Library actions are separate; a completed download is a saved file, not a promise that it is installed or ready to launch.
 

@@ -2,7 +2,7 @@
 
 **Available in 1.5.0 and later.** Use the matching Orbit Store ELF, native PS5 app and Orbit Zero from the same release. Refreshing the catalogue alone does not add the Add-ons page to older apps.
 
-The catalogue has **542 add-ons for 138 games**, with **544 download options**. These are counted separately from base games.
+The catalogue has **626 add-ons for 192 games**, with **628 download options**. These are counted separately from base games.
 
 ## Find add-ons
 

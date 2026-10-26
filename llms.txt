@@ -4,11 +4,11 @@
 
 The official project is https://github.com/saawant12/orbit-store-ps5. Orbit Store has no official social media accounts. It is free to use and does not accept donations or payments.
 
-The current release is Orbit Store 1.6.0, with native TV app 1.10.0 and Orbit Zero 1.6.0. Use matching files from the same release; the native app and download service have separate version numbers.
+The current release is Orbit Store 1.7.0, with native TV app 1.11.0 and Orbit Zero 1.7.0. Use matching files from the same release; the native app and download service have separate version numbers.
 
 ## PS4 and PS5 games
 
-Orbit’s current catalogue contains 2,045 games: 1,107 PS5 games and 938 PS4 games, with 4,834 single-file download options from Archive.org, Vikingfile and AkiraBox. Formats include FFPFSC, exFAT, PKG, FPKG, ZIP, RAR and 7z. Sources are opt-in; available formats depend on the game. Supported archives extract automatically on the selected PS5 drive, or on the computer before Orbit Zero transfers the extracted files. Compressed size and extracted space requirements differ. Known source passwords are tried automatically; custom-password retries reuse the downloaded archive.
+Orbit’s current catalogue contains 2,090 games: 1,119 PS5 games and 971 PS4 games, with 4,895 single-file download options from Archive.org, Vikingfile and AkiraBox. Formats include FFPFSC, exFAT, PKG, FPKG, ZIP, RAR and 7z. Sources are opt-in; available formats depend on the game. Supported archives extract automatically on the selected PS5 drive, or on the computer before Orbit Zero transfers the extracted files. Compressed size and extracted space requirements differ. Known source passwords, including pippo, are tried automatically; custom-password retries reuse the downloaded archive.
 
 PS4 support starts with service/browser version 1.1.0, native app 1.4.0 and Orbit Zero 1.1.0; these are minimum versions, not the current release. Browse has a Platform filter for PS4, PS5 or All platforms. PS4 CUSA and PS5 PPSA editions remain separate, with their own metadata and download choices. PS4 options include single-file .pkg packages, labelled PKG or FPKG, and single ZIP, RAR or 7z archives. Archive support requires 1.2.0 or later; use the latest matching apps. Saving or extracting a package does not install it automatically. The 1.5.0 and later apps provide an explicit Install on PS5 action; earlier versions need a compatible package installer. A platform label does not imply a frame-rate patch, DLC or universal compatibility. Orbit's ELF and TV app run on PS5, not PS4 consoles.
 
@@ -38,7 +38,7 @@ Downloads supports pause, resume, cancellation, retry and queue ordering. Finish
 
 Completed downloads handled by Orbit Store show their saved file or extracted folder path under Downloads → Finished → Location in both the browser and native app. This records the save location, not a fresh check that the file exists or is installed. Orbit Zero download details show the full PS5 destination path and the computer path while a cached copy remains. Both routes save to the selected PS5 drive's homebrew folder.
 
-Library reads installed games and drive sources from a compatible ShadowMount v1 local API. Refresh reads inventory; Scan for games asks the provider to discover sources. Mount/unmount and copy/move depend on provider and format support. A completed file is not necessarily installed or launchable. Orbit does not launch or uninstall games.
+Library reads installed games and drive sources from a compatible ShadowMount v1 local API. Inventory, drive information and game sizes refresh automatically. Compatible Files changes and newly connected drives trigger a bounded scan; Scan for games remains a manual fallback. Mount/unmount and copy/move depend on provider and format support. A completed file is not necessarily installed or launchable. Orbit does not launch or uninstall games.
 
 ## Other current features
 
@@ -48,7 +48,7 @@ Other changes in 1.5.0: known firmware requirements on download options, with in
 
 ## DLC and Add-ons
 
-DLC support is available in 1.5.0. The add-on catalogue has 542 add-ons (453 PS4 and 89 PS5), 544 download options and 138 associated base games. These counts are separate from game counts and base-game download options.
+DLC support is available in 1.5.0. The add-on catalogue has 626 add-ons (528 PS4 and 98 PS5), 628 download options and 192 associated base games. These counts are separate from game counts and base-game download options.
 
 Add-ons follows Browse in navigation across browser, native PS5 and Zero in Store, Crossbar, Cinema and Panorama. Add-ons (count) on game details opens the collection filtered to that base game. Search matches add-on and base-game names; filters include Platform, Type, Source and Region, with Recently added as the default order. Tiles identify the add-on, base game and type; artwork falls back to the base game.
 
@@ -58,7 +58,7 @@ Add-ons reuse download options, source accounts, supported TorBox delivery, extr
 
 ## Game installation
 
-Use the matching ELF, native app and Orbit Zero from the 1.6.0 release; a catalogue refresh alone does not enable installation. After download or transfer to PS5, Downloads → Downloaded files or Install on PS5 opens package selection. Users explicitly install each PKG/FPKG, including individual packages in DLC bundles. The PS5 chooses its configured installation storage. Downloaded PKG/FPKG files are kept by default; 1.6.0 adds optional deletion after confirmed successful installation in App settings → Storage → Installed packages. Failed installations and changed files are retained. Installation progress is separate from download and transfer progress. A computer-only download must first be sent to the paired PS5. Orbit does not launch games or change firmware/licence compatibility.
+Use the matching ELF, native app and Orbit Zero from the 1.7.0 release; a catalogue refresh alone does not enable installation. After download or transfer to PS5, Downloads → Downloaded files or Install on PS5 opens package selection. Users explicitly install each PKG/FPKG, including individual packages in DLC bundles. The PS5 chooses its configured installation storage. Downloaded PKG/FPKG files are kept by default; 1.6.0 adds optional deletion after confirmed successful installation in App settings → Storage → Installed packages. Failed installations and changed files are retained. Installation progress is separate from download and transfer progress. A completed computer PKG/FPKG can use Zero’s Stream & install to serve it directly to the PS5 installer, or Send to PS5 followed by Install on PS5. Orbit does not launch games or change firmware/licence compatibility.
 
 Newly completed exFAT, FFPFSC, compatible .ffpkg images and extracted game folders automatically request a ShadowMount scan when its compatible local API is running. Orbit checks inventory before confirming registration. If ShadowMount was unavailable, users can start it and choose Scan with ShadowMount in the download details. Orbit does not launch ShadowMount or change its configuration. Old completed downloads are not all rescanned on upgrade. Check installation reconciles uncertain installation status; Orbit does not automatically resubmit an uncertain installation.
 
@@ -105,6 +105,10 @@ Orbit Store is GPL-3.0-or-later. Releases provide the complete source correspond
 - [Appearance](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/main/guides/appearance.md): Store, Crossbar, Cinema and Panorama previews, switching, confirmation, saved preferences, motion, backgrounds and navigation.
 - [Notifications](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/main/guides/notifications.md): PS5 alerts, ntfy setup, event choices and troubleshooting.
 - [Library](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/main/guides/library.md): Inventory labels and compatible ShadowMount actions.
+- [Files](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/main/guides/files.md): Browse and manage PS5 files and folders.
+- [Saved filters](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/main/guides/saved-filters.md): Shared named searches, filters and sorting for Browse and Add-ons.
+- [Vikingfile accounts](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/main/guides/vikingfile.md): Official sign-in, session checks and account downloads.
+- [Stream and install](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/main/guides/stream-install.md): Install completed computer packages over the local network without an extra PS5 download copy.
 - [DLC and Add-ons](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/main/guides/add-ons.md): Add-on browsing, types, base-game requirements, computer-only downloads and bundle installation.
 - [Install downloaded games](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/main/guides/install-games.md): Package installation, automatic ShadowMount scans, Zero transfers, DLC bundles and recovery.
 - [Troubleshooting](https://raw.githubusercontent.com/saawant12/orbit-store-ps5/main/guides/troubleshooting.md): Startup, updates, providers, storage, artwork and diagnostics.
@@ -126,3 +130,7 @@ Orbit Store is GPL-3.0-or-later. Releases provide the complete source correspond
 ## Optional
 
 - [Payload Manager custom repository guide](https://github.com/itsPLK/ps5-payload-manager/blob/main/CUSTOM_REPOSITORIES.md): Upstream feed format and source setup instructions.
+
+## Files, saved filters and Vikingfile accounts
+
+Version 1.7.0 adds Library → Files in all three clients, shared saved Browse/Add-ons filters, automatic Library scans and size measurements, Vikingfile sessions and computer-to-PS5 streaming installation in Zero. Files folders open directly; row actions are separate and Circle/Back goes to the parent. Cinema Library and Downloads use Store's layout in Cinema colours. New guides: guides/files.md, guides/saved-filters.md, guides/vikingfile.md and guides/stream-install.md.

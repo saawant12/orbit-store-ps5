@@ -1,6 +1,6 @@
 # Find and download a game
 
-Orbit’s current catalogue includes **2,045 games: 1,107 PS5 games and 938 PS4 games**, with single-file options from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit’s current catalogue includes **2,090 games: 1,119 PS5 games and 971 PS4 games**, with single-file options from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 Settings paths in this guide use the Store layout. For the browser’s other layouts, see the [Settings page equivalents](appearance.md#find-settings-after-switching).
 
@@ -230,3 +230,7 @@ Orbit Zero download details show **PS5 location** and **Computer location** whil
 Orbit checks its catalogue on startup and every six hours. Use **App settings → Game catalogue → Refresh catalogue** for a manual check. You can browse the saved catalogue offline, and queued downloads keep the files you originally chose. New games and corrected release dates arrive without reinstalling Orbit, within the platforms supported by your app version. PS4 support itself requires the 1.1.0 app update.
 
 [Getting started](getting-started.md) · [Troubleshooting](troubleshooting.md) · [Project home](../README.md)
+
+## New in 1.7.0
+
+Use [Vikingfile sign-in](vikingfile.md) to request links with your account session, [saved filters](saved-filters.md) to reuse searches, and [Files](files.md) to manage downloaded content. Zero can [stream a completed package to the PS5 installer](stream-install.md). The built-in archive password list also includes `pippo`; a custom password can still be entered when needed.
