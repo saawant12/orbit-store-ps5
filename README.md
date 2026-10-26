@@ -23,23 +23,32 @@ Explore **2,090 games: 1,119 PS5 games and 971 PS4 games**, plus **626 DLCs and 
 
 > **Also from Orbit: [Orbit Play](https://github.com/saawant12/orbit-play-ps5)** — Stream your jailbroken PS5 to Mac, Windows or Linux over your local network, without PSN sign-in. **Beta available now.**
 
-## Built around the console
+## Features
 
-- **A native app for your TV.** Browse, Discover, Add-ons, Library and Downloads, built for your controller. Save favourites with Square in Store, or Triangle in the other native interfaces. Your downloads keep running when you close the app.
-- **One link per download.** Choose a single-file FFPFSC, exFAT, PKG, FPKG, ZIP, RAR or 7z option, with its source and download size shown before starting. Supported archives extract automatically; there are no archive parts to collect.
-- **Four ways to make it yours.** Choose Store, Crossbar, Cinema or Panorama, with motion and background options. See the [appearance guide](guides/appearance.md).
-- **Your queue, your pace.** Pause, resume, retry and reorder downloads. Choose 1–8 simultaneous games, with one active download by default. Check the space they need before adding more.
-- **Optional TorBox downloads.** Connect your own account to use TorBox for supported links, or download directly from the original provider. See [TorBox setup](guides/downloads.md#optional-download-through-torbox) for account and host limits.
-- **Archive.org sign-in.** Sign in from the PS5 apps or Orbit Zero to access downloads that require an account. See [account setup](guides/downloads.md#archiveorg-sign-in).
-- **Find the right games.** Select several formats or sources in Browse, hide games already installed or saved on a drive, and use eight [game tags](guides/downloads.md#game-tags), including PlayStation exclusives, local co-op and VR support.
-- **A Library for your drives.** See installed games and available files. Manage compatible sources through ShadowMount.
-- **DLC comes to Orbit.** Browse **626 add-ons for 192 games**, including expansions, content packs, activation packages and bundles. Open **Add-ons** or find extras from a game’s details. Available across the PS5 apps and Orbit Zero in all four interfaces. See the [DLC guide](guides/add-ons.md).
-- **Install games without leaving Orbit.** Once a PKG/FPKG is saved on your PS5, open its entry in **Downloads** and choose **Install on PS5**. Compatible images and game folders trigger a ShadowMount scan automatically when it is running. See [installing downloaded games](guides/install-games.md).
-- **Know what your firmware can run.** Download choices show known firmware requirements. Options that do not match your PS5 are listed last with a warning and remain selectable.
-- **Notifications on your phone and PS5.** Choose download, installation and update alerts in **App settings → Notifications**. Use ntfy.sh or your own server to receive them on your phone or computer. See [notification setup](guides/notifications.md).
-- **Control from your phone.** Pair once to browse, queue downloads and check progress on the same PS5.
-- **Updates when you choose.** Orbit tells you when an update is available. Choose **Update Orbit** in Updates to update the TV app and download service together, or **Restart Orbit** to restart only the service. Installation and payload-manager setup remain your choice.
-- **No Orbit account. No telemetry.** Your paired devices connect to Orbit on your local network.
+**Find games**
+- **Discover and Browse** with platform, source, format, region and size filters, plus eight [game tags](guides/downloads.md#game-tags).
+- **Saved filters.** Name your filters once and apply them again in the browser, TV app or Orbit Zero. [Guide](guides/saved-filters.md)
+- **DLC and add-ons** from the Add-ons page or a game’s details. [DLC guide](guides/add-ons.md)
+- **Firmware checks.** Known firmware requirements are shown beside each download option.
+
+**Download**
+- **One link per download.** FFPFSC, exFAT, PKG, FPKG, ZIP, RAR or 7z, with archives extracted automatically.
+- **A queue you control.** Pause, resume, retry and reorder, with up to 8 games at once.
+- **Optional accounts** for [TorBox](guides/downloads.md#optional-download-through-torbox), [Archive.org](guides/downloads.md#archiveorg-sign-in) and [Vikingfile](guides/vikingfile.md).
+- **Notifications** on your PS5, phone or computer. [Setup](guides/notifications.md)
+
+**Install and manage**
+- **Install without leaving Orbit.** PKG and FPKG through Orbit, game images and folders through ShadowMount. [Guide](guides/install-games.md)
+- **Library** of installed games and game files on every drive, kept up to date automatically. [Library guide](guides/library.md)
+- **File manager** for your PS5’s drives: copy, move, rename, delete, unpack and install. [Files guide](guides/files.md)
+
+**Use it your way**
+- **Native TV app** built for your controller. Downloads keep running when you close it.
+- **Four interfaces:** Store, Crossbar, Cinema and Panorama. [Appearance guide](guides/appearance.md)
+- **Control from your phone.** Pair once to browse, queue and follow downloads.
+- **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** for Mac, Windows and Linux, with [stream installs](guides/stream-install.md) from your computer.
+- **Updates when you choose**, for the TV app and service together.
+- **No Orbit account. No telemetry.**
 
 ## New in 1.7.0
 
