@@ -4,8 +4,6 @@
 
 Orbit runs on your PS5. Pick a game, choose its source and format, and Orbit downloads it straight to the console or a drive plugged into it. Use it on your TV with a controller from the Games row, or pair a phone or computer to manage the same downloads over your home network.
 
-When a game finishes downloading, install it without leaving Orbit. Choose **Install on PS5** for a PKG or FPKG. For exFAT, FFPFSC and game folders, Orbit asks ShadowMount to scan for them automatically, if a supported version is running.
-
 **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** brings Orbit to Mac, Windows and Linux. Download games on your computer and send them to your PS5 straight away or later, without your PS5 needing internet access.
 
 Explore **2,090 games: 1,119 PS5 games and 971 PS4 games**, plus **626 DLCs and add-ons for 192 games**, with single-file downloads from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
