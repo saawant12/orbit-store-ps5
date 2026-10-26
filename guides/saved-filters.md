@@ -4,7 +4,7 @@
 
 Choose your filters, search and sort order in **Browse**, then open **Saved filters**. Enter a name and choose **Save filters**. Select a saved entry later to apply it.
 
-![Orbit 1.7.0 native Saved filters dialog with named Browse presets](../assets/1.7.0/native-saved-filters.png)
+![Orbit 1.7.0 native Saved filters dialog with named Browse presets](../assets/1.7.0/native-saved-filters-resident-evil.png)
 
 *Saved filters in the native PS5 app, with example Browse presets.*
 
