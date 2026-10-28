@@ -9,8 +9,8 @@ Orbit runs on your PS5. Pick a game, choose its source and format, and Orbit dow
 Explore **2,090 games: 1,119 PS5 games and 971 PS4 games**, plus **626 DLCs and add-ons for 192 games**, with single-file downloads from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
 
 <p>
-  <a href="assets/1.5.0/native-crossbar-discover.jpg?raw=1"><img src="assets/1.5.0/native-crossbar-discover.jpg" width="48%" alt="Native Crossbar Discover with NieR:Automata selected"></a>
-  <a href="assets/1.5.0/native-store-game-details.jpg?raw=1"><img src="assets/1.5.0/native-store-game-details.jpg" width="48%" alt="Black Myth: Wukong game details in the native Store interface"></a>
+  <a href="assets/1.5.0/native-crossbar-discover.jpg"><img src="assets/1.5.0/native-crossbar-discover.jpg" width="48%" alt="Native Crossbar Discover with NieR:Automata selected"></a>
+  <a href="assets/1.5.0/native-store-game-details.jpg"><img src="assets/1.5.0/native-store-game-details.jpg" width="48%" alt="Black Myth: Wukong game details in the native Store interface"></a>
 </p>
 
 <div align="center">
