@@ -10,3 +10,4 @@ node_modules/
 .venv/
 .state/
 /CATALOGUE.md
+AGENTS.md
