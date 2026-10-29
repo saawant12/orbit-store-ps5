@@ -21,7 +21,7 @@ For transfers to PS5, you also need:
 - Writable storage on the PS5.
 - A PS5 with its jailbreak and Payload Manager or a compatible ELF loader already running, or the matching Orbit receiver already started. Zero does not jailbreak the console.
 - Both devices on the same home network. Wi-Fi, Ethernet, or a mixture of both work. Use the PS5's local IPv4 address.
-- Orbit Zero and its included Orbit Store 1.7.0 service. For native TV controls, install the matching FFPKG from the same release.
+- Orbit Zero and its included Orbit Store 1.7.5 service. For native TV controls, install the matching FFPKG from the same release.
 
 Downloads are available for **ARM64 and x64 on macOS, Windows and Linux**; 32-bit x86 is not supported. Mac builds use Developer ID signing but are not notarized; Windows and Linux packages are unsigned.
 
@@ -84,6 +84,8 @@ In 1.6.0, Browse supports selecting several sources or formats, the same eight [
 In the Store interface, **New on Orbit** appears first in Discover, followed by **Latest releases** and the All games grid. The other interfaces present these collections in their own layouts. In Browse, use **Platform** to choose PS4, PS5 or both. Platform editions stay separate, with their own images, release dates and download options.
 
 The current catalogue includes 971 PS4 games, with raw PKG/FPKG files and single ZIP, RAR or 7z archives among their download options. Choose a source and **This computer** or a PS5 destination just as you would for a PS5 game. The computer-download route also works with the PS5’s internet access blocked. The **1.5.0** apps provide **Install on PS5** after the transfer finishes. Earlier versions need a compatible package installer. See [installing downloaded games](install-games.md) and [PS4 games on PS5](downloads.md#ps4-games-on-ps5).
+
+In **1.7.5**, **Format → LZ4** finds games with LZ4 assets, in all four interfaces. Zero extracts the outer archive on your computer and preserves those assets for transfer. See [LZ4 games](downloads.md#lz4-games) for format and loader requirements. If the saved catalogue is missing or unreadable, Zero can use its bundled catalogue; a valid newer saved copy takes priority.
 
 ## DLC and add-ons
 

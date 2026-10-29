@@ -63,12 +63,18 @@ Artwork comes from external URLs. Orbit tries an available fallback when the pri
 
 - **Provider returned a page:** update Orbit, restart it and retry from Downloads. For browser-only Vikingfile options, repeat the provider step. Orbit still rejects an actual error or verification page returned instead of file data.
 - **Provider throttling:** let the retry delay finish. Orbit honours the provider’s Retry-After response.
-- **Drive disconnected:** reconnect the original destination. Orbit does not silently switch to a different drive.
+- **Drive disconnected:** reconnect the original destination. In 1.7.5, Orbit can recognise the same drive after a remount using its saved marker or the job’s own partial file. Keep those files and select **Resume**. If it still asks for the original drive, export diagnostics before changing the queue. Orbit does not silently switch to a different drive.
 - **Not enough space:** free space on the chosen destination, considering unfinished downloads, then retry.
 - **Source changed:** keep the partial until you decide whether to remove it and restart. Orbit will not append a different file to it.
 - **Partial file deleted or empty:** choose **Retry**. In 1.5.0 and later, Orbit starts that download again from the beginning on the same drive.
 
 Parallel connections can help only when supported by the host and file identity. Provider speed limits, network conditions and drive performance still apply.
+
+### TorBox stops or cannot reach its download server
+
+Use the matching [1.7.5 apps](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.7.5). TorBox uses at most eight connections per game and honours provider cooldowns. In Zero, if the download server refuses a connection before any data arrives, a retry waits at least five minutes. Keep the partial files and allow that wait to finish.
+
+If the message says the original source no longer has the file, choose another download option. A fresh temporary link cannot restore a removed source. If failures continue, export a new diagnostic log and include the app version, source and the point at which it stopped. Do not share your TorBox key or temporary download URLs.
 
 ### Vikingfile does not enter Downloads
 
@@ -178,7 +184,7 @@ When reporting a problem in [Issues](https://github.com/saawant12/orbit-store-ps
 
 - **A Files action says storage is busy:** pause active downloads/transfers and wait for any current installation or storage operation to finish. Opening folders remains available.
 - **A copied source changed:** keep the original and retry after the program changing it has stopped. Orbit did not publish the incomplete copy.
-- **Circle exits a folder:** it should go to the parent, then all drives, then Library. Update all apps to the matching 1.7.0 build if you still see the old behaviour.
+- **Circle exits a folder:** it should go to the parent, then all drives, then Library. Update all apps to the latest matching build if you still see the old behaviour.
 - **Vikingfile says sign-in could not be confirmed:** use Check sign-in or open its account page. A network error or provider challenge is not proof you signed out. See [account setup](vikingfile.md).
 - **Stream & install is missing:** finish the computer download/extraction, connect the paired PS5 and run the matching receiver. See [streaming installation](stream-install.md).
 

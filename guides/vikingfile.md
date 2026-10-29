@@ -1,6 +1,6 @@
 # Use a Vikingfile account
 
-**For Orbit 1.7.0.** Use the matching ELF, native app and Orbit Zero.
+**For Orbit 1.7.5.** Use the matching ELF, native app and Orbit Zero.
 
 Vikingfile identifies an account with an **account hash**: the private code it gives you instead of an email/password login. Treat it like a password and do not include it in issues, screenshots or diagnostic reports.
 

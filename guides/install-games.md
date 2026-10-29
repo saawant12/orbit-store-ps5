@@ -15,6 +15,8 @@ The PS5 uses its configured installation storage. Choosing a download drive does
 
 In **1.6.0**, enable **App settings → Storage → Installed packages** to delete a downloaded package after installation succeeds. This is off by default. If installation fails or the file changed after it was checked, Orbit keeps it. This setting does not delete Zero’s computer copy or extracted non-package files. Archive cleanup and Zero’s computer-cache cleanup have their own settings.
 
+In **1.7.5**, Orbit also shows firmware requirements found in supported metadata after extraction, in Downloads and before installation. Unknown requirements are not confirmation of compatibility.
+
 Installation needs a compatible PS5 setup. It does not change a game's firmware, licence or jailbreak requirements. Orbit does not launch games or uninstall them.
 
 ## Install from Files
@@ -36,6 +38,10 @@ These use ShadowMount instead of the package installer. After a new download or 
 You do not normally need to run a scan yourself. Orbit checks ShadowMount's inventory before showing the game as registered. A scan request alone is not confirmation that registration succeeded.
 
 If ShadowMount was unavailable, start it, open the completed download's details and choose **Scan with ShadowMount** when offered. Orbit does not start ShadowMount or change its configuration. Older completed downloads are not all rescanned automatically when you update Orbit; use **Library → Scan for games** to look for existing compatible files.
+
+### LZ4 game files
+
+For an [LZ4 download](downloads.md#lz4-games), Orbit extracts the outer archive and keeps the game’s LZ4 assets intact. Use a compatible game loader for the resulting files. The LZ4 label does not turn those assets into an installable package or confirm support on your console.
 
 ## Add-ons and bundles
 

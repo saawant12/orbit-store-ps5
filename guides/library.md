@@ -1,6 +1,6 @@
 # Your Library and storage
 
-**For Orbit 1.7.0.** Use the matching ELF, native app and Orbit Zero. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
+**For Orbit 1.7.5.** Use the matching ELF, native app and Orbit Zero. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
 
 ![Native TV app Library with installed and on-drive games](../assets/0.9.0/native-library.png)
 
@@ -43,7 +43,9 @@ If Library is unavailable, start a compatible ShadowMount version and enable its
 
 Open a Library game to see its available actions. Mount or unmount a compatible source, or choose **Copy** or **Move** between supported drives. Unmount it first, pause active/queued Orbit downloads, select the destination and confirm.
 
-Copy keeps the original. Move asks the provider to remove the original after a successful transfer. Follow progress in Library and cancel while the provider reports that it is safe. A provider storage job can continue independently if Orbit closes.
+Copy keeps the original. In **1.7.5**, **Move** copies the game, reads the destination back to verify it, and registers the new location with ShadowMount before removing the original. If copying, verification or registration fails, the original is kept. Keep both drives connected until the operation finishes.
+
+Follow copying and verification progress in Library. Cancellation is available before the original is removed; it cannot undo an already completed move. A compatible ShadowMount version is required. Orbit Zero offers the same flow when connected to the matching PS5 service. These Library moves are separate from ordinary file operations under **Library → Files**.
 
 Open **Library → Files** to check free space and manage files and folders. Select a folder to open it; Circle goes back one folder. See the [Files guide](files.md). Game sizes are measured automatically. Available actions depend on your ShadowMount version, drive format and free space. If an action is unavailable or fails, check the displayed message and see [Troubleshooting](troubleshooting.md).
 

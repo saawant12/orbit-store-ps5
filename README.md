@@ -6,7 +6,7 @@ Orbit runs on your PS5. Pick a game, choose its source and format, and Orbit dow
 
 **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** brings Orbit to Mac, Windows and Linux. Download games on your computer and send them to your PS5 straight away or later, without your PS5 needing internet access.
 
-Explore **2,103 games: 1,132 PS5 games and 971 PS4 games**, plus **626 DLCs and add-ons for 192 games**, with single-file downloads from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
+Explore **2,103 games: 1,132 PS5 games and 971 PS4 games**, with **4,940 game download options**, plus **626 DLCs and add-ons with 628 options across 192 games**. Single-file downloads come from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
 
 <p>
   <a href="assets/1.5.0/native-crossbar-discover.jpg"><img src="assets/1.5.0/native-crossbar-discover.jpg" width="48%" alt="Native Crossbar Discover with NieR:Automata selected"></a>
@@ -32,7 +32,7 @@ Explore **2,103 games: 1,132 PS5 games and 971 PS4 games**, plus **626 DLCs and 
 - **Firmware checks.** Known firmware requirements are shown beside each download option.
 
 **Download**
-- **One link per download.** FFPFSC, exFAT, PKG, FPKG, ZIP, RAR or 7z, with archives extracted automatically.
+- **One link per download.** FFPFSC, exFAT, LZ4, PKG, FPKG, ZIP, RAR or 7z, with archives extracted automatically.
 - **A queue you control.** Pause, resume, retry and reorder, with up to 8 games at once.
 - **Optional accounts** for [TorBox](guides/downloads.md#optional-download-through-torbox), [Archive.org](guides/downloads.md#archiveorg-sign-in) and [Vikingfile](guides/vikingfile.md).
 - **Notifications** on your PS5, phone or computer. [Setup](guides/notifications.md)
@@ -50,9 +50,9 @@ Explore **2,103 games: 1,132 PS5 games and 971 PS4 games**, plus **626 DLCs and 
 - **Updates when you choose**, for the TV app and service together.
 - **No Orbit account. No telemetry.**
 
-## New in 1.7.0
+## New in 1.7.5
 
-Orbit 1.7.0 adds [Files](guides/files.md), [shared saved filters](guides/saved-filters.md), [Vikingfile account sign-in](guides/vikingfile.md) and [Stream & install from Zero](guides/stream-install.md). Cinema’s Library and Downloads use Store’s layout in Cinema colours. These changes require the matching new apps; they are not added by refreshing the catalogue.
+**LZ4 🦎 comes to Orbit.** Find LZ4 games in the Format filter across the browser, native PS5 app and Orbit Zero, in all four interfaces. This release also improves download and TorBox recovery, verifies [Library moves](guides/library.md#manage-a-source) before removing the original, and shows firmware requirements found after extraction. Zero fixes downloads finishing on exFAT drives and starting Orbit through Payload Manager 0.6.3. See [LZ4 downloads](guides/downloads.md#lz4-games) and the [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.7.5). Update to the matching apps to get these features; refreshing the catalogue alone does not add them.
 
 ## Get started
 
@@ -199,13 +199,13 @@ The desktop app supports **ARM64 and x64** computers and the same **11 interface
 
 ## Beta status
 
-**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.7.0** have these version numbers:
+**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.7.5** have these version numbers:
 
 | Component | Version |
 | --- | --- |
-| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.7.0** |
-| Native TV app (`PPSA99177.ffpkg`) | **1.11.0** |
-| Orbit Zero for desktop | **1.7.0** |
+| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.7.5** |
+| Native TV app (`PPSA99177.ffpkg`) | **1.11.2** |
+| Orbit Zero for desktop | **1.7.5** |
 
 The TV app has its own version number; these files belong to the same release. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
 
@@ -314,13 +314,14 @@ In the native TV app, use the D-pad or left stick to move, Cross to select, Circ
 | Circle / Escape | Back or close details |
 | Touch / mouse | Select visible controls |
 
-The catalogue offers single-file **FFPFSC**, **exFAT**, **PKG**, **FPKG**, **ZIP**, **RAR** and **7z** options across Archive.org, Vikingfile and AkiraBox. Archive sizes are marked as compressed; the extracted files need additional space.
+The catalogue offers single-file **FFPFSC**, **exFAT**, **LZ4**, **PKG**, **FPKG**, **ZIP**, **RAR** and **7z** options across Archive.org, Vikingfile and AkiraBox. Archive sizes are marked as compressed; the extracted files need additional space.
 
 | Format | What you get | What to do after it's saved |
 |---|---|---|
 | **exFAT** | `.exfat` image | ShadowMountPlus mounts it. Nothing to install. |
 | **FFPFSC** | `.ffpfsc` image | ShadowMountPlus mounts it. Nothing to install. |
 | **Game folder** | A folder of game files, from an archive | ShadowMountPlus mounts it. Nothing to install. |
+| **LZ4** | Game files containing LZ4-compressed assets, usually inside an archive | Orbit extracts the outer archive and preserves the LZ4 files. Use a compatible game loader; see [LZ4 games](guides/downloads.md#lz4-games). |
 | **PKG**, **FPKG** | `.pkg` package | Choose **Install on PS5** in 1.5.0 and later, or use your compatible package installer on earlier versions. ShadowMountPlus does not mount `.pkg` files. |
 | **ZIP**, **RAR**, **7z** | Archive | Orbit extracts it after downloading. The label shows what's inside, for example `7z · exFAT`; follow that row. |
 

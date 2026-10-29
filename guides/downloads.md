@@ -1,6 +1,6 @@
 # Find and download a game
 
-Orbit’s current catalogue includes **2,103 games: 1,132 PS5 games and 971 PS4 games**, with single-file options from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit’s current catalogue includes **2,103 games: 1,132 PS5 games and 971 PS4 games**, with **4,940 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 Settings paths in this guide use the Store layout. For the browser’s other layouts, see the [Settings page equivalents](appearance.md#find-settings-after-switching).
 
@@ -65,7 +65,7 @@ On the game page, select the main download button to open **Download options**. 
 
 *Different sources can offer different formats or sizes for the same game. Select the exact option you intend to download.*
 
-Orbit 1.5.0 shows known firmware requirements beside download options. Options unsuitable for your detected firmware appear last with a warning and remain selectable. In Zero, this uses the last paired PS5's firmware even while disconnected. Unknown requirements are not a compatibility guarantee.
+Orbit 1.5.0 shows known firmware requirements beside download options. Options unsuitable for your detected firmware appear last with a warning and remain selectable. In Zero, this uses the last paired PS5's firmware even while disconnected. Unknown requirements are not a compatibility guarantee. In 1.7.5, supported metadata found after extraction also appears in Downloads and installation review. If another format or version is already installed or on a drive, the PS5 apps warn before downloading and offer **Download anyway**.
 
 ### Which format to pick
 
@@ -74,10 +74,19 @@ Orbit 1.5.0 shows known firmware requirements beside download options. Options u
 | **exFAT** | `.exfat` image | ShadowMountPlus mounts it. Nothing to install. |
 | **FFPFSC** | `.ffpfsc` image | ShadowMountPlus mounts it. Nothing to install. |
 | **Game folder** | A folder of game files, from an archive | ShadowMountPlus mounts it. Nothing to install. |
+| **LZ4** | Game files containing LZ4-compressed assets, usually inside an archive | Orbit extracts the outer archive and preserves the LZ4 files. Use a compatible game loader; see [LZ4 games](downloads.md#lz4-games). |
 | **PKG**, **FPKG** | `.pkg` package | Choose **Install on PS5** in 1.5.0 and later, or use your compatible package installer on earlier versions. ShadowMountPlus does not mount `.pkg` files. |
 | **ZIP**, **RAR**, **7z** | Archive | Orbit extracts it after downloading. The label shows what's inside, for example `7z · exFAT`; follow that row. |
 
 **PS5 FPKGs and firmware (October 2026):** PS5 FPKG games currently run only on firmware 11.60 or lower. On 12.xx and 13.xx they may install but won't start, until package support arrives for those firmwares. On those firmwares, choose exFAT or FFPFSC instead. Where a game offers exFAT or FFPFSC, those work without installing.
+
+### LZ4 games
+
+**Available in Orbit 1.7.5.** Choose **Browse → Format → LZ4** in the browser/ELF, native PS5 app or Orbit Zero. The same filter works in Store, Crossbar, Cinema and Panorama. The catalogue currently has **49 LZ4 download options across 48 PS5 games**.
+
+LZ4 identifies the game assets inside the download. The download may still be a ZIP, RAR or 7z archive, and those packaging filters continue to match it. Orbit extracts the outer archive on the PS5, or on the computer in Zero, and preserves the LZ4 game files for your loader. It does not recursively decompress those assets or convert them into a PKG, exFAT or FFPFSC image.
+
+Check the selected option’s notes and your game loader’s requirements. The LZ4 label alone does not confirm that the game will run on your firmware or loader.
 
 ### Start the download
 
@@ -153,6 +162,8 @@ Release 1.3.5 removed 225 unavailable Archive.org options. Signing in helps with
 
 *Connect the account in the browser once. The native TV app and paired devices share that connection. If you are not connected, choose **Set up TorBox** under a game’s **Download using** options. In the TV app this opens the browser with your game, source and destination selected; connect in App settings, then return to the game.*
 
+In 1.7.5, TorBox downloads use at most eight connections per game, even when a higher connection count is selected. Orbit respects provider cooldowns. A removed-source error means you need another download option; retrying cannot restore the original host’s file.
+
 Orbit submits supported requests to TorBox without rejecting them based on its advertised file-size limit. TorBox still decides whether the request is allowed; any returned limit or account error appears in Downloads.
 
 An account connection does not guarantee support for every file. If an option is unavailable through TorBox, select the original provider explicitly. Orbit does not silently switch a TorBox job to another delivery method.
@@ -162,6 +173,8 @@ Pause and resume from Downloads as usual. Disconnecting TorBox pauses its unfini
 #### TorBox in Orbit Zero
 
 **Available since 1.3.5.** Open **Downloads → Download settings → TorBox**, or **Settings → Download settings** in another desktop interface. Connect your API key on the computer, then choose **Download using → TorBox** on a supported game option. Zero downloads to the computer. Choose **This computer** to keep the game there, or a PS5 drive to transfer it. This account connection is separate from the PS5 service’s TorBox connection. Host availability, account limits and file-size limits still apply.
+
+Zero can refresh an expired temporary TorBox link during a retry while preserving matching partial data. If TorBox’s download server refuses a connection before any data arrives, Zero waits at least five minutes before retrying. Longer provider waits still apply.
 
 ## ZIP, RAR and 7z downloads
 

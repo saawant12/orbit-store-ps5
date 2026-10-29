@@ -22,7 +22,7 @@ The Games and Media versions share the same downloads, favourites and service se
 - A phone or computer on the same local network, if you want to control Orbit from one.
 - For Library management, a compatible ShadowMount v1 local API.
 
-The current release pairs **Orbit Store 1.7.0**, **native app 1.11.0** and **Orbit Zero 1.7.0**.
+The current release pairs **Orbit Store 1.7.5**, **native app 1.11.2** and **Orbit Zero 1.7.5**.
 
 The instructions below use the default Store layout. If you choose another interface, see [where to find its settings](appearance.md#find-settings-after-switching).
 
