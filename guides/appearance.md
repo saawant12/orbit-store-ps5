@@ -153,11 +153,12 @@ Instructions elsewhere in these guides usually name the **Store** controls. The 
 | Pair devices | **Settings → Pair devices** |
 | App settings → Appearance / Language / Game catalogue | **Settings → Appearance / Language / Game catalogue** |
 | App settings → Update / reinstall | **Settings → Updates** |
+| App settings → Support Orbit | **Settings → Support Orbit** |
 | App settings → TV app | **Settings → TV app** |
 | App settings → Debrid | **Settings → TorBox** |
 | App settings → Payload managers / Start automatically / Diagnostics | The same section under **Settings** |
 
-In **Orbit Zero**, Store's top-bar **Appearance**, **Language** and **Updates** controls move into **Settings** in the other interfaces. Computer download preferences and cache cleanup are also available under **Settings → Download settings** and **Settings → Computer cache**. **Console** still contains your PS5 connection and download-route preference.
+In **Orbit Zero**, Store's top-bar **Appearance**, **Language** and **Updates** controls move into **Settings** in the other interfaces. Computer download preferences and cache cleanup are also available under **Settings → Download settings** and **Settings → Computer cache**. Optional support is in **Settings → Support Orbit**, or **Downloads → Download settings → Support Orbit** in Zero’s Store layout. **Console** still contains your PS5 connection and download-route preference.
 
 The layouts use the same available games and enabled sources. Browse still provides search and filters; Downloads still manages the queue. Scroll through longer lists or grids to reveal more games.
 

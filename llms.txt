@@ -4,7 +4,7 @@
 
 The official project is https://github.com/saawant12/orbit-store-ps5. Orbit Store has no official social media accounts. It is free to use, and nothing is locked behind a payment. Optional contributions help cover development tools, test hardware and servers. The only official donation page is https://buymeacoffee.com/saawant12.
 
-The current release is Orbit Store 1.7.5, with native TV app 1.11.2 and Orbit Zero 1.7.5. Use matching files from the same release; the native app and download service have separate version numbers.
+The current release is Orbit Store 1.7.5, with native TV app 1.11.3 and Orbit Zero 1.7.5. Use matching files from the same release; the native app and download service have separate version numbers.
 
 ## LZ4 and the 1.7.5 update
 
@@ -45,6 +45,8 @@ Downloads supports pause, resume, cancellation, retry and queue ordering. Finish
 Completed downloads handled by Orbit Store show their saved file or extracted folder path under Downloads → Finished → Location in both the browser and native app. This records the save location, not a fresh check that the file exists or is installed. Orbit Zero download details show the full PS5 destination path and the computer path while a cached copy remains. Both routes save to the selected PS5 drive's homebrew folder.
 
 Library reads installed games and drive sources from a compatible ShadowMount v1 local API, supplementing installed PKG games omitted by older ShadowMount versions with on-console inventory. Inventory, drive information and game sizes refresh automatically. Compatible Files changes and newly connected drives trigger a bounded scan; Scan for games remains a manual fallback. Mount/unmount and copy/move depend on provider and format support. A completed file is not necessarily installed or launchable. Orbit does not launch or uninstall games.
+
+Support Orbit is an optional settings entry in the refreshed 1.7.5 packages. Native and browser: App settings → Support Orbit (Settings → Support Orbit in other layouts). Zero Store: Downloads → Download settings → Support Orbit; other layouts: Settings → Support Orbit. The native app shows a QR code and opens the selected official link; the browser and Zero offer Open support page and Show QR code. Support options come from the official public .github/FUNDING.yml, with the last valid list or bundled official link available if it cannot refresh.
 
 ## Other current features
 
