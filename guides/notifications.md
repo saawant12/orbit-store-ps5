@@ -1,6 +1,6 @@
 # Notifications on your PS5, phone and computer
 
-Orbit Store 1.7.0 can send PS5 notifications and optional notifications through [ntfy](https://ntfy.sh). In the default layout, open **App settings → Notifications**. Other layouts use **Settings → Notifications** in the browser and native app.
+Orbit Store 1.7.5 can send PS5 notifications and optional notifications through [ntfy](https://ntfy.sh). In the default layout, open **App settings → Notifications**. Other layouts use **Settings → Notifications** in the browser and native app.
 
 ## Choose your alerts
 

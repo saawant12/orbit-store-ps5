@@ -41,7 +41,7 @@ Complete this section if relevant:
 - Add-on name, if applicable:
 - Required base-game edition/version and selected bundle package, if applicable:
 - Source: Archive.org / Vikingfile / AkiraBox / other
-- File format: PKG / FPKG / exFAT / FFPFSC / other
+- File format: PKG / FPKG / exFAT / FFPFSC / LZ4 / game folder / other
 - Archive, if applicable: ZIP / RAR / 7z
 - Download route: direct PS5 / Orbit Zero computer
 - Stage: computer download / transfer to PS5 / download on PS5 / archive extraction / game or DLC installation / ShadowMount scan
