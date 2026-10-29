@@ -2,7 +2,7 @@
 
 > A modern PS5 download manager with resumable downloads, a native TV app, browser controls and the Orbit Zero desktop companion.
 
-The official project is https://github.com/saawant12/orbit-store-ps5. Orbit Store has no official social media accounts. It is free to use and does not accept donations or payments.
+The official project is https://github.com/saawant12/orbit-store-ps5. Orbit Store has no official social media accounts. It is free to use, and nothing is locked behind a payment. Optional support is accepted only at https://buymeacoffee.com/saawant12; anyone else asking for payment for Orbit is not part of the project.
 
 The current release is Orbit Store 1.7.0, with native TV app 1.11.0 and Orbit Zero 1.7.0. Use matching files from the same release; the native app and download service have separate version numbers.
 
