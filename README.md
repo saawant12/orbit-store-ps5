@@ -386,7 +386,11 @@ Forks are welcome, as long as they share their source under the same licence. Bl
 
 > **Official channels:** Orbit Store has no official social media accounts. This GitHub repository is our official source for releases, updates and support. Any social media account claiming to officially represent Orbit Store is an impersonator.
 
-> **Free, with optional support.** Orbit Store, Orbit Zero, Orbit Play and our upcoming apps are free and will stay free. No feature or download is ever locked behind a payment. Development, AI tools, test hardware and servers have been paid for personally until now. If you’d like to help with those costs, you can support Orbit through [Buy Me a Coffee](https://buymeacoffee.com/saawant12). It’s entirely optional. This is the only place we accept money, and anyone asking for payment anywhere else is not part of Orbit.
+> **Free, with optional support.** Orbit Store, Orbit Zero, Orbit Play and our upcoming apps are free and will stay free.
+>
+> If you’d like to support development, you can contribute through [Buy Me a Coffee](https://buymeacoffee.com/saawant12). Contributions help cover development tools, test hardware and servers, including Orbit Link. It’s entirely optional.
+>
+> This is our only official donation page.
 
 ---
 
