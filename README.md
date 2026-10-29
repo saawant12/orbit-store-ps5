@@ -52,7 +52,7 @@ Explore **2,103 games: 1,132 PS5 games and 971 PS4 games**, with **4,940 game do
 
 ## New in 1.7.5
 
-**LZ4 🦎 comes to Orbit.** Find LZ4 games in the Format filter across the browser, native PS5 app and Orbit Zero, in all four interfaces. This release also improves download and TorBox recovery, verifies [Library moves](guides/library.md#manage-a-source) before removing the original, and shows firmware requirements found after extraction. Zero fixes downloads finishing on exFAT drives and starting Orbit through Payload Manager 0.6.3. See [LZ4 downloads](guides/downloads.md#lz4-games) and the [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.7.5). Update to the matching apps to get these features; refreshing the catalogue alone does not add them.
+**LZ4 🦎 (credits to DLPSGAME) comes to Orbit.** Find LZ4 games in the Format filter across the browser, native PS5 app and Orbit Zero, in all four interfaces. This release also improves download and TorBox recovery, verifies [Library moves](guides/library.md#manage-a-source) before removing the original, and shows firmware requirements found after extraction. Zero fixes downloads finishing on exFAT drives and starting Orbit through Payload Manager 0.6.3. See [LZ4 downloads](guides/downloads.md#lz4-games) and the [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.7.5). Update to the matching apps to get these features; refreshing the catalogue alone does not add them.
 
 ## Get started
 
