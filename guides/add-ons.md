@@ -41,7 +41,7 @@ In Zero, choose **This computer** to download without a connected PS5. Later, co
 
 After the files reach your PS5, open the completed entry in **Downloads** and choose **Downloaded files** or **Install on PS5**. Review the base-game requirements again, select the package and choose **Install on PS5**.
 
-For a bundle, choose each package you intend to install. Orbit does not automatically install the whole bundle or select an installation order. Downloaded packages are kept by default. The optional **App settings → Storage → Installed packages** setting can delete each package after successful installation; see [installation settings](install-games.md). Installing does not change firmware or jailbreak compatibility.
+For a bundle, choose each package you intend to install. Orbit does not automatically install the whole bundle or select an installation order. Downloaded packages are kept by default. The optional **App settings → Storage & cleanup → Installed packages** setting can delete each package after successful installation; see [installation settings](install-games.md). Installing does not change firmware or jailbreak compatibility.
 
 Downloading, transferring and installing have separate progress. See [installing downloaded games](install-games.md) for installation status, storage and recovery.
 

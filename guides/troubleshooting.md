@@ -22,15 +22,23 @@ The Games-row app needs **kstuff and ShadowMountPlus**. Check that `PPSA99177.ff
 
 If the app says Orbit is not running, start your ELF loader on **port 9021** and choose **Try again**, or launch `orbit_store.elf` through your payload manager. The app never stops another running payload to make room.
 
-For missing artwork in the TV app, check the running service version in the browser's **App settings → Update / reinstall**. Use **0.6.0 or later**; older services cannot load artwork for the TV app. Stop Orbit and start the updated service. Installing the new FFPKG alone does not replace a service already running.
+For missing artwork in the TV app, check the running service version in the browser's **App settings → Updates & startup**. Use **0.6.0 or later**; older services cannot load artwork for the TV app. Stop Orbit and start the updated service. Installing the new FFPKG alone does not replace a service already running.
 
 If ShadowMount reports **TitleDir bridge unavailable**, its app-registration bridge is not ready. Close active games, restart the console when convenient, run your usual jailbreak and ShadowMount setup, then retry registration of the existing FFPKG. If it persists, include ShadowMount's version and the relevant registration errors from its debug log in your report.
 
-If a TV app update still opens the previous version, close the app first. Restart the console and jailbreak when convenient so ShadowMountPlus can remount the replacement. The TV app and service have separate versions.
+If a TV app update still opens the previous version, compare the running and saved versions in **App settings → Updates & startup**. Orbit replaces the detected installation; a saved update does not replace an app that is still running. Close the app and reopen it. If ShadowMountPlus still holds the previous image, restart the console and jailbreak when convenient. Keep only one native installation. The TV app and service have separate versions.
+
+### Automatic shutdown has not started
+
+Check **App settings → Downloads → Automatic PS5 shutdown**, or **Settings → Downloads** in Zero. **Wait for** does not ignore other unfinished work. Paused or failed downloads, pending installation checks, active file operations or updates, and a busy or disconnected Zero computer can block shutdown. An installation failure cancels the schedule. Keep Zero open while it has work; reconnect it to report its current status. When all work is finished, the countdown lasts 60 seconds. See [automatic shutdown](shutdown.md).
+
+### The selected drive is too small
+
+Review free space and queued work in the download sheet. Archives may need room for the archive and extracted files together, and installation needs additional console storage. If Zero still has the computer files, use **Change drive** on that download to send them to another PS5 drive without downloading again. A completed copy on the old drive stays there. Direct PS5 downloads do not have this drive-change action. See [change the PS5 drive](orbit-zero.md#change-the-ps5-drive).
 
 ### An update says Orbit is already running
 
-The replacement was saved for the next start. Open **App settings → Update / reinstall** (or **Settings → Updates**) and compare **Running** with **Saved for next start**. In 1.5.0, use **Restart Orbit** with your ELF loader running on port 9021. On older versions, choose **Stop Orbit to restart**, then launch the saved `/data/orbit-store/orbit_store.elf` or a synced manager copy. Pairing and the queue stay saved. A manually imported old ELF starts that older copy unless you replace it.
+The replacement was saved for the next start. Open **App settings → Updates & startup** (or **Settings → Updates & startup**) and compare **Running** with **Saved for next start**. Use **Restart Orbit** with your ELF loader running on port 9021. If you use Payload Manager without that loader, follow the manual stop/start instructions and launch the saved or synced ELF through the manager. On older versions, choose **Stop Orbit to restart**, then launch the saved `/data/orbit-store/orbit_store.elf` or a synced manager copy. Pairing and the queue stay saved. A manually imported old ELF starts that older copy unless you replace it.
 
 ### Orbit shows BlackBox's icon, can't connect or is missing after BlackBox
 
@@ -72,7 +80,7 @@ Parallel connections can help only when supported by the host and file identity.
 
 ### TorBox stops or cannot reach its download server
 
-Use the matching [1.7.5 apps](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.7.5). TorBox uses at most eight connections per game and honours provider cooldowns. In Zero, if the download server refuses a connection before any data arrives, a retry waits at least five minutes. Keep the partial files and allow that wait to finish.
+Use the matching [1.8.0 apps](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.8.0). TorBox uses at most eight connections per game and honours provider cooldowns. In Zero, if the download server refuses a connection before any data arrives, a retry waits at least five minutes. Keep the partial files and allow that wait to finish.
 
 If the message says the original source no longer has the file, choose another download option. A fresh temporary link cannot restore a removed source. If failures continue, export a new diagnostic log and include the app version, source and the point at which it stopped. Do not share your TorBox key or temporary download URLs.
 
@@ -170,9 +178,9 @@ For less movement, choose **Appearance → Motion → Reduced**. Cinema and Pano
 
 ### Share a diagnostic report
 
-Open **App settings → Diagnostics → View diagnostics**, then **Copy diagnostic report**. If automatic copying is unavailable, Orbit shows selectable report text. Reports omit pairing codes, access tokens, download links, game names and paths. Nothing is sent automatically.
+Open **App settings → Diagnostics & about → View diagnostics**, then **Copy diagnostic report**. If automatic copying is unavailable, Orbit shows selectable report text. Reports omit pairing codes, access tokens, download links, game names and paths. Nothing is sent automatically.
 
-You can also save a report as a file. In the browser, choose **App settings → Diagnostics → Save diagnostic report**, then a PS5 drive. On the TV app, **App settings → More settings** offers **View diagnostics** and **Save diagnostic report**. In Zero, choose **Download settings → Export log**. Zero includes the PS5 report when connected. These exports omit game titles, filenames, folders, links, passwords and tokens; attach the saved file yourself when reporting a problem.
+You can also save a report as a file. In the browser, choose **App settings → Diagnostics & about → Save diagnostic report**, then a PS5 drive. On the TV app, **App settings → Diagnostics & about** offers **View diagnostics** and **Save diagnostic report**. In Zero, choose **Settings → Diagnostics & about → Export log**. Zero includes the PS5 report when connected. These exports omit game titles, filenames, folders, links, passwords and tokens; attach the saved file yourself when reporting a problem.
 
 ![App settings with local diagnostics](../assets/0.9.0/desktop-diagnostics.jpg)
 

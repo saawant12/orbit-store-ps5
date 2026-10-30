@@ -1,11 +1,11 @@
 # Stream a computer download to the PS5 installer
 
-**For Orbit 1.7.5.** Use the matching ELF, native app and Orbit Zero.
+**For Orbit 1.8.0.** Use the matching ELF, native app and Orbit Zero.
 
 **Stream & install** lets Orbit Zero serve a finished PKG or FPKG directly to the PS5 installer over your local network. It avoids staging another complete package in the PS5’s download folder. The PS5 still needs space for the installed game and any temporary space its installer requires.
 
 1. Download the game or add-on to **This computer**. For a ZIP, RAR or 7z archive, wait for extraction.
-2. Pair or reconnect your PS5, running the matching Orbit 1.7.5 ELF.
+2. Pair or reconnect your PS5, running the matching Orbit 1.8.0 ELF.
 3. Open the completed item in **Downloads**, choose **Stream & install**, and select the package. For a bundle, choose each package explicitly.
 4. Keep Zero and the PS5 running until the console confirms installation.
 

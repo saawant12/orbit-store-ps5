@@ -21,7 +21,7 @@ For transfers to PS5, you also need:
 - Writable storage on the PS5.
 - A PS5 with its jailbreak and Payload Manager or a compatible ELF loader already running, or the matching Orbit receiver already started. Zero does not jailbreak the console.
 - Both devices on the same home network. Wi-Fi, Ethernet, or a mixture of both work. Use the PS5's local IPv4 address.
-- Orbit Zero and its included Orbit Store 1.7.5 service. For native TV controls, install the matching FFPKG from the same release.
+- Orbit Zero and its included Orbit Store 1.8.0 service. For native TV controls, install the matching FFPKG from the same release.
 
 Downloads are available for **ARM64 and x64 on macOS, Windows and Linux**; 32-bit x86 is not supported. Mac builds use Developer ID signing but are not notarized; Windows and Linux packages are unsigned.
 
@@ -33,13 +33,13 @@ Follow the [macOS, Windows and Linux installation guide](orbit-zero-installation
 
 ### Choose your language
 
-The interface supports English, German, Spanish, French, Hungarian, Italian, Dutch, Polish, Brazilian Portuguese, Russian and Turkish. In Store, select the globe-shaped **Language** button in the top bar; in the other interfaces, open **Settings → Language**. Choose a language or leave **System language** selected.
+The interface supports English, Arabic, Czech, Danish, Dutch, Finnish, French, German, Greek, Hungarian, Indonesian, Italian, Japanese, Korean, Norwegian Bokmål, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, Simplified Chinese and Traditional Chinese. In Store, select the globe-shaped **Language** button in the top bar; in the other interfaces, open **Settings → Appearance → Language**. Choose a language or leave **System language** selected.
 
 ### Choose your interface
 
 Orbit Zero offers **Store**, **Crossbar**, **Cinema** and **Panorama**. In Store, select the palette-shaped **Appearance** button in the top bar; in the other interfaces, open **Settings → Appearance**. Confirm **Keep** within 15 seconds. Your selection is saved on this computer. See the [appearance guide](appearance.md) for screenshots, motion options and navigation.
 
-In Crossbar, Cinema and Panorama, **Settings** also contains **Download settings**, **Computer cache**, **Updates** and **Language**. **Console** continues to hold the PS5 connection and download-route preference.
+Open **Settings** in any layout. **Downloads** contains connections, retries and the download route; **Storage & cleanup** contains the download folder and cache; **Sources & accounts** contains account controls; **Devices** contains pairing and connection details. **Console** remains a status overview. See [Settings](settings.md).
 
 ## Download now and send to your PS5 later
 
@@ -50,9 +50,9 @@ In Crossbar, Cinema and Panorama, **Settings** also contains **Download settings
 
 ## Connect the computer and console
 
-1. Start the PS5's jailbreak and Payload Manager or ELF loader. Open **Console** in Zero and enter the PS5's local IP address.
-2. Expand **Start Orbit on PS5**. For Payload Manager's web interface, choose **Payload Manager → Upload and start Orbit**. This saves or replaces `orbit_store.elf` in the manager and leaves autoload settings unchanged. For a separate ELF loader, choose **ELF loader → Send to ELF loader**. Zero checks the official GitHub payload feed for a compatible receiver, verifies its checksum and caches it. The app also includes a verified compatible receiver for offline setup. If the matching receiver is already running, use **Connect to Orbit** instead. Do not start another Orbit service on the same port.
-3. Zero connects automatically after uploading Orbit. Once connected, select **Show code on PS5**. Enter the six-digit code shown by the console and select **Pair with PS5**. You can request the notification again after the countdown, or open **Pair devices** in Orbit on the PS5 to keep its code visible.
+1. Start the PS5's jailbreak and Payload Manager or ELF loader. Open **Console → Start Orbit on PS5** in Zero. In **Settings → Updates & startup**, enter the PS5's local IP address.
+2. Under **Start Orbit on PS5**, choose your startup method. For Payload Manager's web interface, choose **Payload Manager → Upload and start Orbit**. This saves or replaces `orbit_store.elf` in the manager and leaves autoload settings unchanged. For a separate ELF loader, choose **ELF loader → Send to ELF loader**. Zero checks the official GitHub payload feed for a compatible receiver, verifies its checksum and caches it. The app also includes a verified compatible receiver for offline setup. If the matching receiver is already running, use **Settings → Devices → Connect to Orbit** instead. Do not start another Orbit service on the same port.
+3. Zero connects automatically after uploading Orbit. Once connected, open **Settings → Devices** and select **Show code on PS5**. Enter the six-digit code shown by the console and select **Pair with PS5**. You can request the notification again after the countdown, or open **Pair devices** in Orbit on the PS5 to keep its code visible.
 4. Open a game and choose its source and PS5 destination in the download sheet. The destination is selected for each download; the Console overview shows current storage capacity. Game details also offers **Favourite**, **About this game** and **View download** when that game is already in the queue.
 
 ![Orbit Zero 1.5.0 Console before connecting a PS5](../assets/1.5.0/zero-console.jpg)
@@ -100,7 +100,7 @@ Use **This computer** to save DLC without a connected PS5, then **Send to PS5** 
 | **Computer** (default) | Download through the computer. Uncompressed files transfer in completed chunks; archives extract before their files transfer. |
 | **Prefer PS5** | Check whether the PS5 can reach the selected source, then use a direct PS5 download if it can. Otherwise, use the computer. |
 
-Change this under **Console → Download preference**. It applies to new downloads; running downloads keep their original route. The PS5 needs internet access for direct PS5 downloads. For computer downloads, the computer handles provider access and artwork, so the PS5 only needs its local network connection.
+Change this under **Settings → Downloads → Download preference**. It applies to new downloads; running downloads keep their original route. The PS5 needs internet access for direct PS5 downloads. For computer downloads, the computer handles provider access and artwork, so the PS5 only needs its local network connection.
 
 Download options also show known firmware requirements using the last paired PS5's firmware while it is offline; unpairing clears that saved firmware. A matching firmware label does not guarantee game or DLC compatibility.
 
@@ -114,13 +114,13 @@ For **AkiraBox**, open the provider page, complete verification and wait without
 
 For an expired Vikingfile or AkiraBox link, select **Refresh download link**. Your PS5 can stay disconnected while Zero refreshes the computer download’s link. Zero checks that it still identifies the selected file before reusing partial data. Reconnect the PS5 when you are ready to transfer.
 
-For compressed downloads, **Extract on computer** appears between the download and transfer stages. Keep enough computer space for the archive and its extracted files together. **Download settings → Delete archives after extracting** is on by default and removes the archive after successful extraction. The extracted files follow the separate [Computer cache](#pause-reconnect-and-clean-up) preference.
+For compressed downloads, **Extract on computer** appears between the download and transfer stages. Keep enough computer space for the archive and its extracted files together. **Settings → Storage & cleanup → Delete archives after extracting** is on by default and removes the archive after successful extraction. The extracted files follow the separate [Computer cache](#pause-reconnect-and-clean-up) preference.
 
 ## Follow your downloads
 
 In 1.6.0, completed computer downloads keep their real filenames instead of an internal `.cache` name. If a name already exists, Zero adds a number, such as `Game (2).pkg`. **Show in folder** opens the saved copy.
 
-Choose **1–64 connections per download** in **Download settings**; eight is the default. The provider must support validated byte ranges. Orbit falls back to fewer connections when required. Actual speed depends on the provider, network and storage. **Downloads** shows **Download to computer** and **Transfer to PS5** separately; their rates and progress can differ. A direct PS5 download shows the rate reported by Orbit.
+Choose **1–64 connections per download** in **Settings → Downloads**; eight is the default. The provider must support validated byte ranges. Orbit falls back to fewer connections when required. Actual speed depends on the provider, network and storage. **Downloads** shows **Download to computer** and **Transfer to PS5** separately; their rates and progress can differ. A direct PS5 download shows the rate reported by Orbit.
 
 Orbit **1.5.0** adds estimated time remaining for each stage and direct PS5 downloads. It reads upcoming chunks while transferring to reduce gaps between writes. Speeds still depend on your network and drives.
 
@@ -136,23 +136,23 @@ Orbit **1.5.0** adds estimated time remaining for each stage and direct PS5 down
 
 ### Simultaneous downloads
 
-Zero downloads one game to the computer at a time by default. Open **Downloads → Download settings → Simultaneous computer downloads** to choose **1–8**. Lowering the limit lets current downloads finish before another starts. Files transfer to the PS5 one at a time while computer downloads continue. Each file needs enough computer space for its full cached copy.
+Zero downloads one game to the computer at a time by default. Open **Settings → Downloads → Simultaneous computer downloads** to choose **1–8**. Lowering the limit lets current downloads finish before another starts. Files transfer to the PS5 one at a time while computer downloads continue. Each file needs enough computer space for its full cached copy.
 
 ### Choose the computer download folder
 
-In Console, select **Computer download folder → Choose folder**. In Downloads, open the settings icon beside the page title to find the same control. This applies to every source. New downloads use the folder you choose; existing partial files stay in their original location so they can resume.
+Open **Settings → Storage & cleanup → Computer download folder → Choose folder**. This applies to every source. New downloads use the folder you choose; existing partial files stay in their original location so they can resume.
 
 ### Download recovery settings
 
-Open **Downloads → Download settings → Download recovery** to choose how often Orbit retries, how long it waits between attempts and when a slow download should reconnect. Set **Automatic retries** to **0** to turn retries off. These settings apply to computer downloads; direct PS5 downloads use the settings saved on the console. See [download recovery settings](downloads.md#download-recovery-settings).
+Open **Settings → Downloads → Download recovery** to choose how often Orbit retries, how long it waits between attempts and when a slow download should reconnect. Set **Automatic retries** to **0** to turn retries off. These settings apply to computer downloads; direct PS5 downloads use the settings saved on the console. See [download recovery settings](downloads.md#download-recovery-settings).
 
 ### Accounts for computer downloads
 
-Open **Downloads → Download settings**, or **Settings → Download settings** in Crossbar, Cinema or Panorama. **Archive.org** lets you sign in for account-required downloads; **TorBox** lets you connect your API key and choose TorBox on supported download options. **Vikingfile** lets you sign in with your account hash and check or clear the saved session; see [Vikingfile accounts](vikingfile.md). All three connections are kept on the computer and are separate from the accounts configured on your PS5. See [Archive.org setup](downloads.md#archiveorg-sign-in) and [desktop TorBox](downloads.md#torbox-in-orbit-zero).
+Open **Settings → Sources & accounts**. **Archive.org** lets you sign in for account-required downloads; **TorBox** lets you connect your API key and choose TorBox on supported download options. **Vikingfile** lets you sign in with your account hash and check or clear the saved session; see [Vikingfile accounts](vikingfile.md). All three connections are kept on the computer and are separate from the accounts configured on your PS5. See [Archive.org setup](downloads.md#archiveorg-sign-in) and [desktop TorBox](downloads.md#torbox-in-orbit-zero).
 
 ### Export a log for bug reports
 
-For a bug report in 1.5.0, **Download settings → Export log** saves recent activity and the connected PS5's diagnostics. It excludes game titles, filenames, folders, links, passwords and tokens. Nothing is uploaded automatically.
+For a bug report, **Settings → Diagnostics & about → Export log** saves recent activity and the connected PS5's diagnostics. It excludes game titles, filenames, folders, links, passwords and tokens. Nothing is uploaded automatically.
 
 ## Pause, reconnect and clean up
 
@@ -166,13 +166,29 @@ Keep Orbit Zero open and prevent the computer from sleeping during transfers. Ke
 | **Cancel and remove partials** | Asks for confirmation, then removes that transfer’s partial files from the computer and PS5. Use this to discard unfinished work before starting fresh. |
 | **Stop transfer** | Keeps remaining computer and PS5 files and frees the queue after the PS5 confirms the stop. **This transfer cannot be resumed afterward.** You can recover a completed computer cache or start again. |
 | **Restart PS5 transfer** | When offered, starts a fresh transfer using the saved computer copy, without downloading it again. Existing PS5 files stay untouched; select **Resume** afterward. |
-| **Remove from Downloads** | Stops that computer job and removes its queue entry, keeping files on both devices. If a PS5 transfer still blocks the queue, use **Recover downloads → Review PS5 transfer**. |
+| **Remove from Downloads** | Removes the entry and lets you keep files or review and delete the computer and/or PS5 copies. Files in use cannot be deleted. If an orphaned PS5 transfer blocks the queue, use **Recover downloads → Review PS5 transfer**. |
 
 For an existing PS5 transfer, keep the matching Orbit service running and reconnect before cancelling or stopping. If the PS5 cannot confirm the operation, the job stays available for you to retry. Updating Orbit Zero alone does not update its receiver on the console; follow [Update Orbit Zero](orbit-zero-installation.md#update-orbit-zero) to update both.
 
-**Computer cache.** The computer copy is kept by default. **Downloads → Download settings → Computer cache** offers **Automatically remove after transfer** for future successful transfers and **Clear completed cache** for copies already completed. You can still select **Remove computer cache** on an individual download. Cleanup preserves PS5 files, partial downloads and history. **Remove from Downloads** removes a queue entry while keeping its files; it is also available for stuck jobs.
+**Computer cache.** The computer copy is kept by default. **Settings → Storage & cleanup → Computer cache** offers **Automatically remove after transfer** for future successful transfers and **Clear completed cache** for copies already completed. You can still select **Remove computer cache** on an individual download. Cleanup preserves PS5 files, partial downloads and history. **Remove from Downloads** lets you keep the files or review and delete the computer and/or PS5 copies. You can remember the choice and reset it to **Ask every time** in Storage & cleanup. Failed deletion keeps the entry so you can retry; installed games are not uninstalled.
 
-**Unpairing.** To forget the console, use **Console → Connection settings → Unpair PS5**. Zero blocks unpairing while transfers to that PS5 are unfinished, including paused or interrupted transfers. Finish or cancel those first; unpairing keeps files and download history. If the console has lost its pairing, use [Pair again and keep downloads](#reconnect-after-an-address-change) instead, so Zero can check and resume the saved partial files.
+**Unpairing.** To forget the console, use **Settings → Devices → Connection settings → Unpair PS5**. Zero blocks unpairing while transfers to that PS5 are unfinished, including paused or interrupted transfers. Finish or cancel those first; unpairing keeps files and download history. If the console has lost its pairing, use [Pair again and keep downloads](#reconnect-after-an-address-change) instead, so Zero can check and resume the saved partial files.
+
+## Change the PS5 drive
+
+Use **Change drive** on a computer-managed download when its computer copy remains available. This also works for a completed PS5 transfer with a retained computer copy. It does not change the destination of a direct PS5 download.
+
+1. Connect the original paired PS5 and open the download's details.
+2. Choose **Change drive** and review the drives' free space, queued transfers and projected space after this transfer. Known insufficient destinations cannot be selected.
+3. Choose a suitable drive and confirm. Only the PS5 transfer starts again at the new destination; Zero reuses the computer files instead of downloading them again.
+
+An existing completed PS5 copy stays on its original drive. If Zero offers to delete an old partial, that is a separate choice and requires verification by the receiver. A missing or disconnected drive does not silently change your explicit selection. Keep the computer copy until the new transfer finishes.
+
+## Let the PS5 turn off when work finishes
+
+While connected, open **Settings → Downloads → Automatic PS5 shutdown**. Turn it on and choose **All downloads** or a PS5 download under **Wait for**. This controls the PS5, not your computer. Other unfinished downloads, transfers and installations still block shutdown.
+
+Keep Zero open while it has unfinished work. Disconnecting a busy computer does not make it safe to shut the console down. When ready, the PS5 shows a 60-second countdown which you can cancel from Zero, native Orbit or the browser. See [automatic shutdown](shutdown.md) for all conditions.
 
 ## Install on PS5 and find your files
 
@@ -184,7 +200,7 @@ Completed transfer details show **PS5 location**, plus **Computer location** whi
 
 ## Reconnect after an address change
 
-Open **Console → Connection settings**, enter the PS5’s new local IP address and select **Connect to Orbit**. Zero checks the saved pairing before moving the existing queue to that address.
+Open **Settings → Devices → Connection settings**, enter the PS5’s new local IP address and select **Connect to Orbit**. Zero checks the saved pairing before moving the existing queue to that address.
 
 If the console no longer accepts the saved pairing, Zero offers **Pair again and keep downloads**. Confirm that it is the PS5 used for those downloads, request the on-screen code and enter it. This requires a new pairing code, not just a confirmation. Downloads remain paused until you select **Resume**. Zero compares the existing PS5 partial with the computer copy and continues from the verified position when possible. If resuming is not possible, **Recover downloads → Review PS5 transfer** offers **Delete PS5 partial and start again** after you explicitly confirm the deletion. Only that partial copy is deleted; your computer download is kept.
 
@@ -203,12 +219,12 @@ If an unfinished transfer on the PS5 blocks the queue after its desktop entry wa
 
 ## Control it from the PS5
 
-After pairing the computer, open **App settings → Orbit Zero → Enable Orbit Zero** in the matching TV app. It uses the computer's catalogue and artwork, and new downloads follow the preference saved on the computer. Vikingfile verification asks you to continue on the computer. Turning Zero mode off affects new downloads; existing computer transfers keep their route.
+After pairing the computer, open **App settings → Devices → Orbit Zero → Enable Orbit Zero** in the matching TV app. It uses the computer's catalogue and artwork, and new downloads follow the preference saved on the computer. Vikingfile verification asks you to continue on the computer. Turning Zero mode off affects new downloads; existing computer transfers keep their route.
 
 Alternatively, expand **Console → How it works** in the desktop app. Open one of the displayed computer addresses in the PS5 browser and enter the computer's pairing code. This browser pairing code is separate from the console code used to pair the desktop. Keep it private. The desktop's local browser service normally uses port **34179**.
 
 ## Desktop updates
 
-Open **Updates** in Store’s top navigation, or **Settings → Updates** in Crossbar, Cinema or Panorama. Automatic checks are enabled by default. When an update is available, download the matching verified package and open it when ready to install. Orbit Zero does not replace itself or restart automatically. See [update steps](orbit-zero-installation.md#update-checks-in-orbit-zero).
+Open **Settings → Updates & startup** in any interface. Store also keeps its **Updates** shortcut. Automatic checks are enabled by default. When an update is available, download the matching verified package and open it when ready to install. Orbit Zero does not replace itself or restart automatically. See [update steps](orbit-zero-installation.md#update-checks-in-orbit-zero).
 
 Return to the [Orbit Store README](../README.md) for the current release, supported PS5 workflows and third-party content notice.

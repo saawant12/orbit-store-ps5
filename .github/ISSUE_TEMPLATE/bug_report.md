@@ -67,9 +67,11 @@ Attach a screenshot of the error if possible.
 
 Immediately after reproducing the problem, before restarting Orbit, use the report option in your app:
 
-- **Native PS5 app (1.5.0 release or later):** More settings → Save diagnostic report. Select a drive and attach the saved report.
-- **Orbit Zero:** Downloads → Download settings → Export log. In the other interfaces, use Settings → Download settings. Attach the saved report; it includes PS5 diagnostics when connected.
-- **Browser:** in Store, open App settings → Diagnostics → View diagnostics. In Crossbar, Cinema or Panorama, use Settings → Diagnostics → View diagnostics. Select Copy diagnostic report and paste it below.
+- **Native PS5 app:** App settings → Diagnostics & about → Save diagnostic report. Select a drive and attach the saved report. Crossbar, Cinema and Panorama call the main menu Settings.
+- **Orbit Zero:** Settings → Diagnostics & about → Export log. Attach the saved report; it includes PS5 diagnostics when connected.
+- **Browser:** App settings → Diagnostics & about → View diagnostics, or Settings → Diagnostics & about in the other layouts. Select Copy diagnostic report and paste it below, or save the report to a drive.
+
+In older releases, these controls may be under More settings, Diagnostics or Download settings.
 
 Recent diagnostic events reset when Orbit restarts. If Orbit cannot
 open, say so and provide the error or notification you can see.

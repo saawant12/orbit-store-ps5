@@ -1,6 +1,6 @@
 # Manage files on your PS5
 
-**For Orbit 1.7.5.** Use the matching ELF, native app and Orbit Zero.
+**For Orbit 1.8.0.** Use the matching ELF, native app and Orbit Zero.
 
 Open **Library → Files** in the browser, native TV app or Orbit Zero. Choose internal storage, a connected USB drive or an available M.2/extended drive. Each drive shows its free space.
 

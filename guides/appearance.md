@@ -2,7 +2,7 @@
 
 **In 1.7.0:** Library and Downloads in Cinema use Store’s layout with Cinema’s colours. Files and saved filters are available in all four interfaces. The older screenshots below retain their original version labels.
 
-Orbit Store 1.7.5 and Orbit Zero 1.7.5 offer four interfaces: **Store**, **Crossbar**, **Cinema** and **Panorama**. For the native PS5 app, use **1.11.2**, included in the same release. Each changes the layout and navigation while keeping your catalogue, favourites and download queue.
+Orbit Store 1.8.0 and Orbit Zero 1.8.0 offer four interfaces: **Store**, **Crossbar**, **Cinema** and **Panorama**. For the native PS5 app, use **1.12.0**, included in the same release. Each changes the layout and navigation while keeping your catalogue, favourites and download queue.
 
 ## Switch interfaces
 
@@ -143,22 +143,11 @@ Dialogs and menus have their own controls. While **Keep this interface?** is ope
 
 ## Find settings after switching
 
-Instructions elsewhere in these guides usually name the **Store** controls. The native app calls **App settings** simply **Settings** in the other interfaces, with the same settings sections inside. In the browser's other interfaces, use the **Settings** page:
+Open **App settings** in Orbit Store’s default layout, or **Settings** in the other layouts. Orbit Zero has a **Settings** entry in every layout; the gear in Downloads opens its **Downloads** category directly.
 
-| Browser Store control | Crossbar, Cinema or Panorama |
-| --- | --- |
-| Sources | **Settings → Download sources** |
-| Storage | **Settings → Storage and downloads** |
-| App settings → Notifications | **Settings → Notifications** |
-| Pair devices | **Settings → Pair devices** |
-| App settings → Appearance / Language / Game catalogue | **Settings → Appearance / Language / Game catalogue** |
-| App settings → Update / reinstall | **Settings → Updates** |
-| App settings → Support Orbit | **Settings → Support Orbit** |
-| App settings → TV app | **Settings → TV app** |
-| App settings → Debrid | **Settings → TorBox** |
-| App settings → Payload managers / Start automatically / Diagnostics | The same section under **Settings** |
+The category names stay the same when switching layouts: **Downloads**, **Storage & cleanup**, **Sources & accounts**, **Devices**, **Appearance**, **Notifications**, **Game catalogue**, **Updates & startup**, **Diagnostics & about** and **Support Orbit**. Each app shows the settings it supports. Zero’s Console page remains a connection overview, with shortcuts to Devices and Downloads.
 
-In **Orbit Zero**, Store's top-bar **Appearance**, **Language** and **Updates** controls move into **Settings** in the other interfaces. Computer download preferences and cache cleanup are also available under **Settings → Download settings** and **Settings → Computer cache**. Optional support is in **Settings → Support Orbit**, or **Downloads → Download settings → Support Orbit** in Zero’s Store layout. **Console** still contains your PS5 connection and download-route preference.
+See [Settings](settings.md) for the full map, including which Zero controls affect the computer and which affect the PS5.
 
 The layouts use the same available games and enabled sources. Browse still provides search and filters; Downloads still manages the queue. Scroll through longer lists or grids to reveal more games.
 
@@ -167,6 +156,14 @@ The layouts use the same available games and enabled sources. Browse still provi
 Orbit 1.5.0 adds **Add-ons** after Browse in every interface, across the browser, native PS5 app and Orbit Zero. It uses the layout’s existing search and filter controls. Crossbar gives Add-ons its own icon; Panorama shows the tile caption when selected. Open **Add-ons (count)** from a game’s details to see extras for that game.
 
 Changing interfaces does not change add-on availability, download progress or installation status. See [the DLC guide](add-ons.md) for content types and requirements.
+
+## Language
+
+Open **App settings → Appearance → Language** in Orbit Store's default layout, or **Settings → Appearance → Language** in the other layouts and Orbit Zero. Zero's Store layout also keeps the globe-shaped **Language** shortcut.
+
+The next release supports **26 languages**: English, Arabic, Czech, Danish, Dutch, Finnish, French, German, Greek, Hungarian, Indonesian, Italian, Japanese, Korean, Norwegian Bokmål, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, Simplified Chinese and Traditional Chinese.
+
+Choose a language or follow the system/browser language. Arabic mirrors the layout and horizontal navigation; English game names keep their original reading direction. Numbers, dates and sizes follow the selected language. Game descriptions and provider pages may remain in their original language. The language choice is saved separately for each app or browser.
 
 ## Where your choice is saved
 

@@ -2,7 +2,7 @@
 
 Install **Orbit Zero on your computer**, then use it to upload and start Orbit on your PS5 over your local network. Your computer handles online downloads and sends the files to the console. **The PS5 can keep its internet access blocked throughout setup and use.**
 
-This guide covers **Orbit Zero 1.7.5** and the matching PS5 files from the [Orbit Store release](https://github.com/saawant12/orbit-store-ps5/releases/latest).
+This guide covers **Orbit Zero 1.8.0** and the matching PS5 files from the [Orbit Store release](https://github.com/saawant12/orbit-store-ps5/releases/latest).
 
 The desktop app includes the compatible Orbit service and uploads it over your local network. If an older Orbit service is already running, stop it before starting the new copy. See the [download choices and update steps](orbit-zero-installation.md).
 
@@ -30,7 +30,7 @@ Allow Orbit Zero through your computer's local-network or firewall prompt. See t
 ## 2. Upload and start Orbit from the computer
 
 1. Start your PS5's jailbreak and **Payload Manager** or ELF loader.
-2. Open Orbit Zero on the computer and go to **Console**.
+2. Open **Console → Start Orbit on PS5**, which takes you to **Settings → Updates & startup**.
 3. Enter your **PS5's local IP address**. Leave **Orbit port** at **34177**, unless you changed it.
 4. Under **Start Orbit on PS5**, choose the method your console is running:
 
@@ -51,11 +51,11 @@ If you need to select the ELF yourself, follow the [manual GitHub download and u
 
 If Payload Manager opens at `http://<ps5-ip>:8084/`, choose **Payload Manager**. Its web interface is separate from an ELF loader on port 9021. Use **Advanced** if your loader uses a different port.
 
-If Orbit is already running, select **Connect to Orbit**. When replacing an older running service, stop it through Orbit's **App settings → Update / reinstall → Stop Orbit to restart** before starting the new copy; uploading an ELF alone does not replace the running session.
+If Orbit is already running, select **Connect to Orbit**. When replacing an older running service, stop it through Orbit's **App settings → Updates & startup → Stop Orbit to restart** before starting the new copy; uploading an ELF alone does not replace the running session.
 
 ## 3. Pair the computer and PS5
 
-1. When Orbit Zero shows **Pairing required**, select **Show code on PS5**.
+1. When Orbit Zero shows **Pairing required**, open **Settings → Devices** and select **Show code on PS5**.
 2. Read the six-digit code in the PS5 notification.
 3. Enter it in Orbit Zero and select **Pair with PS5**.
 4. If your computer asks to unlock its credential store, allow Orbit Zero to save the pairing. Enter any computer password only in the operating system's prompt.
@@ -66,7 +66,7 @@ If you miss the notification, request the code again after the countdown. Pairin
 
 ## 4. Download through the computer
 
-Once **Connected** appears, check that the intended PS5 drive is listed under **Storage**. Set **Console → Download preference → Computer**.
+Once **Connected** appears, check that the intended PS5 drive is listed in **Console** or **Settings → Storage & cleanup**. Set **Settings → Downloads → Download preference → Computer**.
 
 ![Connected Orbit Zero Console showing storage and download preference](../assets/orbit-zero-development/connect-ready.jpg)
 
@@ -80,7 +80,7 @@ In Browse, use **Platform** to choose PS4, PS5 or both. Open a game in Orbit Zer
 
 For Vikingfile and AkiraBox, complete any verification in the provider window **on the computer**, then wait without pressing Download. Orbit Zero captures the ready file link and queues the download; the PS5 does not need to open the provider page.
 
-Keep **both devices awake** and Orbit Zero open until the transfer finishes. By default, completed downloads remain in the computer cache. In **Downloads → Download settings → Computer cache**, enable **Automatically remove after transfer** for future successful transfers, or use **Clear completed cache** to remove existing completed copies. The finished PS5 files stay in place.
+Keep **both devices awake** and Orbit Zero open until the transfer finishes. By default, completed downloads remain in the computer cache. In **Settings → Storage & cleanup → Computer cache**, enable **Automatically remove after transfer** for future successful transfers, or use **Clear completed cache** to remove existing completed copies. The finished PS5 files stay in place.
 
 The **Computer** preference chooses where downloads run; it does not change your router or block the PS5's internet access for you.
 
@@ -95,7 +95,7 @@ You can manage everything from the desktop without installing the native app. To
 3. Enable your PS5's FTP server. Connect to it from an FTP client on the computer using the **local IP address and port shown by the server**.
 4. Copy `PPSA99177.ffpkg` to **`/data/homebrew/`** on the PS5. This is a local file transfer; the PS5 does not download the package from the internet.
 5. Let ShadowMountPlus register it, then open **Orbit Store** from the **Games row**. Keep the Orbit service you started from Orbit Zero running.
-6. In the native app, select **App settings → Orbit Zero → Enable Orbit Zero**. Pair the computer first if the app says no computer is paired.
+6. In the native app, select **App settings → Devices → Orbit Zero → Enable Orbit Zero**. Pair the computer first if the app says no computer is paired.
 
 The native app now uses your computer's catalogue and artwork. New downloads follow the **Computer** preference set above. Keep Orbit Zero running on the computer; Vikingfile verification is completed there too.
 
@@ -124,7 +124,7 @@ You do not need to reinstall the native FFPKG each time. Keep your saved pairing
 | Orbit cannot be reached on 34177 | Start the Orbit payload, confirm the PS5's current IP, and allow local-network access on the computer. |
 | Upload finished, but pairing did not appear | Give Orbit time to start, then select **Connect to Orbit**. Check the PS5 notification before sending another launch request. |
 | No pairing code appeared | Select **Show code on PS5** and watch the console notification. |
-| The native app cannot find the computer | Keep Zero open, pair it first, enable **App settings → Orbit Zero**, and check the computer firewall allows local access. |
+| The native app cannot find the computer | Keep Zero open, pair it first, enable **App settings → Devices → Orbit Zero**, and check the computer firewall allows local access. |
 | A transfer stopped after sleep or disconnection | Wake both devices, reconnect the same console and select **Resume**. For a stuck queue, see [transfer recovery](orbit-zero.md#pause-reconnect-and-clean-up). **Stop transfer** keeps files but prevents that transfer from resuming. |
 
 Return to the [desktop installation guide](orbit-zero-installation.md) for OS-specific setup and permissions.

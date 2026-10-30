@@ -1,6 +1,6 @@
 # Save your Browse and Add-ons filters
 
-**For Orbit 1.7.5.** Use the matching ELF, native app and Orbit Zero.
+**For Orbit 1.8.0.** Use the matching ELF, native app and Orbit Zero.
 
 Choose your filters, search and sort order in **Browse**, then open **Saved filters**. Enter a name and choose **Save filters**. Select a saved entry later to apply it.
 

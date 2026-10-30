@@ -13,7 +13,7 @@ The same controls are available in the browser, native PS5 app and Orbit Zero, i
 
 The PS5 uses its configured installation storage. Choosing a download drive does not choose the installation drive. Allow space for both copies during installation. Downloaded PKG/FPKG files stay on the drive by default.
 
-In **1.6.0**, enable **App settings → Storage → Installed packages** to delete a downloaded package after installation succeeds. This is off by default. If installation fails or the file changed after it was checked, Orbit keeps it. This setting does not delete Zero’s computer copy or extracted non-package files. Archive cleanup and Zero’s computer-cache cleanup have their own settings.
+In **1.6.0**, enable **App settings → Storage & cleanup → Installed packages** to delete a downloaded package after installation succeeds. This is off by default. If installation fails or the file changed after it was checked, Orbit keeps it. This setting does not delete Zero’s computer copy or extracted non-package files. Archive cleanup and Zero’s computer-cache cleanup have their own settings.
 
 In **1.7.5**, Orbit also shows firmware requirements found in supported metadata after extraction, in Downloads and before installation. Unknown requirements are not confirmation of compatibility.
 
