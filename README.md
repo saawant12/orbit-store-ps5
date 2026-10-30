@@ -54,6 +54,10 @@ Explore **2,157 games: 1,181 PS5 games and 976 PS4 games**, with **4,997 game do
 - **Updates when you choose**, for the TV app and service together.
 - **No Orbit account. No telemetry.**
 
+## New in 1.8.1
+
+**Performance improvements and bug fixes.** You can now copy and move games and files while a download is active, Orbit Zero can send games while the PS5 downloads, and pairing a new device works even when every pairing slot is taken. Zero also saves its pairing on Linux under window managers such as awesome, i3 and sway. See the [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.8.1). Use the matching apps to get these fixes; refreshing the catalogue alone does not add them.
+
 ## New in 1.8.0
 
 **Orbit now speaks 15 new languages** and can automatically shut down your PS5 when downloads, transfers and installations finish. This release also fixes Vikingfile session handling, reorganises Settings and lets you choose which files to keep when clearing downloads. Zero can change a transfer’s PS5 drive using the copy on your computer. See the [Settings guide](guides/settings.md), [automatic shutdown guide](guides/shutdown.md) and [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.8.0). Use the matching apps to get these features; refreshing the catalogue alone does not add them.
@@ -203,13 +207,13 @@ The desktop app supports **ARM64 and x64** computers and the same **26 interface
 
 ## Beta status
 
-**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.8.0** have these version numbers:
+**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.8.1** have these version numbers:
 
 | Component | Version |
 | --- | --- |
-| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.8.0** |
-| Native TV app (`PPSA99177.ffpkg`) | **1.12.0** |
-| Orbit Zero for desktop | **1.8.0** |
+| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.8.1** |
+| Native TV app (`PPSA99177.ffpkg`) | **1.12.1** |
+| Orbit Zero for desktop | **1.8.1** |
 
 The TV app has its own version number; these files belong to the same release. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
 

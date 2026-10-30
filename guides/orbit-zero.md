@@ -21,7 +21,7 @@ For transfers to PS5, you also need:
 - Writable storage on the PS5.
 - A PS5 with its jailbreak and Payload Manager or a compatible ELF loader already running, or the matching Orbit receiver already started. Zero does not jailbreak the console.
 - Both devices on the same home network. Wi-Fi, Ethernet, or a mixture of both work. Use the PS5's local IPv4 address.
-- Orbit Zero and its included Orbit Store 1.8.0 service. For native TV controls, install the matching FFPKG from the same release.
+- Orbit Zero and its included Orbit Store 1.8.1 service. For native TV controls, install the matching FFPKG from the same release.
 
 Downloads are available for **ARM64 and x64 on macOS, Windows and Linux**; 32-bit x86 is not supported. Mac builds use Developer ID signing but are not notarized; Windows and Linux packages are unsigned.
 

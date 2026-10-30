@@ -1,6 +1,6 @@
 # Manage files on your PS5
 
-**For Orbit 1.8.0.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service.
+**For Orbit 1.8.1.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service.
 
 Open **Library → Files** in the browser, native TV app or Orbit Zero. Choose internal storage, a connected USB drive or an available M.2/extended drive. Each drive shows its free space.
 
@@ -25,7 +25,7 @@ Files shows ordinary files and folders, including packages, images and archives.
 
 File operations run one at a time. Copy and move have pause/resume controls; operations other than installations can be cancelled while their worker is running. Cancelling cannot undo files already deleted or an already completed move. A copied file or directory appears at its final destination only when copying completes.
 
-Pause active Orbit downloads and transfers before changing files. New downloads wait while a Files operation owns the storage. Orbit also protects its settings, files used by downloads or installers, and games registered or mounted by ShadowMount. If a source changes during copying, Orbit stops instead of publishing an incomplete copy or deleting the original.
+Downloads keep running while you change files. Orbit keeps enough space for both, and a download can’t start under a name a file operation is using. One file operation runs at a time, taking turns with Library copies and Orbit Zero transfers. Orbit also protects its settings, files used by downloads or installers, and games registered or mounted by ShadowMount. If a source changes during copying, Orbit stops instead of publishing an incomplete copy or deleting the original.
 
 ## Unpack and install
 

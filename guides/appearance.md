@@ -2,7 +2,7 @@
 
 **In 1.7.0:** Library and Downloads in Cinema use Store’s layout with Cinema’s colours. Files and saved filters are available in all four interfaces. The older screenshots below retain their original version labels.
 
-Orbit Store 1.8.0 and Orbit Zero 1.8.0 offer four interfaces: **Store**, **Crossbar**, **Cinema** and **Panorama**. For the native PS5 app, use **1.12.0**, included in the same release. Each changes the layout and navigation while keeping your catalogue, favourites and download queue.
+Orbit Store 1.8.1 and Orbit Zero 1.8.1 offer four interfaces: **Store**, **Crossbar**, **Cinema** and **Panorama**. For the native PS5 app, use **1.12.1**, included in the same release. Each changes the layout and navigation while keeping your catalogue, favourites and download queue.
 
 ## Switch interfaces
 

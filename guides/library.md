@@ -1,6 +1,6 @@
 # Your Library and storage
 
-**For Orbit 1.8.0.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
+**For Orbit 1.8.1.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
 
 ![Native TV app Library with installed and on-drive games](../assets/0.9.0/native-library.png)
 
@@ -41,7 +41,7 @@ If Library is unavailable, start a compatible ShadowMount version and enable its
 
 ## Manage a source
 
-Open a Library game to see its available actions. Mount or unmount a compatible source, or choose **Copy** or **Move** between supported drives. Unmount it first, pause active/queued Orbit downloads, select the destination and confirm.
+Open a Library game to see its available actions. Mount or unmount a compatible source, or choose **Copy** or **Move** between supported drives. Unmount it first, select the destination and confirm. Downloads keep running while it copies, and Orbit keeps enough space for both.
 
 Copy keeps the original. In **1.7.5**, **Move** copies the game, reads the destination back to verify it, and registers the new location with ShadowMount before removing the original. If copying, verification or registration fails, the original is kept. Keep both drives connected until the operation finishes.
 
