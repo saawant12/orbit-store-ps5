@@ -260,7 +260,7 @@ ZIP, RAR and 7z files extract on your computer before their contents transfer to
 
 ## Update Orbit Zero
 
-Updating has two parts: replace the desktop app, then start its matching service on your PS5. Your pairing and queue stay saved.
+Replace the desktop app, then check the running PS5 service when you next connect. If it is older than 1.8.0, stop it and start the matching service included with Zero. If the updated native FFPKG has already started service 1.8.0, connect to that service instead; another upload is unnecessary. Your pairing and queue stay saved.
 
 ### Update checks in Orbit Zero
 

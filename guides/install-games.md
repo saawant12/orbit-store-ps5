@@ -1,6 +1,6 @@
 # Install games without leaving Orbit
 
-**Available in 1.5.0 and later.** Use the matching Orbit Store ELF, native app and Orbit Zero from the same release. Refreshing the catalogue alone does not add installation controls.
+**Available in 1.5.0 and later.** Keep the Orbit app you use and its running PS5 service on the [same release](getting-started.md#which-files-to-download). The native FFPKG includes that service; Zero can upload its included copy. Refreshing the catalogue alone does not add installation controls.
 
 ## Install a downloaded game
 

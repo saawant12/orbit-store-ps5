@@ -27,7 +27,7 @@ Changing Zero’s connections or accounts does not change the PS5 service’s se
 
 ## Automatic PS5 shutdown
 
-Open **Downloads → Automatic PS5 shutdown**. Enable it and choose **All downloads** or one download under **Wait for**. The same selector is available in native Orbit, the browser and Zero. The existing per-download shutdown action remains available.
+Open **Downloads → Automatic PS5 shutdown**. Enable it and choose **All downloads** or one download under **Wait for**. The same selector is available in native Orbit, the browser and Zero. You can also choose **Shut down when finished** on a PS5 download and confirm. Orbit shows **Automatic shutdown scheduled.**; the same item then offers **Cancel automatic shutdown**.
 
 Choosing a download sets the job to wait for; it does not allow Orbit to turn off the PS5 while other work remains. Downloads, transfers, installations and active file operations must finish. Paused or failed work, pending installation checks and a disconnected busy Zero computer keep shutdown blocked. Installation failure cancels the schedule.
 

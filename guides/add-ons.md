@@ -1,6 +1,6 @@
 # Find, download and install DLC
 
-**Available in 1.5.0 and later.** Use the matching Orbit Store ELF, native PS5 app and Orbit Zero from the same release. Refreshing the catalogue alone does not add the Add-ons page to older apps.
+**Available in 1.5.0 and later.** Keep the Orbit app you use and its running PS5 service on the [same release](getting-started.md#which-files-to-download). The native FFPKG includes that service; Zero can upload its included copy. Refreshing the catalogue alone does not add the Add-ons page to older apps.
 
 The catalogue has **626 add-ons for 192 games**, with **628 download options**. These are counted separately from base games.
 

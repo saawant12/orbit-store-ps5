@@ -77,7 +77,7 @@ For direct console downloads, you need a PS5 that can run homebrew ELF payloads,
 3. **Pick a download.** Open a game and select its main download button to review **Download options**. Choose **Source**, **Download using** and **Save to**, then confirm the download. Direct options download from the TV app. Vikingfile first checks for a direct link using your sign-in; options needing verification open the provider page on the PS5, keeping your selected game, source and drive. Choose **Open Vikingfile on PS5** in the native app or **Open download page on PS5** in the browser version. For **Vikingfile and AkiraBox**, complete verification and wait without pressing Download. Orbit captures the matching link and returns to the app automatically.
 4. **Follow your queue.** Open Downloads on the TV or a paired device to check progress, pause or resume.
 
-The TV app includes Orbit's download service and can start it through a compatible ELF loader on **port 9021**. You can also start `orbit_store.elf` yourself. The Media-tab shortcut opens the browser version while the service is running. After a reboot, start your jailbreak before opening Orbit. See the [setup and update guide](guides/getting-started.md) for installation, updates and phone pairing.
+The FFPKG already includes Orbit's download service; you do not need a separate ELF download when the app starts its bundled service through a compatible ELF loader on **port 9021**. If you launch Orbit separately through Payload Manager, keep that ELF copy up to date too. Stop an older running service before starting the updated copy. See [which files to download](guides/getting-started.md#which-files-to-download). The Media-tab shortcut opens the browser version while the service is running. After a reboot, start your jailbreak before opening Orbit. See the [setup and update guide](guides/getting-started.md) for installation, updates and phone pairing.
 
 ## See how it works
 
@@ -178,7 +178,7 @@ Download on your computer and transfer to your PS5 over your home network. Uncom
 - **Reuse completed computer downloads.** Recover a finished file whose queue entry was removed, including older `.cache` files, then transfer it without downloading it again. See [cache recovery](guides/orbit-zero.md#recover-a-completed-computer-download).
 - **Install after transfer.** Open **Downloaded files** and choose **Install on PS5** once a game or add-on reaches the console. Select each package you want from a bundle.
 - **Export a diagnostic log.** **Settings → Diagnostics & about → Export log** saves a report for support, including PS5 diagnostics when connected. Titles, filenames, paths, links, passwords and tokens are excluded.
-- **Use your accounts on the computer.** Settings → Sources & accounts includes Archive.org sign-in and TorBox for supported sources. Computer accounts are separate from the PS5 service’s accounts.
+- **Use your accounts on the computer.** Settings → Sources & accounts includes Archive.org and Vikingfile sign-in, plus TorBox for supported sources. Computer accounts are separate from the PS5 service’s accounts.
 - **Download more at once.** Download one game to your computer at a time by default, or choose 1–8 in Settings → Downloads. PS5 transfers run one at a time while computer downloads continue.
 
 [Install on Mac, Windows or Linux](https://github.com/saawant12/orbit-store-ps5/blob/main/guides/orbit-zero-installation.md) · [Set up a PS5 without internet](https://github.com/saawant12/orbit-store-ps5/blob/main/guides/orbit-zero-offline-ps5.md)

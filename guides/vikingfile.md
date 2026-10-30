@@ -1,6 +1,6 @@
 # Use a Vikingfile account
 
-Use matching ELF, native app and Orbit Zero builds. The settings paths below follow Orbit 1.8.0.
+The settings paths below follow Orbit 1.8.0. Update the Orbit app handling your download and, for PS5 downloads, its running service. The native FFPKG includes the matching service; see [which files to download](getting-started.md#which-files-to-download).
 
 Vikingfile identifies an account with an **account hash**: the private code it gives you instead of an email/password login. Treat it like a password and do not include it in issues, screenshots or diagnostic reports.
 

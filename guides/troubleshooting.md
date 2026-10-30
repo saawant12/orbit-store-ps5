@@ -22,7 +22,7 @@ The Games-row app needs **kstuff and ShadowMountPlus**. Check that `PPSA99177.ff
 
 If the app says Orbit is not running, start your ELF loader on **port 9021** and choose **Try again**, or launch `orbit_store.elf` through your payload manager. The app never stops another running payload to make room.
 
-For missing artwork in the TV app, check the running service version in the browser's **App settings → Updates & startup**. Use **0.6.0 or later**; older services cannot load artwork for the TV app. Stop Orbit and start the updated service. Installing the new FFPKG alone does not replace a service already running.
+For missing artwork or crashes when opening a game page, use **native app 1.12.0** from Orbit 1.8.0, which includes service **1.8.0** and reduces artwork memory use. Check both running versions in **Diagnostics & about**. Stop any older running service before reopening the app; if you start the service separately through Payload Manager, update that copy too. Unavailable image hosts can still leave artwork missing. If a crash continues, include an existing diagnostic or crash log when reporting it.
 
 If ShadowMount reports **TitleDir bridge unavailable**, its app-registration bridge is not ready. Close active games, restart the console when convenient, run your usual jailbreak and ShadowMount setup, then retry registration of the existing FFPKG. If it persists, include ShadowMount's version and the relevant registration errors from its debug log in your report.
 
@@ -86,7 +86,7 @@ If the message says the original source no longer has the file, choose another d
 
 ### Vikingfile does not enter Downloads
 
-Update both PS5 apps to the latest matching release and enable Vikingfile in Sources. Select the desired option and drive, open its download page on PS5, complete verification and wait without pressing Download. Orbit captures the matching link and returns automatically. For computer downloads in Orbit Zero 1.4.0 or later, complete verification and wait without pressing Download in its provider window too. Verification happens on the PS5 even if you initiated it on your phone.
+Use the current Orbit app and matching running service, and enable Vikingfile under **Sources & accounts**. [Sign in](vikingfile.md) in the interface handling the download. The PS5 browser and native app keep separate sessions. Select the desired option and drive; Orbit first tries the signed-in direct flow. If a provider page opens, complete verification and wait without pressing Download. Orbit captures the matching link and returns automatically. For computer downloads in Orbit Zero 1.4.0 or later, complete verification and wait without pressing Download in its provider window too. Verification happens on the PS5 even if you initiated it on your phone.
 
 If the session times out, the provider page changes or the browser restarts, return to Orbit and try that option again. Cancel an existing session before starting another. A file that does not match the selected option is not queued. Provider links may become unavailable.
 

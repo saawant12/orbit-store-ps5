@@ -26,6 +26,18 @@ The current published release pairs **Orbit Store 1.8.0**, **native app 1.12.0**
 
 The instructions below use the default Store layout. If you choose another interface, see [where to find its settings](appearance.md#find-settings-after-switching).
 
+## Which files to download
+
+Choose the app you use; you do not need to download every asset.
+
+| How you use Orbit | What to download |
+| --- | --- |
+| Native PS5 app | **`PPSA99177.ffpkg`** and its checksum. Native app **1.12.0** already includes service **1.8.0**. A compatible ELF loader on port **9021** lets the app start that bundled service. |
+| Service started separately through Payload Manager or an ELF loader | **`orbit_store.elf`** and its checksum. Update the copy your manager actually launches, even if you also use the native app. |
+| Orbit Zero | The desktop package for your computer. Zero includes the matching service and can upload it through **Console → Start Orbit on PS5**; no separate ELF download is needed. The native FFPKG is optional if you also want TV controls. |
+
+Replacing an FFPKG or uploading an ELF does not replace an older service that is already running. Stop it with **Stop Orbit to restart** before starting the updated copy. In **Diagnostics & about**, the current versions are **native app 1.12.0** and **download service 1.8.0**; they intentionally have different version numbers. Keep your pairing, settings and queue in place.
+
 ## Verify the PS5 files
 
 Download the ELF or FFPKG and its matching `.sha256` file from the **same release**. Keep both files in one folder and open a terminal there. Run the command for the file you downloaded:
@@ -42,7 +54,7 @@ Orbit Zero’s desktop packages use **`SHA256SUMS`** instead. Follow [desktop do
 
 ## Install the native TV app
 
-The native app requires **kstuff and ShadowMountPlus**. For the app to start Orbit's download service itself, keep a compatible **ELF loader on port 9021** running. You can instead start `orbit_store.elf` through your payload manager before opening the app.
+The native FFPKG includes Orbit's download service and requires **kstuff and ShadowMountPlus**. For the app to start its bundled service, keep a compatible **ELF loader on port 9021** running. You can instead start `orbit_store.elf` through your payload manager before opening the app.
 
 1. Get `PPSA99177.ffpkg` and `PPSA99177.ffpkg.sha256` from the [latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest), then [verify the checksum](#verify-the-ps5-files).
 2. If an older Orbit service is running, stop it from **App settings → Updates & startup → Stop Orbit to restart** in the browser version. Installing an FFPKG does not replace a running service.
@@ -70,7 +82,7 @@ You can also get Orbit through Payload Manager's source list; see the [optional 
 
 ### Choose a default drive
 
-Open **App settings → Storage & cleanup** in the native app or browser. Select an available drive, or **Choose automatically** to prefer external storage when available. Selecting another drive for a download makes that drive the default. An unavailable drive must be chosen again explicitly; Orbit does not silently redirect an active transfer.
+Open **App settings → Storage & cleanup** in the native app or browser. Select an available drive, or **Choose automatically** to let Orbit suggest a destination. For a new download, Orbit keeps your preferred drive while it has enough room; otherwise it suggests the suitable drive with the most projected space. Choosing another drive for a download also makes it the default. An explicit selection is not silently changed, and an existing download stays on its original drive. Review **Save to** before starting.
 
 A drive connected to your phone or computer is not a PS5 destination. Attach your external drive to the console; Orbit uses its `homebrew` folder when available.
 

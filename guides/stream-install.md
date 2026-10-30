@@ -1,6 +1,6 @@
 # Stream a computer download to the PS5 installer
 
-**For Orbit 1.8.0.** Use the matching ELF, native app and Orbit Zero.
+**For Orbit Zero 1.8.0 and PS5 service 1.8.0.** Zero includes the service under **Console → Start Orbit on PS5**. A separate native TV app is not required for this flow.
 
 **Stream & install** lets Orbit Zero serve a finished PKG or FPKG directly to the PS5 installer over your local network. It avoids staging another complete package in the PS5’s download folder. The PS5 still needs space for the installed game and any temporary space its installer requires.
 

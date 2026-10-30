@@ -2,11 +2,11 @@
 
 Orbit Zero can save games on your computer without a connected PS5, then send them to the console later. You can also download and transfer to a connected PS5 over the local network. For uncompressed files, the two stages overlap: completed chunks can reach the console while the computer is still downloading. ZIP, RAR and 7z archives finish downloading and extract on the computer before their files transfer. Use the desktop app, a compatible native Orbit TV app, or the local browser controls to browse and manage the queue.
 
-Download the desktop app and matching PS5 files from [Orbit Store releases](https://github.com/saawant12/orbit-store-ps5/releases/latest). PS4 browsing and desktop language selection require Orbit Zero 1.1.0 or later. For a console without internet, follow the [offline PS5 setup guide](orbit-zero-offline-ps5.md).
+Download the desktop app from [Orbit Store releases](https://github.com/saawant12/orbit-store-ps5/releases/latest). Zero includes the matching PS5 service under **Console → Start Orbit on PS5**; download the native FFPKG only if you also want the TV app. PS4 browsing and desktop language selection require Orbit Zero 1.1.0 or later. For a console without internet, follow the [offline PS5 setup guide](orbit-zero-offline-ps5.md).
 
 **Download and transfer improvements are included as standard.** Follow the [installation and update steps](orbit-zero-installation.md) to update the desktop app and PS5 service together.
 
-The current screenshots show Orbit Zero 1.5.0, rendered locally with the current catalogue.
+The screenshots below were captured in Orbit Zero 1.5.0. Follow the current [Settings guide](settings.md) for the categories used in 1.8.0.
 
 ![Orbit Zero 1.5.0 Discover with NieR:Automata selected](../assets/1.5.0/zero-discover-nier-automata.jpg)
 

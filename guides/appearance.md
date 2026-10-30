@@ -161,7 +161,7 @@ Changing interfaces does not change add-on availability, download progress or in
 
 Open **App settings → Appearance → Language** in Orbit Store's default layout, or **Settings → Appearance → Language** in the other layouts and Orbit Zero. Zero's Store layout also keeps the globe-shaped **Language** shortcut.
 
-The next release supports **26 languages**: English, Arabic, Czech, Danish, Dutch, Finnish, French, German, Greek, Hungarian, Indonesian, Italian, Japanese, Korean, Norwegian Bokmål, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, Simplified Chinese and Traditional Chinese.
+Orbit 1.8.0 supports **26 languages**: English, Arabic, Czech, Danish, Dutch, Finnish, French, German, Greek, Hungarian, Indonesian, Italian, Japanese, Korean, Norwegian Bokmål, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, Simplified Chinese and Traditional Chinese.
 
 Choose a language or follow the system/browser language. Arabic mirrors the layout and horizontal navigation; English game names keep their original reading direction. Numbers, dates and sizes follow the selected language. Game descriptions and provider pages may remain in their original language. The language choice is saved separately for each app or browser.
 

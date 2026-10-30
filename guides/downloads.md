@@ -98,7 +98,7 @@ For a direct option, select **Download to PS5**. Orbit checks the file and desti
 
 ### Vikingfile: sign in or complete verification
 
-In **1.7.0**, [sign in to Vikingfile](vikingfile.md) to let Orbit request the selected file with your account session. If Vikingfile returns a matching direct link, the download starts without a provider window. Otherwise, use the verification steps below.
+[Sign in to Vikingfile](vikingfile.md) to let Orbit request the selected file with your account session. In **1.8.0**, Orbit also keeps that session attached while checking, downloading and resuming the file. If Vikingfile returns a matching direct link, the download starts without a provider window. Otherwise, use the verification steps below.
 
 **Starting in the native TV app?** Open **Download options**, choose your source and drive, then select **Open Vikingfile on PS5**. Vikingfile opens directly in the PS5 browser. With the current matching PS5 apps, complete any verification and wait without pressing Download. Orbit captures the ready link and closes its provider window automatically. Orbit checks the file and queues it on your selected drive. You do not need to open Orbit's browser interface first. If the source or drive is no longer available, choose an available one explicitly.
 
@@ -143,9 +143,9 @@ If the session expires, start the provider step again. For an existing paused or
 
 **Available since 1.3.5.** Some Archive.org downloads require an account. You can still use public downloads without signing in.
 
-- **Native PS5 app:** open **App settings → Sources & accounts → Archive.org** (or **Settings → Archive.org** in another interface).
-- **PS5 browser or paired device:** open **App settings → Sources & accounts → Archive.org**. In another browser interface, use **Settings → Archive.org**.
-- **Orbit Zero computer downloads:** open **Settings → Sources & accounts → Archive.org**. In another desktop interface, use **Settings → Downloads**.
+- **Native PS5 app:** open **App settings → Sources & accounts → Archive.org** (or **Settings → Sources & accounts → Archive.org** in another interface).
+- **PS5 browser or paired device:** open **App settings → Sources & accounts → Archive.org**. In another browser interface, use **Settings → Sources & accounts → Archive.org**.
+- **Orbit Zero computer downloads:** open **Settings → Sources & accounts → Archive.org** in any layout.
 
 Enter your Archive.org email and password, select **Sign in**, and check that the panel shows **Signed in**. Then retry the download. The native app and browser share the PS5’s sign-in; Orbit Zero keeps a separate sign-in on the computer. If you use **Prefer PS5**, sign in on the PS5 as well for downloads routed there. Your password is not saved.
 
@@ -153,7 +153,7 @@ Release 1.3.5 removed 225 unavailable Archive.org options. Signing in helps with
 
 ### Optional: download through TorBox
 
-**Available in 0.8.0 and later.** TorBox is an optional delivery choice for supported links. Update both Orbit’s service ELF and native FFPKG to use it in the TV app. You need your own TorBox account; its plan, host availability, quotas and file-size limits apply. You can keep using the original provider without connecting TorBox.
+**Available in 0.8.0 and later.** TorBox is an optional delivery choice for supported links. Use the current native FFPKG and its matching running service; the package already includes the service. See [which files to download](getting-started.md#which-files-to-download). You need your own TorBox account; its plan, host availability, quotas and file-size limits apply. You can keep using the original provider without connecting TorBox.
 
 1. In Orbit’s browser version, open **App settings → Sources & accounts → TorBox**. You can do this on the PS5 or a paired phone or computer.
 2. Get your API key from [TorBox settings](https://torbox.app/settings), enter it in Orbit and choose **Connect TorBox**. Keep the key private.
@@ -172,7 +172,7 @@ Pause and resume from Downloads as usual. Disconnecting TorBox pauses its unfini
 
 #### TorBox in Orbit Zero
 
-**Available since 1.3.5.** Open **Settings → Sources & accounts → TorBox**, or **Settings → Downloads** in another desktop interface. Connect your API key on the computer, then choose **Download using → TorBox** on a supported game option. Zero downloads to the computer. Choose **This computer** to keep the game there, or a PS5 drive to transfer it. This account connection is separate from the PS5 service’s TorBox connection. Host availability, account limits and file-size limits still apply.
+**Available since 1.3.5.** Open **Settings → Sources & accounts → TorBox** in any desktop interface. Connect your API key on the computer, then choose **Download using → TorBox** on a supported game option. Zero downloads to the computer. Choose **This computer** to keep the game there, or a PS5 drive to transfer it. This account connection is separate from the PS5 service’s TorBox connection. Host availability, account limits and file-size limits still apply.
 
 Zero can refresh an expired temporary TorBox link during a retry while preserving matching partial data. If TorBox’s download server refuses a connection before any data arrives, Zero waits at least five minutes before retrying. Longer provider waits still apply.
 
@@ -224,7 +224,7 @@ In Zero, **Remove from Downloads** can include the computer copy, PS5 copy or bo
 
 ### Automatic PS5 shutdown
 
-Open **App settings → Downloads → Automatic PS5 shutdown**. In Zero, use **Settings → Downloads** while connected to the PS5. Choose the whole queue or a download under **Wait for**. Other unfinished work still prevents shutdown. Orbit shows a cancellable 60-second countdown when everything is ready. It is off by default. See the [shutdown guide](shutdown.md).
+Open **App settings → Downloads → Automatic PS5 shutdown**. In Zero, use **Settings → Downloads** while connected to the PS5. Choose the whole queue or a download under **Wait for**, or choose **Shut down when finished** on a PS5 download and confirm. Orbit shows **Automatic shutdown scheduled.** and changes the item action to **Cancel automatic shutdown**. Other unfinished work still prevents shutdown. Orbit shows a cancellable 60-second countdown when everything is ready. It is off by default. See the [shutdown guide](shutdown.md).
 
 ### Simultaneous downloads
 

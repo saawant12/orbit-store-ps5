@@ -1,6 +1,6 @@
 # Your Library and storage
 
-**For Orbit 1.8.0.** Use the matching ELF, native app and Orbit Zero. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
+**For Orbit 1.8.0.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
 
 ![Native TV app Library with installed and on-drive games](../assets/0.9.0/native-library.png)
 
