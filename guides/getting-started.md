@@ -22,7 +22,7 @@ The Games and Media versions share the same downloads, favourites and service se
 - A phone or computer on the same local network, if you want to control Orbit from one.
 - For Library management, a compatible ShadowMount v1 local API.
 
-The current published release pairs **Orbit Store 1.8.1**, **native app 1.12.1** and **Orbit Zero 1.8.1**.
+The current published release pairs **Orbit Store 1.8.2**, **native app 1.12.2** and **Orbit Zero 1.8.2**.
 
 The instructions below use the default Store layout. If you choose another interface, see [where to find its settings](appearance.md#find-settings-after-switching).
 
@@ -32,11 +32,11 @@ Choose the app you use; you do not need to download every asset.
 
 | How you use Orbit | What to download |
 | --- | --- |
-| Native PS5 app | **`PPSA99177.ffpkg`** and its checksum. Native app **1.12.1** already includes service **1.8.1**. A compatible ELF loader on port **9021** lets the app start that bundled service. |
+| Native PS5 app | **`PPSA99177.ffpkg`** and its checksum. Native app **1.12.2** already includes service **1.8.2**. A compatible ELF loader on port **9021** lets the app start that bundled service. |
 | Service started separately through Payload Manager or an ELF loader | **`orbit_store.elf`** and its checksum. Update the copy your manager actually launches, even if you also use the native app. |
 | Orbit Zero | The desktop package for your computer. Zero includes the matching service and can upload it through **Console → Start Orbit on PS5**; no separate ELF download is needed. The native FFPKG is optional if you also want TV controls. |
 
-Replacing an FFPKG or uploading an ELF does not replace an older service that is already running. Stop it with **Stop Orbit to restart** before starting the updated copy. In **Diagnostics & about**, the current versions are **native app 1.12.0** and **download service 1.8.0**; they intentionally have different version numbers. Keep your pairing, settings and queue in place.
+Replacing an FFPKG or uploading an ELF does not replace an older service that is already running. Stop it with **Stop Orbit to restart** before starting the updated copy. In **Diagnostics & about**, the current versions are **native app 1.12.2** and **download service 1.8.2**; they intentionally have different version numbers. Keep your pairing, settings and queue in place.
 
 ## Verify the PS5 files
 
@@ -156,7 +156,11 @@ Existing `autoload.txt` lists are supported. Configure etaHEN auto-start manuall
 
 ### One-step updates
 
-**Update Orbit**, available since 1.5.0, is under **Updates & startup** in the current settings. It installs the TV app and download service together. With your local ELF loader running on port 9021, Orbit restarts its service and resumes the downloads it interrupted. **Restart Orbit** restarts just the service. Reopen the TV app after its update to use the new version. If the loader is unavailable, follow the manual launch instructions shown by Orbit.
+**Update Orbit**, available since 1.5.0, is under **Updates & startup**. It updates the TV app and download service together.
+
+Starting with native app **1.12.2** in Orbit **1.8.2**, Orbit downloads only the FFPKG when it already includes the newest service. When the download finishes, select **Close and reopen**. Reopen Orbit from the Games row. The updated app saves your queue, stops the older service and starts its new bundled service through your compatible ELF loader. Downloads interrupted by that service restart continue. Check the running versions in **Diagnostics & about**.
+
+For browser or service-only updates, **Restart Orbit** restarts the service through a local ELF loader on port **9021**. If your setup uses Payload Manager without that loader, follow Orbit’s manual stop/start instructions and run the updated saved or synced ELF. Older native apps retain their existing update flow until upgraded.
 
 In the native app, open **App settings → Updates & startup**. In the browser’s Store layout, open **App settings → Updates & startup**; other browser layouts use **Settings → Updates & startup**.
 
@@ -177,7 +181,7 @@ The update panel shows three separate versions: **Running**, **Saved for next st
 
 ### Update the TV app
 
-On 1.5.0 or later, **Update Orbit** updates the TV app and service together; see [one-step updates](#one-step-updates). Reopen the TV app after updating it. The following separate controls are useful for older versions or when updating only the TV app.
+On 1.5.0 or later, **Update Orbit** updates the TV app and service together; see [one-step updates](#one-step-updates). On native 1.12.2 or later, use **Close and reopen** when offered, then reopen the TV app. The following separate controls are useful for older versions or when updating only the TV app.
 
 In the native app, open **App settings → Updates & startup → TV app**, check for updates and choose **Update TV app**. Confirm **Replace with this release** if the existing image was copied manually. After installation, close and reopen the app.
 
@@ -189,7 +193,7 @@ Alternatively, use the browser:
 
 A saved update is not proof that the new native app is running. Close and reopen the app, then compare the running native version with the saved version. You can also verify and replace the FFPKG at its existing location manually; a first installation normally uses `/data/homebrew/PPSA99177.ffpkg`. Keep only one installation: Orbit will not overwrite a folder installation at `/data/homebrew/PPSA99177/`. Update that folder yourself, or remove your old app copy before switching formats. Keep `/data/orbit-store/`; it holds your settings and queue.
 
-The TV app includes a copy of the service, but replacing the app does not replace the service that is already running. Stop Orbit before starting the new copy. If the saved service is newer than the one inside the TV app, opening the app keeps the newer one.
+The TV app includes a copy of the service. For a manual replacement or an older updater, stop the old service before starting the new copy. After an in-app update, choosing **Close and reopen** lets the updated app handle that service replacement when you open it again. If the saved service is newer than the one inside the TV app, opening the app keeps the newer one.
 
 ### Upgrading an older version
 

@@ -1,6 +1,6 @@
 # Your Library and storage
 
-**For Orbit 1.8.1.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
+**For Orbit 1.8.2.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
 
 ![Native TV app Library with installed and on-drive games](../assets/0.9.0/native-library.png)
 
@@ -41,11 +41,11 @@ If Library is unavailable, start a compatible ShadowMount version and enable its
 
 ## Manage a source
 
-Open a Library game to see its available actions. Mount or unmount a compatible source, or choose **Copy** or **Move** between supported drives. Unmount it first, select the destination and confirm. Downloads keep running while it copies, and Orbit keeps enough space for both.
+Open a Library game to see its available actions. Mount or unmount a compatible source, or choose **Copy** or **Move** between supported drives. Unmount it first, select the destination and confirm. Downloads can continue, start or resume while the game copies or moves. Orbit reserves the remaining space and protects paths in use.
 
 Copy keeps the original. In **1.7.5**, **Move** copies the game, reads the destination back to verify it, and registers the new location with ShadowMount before removing the original. If copying, verification or registration fails, the original is kept. Keep both drives connected until the operation finishes.
 
-Follow copying and verification progress in Library. Cancellation is available before the original is removed; it cannot undo an already completed move. A compatible ShadowMount version is required. Orbit Zero offers the same flow when connected to the matching PS5 service. These Library moves are separate from ordinary file operations under **Library → Files**.
+Follow copying and verification progress in Library. When it finishes, dismiss the result to clear the message; this does not remove the copied or moved files. Cancellation is available before the original is removed; it cannot undo an already completed move. A compatible ShadowMount version is required. Orbit Zero offers the same flow when connected to the matching PS5 service. These Library moves are separate from ordinary file operations under **Library → Files**.
 
 Open **Library → Files** to check free space and manage files and folders. Select a folder to open it; Circle goes back one folder. See the [Files guide](files.md). Game sizes are measured automatically. Available actions depend on your ShadowMount version, drive format and free space. If an action is unavailable or fails, check the displayed message and see [Troubleshooting](troubleshooting.md).
 

@@ -1,6 +1,6 @@
 # Find and download a game
 
-Orbit’s current catalogue includes **2,157 games: 1,181 PS5 games and 976 PS4 games**, with **4,997 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit’s current catalogue includes **2,158 games: 1,182 PS5 games and 976 PS4 games**, with **5,045 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 Settings paths in this guide use the Store layout. For the browser’s other layouts, see the [Settings page equivalents](appearance.md#find-settings-after-switching).
 
@@ -59,6 +59,8 @@ Files go to the selected drive’s `homebrew` folder, including `/data/homebrew/
 
 ## Pick a source, format and drive
 
+In Orbit 1.8.2, opening a game from filtered Browse results selects an available option matching those filters. When you open it elsewhere, Orbit first tries the source and format you downloaded last, then an option that can download without a verification page. You can still choose another option.
+
 On the game page, select the main download button to open **Download options**. This reviews your choices without starting a transfer. Open **Source** to choose a format and provider, **Download using** for direct or TorBox delivery, and **Save to** for storage attached to the PS5. The storage panel shows **Free now**, **Unfinished downloads**, and **After queue + this download**. Back returns to your previous selection.
 
 ![Orbit Store 1.5.0 source, delivery and destination choices](../assets/1.5.0/store-download-options.jpg)
@@ -82,7 +84,7 @@ Orbit 1.5.0 shows known firmware requirements beside download options. Options u
 
 ### LZ4 games
 
-**Available in Orbit 1.7.5.** Choose **Browse → Format → LZ4** in the browser/ELF, native PS5 app or Orbit Zero. The same filter works in Store, Crossbar, Cinema and Panorama. The catalogue currently has **49 LZ4 download options across 48 PS5 games**.
+**Available in Orbit 1.7.5.** Choose **Browse → Format → LZ4** in the browser/ELF, native PS5 app or Orbit Zero. The same filter works in Store, Crossbar, Cinema and Panorama. The catalogue currently has **52 LZ4 download options across 50 PS5 games**.
 
 LZ4 identifies the game assets inside the download. The download may still be a ZIP, RAR or 7z archive, and those packaging filters continue to match it. Orbit extracts the outer archive on the PS5, or on the computer in Zero, and preserves the LZ4 game files for your loader. It does not recursively decompress those assets or convert them into a PKG, exFAT or FFPFSC image.
 

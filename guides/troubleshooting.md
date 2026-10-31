@@ -22,7 +22,7 @@ The Games-row app needs **kstuff and ShadowMountPlus**. Check that `PPSA99177.ff
 
 If the app says Orbit is not running, start your ELF loader on **port 9021** and choose **Try again**, or launch `orbit_store.elf` through your payload manager. The app never stops another running payload to make room.
 
-For missing artwork or crashes when opening a game page, use **native app 1.12.0** from Orbit 1.8.0, which includes service **1.8.0** and reduces artwork memory use. Check both running versions in **Diagnostics & about**. Stop any older running service before reopening the app; if you start the service separately through Payload Manager, update that copy too. Unavailable image hosts can still leave artwork missing. If a crash continues, include an existing diagnostic or crash log when reporting it.
+For missing artwork or crashes when opening a game page, use the [latest matching release](https://github.com/saawant12/orbit-store-ps5/releases/latest). Orbit 1.8.2 includes **native app 1.12.2** and service **1.8.2**, with the artwork memory fixes introduced in 1.8.0. Check both running versions in **Diagnostics & about**. Stop any older running service before reopening the app; if you start the service separately through Payload Manager, update that copy too. Unavailable image hosts can still leave artwork missing. If a crash continues, include an existing diagnostic or crash log when reporting it.
 
 If ShadowMount reports **TitleDir bridge unavailable**, its app-registration bridge is not ready. Close active games, restart the console when convenient, run your usual jailbreak and ShadowMount setup, then retry registration of the existing FFPKG. If it persists, include ShadowMount's version and the relevant registration errors from its debug log in your report.
 
@@ -37,6 +37,8 @@ Check **App settings → Downloads → Automatic PS5 shutdown**, or **Settings �
 Review free space and queued work in the download sheet. Archives may need room for the archive and extracted files together, and installation needs additional console storage. If Zero still has the computer files, use **Change drive** on that download to send them to another PS5 drive without downloading again. A completed copy on the old drive stays there. Direct PS5 downloads do not have this drive-change action. See [change the PS5 drive](orbit-zero.md#change-the-ps5-drive).
 
 ### An update says Orbit is already running
+
+In native 1.12.2 or later, select **Close and reopen** when offered, then open Orbit again. When reopened after an in-app update, the updated app saves the queue, stops the older service and starts its bundled copy. If you replaced files manually or use an older updater, follow the steps below.
 
 The replacement was saved for the next start. Open **App settings → Updates & startup** (or **Settings → Updates & startup**) and compare **Running** with **Saved for next start**. Use **Restart Orbit** with your ELF loader running on port 9021. If you use Payload Manager without that loader, follow the manual stop/start instructions and launch the saved or synced ELF through the manager. On older versions, choose **Stop Orbit to restart**, then launch the saved `/data/orbit-store/orbit_store.elf` or a synced manager copy. Pairing and the queue stay saved. A manually imported old ELF starts that older copy unless you replace it.
 
@@ -67,6 +69,12 @@ Check the enabled Sources and clear Browse’s filters. Then try **App settings 
 
 Artwork comes from external URLs. Orbit tries an available fallback when the primary fails. Network/DNS restrictions or unavailable host images can still prevent artwork from loading. Some dates and other metadata remain missing; corrections arrive through catalogue updates. Undated games appear after dated games in release-date sorting.
 
+### Catalogue refresh reports a network error or HTTP 0
+
+Orbit did not receive an HTTP response from its catalogue host. It keeps the current saved or bundled catalogue, so you can continue browsing; new entries and corrections appear only after a refresh succeeds. Your queue and downloaded files are kept. Try **App settings → Game catalogue → Refresh catalogue** again later, after any displayed cooldown. Downloads from reachable providers can continue independently.
+
+If it persists, check internet access on the device handling the refresh and export Orbit’s diagnostic report. A working GitHub webpage does not necessarily mean its catalogue-file host is reachable. Do not delete your queue or reinstall games to address a catalogue refresh failure.
+
 ### A download fails or is slow
 
 - **Provider returned a page:** update Orbit, restart it and retry from Downloads. For browser-only Vikingfile options, repeat the provider step. Orbit still rejects an actual error or verification page returned instead of file data.
@@ -80,7 +88,7 @@ Parallel connections can help only when supported by the host and file identity.
 
 ### TorBox stops or cannot reach its download server
 
-Use the matching [1.8.0 apps](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.8.0). TorBox uses at most eight connections per game and honours provider cooldowns. In Zero, if the download server refuses a connection before any data arrives, a retry waits at least five minutes. Keep the partial files and allow that wait to finish.
+Use the [latest matching apps](https://github.com/saawant12/orbit-store-ps5/releases/latest). TorBox uses at most eight connections per game and honours provider cooldowns. In Zero, if the download server refuses a connection before any data arrives, a retry waits at least five minutes. Keep the partial files and allow that wait to finish.
 
 If the message says the original source no longer has the file, choose another download option. A fresh temporary link cannot restore a removed source. If failures continue, export a new diagnostic log and include the app version, source and the point at which it stopped. Do not share your TorBox key or temporary download URLs.
 

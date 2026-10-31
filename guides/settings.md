@@ -33,6 +33,10 @@ Choosing a download sets the job to wait for; it does not allow Orbit to turn of
 
 When the console is ready, a **60-second countdown** appears. Cancel it from any connected Orbit app. Shutdown is off by default, and completed history does not trigger it after restarting Orbit.
 
+## Updating Orbit
+
+Open **Updates & startup**. In native 1.12.2, **Update Orbit** can download both components in one FFPKG, then offer **Close and reopen**. Reopen the app to start its bundled service; saving the package alone does not activate the update. Browser and separately managed ELF users retain the service restart or manual launch controls. See [one-step updates](getting-started.md#one-step-updates).
+
 ## Language
 
 Choose **Appearance → Language**. Orbit supports 26 interface languages, including Arabic with a mirrored layout and Japanese, Chinese and Korean fonts. Follow the system language or choose one for this device. Game names and provider pages may use their own language.

@@ -6,7 +6,7 @@ Orbit runs on your PS5. Pick a game, choose its source and format, and Orbit dow
 
 **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** brings Orbit to Mac, Windows and Linux. Download games on your computer and send them to your PS5 straight away or later, without your PS5 needing internet access.
 
-Explore **2,157 games: 1,181 PS5 games and 976 PS4 games**, with **4,997 game download options**, plus **626 DLCs and add-ons with 628 options across 192 games**. Single-file downloads come from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
+Explore **2,158 games: 1,182 PS5 games and 976 PS4 games**, with **5,045 game download options**, plus **626 DLCs and add-ons with 628 options across 192 games**. Single-file downloads come from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
 
 <p>
   <a href="assets/1.5.0/native-crossbar-discover.jpg"><img src="assets/1.5.0/native-crossbar-discover.jpg" width="48%" alt="Native Crossbar Discover with NieR:Automata selected"></a>
@@ -53,6 +53,10 @@ Explore **2,157 games: 1,181 PS5 games and 976 PS4 games**, with **4,997 game do
 - **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** for Mac, Windows and Linux, with [stream installs](guides/stream-install.md) from your computer.
 - **Updates when you choose**, for the TV app and service together.
 - **No Orbit account. No telemetry.**
+
+## New in 1.8.2
+
+**Smoother updates and download choices.** Native updates can download the app and its included service together; choose **Close and reopen** when asked. Game pages select an option matching your Browse filters, or your last-used source and format. Downloads can start while copies or transfers run, completed Library results can be dismissed, and long downloads show hours and minutes remaining. See the [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.8.2) and [update guide](guides/getting-started.md#one-step-updates).
 
 ## New in 1.8.1
 
@@ -207,13 +211,13 @@ The desktop app supports **ARM64 and x64** computers and the same **26 interface
 
 ## Beta status
 
-**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.8.1** have these version numbers:
+**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.8.2** have these version numbers:
 
 | Component | Version |
 | --- | --- |
-| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.8.1** |
-| Native TV app (`PPSA99177.ffpkg`) | **1.12.1** |
-| Orbit Zero for desktop | **1.8.1** |
+| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.8.2** |
+| Native TV app (`PPSA99177.ffpkg`) | **1.12.2** |
+| Orbit Zero for desktop | **1.8.2** |
 
 The TV app has its own version number; these files belong to the same release. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
 
