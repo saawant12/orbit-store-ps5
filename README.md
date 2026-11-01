@@ -405,7 +405,7 @@ Forks are welcome, as long as they share their source under the same licence. Bl
 
 > **Free, with optional support.** Orbit Store, Orbit Zero, Orbit Play and our upcoming apps are free and will stay free.
 >
-> If you’d like to support development, you can contribute through [GitHub Sponsors](https://github.com/sponsors/saawant12) or [Buy Me a Coffee](https://buymeacoffee.com/saawant12). Contributions help cover development tools, test hardware and servers, including Orbit Play for playing away from home. It’s entirely optional. You can also find **Support Orbit** in the apps’ settings, with links and QR codes.
+> If you’d like to support development, you can contribute through [GitHub Sponsors](https://github.com/sponsors/saawant12) or [Buy Me a Coffee](https://buymeacoffee.com/saawant12). Contributions help cover the costs of AI tools, test consoles, hardware and servers, including Orbit Play for playing away from home. It’s entirely optional. You can also find **Support Orbit** in the apps’ settings, with links and QR codes.
 >
 > These are our only official donation pages.
 
