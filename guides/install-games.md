@@ -19,6 +19,14 @@ In **1.7.5**, Orbit also shows firmware requirements found in supported metadata
 
 Installation needs a compatible PS5 setup. It does not change a game's firmware, licence or jailbreak requirements. Orbit does not launch games or uninstall them.
 
+## Included backports
+
+In **1.8.3**, Orbit checks extracted downloads for a `fakelib` or `fakelib2` directory. When the game needs newer firmware than your PS5, its warning explains how to place the included backport for ShadowMount+.
+
+Open **Library → Files**, locate the folder containing `fakelib` or `fakelib2`, and move that parent folder into `/data/homebrew/backports/`. Give the parent folder the game's exact title ID shown in the warning, for example `/data/homebrew/backports/PPSA01234/fakelib/`. Move the containing folder, not just its individual files. If that destination already exists, Orbit will not overwrite it.
+
+Backport files are only evidence that a backport is included; they do not confirm compatibility with your firmware, game version or loader. Follow any requirements supplied with the selected download.
+
 ## Install from Files
 
 In **1.7.0**, open **Library → Files**, select a package or a folder’s **…** menu, and choose **Install on PS5**. Compatible images and game folders use ShadowMount. See [Files](files.md).

@@ -1,6 +1,6 @@
 # Find and download a game
 
-Orbit’s current catalogue includes **2,158 games: 1,182 PS5 games and 976 PS4 games**, with **5,045 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit’s current catalogue includes **2,168 games: 1,192 PS5 games and 976 PS4 games**, with **5,065 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 Settings paths in this guide use the Store layout. For the browser’s other layouts, see the [Settings page equivalents](appearance.md#find-settings-after-switching).
 
@@ -12,17 +12,23 @@ Settings paths in this guide use the Store layout. For the browser’s other lay
 
 *Store Discover in Orbit 1.5.0, rendered locally from the browser app. Crossbar, Cinema and Panorama arrange the same collections differently; see the [appearance guide](appearance.md).*
 
-Switch to **Browse** when you want search and filters. It defaults to **Release date (newest first)**. Games without a recorded date follow alphabetically. Search by game name or title ID, filter by platform, source, format, region or download size, and change the sort order. **Reset filters** restores the default. Missing dates and other metadata can be added later through catalogue updates.
+Switch to **Browse** when you want search and filters. It defaults to **Release date (newest first)**. Games without a recorded date follow alphabetically. Search by game name or title ID, filter by platform, source, format, genre, tag, region or download size, and change the sort order. **Reset filters** restores the default. Missing dates and other metadata can be added later through catalogue updates.
 
-![Orbit Store 1.5.0 Browse with platform, source, format and region filters](../assets/1.5.0/store-browse.jpg)
+![Native Store Browse with Genre choices and matching game counts](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.8.3/orbit-1.8.3-filters-store.png)
 
 *Use filters to find options that fit your drive and preferred format. Sizes reflect the download option you choose.*
 
 In 1.6.0, Source and Format allow multiple selections. Use **Installed games** to hide games already installed or saved on a PS5 drive. This uses the connected console’s library; it does not treat a computer-only copy as installed.
 
+### Genres and filter counts
+
+In **1.8.3**, Browse dropdowns show how many games match each choice, updating as you change your search and other filters. Choices with no matches are dimmed. This works in the browser, native app and Zero, in all four interfaces.
+
+Choose one or more entries under **Genre**. A game can match any selected genre, while still meeting your other filters. Save that selection through [Saved filters](saved-filters.md). Genre uses the metadata shown on game details; equivalent labels share one entry. Only genres recorded for at least ten games in the full catalogue appear in the dropdown. This threshold does not change with your current filters, and games with missing or less common genres remain in **All genres**.
+
 ### Game tags
 
-Use **Tags** for **PlayStation exclusive**, **Local co-op**, **Split-screen**, **Open world**, **Story-driven**, **Soulslike**, **PSVR supported** and **PSVR2 supported**. Selecting several tags includes games matching any selected tag. Combine them with Platform, Source, Format and the other filters to narrow results.
+Use **Tags** for **PlayStation exclusive**, **Local co-op**, **Split-screen**, **Open world**, **Story-driven**, **Soulslike**, **Turn-based**, **PSVR supported** and **PSVR2 supported**. Selecting several tags includes games matching any selected tag. Combine them with Platform, Source, Format and the other filters to narrow results.
 
 PlayStation exclusive means no official PC, Xbox or Nintendo version for that game. VR filters include both required and optional VR modes, attached to the relevant PS4 or PS5 edition; check the game details for headset requirements. Tags are reviewed catalogue metadata, and coverage is still expanding. An untagged game is not proof that it lacks a feature.
 
@@ -59,7 +65,7 @@ Files go to the selected drive’s `homebrew` folder, including `/data/homebrew/
 
 ## Pick a source, format and drive
 
-In Orbit 1.8.2, opening a game from filtered Browse results selects an available option matching those filters. When you open it elsewhere, Orbit first tries the source and format you downloaded last, then an option that can download without a verification page. You can still choose another option.
+From Orbit 1.8.2 onward, opening a game from filtered Browse results selects an available option matching those filters. When you open it elsewhere, Orbit first tries the source and format you downloaded last, then an option that can download without a verification page. You can still choose another option.
 
 On the game page, select the main download button to open **Download options**. This reviews your choices without starting a transfer. Open **Source** to choose a format and provider, **Download using** for direct or TorBox delivery, and **Save to** for storage attached to the PS5. The storage panel shows **Free now**, **Unfinished downloads**, and **After queue + this download**. Back returns to your previous selection.
 
@@ -67,7 +73,9 @@ On the game page, select the main download button to open **Download options**. 
 
 *Different sources can offer different formats or sizes for the same game. Select the exact option you intend to download.*
 
-Orbit 1.5.0 shows known firmware requirements beside download options. Options unsuitable for your detected firmware appear last with a warning and remain selectable. In Zero, this uses the last paired PS5's firmware even while disconnected. Unknown requirements are not a compatibility guarantee. In 1.7.5, supported metadata found after extraction also appears in Downloads and installation review. If another format or version is already installed or on a drive, the PS5 apps warn before downloading and offer **Download anyway**.
+Orbit 1.5.0 shows known firmware requirements beside download options. Options unsuitable for your detected firmware appear last with a warning and remain selectable. In Zero, this uses the last paired PS5's firmware even while disconnected. Unknown requirements are not a compatibility guarantee. In 1.7.5, supported metadata found after extraction also appears in Downloads and installation review. If another format or version is already installed or on a drive, the PS5 apps warn before downloading and offer **Download anyway**. In 1.8.3, the browser and native Store layout also show the existing copy’s location and format above that button.
+
+If extraction finds backport files and the game needs newer firmware, 1.8.3 shows [backport placement instructions](install-games.md#included-backports) in its firmware warning. Finding those files does not confirm that the game will run on your console.
 
 ### Which format to pick
 

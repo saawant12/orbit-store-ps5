@@ -35,7 +35,7 @@ When the console is ready, a **60-second countdown** appears. Cancel it from any
 
 ## Updating Orbit
 
-Open **Updates & startup**. In native 1.12.2, **Update Orbit** can download both components in one FFPKG, then offer **Close and reopen**. Reopen the app to start its bundled service; saving the package alone does not activate the update. Browser and separately managed ELF users retain the service restart or manual launch controls. See [one-step updates](getting-started.md#one-step-updates).
+Open **Updates & startup**. From native 1.12.2 onward, **Update Orbit** can download both components in one FFPKG, then offer **Close and reopen**. Reopen the app to start its bundled service; saving the package alone does not activate the update. Browser and separately managed ELF users retain the service restart or manual launch controls. See [one-step updates](getting-started.md#one-step-updates).
 
 ## Language
 

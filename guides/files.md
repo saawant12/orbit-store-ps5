@@ -1,6 +1,6 @@
 # Manage files on your PS5
 
-**For Orbit 1.8.2.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service.
+**For Orbit 1.8.3.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service.
 
 Open **Library → Files** in the browser, native TV app or Orbit Zero. Choose internal storage, a connected USB drive or an available M.2/extended drive. Each drive shows its free space.
 
@@ -32,6 +32,8 @@ Downloads can continue, start or resume while you change files. Orbit keeps enou
 **Unpack here** supports ZIP, RAR and 7z. Orbit tries its known passwords, then asks for a password if needed. Files keeps the original archive. Existing extracted items are not overwritten.
 
 **Install on PS5** uses the console’s package installer for PKG/FPKG files. For game images and game folders it asks ShadowMount to register them. ShadowMount 1.7beta5 or newer can add supported games from folders outside `homebrew`; older versions may ask you to move them into `homebrew` first. Installation still depends on the game, firmware and jailbreak. See [installing games](install-games.md).
+
+When Downloads identifies an included backport and warns about newer firmware, use Files to place its containing folder as shown in the warning. See [included backports](install-games.md#included-backports).
 
 ## Save a file to another device
 

@@ -27,7 +27,7 @@ Explore **2,168 games: 1,192 PS5 games and 976 PS4 games**, with **5,065 game do
 ## Features
 
 **Find games**
-- **Discover and Browse** with platform, source, format, region and size filters, plus eight [game tags](guides/downloads.md#game-tags).
+- **Discover and Browse** with platform, source, format, genre, region and size filters with matching game counts, plus nine [game tags](guides/downloads.md#game-tags).
 - **Saved filters.** Name your filters once and apply them again in the browser, TV app or Orbit Zero. [Guide](guides/saved-filters.md)
 - **DLC and add-ons** from the Add-ons page or a game’s details. [DLC guide](guides/add-ons.md)
 - **Firmware checks.** Known firmware requirements are shown beside each download option.
@@ -54,6 +54,10 @@ Explore **2,168 games: 1,192 PS5 games and 976 PS4 games**, with **5,065 game do
 - **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** for Mac, Windows and Linux, with [stream installs](guides/stream-install.md) from your computer.
 - **Updates when you choose**, for the TV app and service together.
 - **No Orbit account. No telemetry.**
+
+## New in 1.8.3
+
+**Clearer Browse filters and other improvements.** Filter choices show game counts in every layout. Choose several genres, save them with your other filters, or try the new **Turn-based** tag. Downloads explain where to put an included backport when newer firmware is required, and Zero keeps cached covers visible after filter changes. See the [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.8.3) and [download guide](guides/downloads.md).
 
 ## New in 1.8.2
 
@@ -212,13 +216,13 @@ The desktop app supports **ARM64 and x64** computers and the same **26 interface
 
 ## Beta status
 
-**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.8.2** have these version numbers:
+**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.8.3** have these version numbers:
 
 | Component | Version |
 | --- | --- |
-| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.8.2** |
-| Native TV app (`PPSA99177.ffpkg`) | **1.12.2** |
-| Orbit Zero for desktop | **1.8.2** |
+| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.8.3** |
+| Native TV app (`PPSA99177.ffpkg`) | **1.12.3** |
+| Orbit Zero for desktop | **1.8.3** |
 
 The TV app has its own version number; these files belong to the same release. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
 
@@ -304,7 +308,7 @@ If ShadowMount is absent or its API is incompatible, Library explains what is mi
 
 ## Finding and saving games
 
-In **Browse**, combine platform, source, format, region and download-size filters, then choose a sort order. Size sorting uses the smallest option matching your filters. **Release date (newest first)** is the default. Games without a recorded date appear afterward, alphabetically. **Reset filters** restores this order.
+In **Browse**, combine platform, source, format, genre, tag, region and download-size filters, then choose a sort order. Size sorting uses the smallest option matching your filters. **Release date (newest first)** is the default. Games without a recorded date appear afterward, alphabetically. **Reset filters** restores this order.
 
 Open a game's details and choose **Add to favourites**, or use the favourite shortcut on a selected game in native Browse or Discover: **Square** in Store, **Triangle** in Crossbar, Cinema or Panorama. Your favourites are shared between the console and paired devices and stay saved after restarting Orbit. Disabling a source hides its games without forgetting your favourites.
 

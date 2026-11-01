@@ -22,7 +22,7 @@ The Games and Media versions share the same downloads, favourites and service se
 - A phone or computer on the same local network, if you want to control Orbit from one.
 - For Library management, a compatible ShadowMount v1 local API.
 
-The current published release pairs **Orbit Store 1.8.2**, **native app 1.12.2** and **Orbit Zero 1.8.2**.
+The current published release pairs **Orbit Store 1.8.3**, **native app 1.12.3** and **Orbit Zero 1.8.3**.
 
 The instructions below use the default Store layout. If you choose another interface, see [where to find its settings](appearance.md#find-settings-after-switching).
 
@@ -32,11 +32,11 @@ Choose the app you use; you do not need to download every asset.
 
 | How you use Orbit | What to download |
 | --- | --- |
-| Native PS5 app | **`PPSA99177.ffpkg`** and its checksum. Native app **1.12.2** already includes service **1.8.2**. A compatible ELF loader on port **9021** lets the app start that bundled service. |
+| Native PS5 app | **`PPSA99177.ffpkg`** and its checksum. Native app **1.12.3** already includes service **1.8.3**. A compatible ELF loader on port **9021** lets the app start that bundled service. |
 | Service started separately through Payload Manager or an ELF loader | **`orbit_store.elf`** and its checksum. Update the copy your manager actually launches, even if you also use the native app. |
 | Orbit Zero | The desktop package for your computer. Zero includes the matching service and can upload it through **Console → Start Orbit on PS5**; no separate ELF download is needed. The native FFPKG is optional if you also want TV controls. |
 
-Replacing an FFPKG or uploading an ELF does not replace an older service that is already running. Stop it with **Stop Orbit to restart** before starting the updated copy. In **Diagnostics & about**, the current versions are **native app 1.12.2** and **download service 1.8.2**; they intentionally have different version numbers. Keep your pairing, settings and queue in place.
+Replacing an FFPKG or uploading an ELF does not replace an older service that is already running. Stop it with **Stop Orbit to restart** before starting the updated copy. In **Diagnostics & about**, the current versions are **native app 1.12.3** and **download service 1.8.3**; they intentionally have different version numbers. Keep your pairing, settings and queue in place.
 
 ## Verify the PS5 files
 
