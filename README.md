@@ -17,6 +17,7 @@ Explore **2,158 games: 1,182 PS5 games and 976 PS4 games**, with **5,045 game do
 
 [Download Orbit](https://github.com/saawant12/orbit-store-ps5/releases/latest) · [Orbit Zero](#orbit-zero-for-mac-windows-and-linux) · [Get started](guides/getting-started.md) · [Download guide](guides/downloads.md) · [DLC guide](guides/add-ons.md) · [Library guide](guides/library.md) · [Appearance guide](guides/appearance.md) · [Notifications](guides/notifications.md) · [Troubleshooting](guides/troubleshooting.md) · [Report a bug](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md) · [Request a feature](https://github.com/saawant12/orbit-store-ps5/issues/new?template=feature_request.md)
 
+<a href="https://github.com/sponsors/saawant12"><img src="assets/sponsor-orbit.svg" alt="Sponsor Orbit on GitHub" width="317" height="57"></a>
 <a href="https://buymeacoffee.com/saawant12"><img src="assets/support-orbit.svg" alt="Support Orbit on Buy Me a Coffee" width="268" height="57"></a>
 
 </div>
@@ -400,9 +401,9 @@ Forks are welcome, as long as they share their source under the same licence. Bl
 
 > **Free, with optional support.** Orbit Store, Orbit Zero, Orbit Play and our upcoming apps are free and will stay free.
 >
-> If you’d like to support development, you can contribute through [Buy Me a Coffee](https://buymeacoffee.com/saawant12). Contributions help cover development tools, test hardware and servers, including Orbit Play for playing away from home. It’s entirely optional. You can also find **Support Orbit** in the apps’ settings, with a link and QR code.
+> If you’d like to support development, you can contribute through [GitHub Sponsors](https://github.com/sponsors/saawant12) or [Buy Me a Coffee](https://buymeacoffee.com/saawant12). Contributions help cover development tools, test hardware and servers, including Orbit Play for playing away from home. It’s entirely optional. You can also find **Support Orbit** in the apps’ settings, with links and QR codes.
 >
-> This is our only official donation page.
+> These are our only official donation pages.
 
 ---
 

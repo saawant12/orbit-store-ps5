@@ -2,7 +2,7 @@
 
 > A modern PS5 download manager with resumable downloads, a native TV app, browser controls and the Orbit Zero desktop companion.
 
-The official project is https://github.com/saawant12/orbit-store-ps5. Orbit Store has no official social media accounts. It is free to use, and nothing is locked behind a payment. Optional contributions help cover development tools, test hardware and servers. The only official donation page is https://buymeacoffee.com/saawant12.
+The official project is https://github.com/saawant12/orbit-store-ps5. Orbit Store has no official social media accounts. It is free to use, and nothing is locked behind a payment. Optional contributions help cover development tools, test hardware and servers. The only official donation pages are https://github.com/sponsors/saawant12 (GitHub Sponsors) and https://buymeacoffee.com/saawant12 (Buy Me a Coffee).
 
 The latest published release is Orbit Store 1.8.2, with native TV app 1.12.2 and Orbit Zero 1.8.2. Native updates download the app once when it includes the newest service, then offer Close and reopen to activate it. Game pages select a download option matching active Browse filters, otherwise the last-used source and format, then a direct option. Downloads can start or resume while Library copies, Files operations and Zero transfers run, with remaining-space reservations and path protections. Completed Library operation results can be dismissed. Long downloads and transfers show hours and minutes remaining; transient messages clear when a retry succeeds. Zero no longer reports a payload-loader timeout after a complete upload has already started Orbit.
 
@@ -47,7 +47,7 @@ Completed downloads handled by Orbit Store show their saved file or extracted fo
 
 Library reads installed games and drive sources from a compatible ShadowMount v1 local API, supplementing installed PKG games omitted by older ShadowMount versions with on-console inventory. Inventory, drive information and game sizes refresh automatically. Compatible Files changes and newly connected drives trigger a bounded scan; Scan for games remains a manual fallback. Mount/unmount and copy/move depend on provider and format support. A completed file is not necessarily installed or launchable. Orbit does not launch or uninstall games.
 
-Support Orbit is an optional settings entry in the refreshed 1.7.5 packages. Native and browser: App settings → Support Orbit (Settings → Support Orbit in other layouts). Zero Store: Settings → Support Orbit; other layouts: Settings → Support Orbit. The native app shows a QR code and opens the selected official link; the browser and Zero offer Open support page and Show QR code. Support options come from the official public .github/FUNDING.yml, with the last valid list or bundled official link available if it cannot refresh.
+Support Orbit is an optional settings entry in the refreshed 1.7.5 packages. Native and browser: App settings → Support Orbit (Settings → Support Orbit in other layouts). Zero Store: Settings → Support Orbit; other layouts: Settings → Support Orbit. The native app shows a QR code and opens the selected official link; the browser and Zero offer Open support page and Show QR code. Support options (GitHub Sponsors and Buy Me a Coffee) come from the official public .github/FUNDING.yml, with the last valid list or bundled official link available if it cannot refresh.
 
 ## Other current features
 
