@@ -13,6 +13,8 @@ Explore **2,174 games: 1,193 PS5 games and 981 PS4 games**, with **5,074 game do
   <a href="assets/1.5.0/native-store-game-details.jpg"><img src="assets/1.5.0/native-store-game-details.jpg" width="48%" alt="Black Myth: Wukong game details in the native Store interface"></a>
 </p>
 
+<br>
+
 <div align="center">
 
 <a href="https://github.com/sponsors/saawant12"><img src="assets/sponsor-orbit.svg" alt="Sponsor Orbit on GitHub" width="317" height="57"></a>
