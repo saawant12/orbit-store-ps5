@@ -6,7 +6,7 @@ Orbit runs on your PS5. Pick a game, choose its source and format, and Orbit dow
 
 **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** brings Orbit to Mac, Windows and Linux. Download games on your computer and send them to your PS5 straight away or later, without your PS5 needing internet access.
 
-Explore **2,168 games: 1,192 PS5 games and 976 PS4 games**, with **5,065 game download options**, plus **626 DLCs and add-ons with 628 options across 192 games**. Single-file downloads come from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
+Explore **2,169 games: 1,193 PS5 games and 976 PS4 games**, with **5,069 game download options**, plus **626 DLCs and add-ons with 628 options across 192 games**. Single-file downloads come from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
 
 <p>
   <a href="assets/1.5.0/native-crossbar-discover.jpg"><img src="assets/1.5.0/native-crossbar-discover.jpg" width="48%" alt="Native Crossbar Discover with NieR:Automata selected"></a>
@@ -27,49 +27,43 @@ Explore **2,168 games: 1,192 PS5 games and 976 PS4 games**, with **5,065 game do
 ## Features
 
 **Find games**
-- **Discover and Browse** with platform, source, format, genre, region and size filters with matching game counts, plus nine [game tags](guides/downloads.md#game-tags).
+
+- **Discover and Browse** with platform, source, format, genre, region and size filters, matching game counts and nine [game tags](guides/downloads.md#game-tags). Select several sources, formats or genres at once.
+- **Hide games you already have** installed or saved on a connected PS5 drive.
+- **Favourites.** Save games you want to return to and find them again quickly.
 - **Saved filters.** Name your filters once and apply them again in the browser, TV app or Orbit Zero. [Guide](guides/saved-filters.md)
 - **DLC and add-ons** from the Add-ons page or a game’s details. [DLC guide](guides/add-ons.md)
-- **Firmware checks.** Known firmware requirements are shown beside each download option.
+- **Firmware checks and backport guidance.** See known firmware requirements beside each download option and instructions for an included backport when Orbit detects one after extraction. [Guide](guides/install-games.md#included-backports)
 
 **Download**
+
 - **One link per download.** FFPFSC, exFAT, LZ4, PKG, FPKG, ZIP, RAR or 7z, with archives extracted automatically.
 - **A queue you control.** Pause, resume, retry and reorder, with up to 8 games at once.
+- **Choose 1–64 connections per download**, with eight as the default. Active downloads share a limit of 64; TorBox uses at most four per game in Zero and eight on PS5. [Guide](guides/downloads.md#follow-your-queue)
+- **Download now, send later.** Zero can save games on your computer without a connected PS5. Transfer them when you’re ready. [Guide](guides/orbit-zero.md#download-now-and-send-to-your-ps5-later)
+- **Filter for TorBox.** With your account connected, choose **Source → TorBox available** to find supported options.
 - **Optional accounts** for [TorBox](guides/downloads.md#optional-download-through-torbox), [Archive.org](guides/downloads.md#archiveorg-sign-in) and [Vikingfile](guides/vikingfile.md).
 - **Notifications** on your PS5, phone or computer. [Setup](guides/notifications.md)
 - **Optional automatic shutdown** after downloads, transfers and installations finish, with a countdown you can cancel. [Guide](guides/shutdown.md)
 
 **Install and manage**
+
 - **Install without leaving Orbit.** PKG and FPKG through Orbit, game images and folders through ShadowMount. [Guide](guides/install-games.md)
+- **Stream & install from Zero.** Install a finished computer download without first copying the entire PKG or FPKG to the PS5. [Guide](guides/stream-install.md)
 - **Library** of installed games and game files on every drive, kept up to date automatically. [Library guide](guides/library.md)
 - **File manager** for your PS5’s drives: copy, move, rename, delete, unpack and install. [Files guide](guides/files.md)
 - **Keep or delete downloaded files** when clearing history, with a preview of the affected paths and sizes. [Guide](guides/downloads.md#remove-download-history-and-files)
 - **Change a Zero transfer’s drive** using its computer copy, without downloading it again. [Guide](guides/orbit-zero.md#change-the-ps5-drive)
 
 **Use it your way**
+
 - **Native TV app** built for your controller. Downloads keep running when you close it.
 - **Four interfaces:** Store, Crossbar, Cinema and Panorama, with 26 interface languages. [Appearance guide](guides/appearance.md)
 - **Settings grouped by task** across all three apps. [Settings guide](guides/settings.md)
 - **Control from your phone.** Pair once to browse, queue and follow downloads.
-- **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** for Mac, Windows and Linux, with [stream installs](guides/stream-install.md) from your computer.
+- **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** for Mac, Windows and Linux.
 - **Updates when you choose**, for the TV app and service together.
 - **No Orbit account. No telemetry.**
-
-## New in 1.8.3
-
-**Clearer Browse filters and other improvements.** Filter choices show game counts in every layout. Choose several genres, save them with your other filters, or try the new **Turn-based** tag. Downloads explain where to put an included backport when newer firmware is required, and Zero keeps cached covers visible after filter changes. See the [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.8.3) and [download guide](guides/downloads.md).
-
-## New in 1.8.2
-
-**Smoother updates and download choices.** Native updates can download the app and its included service together; choose **Close and reopen** when asked. Game pages select an option matching your Browse filters, or your last-used source and format. Downloads can start while copies or transfers run, completed Library results can be dismissed, and long downloads show hours and minutes remaining. See the [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.8.2) and [update guide](guides/getting-started.md#one-step-updates).
-
-## New in 1.8.1
-
-**Performance improvements and bug fixes.** You can now copy and move games and files while a download is active, Orbit Zero can send games while the PS5 downloads, and pairing a new device works even when every pairing slot is taken. Zero also saves its pairing on Linux under window managers such as awesome, i3 and sway. See the [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.8.1). Use the matching apps to get these fixes; refreshing the catalogue alone does not add them.
-
-## New in 1.8.0
-
-**Orbit now speaks 15 new languages** and can automatically shut down your PS5 when downloads, transfers and installations finish. This release also fixes Vikingfile session handling, reorganises Settings and lets you choose which files to keep when clearing downloads. Zero can change a transfer’s PS5 drive using the copy on your computer. See the [Settings guide](guides/settings.md), [automatic shutdown guide](guides/shutdown.md) and [full release notes](https://github.com/saawant12/orbit-store-ps5/releases/tag/v1.8.0). Use the matching apps to get these features; refreshing the catalogue alone does not add them.
 
 ## Get started
 
@@ -216,13 +210,13 @@ The desktop app supports **ARM64 and x64** computers and the same **26 interface
 
 ## Beta status
 
-**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.8.3** have these version numbers:
+**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.8.4** have these version numbers:
 
 | Component | Version |
 | --- | --- |
-| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.8.3** |
-| Native TV app (`PPSA99177.ffpkg`) | **1.12.3** |
-| Orbit Zero for desktop | **1.8.3** |
+| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.8.4** |
+| Native TV app (`PPSA99177.ffpkg`) | **1.12.5** |
+| Orbit Zero for desktop | **1.8.4** |
 
 The TV app has its own version number; these files belong to the same release. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
 

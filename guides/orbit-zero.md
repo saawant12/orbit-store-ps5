@@ -21,7 +21,7 @@ For transfers to PS5, you also need:
 - Writable storage on the PS5.
 - A PS5 with its jailbreak and Payload Manager or a compatible ELF loader already running, or the matching Orbit receiver already started. Zero does not jailbreak the console.
 - Both devices on the same home network. Wi-Fi, Ethernet, or a mixture of both work. Use the PS5's local IPv4 address.
-- Orbit Zero and its included Orbit Store 1.8.3 service. For native TV controls, install the matching FFPKG from the same release.
+- Orbit Zero and its included Orbit Store 1.8.4 service. For native TV controls, install the matching FFPKG from the same release.
 
 Downloads are available for **ARM64 and x64 on macOS, Windows and Linux**; 32-bit x86 is not supported. Mac builds use Developer ID signing but are not notarized; Windows and Linux packages are unsigned.
 
@@ -79,7 +79,7 @@ Choosing a game and its destination (step 4):
 
 [Saved filters](saved-filters.md) in **1.7.0** let the PS5 apps and connected Zero share named searches, filters and sort orders.
 
-Browse supports selecting several sources, formats or genres, the same nine [game tags](downloads.md#game-tags) as the PS5 apps, and hiding games installed or saved on the connected PS5. In 1.8.3, dropdown choices show matching game counts and cached covers stay visible after filter changes. These controls work in all four interfaces.
+Browse supports selecting several sources, formats or genres, the same nine [game tags](downloads.md#game-tags) as the PS5 apps, and hiding games installed or saved on the connected PS5. In 1.8.3, dropdown choices show matching game counts and cached covers stay visible after filter changes. These controls work in all four interfaces. With TorBox connected, **Source → TorBox available** shows games with a supported option.
 
 In the Store interface, **New on Orbit** appears first in Discover, followed by **Latest releases** and the All games grid. The other interfaces present these collections in their own layouts. In Browse, use **Platform** to choose PS4, PS5 or both. Platform editions stay separate, with their own images, release dates and download options.
 

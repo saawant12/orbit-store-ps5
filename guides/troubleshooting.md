@@ -22,7 +22,7 @@ The Games-row app needs **kstuff and ShadowMountPlus**. Check that `PPSA99177.ff
 
 If the app says Orbit is not running, start your ELF loader on **port 9021** and choose **Try again**, or launch `orbit_store.elf` through your payload manager. The app never stops another running payload to make room.
 
-For missing artwork or crashes when opening a game page, use the [latest matching release](https://github.com/saawant12/orbit-store-ps5/releases/latest). Orbit 1.8.3 includes **native app 1.12.3** and service **1.8.3**, with the artwork memory fixes introduced in 1.8.0. Check both running versions in **Diagnostics & about**. Stop any older running service before reopening the app; if you start the service separately through Payload Manager, update that copy too. Orbit Zero 1.8.3 also fixes cached covers disappearing after changing Browse filters. Unavailable image hosts can still leave artwork missing. If a crash continues, include an existing diagnostic or crash log when reporting it.
+For missing artwork or crashes when opening a game page, use the [latest matching release](https://github.com/saawant12/orbit-store-ps5/releases/latest). Orbit 1.8.4 includes **native app 1.12.5** and service **1.8.4**, with the artwork memory fixes introduced in 1.8.0. Check both running versions in **Diagnostics & about**. Stop any older running service before reopening the app; if you start the service separately through Payload Manager, update that copy too. Orbit Zero 1.8.3 also fixes cached covers disappearing after changing Browse filters. Unavailable image hosts can still leave artwork missing. If a crash continues, include an existing diagnostic or crash log when reporting it.
 
 If ShadowMount reports **TitleDir bridge unavailable**, its app-registration bridge is not ready. Close active games, restart the console when convenient, run your usual jailbreak and ShadowMount setup, then retry registration of the existing FFPKG. If it persists, include ShadowMount's version and the relevant registration errors from its debug log in your report.
 
@@ -88,7 +88,7 @@ Parallel connections can help only when supported by the host and file identity.
 
 ### TorBox stops or cannot reach its download server
 
-Use the [latest matching apps](https://github.com/saawant12/orbit-store-ps5/releases/latest). TorBox uses at most eight connections per game and honours provider cooldowns. In Zero, if the download server refuses a connection before any data arrives, a retry waits at least five minutes. Keep the partial files and allow that wait to finish.
+Use the [latest matching apps](https://github.com/saawant12/orbit-store-ps5/releases/latest). TorBox uses at most four connections per game in Zero 1.8.4 and eight for direct PS5 downloads. Both honour provider cooldowns. For repeated interruptions in Zero, try **Settings → Downloads → Connections per download → 1**, then resume the existing download. In Zero, if the download server refuses a connection before any data arrives, a retry waits at least five minutes. Keep the partial files and allow that wait to finish.
 
 If the message says the original source no longer has the file, choose another download option. A fresh temporary link cannot restore a removed source. If failures continue, export a new diagnostic log and include the app version, source and the point at which it stopped. Do not share your TorBox key or temporary download URLs.
 
@@ -108,7 +108,7 @@ Some files need an Archive.org account. Follow [Archive.org sign-in](downloads.m
 
 ### Archive needs a password
 
-Orbit automatically tries the [known source passwords](../README.md#automatic-archive-extraction). If the archive needs a different one, choose **Enter archive password**, enter the source’s password exactly, then **Retry extraction**. Keep the downloaded archive and enough free space for its extracted files. A corrupt or unsupported archive can still fail with the correct password.
+Orbit automatically tries the [known source passwords](../README.md#automatic-archive-extraction). If the archive needs a different one, choose **Enter archive password**, enter the source’s password exactly, then **Retry extraction**. Keep the downloaded archive and enough free space for its extracted files. A corrupt or unsupported archive can still fail with the correct password. In 1.8.4, **Enter archive password** appears only for a password failure; other failures show the extraction error. Retry extraction using the saved archive when possible.
 
 ### Internal storage or an M.2 SSD is missing
 

@@ -172,11 +172,11 @@ Release 1.3.5 removed 225 unavailable Archive.org options. Signing in helps with
 
 *Connect the account in the browser once. The native TV app and paired devices share that connection. If you are not connected, choose **Set up TorBox** under a game’s **Download using** options. In the TV app this opens the browser with your game, source and destination selected; connect in App settings, then return to the game.*
 
-In 1.7.5, TorBox downloads use at most eight connections per game, even when a higher connection count is selected. Orbit respects provider cooldowns. A removed-source error means you need another download option; retrying cannot restore the original host’s file.
+In 1.8.4, TorBox downloads use at most four connections per game in Zero and eight for direct PS5 downloads, even when a higher count is selected. Selecting one connection in Zero uses a continuous transfer, including when resuming. Orbit respects provider cooldowns. A removed-source error means you need another download option; retrying cannot restore the original host’s file.
 
 Orbit submits supported requests to TorBox without rejecting them based on its advertised file-size limit. TorBox still decides whether the request is allowed; any returned limit or account error appears in Downloads.
 
-An account connection does not guarantee support for every file. If an option is unavailable through TorBox, select the original provider explicitly. Orbit does not silently switch a TorBox job to another delivery method.
+With TorBox connected, choose **Browse → Source → TorBox available** to show games with a supported option. This choice also works in saved filters. An account connection does not guarantee support for every file. If an option is unavailable through TorBox, select the original provider explicitly. Orbit does not silently switch a TorBox job to another delivery method.
 
 Pause and resume from Downloads as usual. Disconnecting TorBox pauses its unfinished jobs and keeps their partial files. Reconnect the same account to resume them. Disconnecting does not remove files from your remote TorBox account.
 
