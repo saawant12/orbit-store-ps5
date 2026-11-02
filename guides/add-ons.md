@@ -2,7 +2,7 @@
 
 **Available in 1.5.0 and later.** Keep the Orbit app you use and its running PS5 service on the [same release](getting-started.md#which-files-to-download). The native FFPKG includes that service; Zero can upload its included copy. Refreshing the catalogue alone does not add the Add-ons page to older apps.
 
-The catalogue has **626 add-ons for 192 games**, with **628 download options**. These are counted separately from base games.
+The catalogue has **628 add-ons for 194 games**, with **630 download options**. These are counted separately from base games.
 
 ## Find add-ons
 
