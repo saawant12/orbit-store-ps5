@@ -20,7 +20,7 @@ After extraction, 1.8.3 recognises backport files by a fakelib or fakelib2 direc
 
 ## PS4 and PS5 games
 
-Orbit’s current catalogue contains 2,200 games: 1,193 PS5 games and 1,007 PS4 games, with 5,100 single-file download options from Archive.org, Vikingfile and AkiraBox. Formats include FFPFSC, exFAT, LZ4, PKG, FPKG, ZIP, RAR and 7z. Sources are opt-in; available formats depend on the game. Supported archives extract automatically on the selected PS5 drive, or on the computer before Orbit Zero transfers the extracted files. Compressed size and extracted space requirements differ. Known source passwords, including pippo, are tried automatically; custom-password retries reuse the downloaded archive.
+Orbit’s current catalogue contains 2,249 games: 1,193 PS5 games and 1,056 PS4 games, with 5,149 single-file download options from Archive.org, Vikingfile and AkiraBox. Formats include FFPFSC, exFAT, LZ4, PKG, FPKG, ZIP, RAR and 7z. Sources are opt-in; available formats depend on the game. Supported archives extract automatically on the selected PS5 drive, or on the computer before Orbit Zero transfers the extracted files. Compressed size and extracted space requirements differ. Known source passwords, including pippo, are tried automatically; custom-password retries reuse the downloaded archive.
 
 PS4 support starts with service/browser version 1.1.0, native app 1.4.0 and Orbit Zero 1.1.0; these are minimum versions, not the current release. Browse has a Platform filter for PS4, PS5 or All platforms. PS4 CUSA and PS5 PPSA editions remain separate, with their own metadata and download choices. PS4 options include single-file .pkg packages, labelled PKG or FPKG, and single ZIP, RAR or 7z archives. Archive support requires 1.2.0 or later; use the latest matching apps. Saving or extracting a package does not install it automatically. The 1.5.0 and later apps provide an explicit Install on PS5 action; earlier versions need a compatible package installer. A platform label does not imply a frame-rate patch, DLC or universal compatibility. Orbit's ELF and TV app run on PS5, not PS4 consoles.
 
@@ -61,7 +61,7 @@ Other changes in 1.5.0: known firmware requirements on download options, with in
 
 ## DLC and Add-ons
 
-DLC support is available in 1.5.0. The add-on catalogue has 628 add-ons (530 PS4 and 98 PS5), 630 download options and 194 associated base games. These counts are separate from game counts and base-game download options.
+DLC support is available in 1.5.0. The add-on catalogue has 631 add-ons (533 PS4 and 98 PS5), 633 download options and 197 associated base games. These counts are separate from game counts and base-game download options.
 
 Add-ons follows Browse in navigation across browser, native PS5 and Zero in Store, Crossbar, Cinema and Panorama. Add-ons (count) on game details opens the collection filtered to that base game. Search matches add-on and base-game names; filters include Platform, Type, Source and Region, with Recently added as the default order. Tiles identify the add-on, base game and type; artwork falls back to the base game.
 
