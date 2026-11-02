@@ -6,7 +6,7 @@ Orbit runs on your PS5. Pick a game, choose its source and format, and Orbit dow
 
 **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** brings Orbit to Mac, Windows and Linux. Download games on your computer and send them to your PS5 straight away or later, without your PS5 needing internet access.
 
-Explore **2,174 games: 1,193 PS5 games and 981 PS4 games**, with **5,074 game download options**, plus **628 DLCs and add-ons with 630 options across 194 games**. Single-file downloads come from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
+Explore **2,199 games: 1,193 PS5 games and 1,006 PS4 games**, with **5,099 game download options**, plus **628 DLCs and add-ons with 630 options across 194 games**. Single-file downloads come from Archive.org, Vikingfile and AkiraBox. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
 
 <p>
   <a href="assets/1.5.0/native-crossbar-discover.jpg"><img src="assets/1.5.0/native-crossbar-discover.jpg" width="48%" alt="Native Crossbar Discover with NieR:Automata selected"></a>
@@ -24,7 +24,7 @@ Explore **2,174 games: 1,193 PS5 games and 981 PS4 games**, with **5,074 game do
 
 </div>
 
-> **Also from Orbit: [Orbit Play](https://github.com/saawant12/orbit-play-ps5)** — Stream your jailbroken PS5 to Mac, Windows or Linux over your local network, without PSN sign-in. **Beta available now.**
+> **Also from Orbit: [Orbit Play](https://github.com/saawant12/orbit-play-ps5)**. Stream your jailbroken PS5 to Mac, Windows or Linux over your local network, without PSN sign-in. **Beta available now.**
 
 ## Features
 
