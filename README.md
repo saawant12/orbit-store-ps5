@@ -15,10 +15,10 @@ Explore **2,174 games: 1,193 PS5 games and 981 PS4 games**, with **5,074 game do
 
 <div align="center">
 
-[Download Orbit](https://github.com/saawant12/orbit-store-ps5/releases/latest) · [Orbit Zero](#orbit-zero-for-mac-windows-and-linux) · [Get started](guides/getting-started.md) · [Download guide](guides/downloads.md) · [DLC guide](guides/add-ons.md) · [Library guide](guides/library.md) · [Appearance guide](guides/appearance.md) · [Notifications](guides/notifications.md) · [Troubleshooting](guides/troubleshooting.md) · [Report a bug](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md) · [Request a feature](https://github.com/saawant12/orbit-store-ps5/issues/new?template=feature_request.md)
-
 <a href="https://github.com/sponsors/saawant12"><img src="assets/sponsor-orbit.svg" alt="Sponsor Orbit on GitHub" width="317" height="57"></a>
 <a href="https://buymeacoffee.com/saawant12"><img src="assets/support-orbit.svg" alt="Support Orbit on Buy Me a Coffee" width="268" height="57"></a>
+
+[Download Orbit](https://github.com/saawant12/orbit-store-ps5/releases/latest) · [Get started](guides/getting-started.md) · [Guides](guides) · [Report an issue](https://github.com/saawant12/orbit-store-ps5/issues/new/choose)
 
 </div>
 
