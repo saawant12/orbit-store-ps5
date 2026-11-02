@@ -35,12 +35,11 @@ Explore **2,249 games: 1,193 PS5 games and 1,056 PS4 games**, with **5,149 game 
 - **Favourites.** Save games you want to return to and find them again quickly.
 - **Saved filters.** Name your filters once and apply them again in the browser, TV app or Orbit Zero. [Guide](guides/saved-filters.md)
 - **DLC and add-ons** from the Add-ons page or a game’s details. [DLC guide](guides/add-ons.md)
-- **Firmware checks and backport guidance.** See known firmware requirements beside each download option and instructions for an included backport when Orbit detects one after extraction. [Guide](guides/install-games.md#included-backports)
+- **Firmware requirements.** See the required firmware for each download option when that information is available.
 
 **Download**
 
 - **One link per download.** FFPFSC, exFAT, LZ4, PKG, FPKG and game folders, with ZIP, RAR and 7z archives extracted automatically.
-- **A queue you control.** Pause, resume, retry and reorder, with up to 8 games at once.
 - **Choose 1–64 connections per download**, with eight as the default. Active downloads share a limit of 64; TorBox uses at most four per game in Zero and eight on PS5. [Guide](guides/downloads.md#follow-your-queue)
 - **Download now, send later.** Zero can save games on your computer without a connected PS5. Transfer them when you’re ready. [Guide](guides/orbit-zero.md#download-now-and-send-to-your-ps5-later)
 - **Filter for TorBox.** With your account connected, choose **Source → TorBox available** to find supported options.
@@ -55,17 +54,14 @@ Explore **2,249 games: 1,193 PS5 games and 1,056 PS4 games**, with **5,149 game 
 - **Library** of installed games and game files on every drive, kept up to date automatically. [Library guide](guides/library.md)
 - **File manager** for your PS5’s drives: copy, move, rename, delete, unpack and install. [Files guide](guides/files.md)
 - **Save files from your PS5.** Use **Library → Files** to save a file to your paired phone or computer. [Guide](guides/files.md#save-a-file-to-another-device)
-- **Keep or delete downloaded files** when clearing history, with a preview of the affected paths and sizes. [Guide](guides/downloads.md#remove-download-history-and-files)
 - **Change a Zero transfer’s drive** using its computer copy, without downloading it again. [Guide](guides/orbit-zero.md#change-the-ps5-drive)
 
 **Use it your way**
 
 - **Native TV app** built for your controller. Downloads keep running when you close it.
 - **Four interfaces:** Store, Crossbar, Cinema and Panorama, with 26 interface languages. [Appearance guide](guides/appearance.md)
-- **Settings grouped by task** across all three apps. [Settings guide](guides/settings.md)
 - **Control from your phone.** Pair once to browse, queue and follow downloads.
 - **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** for Mac, Windows and Linux.
-- **Updates when you choose**, for the TV app and service together.
 - **No Orbit account. No telemetry.**
 
 ## Get started
