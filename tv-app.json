@@ -1,9 +1,9 @@
 {
   "name": "Orbit Store for TV",
   "filename": "PPSA99177.ffpkg",
-  "version": "1.12.3",
-  "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v1.8.3/PPSA99177.ffpkg",
-  "checksum": "67ea1885c20b7fe725ea5c071ed63584db2b0949ddb00ded1eacb11b05bb77a6",
-  "size": 217317376,
-  "serviceVersion": "1.8.3"
+  "version": "1.12.5",
+  "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v1.8.4/PPSA99177.ffpkg",
+  "checksum": "9fa8997019f6c6a50a3f7b64236f6b7b1f8debac6832265c6da0c0f32859d15c",
+  "size": 218103808,
+  "serviceVersion": "1.8.4"
 }
