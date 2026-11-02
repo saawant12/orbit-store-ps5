@@ -37,7 +37,7 @@ Explore **2,169 games: 1,193 PS5 games and 976 PS4 games**, with **5,069 game do
 
 **Download**
 
-- **One link per download.** FFPFSC, exFAT, LZ4, PKG, FPKG, ZIP, RAR or 7z, with archives extracted automatically.
+- **One link per download.** FFPFSC, exFAT, LZ4, PKG, FPKG and game folders, with ZIP, RAR and 7z archives extracted automatically.
 - **A queue you control.** Pause, resume, retry and reorder, with up to 8 games at once.
 - **Choose 1–64 connections per download**, with eight as the default. Active downloads share a limit of 64; TorBox uses at most four per game in Zero and eight on PS5. [Guide](guides/downloads.md#follow-your-queue)
 - **Download now, send later.** Zero can save games on your computer without a connected PS5. Transfer them when you’re ready. [Guide](guides/orbit-zero.md#download-now-and-send-to-your-ps5-later)
@@ -52,6 +52,7 @@ Explore **2,169 games: 1,193 PS5 games and 976 PS4 games**, with **5,069 game do
 - **Stream & install from Zero.** Install a finished computer download without first copying the entire PKG or FPKG to the PS5. [Guide](guides/stream-install.md)
 - **Library** of installed games and game files on every drive, kept up to date automatically. [Library guide](guides/library.md)
 - **File manager** for your PS5’s drives: copy, move, rename, delete, unpack and install. [Files guide](guides/files.md)
+- **Save files from your PS5.** Use **Library → Files** to save a file to your paired phone or computer. [Guide](guides/files.md#save-a-file-to-another-device)
 - **Keep or delete downloaded files** when clearing history, with a preview of the affected paths and sizes. [Guide](guides/downloads.md#remove-download-history-and-files)
 - **Change a Zero transfer’s drive** using its computer copy, without downloading it again. [Guide](guides/orbit-zero.md#change-the-ps5-drive)
 
