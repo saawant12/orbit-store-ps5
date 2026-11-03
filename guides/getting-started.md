@@ -7,7 +7,7 @@ Orbit runs on your PS5. Use the TV with your controller, or pair a phone or comp
 | Do this | Orbit appears in | What it is |
 |---|---|---|
 | Copy `PPSA99177.ffpkg` to `/data/homebrew/` | **Games** on your PS5 | The TV app, used with your controller. Needs kstuff and ShadowMountPlus. [Install it](#install-the-native-tv-app). |
-| Run `orbit_store.elf` with your payload manager or ELF loader | **Media** on your PS5 | The browser version. It only opens while Orbit is running. [Set it up](#use-the-browser-version). |
+| Run `orbit_store.elf` with your payload manager or ELF loader | **Media** on your PS5 | Opens Orbit in the PS5’s browser. Keep Orbit’s download service running on the PS5 to use it. [Set it up](#use-the-browser-version). |
 | Install [Orbit Zero](orbit-zero.md) | Your Mac, Windows or Linux computer | Downloads on your computer and sends the files to your PS5. The PS5 doesn't need internet. |
 
 The Games and Media versions share the same downloads, favourites and service settings, so seeing two Orbit icons on your PS5 is normal. Appearance is saved separately in each app or browser.

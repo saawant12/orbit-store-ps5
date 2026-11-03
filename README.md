@@ -6,7 +6,7 @@ Orbit runs on your PS5. Pick a game, choose its source and format, and Orbit dow
 
 **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** brings Orbit to Mac, Windows and Linux. Download games on your computer and send them to your PS5 straight away or later, without your PS5 needing internet access.
 
-Explore **2,249 games: 1,193 PS5 games and 1,056 PS4 games**, with **5,149 game download options**, plus **631 DLCs and add-ons with 633 options across 197 games**. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
+Explore **2,256 games: 1,200 PS5 games and 1,056 PS4 games**, with **5,054 game download options**, plus **631 DLCs and add-ons with 633 options across 197 games**. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
 
 <p>
   <a href="assets/1.5.0/native-crossbar-discover.jpg"><img src="assets/1.5.0/native-crossbar-discover.jpg" width="48%" alt="Native Crossbar Discover with NieR:Automata selected"></a>
@@ -71,7 +71,7 @@ Explore **2,249 games: 1,193 PS5 games and 1,056 PS4 games**, with **5,149 game 
 | Do this | Orbit appears in | What it is |
 |---|---|---|
 | Copy `PPSA99177.ffpkg` to `/data/homebrew/` | **Games** on your PS5 | The TV app, used with your controller. Needs kstuff and ShadowMountPlus. |
-| Run `orbit_store.elf` with your payload manager or ELF loader | **Media** on your PS5 | The browser version. It only opens while Orbit is running. |
+| Run `orbit_store.elf` with your payload manager or ELF loader | **Media** on your PS5 | Opens Orbit in the PS5’s browser. Keep Orbit’s download service running on the PS5 to use it. |
 | Install [Orbit Zero](#orbit-zero-for-mac-windows-and-linux) | Your Mac, Windows or Linux computer | Downloads on your computer and sends the files to your PS5. The PS5 doesn't need internet. |
 
 The Games and Media versions share the same downloads, favourites and service settings, so seeing two Orbit icons on your PS5 is normal. Appearance is saved separately in each app or browser.
