@@ -207,13 +207,13 @@ The desktop app supports **ARM64 and x64** computers and the same **26 interface
 
 ## Beta status
 
-**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.8.4** have these version numbers:
+**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.8.5** have these version numbers:
 
 | Component | Version |
 | --- | --- |
-| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.8.4** |
-| Native TV app (`PPSA99177.ffpkg`) | **1.12.5** |
-| Orbit Zero for desktop | **1.8.4** |
+| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.8.5** |
+| Native TV app (`PPSA99177.ffpkg`) | **1.12.6** |
+| Orbit Zero for desktop | **1.8.5** |
 
 The TV app has its own version number; these files belong to the same release. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
 
