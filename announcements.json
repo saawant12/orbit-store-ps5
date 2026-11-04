@@ -1,6 +1,13 @@
 {
   "announcements": [
     {
+      "id": "crypto-support-2026-11-04",
+      "title": "You can now support Orbit with crypto",
+      "message": "If you’d like to help with development costs, you can now contribute via crypto. It’s entirely optional, and Orbit stays free. Open Support Orbit in Settings to view the options.",
+      "endsAt": "2026-11-18T00:00:00Z",
+      "minVersion": "1.8.5"
+    },
+    {
       "id": "catalogue-2200-games-2026-11-03",
       "title": "Orbit reaches 2,200 games and 5,100 download options!",
       "message": "Plus 628 DLCs and add-ons with 630 options. Refresh the catalogue in Settings to see the latest additions.",
