@@ -18,6 +18,7 @@ Explore **2,261 games: 1,205 PS5 games and 1,056 PS4 games**, with **5,084 game 
 <div align="center">
 
 <a href="https://github.com/sponsors/saawant12"><img src="assets/sponsor-orbit.svg" alt="Sponsor Orbit on GitHub" width="317" height="57"></a>
+<a href="https://github.com/saawant12/orbit-store-ps5/issues/131#user-content-support-with-crypto"><img src="assets/support-crypto.svg" alt="Support Orbit with crypto" width="353" height="57"></a>
 
 [Get started](guides/getting-started.md) · [Download Orbit](https://github.com/saawant12/orbit-store-ps5/releases/latest) · [Guides](guides) · [Report an issue](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md) · [Request a feature](https://github.com/saawant12/orbit-store-ps5/issues/new?template=feature_request.md) · [Appearance guide](guides/appearance.md) · [Troubleshooting](guides/troubleshooting.md)
 
@@ -397,9 +398,9 @@ Forks are welcome, as long as they share their source under the same licence. Bl
 
 > **Free, with optional support.** Orbit Store, Orbit Zero, Orbit Play and our upcoming apps are free and will stay free.
 >
-> If you’d like to support development, you can contribute through [GitHub Sponsors](https://github.com/sponsors/saawant12). Contributions help cover the costs of AI tools, test consoles, hardware and servers, including Orbit Play for playing away from home. It’s entirely optional. You can also find **Support Orbit** in the apps’ settings, with links and QR codes.
+> If you’d like to support development, you can contribute through [GitHub Sponsors](https://github.com/sponsors/saawant12). You can also [support via crypto](https://github.com/saawant12/orbit-store-ps5/issues/131#user-content-support-with-crypto). Contributions help cover the costs of AI tools, test consoles, hardware and servers, including Orbit Play for playing away from home. It’s entirely optional. You can also find **Support Orbit** in the apps’ settings, with links and QR codes.
 >
-> GitHub Sponsors is our official donation page.
+> GitHub Sponsors and the [crypto addresses in our support issue](https://github.com/saawant12/orbit-store-ps5/issues/131#user-content-support-with-crypto) are our official support options.
 
 ---
 
