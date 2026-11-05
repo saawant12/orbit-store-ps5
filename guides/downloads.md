@@ -1,12 +1,12 @@
 # Find and download a game
 
-Orbit’s current catalogue includes **2,261 games: 1,205 PS5 games and 1,056 PS4 games**, with **5,084 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit’s current catalogue includes **2,320 games: 1,210 PS5 games and 1,110 PS4 games**, with **5,162 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 Settings paths in this guide use the Store layout. For the browser’s other layouts, see the [Settings page equivalents](appearance.md#find-settings-after-switching).
 
 ## Browse and choose
 
-**Discover opens first.** In the default Store interface, explore the featured game and **New on Orbit** first, followed by **Latest releases**. New on Orbit shows up to 40 games, with selected highlights first. Remaining places show recent catalogue additions, ordered by game release date. Move down to All games for the full collection. The grid loads more games as you scroll, largest downloads first. Each game's size is its smallest available option from your enabled sources.
+**Discover opens first.** In the default Store interface, explore the featured game and **New on Orbit** first, followed by **Latest releases**. New on Orbit shows up to 40 games, with selected highlights first. Its selection and order arrive through catalogue updates. Move down to All games for the full collection. The grid loads more games as you scroll, largest downloads first. Each game's size is its smallest available option from your enabled sources.
 
 ![Orbit Store 1.5.0 Discover with NieR:Automata selected](../assets/1.5.0/store-discover-nier-automata.jpg)
 
@@ -86,7 +86,9 @@ If extraction finds backport files and the game needs newer firmware, 1.8.3 show
 | **Game folder** | A folder of game files, from an archive | ShadowMountPlus mounts it. Nothing to install. |
 | **LZ4** | Game files containing LZ4-compressed assets, usually inside an archive | Orbit extracts the outer archive and preserves the LZ4 files. Use a compatible game loader; see [LZ4 games](downloads.md#lz4-games). |
 | **PKG**, **FPKG** | `.pkg` package | Choose **Install on PS5** in 1.5.0 and later, or use your compatible package installer on earlier versions. ShadowMountPlus does not mount `.pkg` files. |
-| **ZIP**, **RAR**, **7z** | Archive | Orbit extracts it after downloading. The label shows what's inside, for example `7z · exFAT`; follow that row. |
+| **ZIP**, **RAR**, **7z** | Archive | Orbit extracts it after downloading. When its contents are identified, the label shows the format inside, for example `7z · exFAT`; follow that row. |
+
+Identified archives match both their content format and their archive type in Browse. For example, an inspected exFAT image inside a RAR appears under **exFAT** and **RAR**. Options whose contents are still unverified retain their archive label. Check the selected option’s download size and expected extracted size when planning drive space.
 
 **PS5 FPKGs and firmware (October 2026):** PS5 FPKG games currently run only on firmware 11.60 or lower. On 12.xx and 13.xx they may install but won't start, until package support arrives for those firmwares. On those firmwares, choose exFAT or FFPFSC instead. Where a game offers exFAT or FFPFSC, those work without installing.
 
