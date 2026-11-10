@@ -6,7 +6,7 @@ Orbit runs on your PS5. Pick a game, choose its source and format, and Orbit dow
 
 **[Orbit Zero](#orbit-zero-for-mac-windows-and-linux)** brings Orbit to Mac, Windows and Linux. Download games on your computer and send them to your PS5 straight away or later, without your PS5 needing internet access.
 
-Explore **2,331 games: 1,216 PS5 games and 1,115 PS4 games**, with **5,196 game download options**, plus **631 DLCs and add-ons with 633 options across 197 games**. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
+Explore **2,368 games: 1,253 PS5 games and 1,115 PS4 games**, with **5,306 game download options**, plus **631 DLCs and add-ons with 633 options across 197 games**. Filter by platform, choose your source and save to your preferred drive. New games, add-ons and corrected links arrive through catalogue updates. For PS4 packages, see [PS4 games on PS5](guides/downloads.md#ps4-games-on-ps5).
 
 <p>
   <a href="assets/1.5.0/native-crossbar-discover.jpg"><img src="assets/1.5.0/native-crossbar-discover.jpg" width="48%" alt="Native Crossbar Discover with NieR:Automata selected"></a>
