@@ -17,7 +17,7 @@ Library shows installed games and sources available on your drives, using a comp
 - **Mounted:** the provider reports the source as mounted.
 - **Source missing:** a reported source is not currently available on its drive.
 
-These states can overlap. **Games** and **Files** share the Library page. Games uses one counted status filter: **All games**, **Available now** or **Missing source**. **Installed** and **Mounted** remain separate badges. Search by title, title ID or path, and use the other filters to narrow the list.
+These states can overlap. **Games** and **Files** share the Library page. Games uses one counted status filter: **All games**, **Available now** or **Missing source**. **Available now** means the source is present on a connected drive; **Missing source** means it is not currently available. It does not mean an installed game was uninstalled. **Installed** and **Mounted** remain separate badges. Counts reflect the current search and location. Search by title, title ID or path, and use the other filters to narrow the list.
 
 ## PS4 packages and platform labels
 

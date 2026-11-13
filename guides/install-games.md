@@ -45,7 +45,9 @@ These use ShadowMount instead of the package installer. After a new download or 
 
 You do not normally need to run a scan yourself. Orbit checks ShadowMount's inventory before showing the game as registered. A scan request alone is not confirmation that registration succeeded.
 
-If ShadowMount was unavailable, start it, open the completed download's details and choose **Scan with ShadowMount** when offered. Orbit does not start ShadowMount or change its configuration. Older completed downloads are not all rescanned automatically when you update Orbit; use **Library → Scan for games** to look for existing compatible files.
+If ShadowMount was unavailable, start it, open the completed download's details and choose **Scan with ShadowMount** when offered. Orbit does not start ShadowMount or change its configuration. Older completed downloads are not all rescanned automatically when you update Orbit. For an existing download, prefer **Scan with ShadowMount** in its details. **Library → Scan for games** remains a general fallback.
+
+In **1.9.0**, Orbit locates actual game roots inside nested folders, such as `homebrew/Game/Game-app`, and registers those roots with supported ShadowMount versions. It leaves the files in place. If the download is no longer in history, open the actual game folder’s actions in **Library → Files** and use **Install on PS5** when offered. For permission or filename warnings, use [Verify & Repair](files.md#check-and-repair-a-game-folder).
 
 ### LZ4 game files
 

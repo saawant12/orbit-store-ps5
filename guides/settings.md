@@ -19,6 +19,14 @@ Open **App settings** in Orbit Store’s default Store layout, or **Settings** i
 
 The categories are consistent across layouts; each app shows the controls it supports. Existing saved choices are retained.
 
+## Download method and game-card details
+
+Under **Sources & accounts → TorBox**, **Always use TorBox** applies to new downloads. Orbit also remembers the last Direct/TorBox selection. Existing jobs keep their delivery method; unsupported files and account limits still need your choice. The PS5 service and Zero keep separate preferences.
+
+Under **Appearance**, turn **Scores and playtimes on game cards** off to hide the extra card labels. Game details, Browse filters and sorting remain available. This setting is saved on the device.
+
+In Zero, **Devices → Connected apps** controls the opt-in local integration API. You can approve a connection request, create a token manually, or revoke an app. See [connecting another app](orbit-zero-integrations.md).
+
 ## Computer or PS5?
 
 In Zero, **This computer** labels computer downloads, account sessions, retry preferences, the download folder and cache cleanup. **On this PS5** labels the connected console’s shutdown controls. PS5 storage information describes drives connected to the console, not your computer.

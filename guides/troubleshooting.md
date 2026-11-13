@@ -67,7 +67,7 @@ If Orbit still shows BlackBox's icon, open a bug report with your firmware, your
 
 Check the enabled Sources and clear Browse’s filters. Then try **App settings → Game catalogue → Refresh catalogue**. Use the latest matching apps; PS4 support starts with service 1.1.0, native app 1.4.0 and Orbit Zero 1.1.0. Builds without PS4 support use a PS5-compatible catalogue. Select **Platform → All platforms** or **PS4**, and check the running service version as well as the installed app version.
 
-Artwork comes from external URLs. Orbit tries an available fallback when the primary fails. Network/DNS restrictions or unavailable host images can still prevent artwork from loading. Some dates and other metadata remain missing; corrections arrive through catalogue updates. Undated games appear after dated games in release-date sorting.
+In **1.9.0**, Orbit keeps a bounded artwork cache across restarts, reuses cached fallback images and uses smaller images for tiles. The first visit to an uncached image still needs the network, and older cached images can be removed to make room. Network/DNS restrictions or unavailable image hosts can still prevent new artwork from loading. This cache is for artwork inside Orbit; it does not repair missing icons on the PS5 home screen. Some dates and other metadata remain missing; corrections arrive through catalogue updates. Undated games appear after dated games in release-date sorting.
 
 ### Catalogue refresh reports a network error or HTTP 0
 
@@ -95,6 +95,8 @@ If the message says the original source no longer has the file, choose another d
 ### Vikingfile does not enter Downloads
 
 Use the current Orbit app and matching running service, and enable Vikingfile under **Sources & accounts**. [Sign in](vikingfile.md) in the interface handling the download. The PS5 browser and native app keep separate sessions. Select the desired option and drive; Orbit first tries the signed-in direct flow. If a provider page opens, complete verification and wait without pressing Download. Orbit captures the matching link and returns automatically. For computer downloads in Orbit Zero 1.4.0 or later, complete verification and wait without pressing Download in its provider window too. Verification happens on the PS5 even if you initiated it on your phone.
+
+Orbit **1.9.0** recognises additional Vikingfile download servers and improves ready-link detection. Update the running service as well as the native app, or update Zero for computer downloads. If a ready link is still missed, include the exact game and download option and a diagnostic report captured before restarting; do not share temporary signed URLs.
 
 If the session times out, the provider page changes or the browser restarts, return to Orbit and try that option again. Cancel an existing session before starting another. A file that does not match the selected option is not queued. Provider links may become unavailable.
 
@@ -149,6 +151,12 @@ For downloads handled by Orbit Store, check **Downloads → Finished → Locatio
 Orbit Zero download details also show the full PS5 destination path and the computer path while a cached copy remains. Check the selected PS5 drive's [homebrew folder](downloads.md#where-downloads-are-saved). For **Send to PS5**, wait for **Transfer to PS5** to complete too. If you used **Stream & install**, check the installation result instead; it does not leave a full package in the PS5 download folder.
 
 If the file exists but does not appear in Library or on the home screen, check its format and the installation or mounting method supported by your console setup. A finished download is not automatically installed, and ShadowMount may not list every format. PKG and FPKG packages need installing first; see [below](#a-downloaded-pkg-or-fpkg-game-doesnt-appear). If the file is absent, include the app, game, source, format, destination and completion screen in your report; do not delete the queue or remaining files while investigating.
+
+### ShadowMount does not find a game inside nested folders
+
+Update the running PS5 service to **1.9.0**, and update the native app or Zero you use with it. A path such as `/data/homebrew/Game/Game-app` should be registered using its inner game root. Start a compatible ShadowMount version, open the completed download’s details and choose **Scan with ShadowMount**. This retries registration using the existing files; it does not redownload or flatten the folder.
+
+If the download is no longer in history, locate the actual game folder in **Library → Files**, open its actions and choose **Install on PS5** when offered. If registration still fails, keep the files and attach the exact saved path, ShadowMount version and Orbit diagnostic report. See [game-folder checks](files.md#check-and-repair-a-game-folder) for separate permission or filename warnings.
 
 ### A downloaded PKG or FPKG game doesn't appear
 

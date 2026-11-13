@@ -22,7 +22,7 @@ In 1.6.0, Source and Format allow multiple selections. Use **Installed games** t
 
 ### Scores and playtimes
 
-Game pages show Metacritic scores and HowLongToBeat estimates when recorded. Browse can filter by minimum score or playtime and sort using these values. Choose **Main Story**, **Main + Extras** or **Completionist** for the estimate you want. These choices can be saved with Browse filters. Missing values stay unlabelled.
+Game pages show Metacritic scores and HowLongToBeat estimates when recorded. Browse can filter by minimum score or playtime and sort using these values. Choose **Main Story**, **Main + Extras** or **Completionist** for the estimate you want. These choices can be saved with Browse filters. Missing values stay unlabelled and sort last; applying a score or playtime filter excludes games missing that value. Playtimes are community estimates and vary by player. This information comes from the catalogue and can be corrected through catalogue updates.
 
 To hide this information below game cards, turn off **Appearance → Scores and playtimes on game cards**. Game details and filters remain available. The preference is saved on the device and works in all four layouts.
 

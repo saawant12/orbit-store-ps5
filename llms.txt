@@ -55,6 +55,22 @@ Library reads installed games and drive sources from a compatible ShadowMount v1
 
 Support Orbit is an optional settings entry in the refreshed 1.7.5 packages. Native and browser: App settings → Support Orbit (Settings → Support Orbit in other layouts). Zero Store: Settings → Support Orbit; other layouts: Settings → Support Orbit. The native app shows a QR code and opens the selected official link; the browser and Zero offer Open support page and Show QR code. The crypto support option comes from the official public .github/FUNDING.yml, with the last valid list or bundled official link available if it cannot refresh.
 
+## Scores, playtimes and download preferences
+
+Scores and HowLongToBeat playtimes are supplied by catalogue metadata, not fetched live whenever a game opens. Browse offers minimum-score and playtime-range filters, score/time sorting, and Main Story, Main + Extras or Completionist estimates. Missing values sort last and are excluded when their corresponding filter is active. Saved Browse filters retain these choices. Appearance → Scores and playtimes on game cards is on by default and saved per device; hiding card labels does not remove details, filters or sorting.
+
+Orbit remembers Direct/TorBox and offers Always use TorBox under Sources & accounts → TorBox. It applies to new downloads; existing jobs retain their method. The PS5 service and Zero keep separate preferences. Account/source limits still apply. Orbit does not silently switch a rejected TorBox request to Direct.
+
+## Library status, folder checks and artwork
+
+Library keeps Games and Files as separate views. The counted status filter is All games / Available now / Missing source. Availability follows whether the source is present on a connected drive; Installed and Mounted remain independent badges. A missing source is not proof that a package was uninstalled.
+
+After extraction, supported game folders are inspected without silently applying repairs. Library → Files → folder actions → Verify & Repair also checks existing PS5 folders. Users review proposed permission and uniquely matched filename/reference repairs before applying them. Missing or ambiguous files remain warnings. This does not rebuild images, fetch replacement files, apply backports or prove launch compatibility. Zero uses the paired PS5 for this flow.
+
+Version 1.9.0 registers actual game roots inside nested extracted/transferred folders with supported ShadowMount versions. Existing completed downloads can use Scan with ShadowMount to rediscover roots without redownloading or moving their files.
+
+Artwork is cached across restarts with bounded storage, smaller tile images and cached fallback reuse. Uncached images still require reachable hosts. This cache concerns Orbit artwork, not the PS5 home screen’s system icons.
+
 ## Other current features
 
 Version 1.6.0 adds phone/computer notifications through ntfy, with server/topic credentials and event choices in App settings → Notifications. It supports 1–64 connections per download (default eight); concurrent PS5 downloads share a 64-connection budget. Browse supports multiple sources/formats, hiding installed or saved games, and tags: PlayStation exclusive, Local co-op, Split-screen, Open world, Story-driven, Soulslike, PSVR supported and PSVR2 supported. PlayStation exclusives exclude official PC/Xbox/Nintendo editions; VR tags include optional support. Version 1.8.3 adds Turn-based as the ninth tag. Tag coverage is curated and not exhaustive. Completed Zero downloads keep readable filenames with collision-safe numbering.
@@ -98,6 +114,10 @@ Refresh download link for a computer download works while the PS5 is disconnecte
 Orbit Zero retries temporary computer-download failures with fewer connections; deliberate pauses, changed files, access restrictions and disk failures are not retried indefinitely. Remove from Downloads offers to keep files or review and delete the computer and/or PS5 copies. It preserves the entry when deletion fails and does not delete files still in use. Recover downloads → Review PS5 transfer can release an orphaned blocking transfer after confirmation. Recover downloads → Choose file also restores a completed file under its saved game name, or an older .cache file. Keep the name and folder Orbit used; a named file needs its completion record on this computer. Review the matching download and destination, add to queue, then Resume. Size alone does not prove an older cache is complete, and an already-deleted cache cannot be recovered.
 
 Updates checks for new desktop versions automatically, downloads the matching OS/architecture package, verifies its SHA-256 digest and opens it only when requested. Zero never replaces or restarts itself automatically. Mac packages are Developer ID signed but not notarized; Windows and Linux packages are unsigned. Use the installation guide for permissions and package choices.
+
+## Orbit Zero local integrations
+
+Available in Zero 1.9.0 under Settings → Devices → Connected apps → Allow other apps. Access is opt-in and IPv4-loopback-only on the same computer. Each app needs its own bearer token, delivered after an approval request or created manually with Create API token. Tokens are shown once and can be revoked separately; disabling app access revokes existing grants. The API exposes catalogue/options, download requests and progress, supported retry/alternate-source actions, PS5 transfer requests and saved-computer-copy status. It does not expose provider credentials, installation, arbitrary file management or file deletion. See guides/orbit-zero-integrations.md for endpoints and request idempotency.
 
 ## Shutdown and destination changes
 

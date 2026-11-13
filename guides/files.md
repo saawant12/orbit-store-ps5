@@ -37,7 +37,13 @@ When Downloads identifies an included backport and warns about newer firmware, u
 
 ## Check and repair a game folder
 
-Open a game folder’s actions and choose **Verify & Repair**. Orbit checks supported game metadata, required permissions and filename capitalization. Review the proposed repairs before confirming; inspection alone does not change files. Missing files remain warnings, and ambiguous filename matches are not guessed. Extracted game folders are checked automatically, with approval still required before repairs.
+1. Open **Library → Files** and locate the actual game folder, including an inner `-app` folder when present.
+2. Open the folder’s action menu and choose **Verify & Repair**. In Store and Cinema, use the **…** button instead of selecting the folder name.
+3. Review the detected issues and proposed repairs, then confirm only the changes you want to apply.
+
+Orbit checks supported game metadata, required permissions and filename capitalization. Inspection alone does not change files. Extracted game folders are checked automatically, with approval still required before repairs. Zero offers the same review for folders on the paired PS5; the console must be connected.
+
+For a unique case-only mismatch, a repair can update a supported configuration reference to the existing filename. Missing files remain warnings, and ambiguous filename matches are not guessed. This does not download replacement files, rebuild game images, apply backports or establish firmware compatibility. It can check existing folders without downloading the game again.
 
 ## Save a file to another device
 
