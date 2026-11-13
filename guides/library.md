@@ -1,6 +1,6 @@
 # Your Library and storage
 
-**For Orbit 1.8.5.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
+**For Orbit 1.9.0.** Update the Orbit apps you use from the [same release](getting-started.md#which-files-to-download); the native FFPKG includes its matching service. Library is available in the native TV app, browser and Orbit Zero. They share the same PS5 inventory and file operations. Store, Crossbar, Cinema and Panorama present it in different layouts; changing [appearance](appearance.md) does not change which games are installed or mounted.
 
 ![Native TV app Library with installed and on-drive games](../assets/0.9.0/native-library.png)
 
@@ -17,7 +17,7 @@ Library shows installed games and sources available on your drives, using a comp
 - **Mounted:** the provider reports the source as mounted.
 - **Source missing:** a reported source is not currently available on its drive.
 
-These states can overlap. Search by title, title ID or path, and filter by status, location or format.
+These states can overlap. **Games** and **Files** share the Library page. Games uses one counted status filter: **All games**, **Available now** or **Missing source**. **Installed** and **Mounted** remain separate badges. Search by title, title ID or path, and use the other filters to narrow the list.
 
 ## PS4 packages and platform labels
 
@@ -35,7 +35,7 @@ The **Add-ons** page is a separate collection. Finding the base game in Library 
 
 Library and drive information refresh automatically. Game sizes show **Measuring…** until known. When Files puts a compatible game into `homebrew`, or a drive is connected, Orbit requests a ShadowMount scan at most once a minute. **Looking for new games…** appears while the scan is pending. **Try again** appears when the provider is not responding. **Scan for games** remains a manual fallback and may register or mount games after confirmation.
 
-In **1.5.0** and later, a newly completed exFAT, FFPFSC or game-folder download or transfer automatically requests a scan when a compatible ShadowMount version is running. Orbit checks registration separately. If ShadowMount was unavailable, start it and use **Scan with ShadowMount** in the download’s details when offered. Older completed downloads are not all rescanned automatically on upgrade.
+In **1.5.0** and later, a newly completed exFAT, FFPFSC or game-folder download or transfer automatically requests a scan when a compatible ShadowMount version is running. Orbit checks registration separately. If ShadowMount was unavailable, start it and use **Scan with ShadowMount** in the download’s details when offered. Older completed downloads are not all rescanned automatically on upgrade. In 1.9.0, Orbit registers the actual game root inside nested extracted or transferred folders with supported ShadowMount versions. Existing completed downloads can use **Scan with ShadowMount** to rediscover these roots without redownloading.
 
 If Library is unavailable, start a compatible ShadowMount version and enable its local API. Available actions depend on your ShadowMount version and the selected game file.
 

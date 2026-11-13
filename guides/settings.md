@@ -9,8 +9,8 @@ Open **App settings** in Orbit Store’s default Store layout, or **Settings** i
 | Downloads | Simultaneous downloads, connections per download, automatic retries and PS5 shutdown. Zero also chooses the computer/PS5 download route here. |
 | Storage & cleanup | Default PS5 drive, available space, archive/package cleanup and what happens to files when clearing history. Zero has its download folder and computer cache controls here. |
 | Sources & accounts | Orbit Store’s enabled sources, plus Archive.org, Vikingfile and TorBox account controls supported by each app. |
-| Devices | Pairing, connection details and Orbit Zero companion controls. Zero’s Console page keeps a connection overview and links here. |
-| Appearance | Interface, language, motion and the selected layout’s appearance options. |
+| Devices | Pairing, connection details and Orbit Zero companion controls. Zero’s Console page keeps a connection overview and links here. Zero also has Connected apps for its opt-in local API. |
+| Appearance | Interface, language, motion, scores/playtimes on game cards and the selected layout’s appearance options. |
 | Notifications | PS5 and ntfy notification preferences in Orbit Store. |
 | Game catalogue | Catalogue version and refresh. |
 | Updates & startup | Updates and restart/startup controls available in that app. Native links to the browser for payload-manager and auto-start setup. |

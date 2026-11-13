@@ -1,6 +1,6 @@
 # Find and download a game
 
-Orbit’s current catalogue includes **2,368 games: 1,253 PS5 games and 1,115 PS4 games**, with **5,306 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit’s current catalogue includes **2,390 games: 1,275 PS5 games and 1,115 PS4 games**, with **5,335 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 Settings paths in this guide use the Store layout. For the browser’s other layouts, see the [Settings page equivalents](appearance.md#find-settings-after-switching).
 
@@ -19,6 +19,12 @@ Switch to **Browse** when you want search and filters. It defaults to **Release 
 *Use filters to find options that fit your drive and preferred format. Sizes reflect the download option you choose.*
 
 In 1.6.0, Source and Format allow multiple selections. Use **Installed games** to hide games already installed or saved on a PS5 drive. This uses the connected console’s library; it does not treat a computer-only copy as installed.
+
+### Scores and playtimes
+
+Game pages show Metacritic scores and HowLongToBeat estimates when recorded. Browse can filter by minimum score or playtime and sort using these values. Choose **Main Story**, **Main + Extras** or **Completionist** for the estimate you want. These choices can be saved with Browse filters. Missing values stay unlabelled.
+
+To hide this information below game cards, turn off **Appearance → Scores and playtimes on game cards**. Game details and filters remain available. The preference is saved on the device and works in all four layouts.
 
 ### Genres and filter counts
 
@@ -162,6 +168,10 @@ If the session expires, start the provider step again. For an existing paused or
 Enter your Archive.org email and password, select **Sign in**, and check that the panel shows **Signed in**. Then retry the download. The native app and browser share the PS5’s sign-in; Orbit Zero keeps a separate sign-in on the computer. If you use **Prefer PS5**, sign in on the PS5 as well for downloads routed there. Your password is not saved.
 
 Release 1.3.5 removed 225 unavailable Archive.org options. Signing in helps with account-required files; it does not restore removed files. If the source page says the item is unavailable, choose another source or game option. You can sign out from the same account panel.
+
+### Remember your download method
+
+Orbit remembers whether you chose **Direct** or **TorBox**. In TorBox settings, enable **Always use TorBox** to apply it to new downloads. Your account and the selected source must support the request. Turn this preference off before choosing Direct; Orbit does not silently switch a TorBox request to the original source. Zero and the PS5 service keep their own preferences.
 
 ### Optional: download through TorBox
 

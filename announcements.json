@@ -1,6 +1,12 @@
 {
   "announcements": [
     {
+      "id": "orbit-ps4-launch-190",
+      "title": "🎉 Orbit is now on PS4!",
+      "message": "Get the downloads and setup instructions from the Orbit Store for PS4 repository: github.com/saawant12/orbit-store-ps4.",
+      "minVersion": "1.8.4"
+    },
+    {
       "id": "crypto-support-2026-11-04",
       "title": "You can now support Orbit with crypto",
       "message": "If you’d like to help with development costs, you can now contribute via crypto. It’s entirely optional, and Orbit stays free. Open Support Orbit in Settings to view the options.",
