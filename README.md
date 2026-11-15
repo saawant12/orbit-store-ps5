@@ -20,7 +20,7 @@ Explore **2,714 games: 1,280 PS5 games and 1,434 PS4 games**, with **5,679 game 
 <div align="center">
 <a href="https://github.com/saawant12/orbit-store-ps5/issues/131#user-content-support-with-crypto"><img src="assets/support-crypto.svg" alt="Support Orbit with crypto" width="353" height="57"></a>
 
-[Get started](guides/getting-started.md) · [Download Orbit](https://github.com/saawant12/orbit-store-ps5/releases/latest) · [Guides](guides) · [Report an issue](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md) · [Request a feature](https://github.com/saawant12/orbit-store-ps5/issues/new?template=feature_request.md) · [Appearance guide](guides/appearance.md) · [Troubleshooting](guides/troubleshooting.md)
+[orbitstore.dev](https://orbitstore.dev) · [Get started](guides/getting-started.md) · [Download Orbit](https://github.com/saawant12/orbit-store-ps5/releases/latest) · [Guides](guides) · [Report an issue](https://github.com/saawant12/orbit-store-ps5/issues/new?template=bug_report.md) · [Request a feature](https://github.com/saawant12/orbit-store-ps5/issues/new?template=feature_request.md) · [Appearance guide](guides/appearance.md) · [Troubleshooting](guides/troubleshooting.md)
 
 </div>
 
