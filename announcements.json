@@ -1,6 +1,13 @@
 {
   "announcements": [
     {
+      "id": "orbitnet-coming-soon-2026-11-16",
+      "title": "OrbitNet is coming soon: online multiplayer for jailbroken PS5s",
+      "message": "From the developer of Orbit. getorbitnet.com",
+      "endsAt": "2026-12-01T00:00:00Z",
+      "minVersion": "1.8.4"
+    },
+    {
       "id": "orbit-ps4-launch-190",
       "title": "🎉 Orbit is now on PS4!",
       "message": "Get the downloads and setup instructions from the Orbit Store for PS4 repository: github.com/saawant12/orbit-store-ps4.",
