@@ -1,6 +1,6 @@
 # Find and download a game
 
-Orbit’s current catalogue includes **2,390 games: 1,275 PS5 games and 1,115 PS4 games**, with **5,335 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit’s current catalogue includes **2,714 games: 1,280 PS5 games and 1,434 PS4 games**, with **5,679 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 Settings paths in this guide use the Store layout. For the browser’s other layouts, see the [Settings page equivalents](appearance.md#find-settings-after-switching).
 
@@ -56,6 +56,14 @@ In the native TV app’s Store interface, use D-pad/left stick to move, Cross to
 
 Orbit 1.5.0 adds **Add-ons** after Browse, plus **Add-ons (count)** on game details. Search by DLC or base-game name and filter by Platform, Type, Source and Region. Check the required game edition, title ID and known version requirements before downloading. DLC counts and installation status are separate from those of the base game. Use the same source, delivery and destination controls as for games; Zero can also save add-ons to **This computer** and send them later. See [the DLC guide](add-ons.md).
 
+## ZSTD games
+
+Orbit Store **1.9.1** adds **Format → ZSTD** in the PS5 browser and native app, in all four layouts. The catalogue has **20 identified ZSTD options across 20 PS5 games**. These games lead **New on Orbit** in this catalogue update.
+
+Orbit extracts the outer RAR, ZIP or 7z archive and keeps the game’s ZSTD assets intact. Running them requires a compatible loader and a ZSTD-capable AMPR runtime. The format label alone does not confirm compatibility with your console.
+
+The shared Orbit Zero 1.9.1 installers can download, extract and transfer these game folders; their Format filter still lists them as **Game folder**.
+
 ## PS4 games on PS5
 
 PS4 support starts with **Orbit Store 1.1.0**, **native app 1.4.0** and **Orbit Zero 1.1.0**. Use the latest matching apps for the current catalogue and features. Update the apps before refreshing the catalogue; builds without PS4 support keep their PS5-compatible catalogue.
@@ -67,7 +75,7 @@ PS4 support starts with **Orbit Store 1.1.0**, **native app 1.4.0** and **Orbit 
 
 Files go to the selected drive’s `homebrew` folder, including `/data/homebrew/` for internal storage. In **1.5.0** and later, open a completed download and choose **Install on PS5** to install its PKG/FPKG. Earlier versions need a compatible package installer. Check the game’s requirements; downloading and installing remain separate steps. See [installing downloaded games](install-games.md). The instructions for installing Orbit’s own `PPSA99177.ffpkg` TV app do not install a downloaded game package.
 
-**Orbit still runs on PS5.** PS4 game support does not make the ELF or TV app compatible with PS4 consoles. See [Library](library.md) for the distinction between downloaded files and installed games.
+**This ELF and TV app run on PS5.** For a PS4 console, use the separate [Orbit Store for PS4](https://github.com/saawant12/orbit-store-ps4) release with the same Orbit Zero 1.9.1 desktop app. See [Library](library.md) for the distinction between downloaded files and installed games.
 
 ## Pick a source, format and drive
 

@@ -2,7 +2,7 @@
 
 Orbit Zero can save games on your computer without a connected PS5, then send them to the console later. You can also download and transfer to a connected PS5 over the local network. For uncompressed files, the two stages overlap: completed chunks can reach the console while the computer is still downloading. ZIP, RAR and 7z archives finish downloading and extract on the computer before their files transfer. Use the desktop app, a compatible native Orbit TV app, or the local browser controls to browse and manage the queue.
 
-Download the desktop app from [Orbit Store releases](https://github.com/saawant12/orbit-store-ps5/releases/latest). Zero includes the matching PS5 service under **Console → Start Orbit on PS5**; download the native FFPKG only if you also want the TV app. PS4 browsing and desktop language selection require Orbit Zero 1.1.0 or later. For a console without internet, follow the [offline PS5 setup guide](orbit-zero-offline-ps5.md).
+Download the desktop app from [Orbit Store releases](https://github.com/saawant12/orbit-store-ps5/releases/latest). Zero can start the PS5 service under **Console → Start Orbit on PS5**; download the native FFPKG only if you also want the TV app. PS4 browsing and desktop language selection require Orbit Zero 1.1.0 or later. For a console without internet, follow the [offline PS5 setup guide](orbit-zero-offline-ps5.md).
 
 **Download and transfer improvements are included as standard.** Follow the [installation and update steps](orbit-zero-installation.md) to update the desktop app and PS5 service together.
 
@@ -11,6 +11,18 @@ The screenshots below were captured in Orbit Zero 1.5.0. Follow the current [Set
 ![Orbit Zero 1.5.0 Discover with NieR:Automata selected](../assets/1.5.0/zero-discover-nier-automata.jpg)
 
 *Discover in Orbit Zero.*
+
+## One desktop app for PS5 and PS4
+
+Orbit Zero **1.9.1** works with both consoles. Use [Orbit Store for PS4](https://github.com/saawant12/orbit-store-ps4) **0.0.2 or later** on a PS4; the PS5 native app and ELF remain PS5-specific. The Zero installers are the same on both projects’ releases.
+
+Each console has its own saved pairing, games and downloads. In **Settings → Devices → Consoles**, choose a saved console or **Add another console**. The Connection panel on **Console** also has a switch. Finish or cancel unfinished console transfers before switching. Computer-only downloads remain available, and the download folder, provider accounts and language are shared.
+
+With **Settings → Downloads → Download preference → Prefer PS5**, Zero can open Vikingfile or AkiraBox verification on your computer, then give the generated link to **Orbit Store 1.9.1 or later** on your PS5. The PS5 checks the file and downloads it itself. If the link cannot be used by the console, the automatic route can download on the computer and transfer the files instead. **Computer** keeps downloading and extracting on your computer. When a PS4 profile is selected, the preference is named **Prefer PS4**.
+
+For PS4 startup, open **Settings → Updates & startup**, choose **PS4**, and select **Start Orbit on PS4**. GoldHEN must already be running. Zero sends elfldr first when needed, then Orbit. Follow the [PS4 setup guide](https://github.com/saawant12/orbit-store-ps4/blob/main/guides/orbit-zero.md). **Stream & install** remains a PS5 feature; PS4 uses transfer to the console followed by installation.
+
+The shared Zero 1.9.1 packages include PS5 service **1.9.0** as an offline fallback and fetch newer compatible services from the official feed. Install PS5 service **1.9.1** separately or use its ELF in **Advanced → Choose another ELF** if the new feed is unavailable. A native FFPKG includes its own matching service.
 
 ## What you need
 
@@ -21,7 +33,7 @@ For transfers to PS5, you also need:
 - Writable storage on the PS5.
 - A PS5 with its jailbreak and Payload Manager or a compatible ELF loader already running, or the matching Orbit receiver already started. Zero does not jailbreak the console.
 - Both devices on the same home network. Wi-Fi, Ethernet, or a mixture of both work. Use the PS5's local IPv4 address.
-- Orbit Zero and its included Orbit Store 1.9.0 service. For native TV controls, install the matching FFPKG from the same release.
+- Orbit Zero and a compatible running PS5 service. Its shared installers include service 1.9.0 as an offline fallback; use 1.9.1 for captured-link handoff. For native TV controls, use the FFPKG from the same PS5 release as the service.
 
 Downloads are available for **ARM64 and x64 on macOS, Windows and Linux**; 32-bit x86 is not supported. Mac builds use Developer ID signing but are not notarized; Windows and Linux packages are unsigned.
 
@@ -83,7 +95,7 @@ Browse supports selecting several sources, formats or genres, the same nine [gam
 
 In the Store interface, **New on Orbit** appears first in Discover, followed by **Latest releases** and the All games grid. The other interfaces present these collections in their own layouts. In Browse, use **Platform** to choose PS4, PS5 or both. Platform editions stay separate, with their own images, release dates and download options.
 
-The current catalogue includes 1,115 PS4 games, with raw PKG/FPKG files and single ZIP, RAR or 7z archives among their download options. Choose a source and **This computer** or a PS5 destination just as you would for a PS5 game. The computer-download route also works with the PS5’s internet access blocked. The **1.5.0** apps provide **Install on PS5** after the transfer finishes. Earlier versions need a compatible package installer. See [installing downloaded games](install-games.md) and [PS4 games on PS5](downloads.md#ps4-games-on-ps5).
+The current catalogue includes 1,434 PS4 games, with raw PKG/FPKG files and single ZIP, RAR or 7z archives among their download options. Choose a source and **This computer** or a PS5 destination just as you would for a PS5 game. The computer-download route also works with the PS5’s internet access blocked. The **1.5.0** apps provide **Install on PS5** after the transfer finishes. Earlier versions need a compatible package installer. See [installing downloaded games](install-games.md) and [PS4 games on PS5](downloads.md#ps4-games-on-ps5).
 
 In **1.7.5**, **Format → LZ4** finds games with LZ4 assets, in all four interfaces. Zero extracts the outer archive on your computer and preserves those assets for transfer. See [LZ4 games](downloads.md#lz4-games) for format and loader requirements. If the saved catalogue is missing or unreadable, Zero can use its bundled catalogue; a valid newer saved copy takes priority.
 
