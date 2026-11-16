@@ -21,7 +21,7 @@ The categories are consistent across layouts; each app shows the controls it sup
 
 ## Download method and game-card details
 
-Under **Sources & accounts → TorBox**, **Always use TorBox** applies to new downloads. Orbit also remembers the last Direct/TorBox selection. Existing jobs keep their delivery method; unsupported files and account limits still need your choice. The PS5 service and Zero keep separate preferences.
+Under **Sources & accounts → TorBox**, **Always use TorBox** applies to new downloads that TorBox can take; other options use their original source. Orbit also remembers the last Direct/TorBox selection. Existing jobs keep their delivery method; unsupported files and account limits still need your choice. The PS5 service and Zero keep separate preferences.
 
 Under **Appearance**, turn **Scores and playtimes on game cards** off to hide the extra card labels. Game details, Browse filters and sorting remain available. This setting is saved on the device.
 

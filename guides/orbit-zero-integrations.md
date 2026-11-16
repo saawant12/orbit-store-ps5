@@ -60,7 +60,7 @@ Use option `id` values as `releaseId`. Keep a user's exact platform, title ID, e
 
 For a PS5 drive, use `"destination": { "type": "ps5", "id": "usb0" }` with an ID returned by `/destinations`.
 
-`delivery` is optional (`direct` or `torbox`). Omission uses the remembered method; Always use TorBox overrides it. `route` is optional: `auto` follows Zero's download preference, `computer` downloads on the computer and transfers when appropriate, and `ps5` requires a direct console download. Explicit `ps5` does not silently fall back to the computer and does not support the computer's TorBox connection. These per-request choices do not change the global download preference.
+`delivery` is optional (`direct` or `torbox`). Omission uses the remembered method; Always use TorBox overrides it for options TorBox can take. `route` is optional: `auto` follows Zero's download preference, `computer` downloads on the computer and transfers when appropriate, and `ps5` requires a direct console download. Explicit `ps5` does not silently fall back to the computer and does not support the computer's TorBox connection. These per-request choices do not change the global download preference.
 
 The response is HTTP 202:
 

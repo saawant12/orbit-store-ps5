@@ -20,9 +20,9 @@ Each console has its own saved pairing, games and downloads. In **Settings → D
 
 With **Settings → Downloads → Download preference → Prefer PS5**, Zero can open Vikingfile or AkiraBox verification on your computer, then give the generated link to **Orbit Store 1.9.1 or later** on your PS5. The PS5 checks the file and downloads it itself. If the link cannot be used by the console, the automatic route can download on the computer and transfer the files instead. **Computer** keeps downloading and extracting on your computer. When a PS4 profile is selected, the preference is named **Prefer PS4**.
 
-For PS4 startup, open **Settings → Updates & startup**, choose **PS4**, and select **Start Orbit on PS4**. GoldHEN must already be running. Zero sends elfldr first when needed, then Orbit. Follow the [PS4 setup guide](https://github.com/saawant12/orbit-store-ps4/blob/main/guides/orbit-zero.md). **Stream & install** remains a PS5 feature; PS4 uses transfer to the console followed by installation.
+For PS4 startup, open **Settings → Updates & startup**, choose **PS4**, and select **Start Orbit on PS4**. GoldHEN must already be running. Zero sends elfldr first when needed, then Orbit. Follow the [PS4 setup guide](https://github.com/saawant12/orbit-store-ps4/blob/main/guides/orbit-zero.md). Since Zero **1.9.2**, **Stream & install** works on PS4 too, with Orbit Store for PS4 **0.0.3**. Some packages can’t be installed straight from the computer; Zero then tells you to send them to the PS4 instead.
 
-The shared Zero 1.9.1 packages include PS5 service **1.9.0** as an offline fallback and fetch newer compatible services from the official feed. Install PS5 service **1.9.1** separately or use its ELF in **Advanced → Choose another ELF** if the new feed is unavailable. A native FFPKG includes its own matching service.
+The shared Zero 1.9.2 packages include PS5 service **1.9.2** as an offline fallback and fetch newer compatible services from the official feed. A native FFPKG includes its own matching service.
 
 ## What you need
 

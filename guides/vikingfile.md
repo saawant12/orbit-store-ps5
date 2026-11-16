@@ -16,6 +16,24 @@ Orbit shows **Signed in** only after Vikingfile confirms the session. Opening th
 
 Orbit uses the selected browser session when resolving and checking the file link, downloading it and resuming it. On PS5, it reads only Vikingfile’s session for the active user; Zero uses its own provider session. These cookies are not stored in download history, exposed in diagnostics or sent to TorBox or unrelated hosts. The session check also supplies the sign-in indicator.
 
+## Use a pass from another device
+
+**Needs Orbit 1.9.2 or later.**
+
+If Vikingfile’s sign-in page freezes or closes on your PS5, you can sign in on another device instead and give Orbit that sign-in, called a *pass*. Vikingfile stores it in your browser as a cookie named `PHPSESSID`.
+
+1. On a computer, open vikingfile.com in Chrome, Edge, Firefox or Safari and sign in with your account code.
+2. Open the browser’s developer tools: press F12, or ⌥⌘I on a Mac. In Safari, first turn on **Settings → Advanced → Show features for web developers**.
+3. Find the cookies: **Application → Cookies** in Chrome and Edge, or **Storage → Cookies** in Firefox and Safari. Select vikingfile.com.
+4. Copy the **Value** of `PHPSESSID`.
+5. Open Orbit in a browser on your computer or phone and go to the Vikingfile settings. Paste the value into **Sign-in pass (PHPSESSID)** and choose **Save pass**.
+
+Phone browsers don’t show cookies unless you add a cookie viewer, so copying the pass is easiest on a computer. You can paste it from any device.
+
+Orbit checks the pass with Vikingfile before saving it and shows **Pass saved and signed in**. The pass is kept only on your PS5 and never shown again. Treat it like a password. The native app shows the pass status under **Vikingfile**, with **Forget pass**.
+
+Orbit tries the pass first for Vikingfile downloads. If Vikingfile has ended it, Orbit uses the PS5’s own sign-in, if any, and the settings say **Vikingfile has signed this pass out**. Copy a new one the same way. Signing out on vikingfile.com in that browser also ends the pass, so close the tab instead.
+
 ## On your computer
 
 In Orbit Zero’s **Settings → Sources & accounts → Vikingfile**, enter your account hash and choose **Sign in**. Zero fills the official page’s account field. Complete any human verification there. The account field is cleared after submitting; the resulting browser session stays on that computer. Use **Check sign-in** or **Sign out** in the same settings.

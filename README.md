@@ -214,15 +214,15 @@ The desktop app supports **ARM64 and x64** computers and the same **26 interface
 
 ## Beta status
 
-**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.9.1** have these version numbers:
+**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.9.2** have these version numbers:
 
 | Component | Version |
 | --- | --- |
-| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.9.1** |
-| Native TV app (`PPSA99177.ffpkg`) | **1.13.1** |
-| Orbit Zero for desktop | **1.9.1** |
+| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.9.2** |
+| Native TV app (`PPSA99177.ffpkg`) | **1.13.2** |
+| Orbit Zero for desktop | **1.9.2** |
 
-The TV app has its own version number; these files belong to the same release. Zero’s shared installers are identical to those in the PS4 0.0.2 release. They include PS5 service **1.9.0** as an offline fallback and fetch newer compatible services from the official feed when online. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
+The TV app has its own version number; these files belong to the same release. Zero’s shared installers are identical to those in the PS4 0.0.3 release. They include PS5 service **1.9.2** as an offline fallback and fetch newer compatible services from the official feed when online. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
 
 **Payload-manager setup is opt-in.** Choose **App settings → Updates & startup → Payload managers → Add Orbit** to let Orbit add and update a copy. Existing copies stay in place until you choose whether to allow updates. Auto-start is a separate choice, and Orbit leaves your manager's global Autoload switch unchanged.
 
@@ -356,7 +356,7 @@ On a paired phone, these steps open on the PS5. In Orbit Zero, they open on your
 
 ### Automatic archive extraction
 
-Orbit automatically extracts supported single-file **ZIP, RAR and 7z** downloads. Orbit Store extracts on the selected PS5 drive; Orbit Zero extracts on your computer before transferring the extracted files to the PS5. Keep enough free space for both the archive and its extracted files.
+Orbit automatically extracts supported single-file **ZIP, RAR and 7z** downloads. Orbit Store extracts on the selected PS5 drive; Orbit Zero extracts on your computer before transferring the extracted files to the PS5. Keep enough free space for both the archive and its extracted files. From Orbit Store **1.9.2**, you can turn off **Extract archives after downloading** to keep downloads as archives instead. [Guide](guides/downloads.md)
 
 **Delete archives after extracting** is on by default. Change it under **App settings → Storage & cleanup** in Orbit Store, or **Settings → Storage & cleanup** in Orbit Zero. It removes the downloaded archive only after successful extraction. In Zero, keeping or removing the extracted computer copy after transfer is a separate **Computer cache** setting; automatic cache removal is off by default.
 

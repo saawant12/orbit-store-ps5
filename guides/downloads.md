@@ -179,7 +179,7 @@ Release 1.3.5 removed 225 unavailable Archive.org options. Signing in helps with
 
 ### Remember your download method
 
-Orbit remembers whether you chose **Direct** or **TorBox**. In TorBox settings, enable **Always use TorBox** to apply it to new downloads. Your account and the selected source must support the request. Turn this preference off before choosing Direct; Orbit does not silently switch a TorBox request to the original source. Zero and the PS5 service keep their own preferences.
+Orbit remembers whether you chose **Direct** or **TorBox**. In TorBox settings, enable **Always use TorBox** to apply it to new downloads that TorBox can take. Options it can't, such as AkiraBox or a host TorBox has paused, use the original source. To choose Direct for an option TorBox can take, turn this preference off first. Orbit never switches a TorBox job in Downloads to the original source. Zero and the PS5 service keep their own preferences.
 
 ### Optional: download through TorBox
 
@@ -192,7 +192,7 @@ Orbit remembers whether you chose **Direct** or **TorBox**. In TorBox settings, 
 
 *Connect the account in the browser once. The native TV app and paired devices share that connection. If you are not connected, choose **Set up TorBox** under a game’s **Download using** options. In the TV app this opens the browser with your game, source and destination selected; connect in App settings, then return to the game.*
 
-In 1.8.4, TorBox downloads use at most four connections per game in Zero and eight for direct PS5 downloads, even when a higher count is selected. Selecting one connection in Zero uses a continuous transfer, including when resuming. Orbit respects provider cooldowns. A removed-source error means you need another download option; retrying cannot restore the original host’s file.
+In 1.8.4, TorBox downloads use at most four connections per game in Zero and eight for direct PS5 downloads, even when a higher count is selected. Selecting one connection in Zero uses a continuous transfer, including when resuming. Orbit respects provider cooldowns. A removed-source error means you need another download option; retrying cannot restore the original host’s file. If TorBox makes no progress on a file for five minutes, Orbit stops and says the source may be offline or the file removed.
 
 Orbit submits supported requests to TorBox without rejecting them based on its advertised file-size limit. TorBox still decides whether the request is allowed; any returned limit or account error appears in Downloads.
 
@@ -215,6 +215,8 @@ Orbit Store extracts on the selected PS5 drive after downloading. Orbit Zero ext
 If an archive puts a game folder inside extra empty folders, Orbit Store 1.4.0 and later removes those extra folders so the game folder is saved directly. Other files and folders in the archive are kept.
 
 **Delete archives after extracting** is on by default in both apps. Find it under **App settings → Storage & cleanup** in Orbit Store, or **Settings → Storage & cleanup** in Orbit Zero. It removes the downloaded archive after successful extraction and keeps archives that need a password or fail to extract.
+
+To extract archives yourself with another tool, turn off **Extract archives after downloading** in the same Orbit Store settings (Orbit 1.9.2 or later). ZIP, 7z and RAR downloads you add afterwards are saved as the archive under its own name and need room only for the archive. Downloads already in the queue keep the setting they were added with.
 
 In Zero, the extracted computer files follow the separate **Computer cache** setting. **Automatically remove after transfer** is off by default; enabling it removes those copies only after the PS5 confirms the transfer. Deleting an archive after extraction does not delete the extracted files. See [saved locations](#where-downloads-are-saved) to find the result.
 
