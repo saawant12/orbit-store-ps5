@@ -14,7 +14,7 @@ The screenshots below were captured in Orbit Zero 1.5.0. Follow the current [Set
 
 ## One desktop app for PS5 and PS4
 
-Orbit Zero **1.9.1** works with both consoles. Use [Orbit Store for PS4](https://github.com/saawant12/orbit-store-ps4) **0.0.2 or later** on a PS4; the PS5 native app and ELF remain PS5-specific. The Zero installers are the same on both projects’ releases.
+Orbit Zero **1.9.5** works with both consoles. Use [Orbit Store for PS4](https://github.com/saawant12/orbit-store-ps4) **0.0.2 or later** on a PS4; the PS5 native app and ELF remain PS5-specific. The Zero installers are the same on both projects’ releases.
 
 Each console has its own saved pairing, games and downloads. In **Settings → Devices → Consoles**, choose a saved console or **Add another console**. The Connection panel on **Console** also has a switch. Finish or cancel unfinished console transfers before switching. Computer-only downloads remain available, and the download folder, provider accounts and language are shared.
 
@@ -22,7 +22,7 @@ With **Settings → Downloads → Download preference → Prefer PS5**, Zero can
 
 For PS4 startup, open **Settings → Updates & startup**, choose **PS4**, and select **Start Orbit on PS4**. GoldHEN must already be running. Zero sends elfldr first when needed, then Orbit. Follow the [PS4 setup guide](https://github.com/saawant12/orbit-store-ps4/blob/main/guides/orbit-zero.md). Since Zero **1.9.2**, **Stream & install** works on PS4 too, with Orbit Store for PS4 **0.0.3**. Some packages can’t be installed straight from the computer; Zero then tells you to send them to the PS4 instead.
 
-The shared Zero 1.9.2 packages include PS5 service **1.9.2** as an offline fallback and fetch newer compatible services from the official feed. A native FFPKG includes its own matching service.
+The shared Zero 1.9.5 packages include PS5 service **1.9.5** as an offline fallback and fetch newer compatible services from the official feed. A native FFPKG includes its own matching service.
 
 ## What you need
 
@@ -33,7 +33,7 @@ For transfers to PS5, you also need:
 - Writable storage on the PS5.
 - A PS5 with its jailbreak and Payload Manager or a compatible ELF loader already running, or the matching Orbit receiver already started. Zero does not jailbreak the console.
 - Both devices on the same home network. Wi-Fi, Ethernet, or a mixture of both work. Use the PS5's local IPv4 address.
-- Orbit Zero and a compatible running PS5 service. Its shared installers include service 1.9.0 as an offline fallback; use 1.9.1 for captured-link handoff. For native TV controls, use the FFPKG from the same PS5 release as the service.
+- Orbit Zero and a compatible running PS5 service. Its shared installers include service 1.9.5 as an offline fallback; captured-link handoff needs 1.9.1 or later. For native TV controls, use the FFPKG from the same PS5 release as the service.
 
 Downloads are available for **ARM64 and x64 on macOS, Windows and Linux**; 32-bit x86 is not supported. Mac builds use Developer ID signing but are not notarized; Windows and Linux packages are unsigned.
 

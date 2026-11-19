@@ -74,7 +74,7 @@ Orbit Store **1.9.1** adds **Format → ZSTD** in the PS5 browser and native app
 
 Orbit extracts the outer RAR, ZIP or 7z archive and keeps the game’s ZSTD assets intact. Running them requires a compatible loader and a ZSTD-capable AMPR runtime. The format label alone does not confirm compatibility with your console.
 
-The shared Orbit Zero 1.9.1 installers can download, extract and transfer these game folders; their Format filter still lists them as **Game folder**.
+Orbit Zero 1.9.1 and later can download, extract and transfer these game folders; their Format filter still lists them as **Game folder**.
 
 ## PS4 games on PS5
 
@@ -87,7 +87,7 @@ PS4 support starts with **Orbit Store 1.1.0**, **native app 1.4.0** and **Orbit 
 
 Files go to the selected drive’s `homebrew` folder, including `/data/homebrew/` for internal storage. In **1.5.0** and later, open a completed download and choose **Install on PS5** to install its PKG/FPKG. Earlier versions need a compatible package installer. Check the game’s requirements; downloading and installing remain separate steps. See [installing downloaded games](install-games.md). The instructions for installing Orbit’s own `PPSA99177.ffpkg` TV app do not install a downloaded game package.
 
-**This ELF and TV app run on PS5.** For a PS4 console, use the separate [Orbit Store for PS4](https://github.com/saawant12/orbit-store-ps4) release with the same Orbit Zero 1.9.1 desktop app. See [Library](library.md) for the distinction between downloaded files and installed games.
+**This ELF and TV app run on PS5.** For a PS4 console, use the separate [Orbit Store for PS4](https://github.com/saawant12/orbit-store-ps4) release with the same Orbit Zero 1.9.5 desktop app. See [Library](library.md) for the distinction between downloaded files and installed games.
 
 ## Pick a source, format and drive
 
@@ -116,7 +116,7 @@ If extraction finds backport files and the game needs newer firmware, 1.8.3 show
 
 Identified archives match both their content format and their archive type in Browse. For example, an inspected exFAT image inside a RAR appears under **exFAT** and **RAR**. Options whose contents are still unverified retain their archive label. Check the selected option’s download size and expected extracted size when planning drive space.
 
-**PS5 FPKGs and firmware (October 2026):** PS5 FPKG games currently run only on firmware 11.60 or lower. On 12.xx and 13.xx they may install but won't start, until package support arrives for those firmwares. On those firmwares, choose exFAT or FFPFSC instead. Where a game offers exFAT or FFPFSC, those work without installing.
+**PS5 PKG and FPKG games:** run them with [Kraken Mount](install-games.md#kraken-mount), which runs them without installing them. While it's running, Orbit labels these options **Runs with Kraken Mount**. Where a game offers exFAT or FFPFSC, those also work without installing.
 
 ### LZ4 games
 

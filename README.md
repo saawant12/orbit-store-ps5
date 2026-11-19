@@ -186,7 +186,7 @@ Download on your computer and transfer to your PS5 over your home network. Uncom
 - **One Zero for PS5 and PS4.** Each console has its own pairing, games and downloads. Switch profiles in **Settings → Devices → Consoles**. PS4 uses its [separate Orbit Store app](https://github.com/saawant12/orbit-store-ps4).
 - **Start Orbit from your computer.** Upload and launch the compatible payload without a separate ELF download or manual file selection. Your PS5 must already have its jailbreak and Payload Manager or an ELF loader running.
 - **Control downloads from either device.** Browse and manage the computer’s queue from the desktop or the matching native Orbit app on your PS5.
-- **Choose where downloads run.** Use **Computer** to download through your computer, or **Prefer PS5** to let the console download directly. Vikingfile and AkiraBox verification opens on your computer, then Zero hands a usable link to PS5 service 1.9.1. It can fall back to downloading and transferring through your computer.
+- **Choose where downloads run.** Use **Computer** to download through your computer, or **Prefer PS5** to let the console download directly. Vikingfile and AkiraBox verification opens on your computer, then Zero hands a usable link to PS5 service 1.9.1 or later. It can fall back to downloading and transferring through your computer.
 - **Follow each stage.** See download and PS5 transfer rates and estimated time remaining separately, plus extraction progress for archives, with controls to pause, resume and reconnect.
 - **Recover an interrupted transfer.** From **1.9.5**, Zero carries on by itself when the connection drops during a big transfer. Resume after a connection failure, reconnect your PS5 at its new address, or remove a stuck queue entry while keeping its files. [Compare the recovery choices](guides/orbit-zero.md#pause-reconnect-and-clean-up).
 - **Reuse completed computer downloads.** Recover a finished file whose queue entry was removed, including older `.cache` files, then transfer it without downloading it again. See [cache recovery](guides/orbit-zero.md#recover-a-completed-computer-download).
@@ -346,7 +346,7 @@ The catalogue offers single-file **FFPFSC**, **exFAT**, **LZ4**, **ZSTD**, **PKG
 | **PKG**, **FPKG** | `.pkg` package | Choose **Install on PS5** in 1.5.0 and later, or use your compatible package installer on earlier versions. ShadowMountPlus does not mount `.pkg` files. With Kraken Mount running, PS5 options say **Runs with Kraken Mount**: Kraken Mount runs the game without installing it. |
 | **ZIP**, **RAR**, **7z** | Archive | Orbit extracts it after downloading. The label shows what's inside, for example `7z · exFAT`; follow that row. |
 
-**PS5 FPKGs and firmware (October 2026):** PS5 FPKG games currently run only on firmware 11.60 or lower. On 12.xx and 13.xx they may install but won't start, until package support arrives for those firmwares. On those firmwares, choose exFAT or FFPFSC instead.
+**PS5 PKG and FPKG games:** run them with [Kraken Mount](guides/install-games.md#kraken-mount), which runs them without installing them. While it's running, Orbit 1.9.5 or later labels these options **Runs with Kraken Mount**.
 
 See [which format to pick](guides/downloads.md#which-format-to-pick).
 
