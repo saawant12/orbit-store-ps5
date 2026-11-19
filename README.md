@@ -53,7 +53,7 @@ Explore **3,057 games: 1,323 PS5 games and 1,734 PS4 games**, with **6,037 game 
 **Install and manage**
 
 - **Install without leaving Orbit.** PKG and FPKG through Orbit, game images and folders through ShadowMount. [Guide](guides/install-games.md)
-- **Kraken Mount support.** With [Kraken Mount](https://github.com/quer3q/kraken-mount) running, Orbit hands your downloaded PS5 PKG/FPKG games and game folders to it, shows its progress in Downloads, and Library lists the games it has added. [Guide](guides/install-games.md#kraken-mount)
+- **PKG and FPKG support via Kraken Mount.** With [Kraken Mount](https://github.com/quer3q/kraken-mount) running, PS5 PKG and FPKG options are labelled **Runs with Kraken Mount**. Orbit hands downloaded PKG/FPKG games and game folders to Kraken Mount, which runs them without installing them. Downloads shows its progress, and Library lists the games it has added. [Guide](guides/install-games.md#kraken-mount)
 - **Stream & install from Zero.** Install a finished computer download without first copying the entire PKG or FPKG to the PS5. [Guide](guides/stream-install.md)
 - **Library** of installed games and game files on every drive, kept up to date automatically. [Library guide](guides/library.md)
 - **Game-folder checks.** Review and approve repairs to supported folder permissions and filename capitalization. [Guide](guides/files.md#check-and-repair-a-game-folder)
