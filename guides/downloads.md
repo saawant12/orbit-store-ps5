@@ -1,6 +1,6 @@
 # Find and download a game
 
-Orbit’s current catalogue includes **2,714 games: 1,280 PS5 games and 1,434 PS4 games**, with **5,679 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
+Orbit’s current catalogue includes **3,057 games: 1,323 PS5 games and 1,734 PS4 games**, with **6,037 single-file download options** from Archive.org, Vikingfile and AkiraBox. Each platform edition has its own game page; open it to choose from its available sources and formats. The selection depends on which sources you enable.
 
 Settings paths in this guide use the Store layout. For the browser’s other layouts, see the [Settings page equivalents](appearance.md#find-settings-after-switching).
 
@@ -54,7 +54,19 @@ In the native TV app’s Store interface, use D-pad/left stick to move, Cross to
 
 ## DLC and add-ons
 
-Orbit 1.5.0 adds **Add-ons** after Browse, plus **Add-ons (count)** on game details. Search by DLC or base-game name and filter by Platform, Type, Source and Region. Check the required game edition, title ID and known version requirements before downloading. DLC counts and installation status are separate from those of the base game. Use the same source, delivery and destination controls as for games; Zero can also save add-ons to **This computer** and send them later. See [the DLC guide](add-ons.md).
+Orbit 1.5.0 adds **Add-ons** after Browse, plus **Add-ons (count)** on game details. Search by DLC or base-game name and filter by Platform, Type, Source and Region. Check the required game edition, title ID and known version requirements before downloading. DLC counts and installation status are separate from those of the base game. Use the same source, delivery and destination controls as for games; Zero can also save add-ons to **This computer** and send them later. See [the DLC guide](add-ons.md). To download a game with all its DLC at once, use [Get everything](#get-everything).
+
+## Get everything
+
+**Requires 1.9.5 or later.** On a game’s page, choose **Get everything** to download the game together with every DLC Orbit has for it. It works in every look of the TV app and in the browser version. Orbit Zero offers it for games your PS5 downloads itself.
+
+1. **Get everything** lists the game, using the source and format chosen on its page, followed by each DLC with its source and size. Everything is selected; deselect anything you don’t want.
+2. Check the total size, the free space and the drive the downloads go to. If the drive doesn’t have room for everything selected, Orbit says so and doesn’t start.
+3. Choose **Download all**. Orbit adds the items to Downloads one after another and shows each one’s state, for example **Adding 3 of 14 to Downloads**. **Stop** stops adding the rest; anything already added stays in Downloads.
+4. If an item needs its provider’s page, such as Vikingfile verification, Orbit opens it. In the TV app the page opens in Orbit’s own window, which closes once the download is added. Items that download through TorBox need no page.
+5. When the downloads finish, Orbit installs them in order: the game first, then its DLC. With [Kraken Mount](install-games.md#kraken-mount) running, Orbit hands the game to Kraken Mount instead, and the DLC installs as usual.
+
+One Download all runs at a time. You can close Get everything while Orbit adds the items; open it again on the same game to see the progress.
 
 ## ZSTD games
 
@@ -97,9 +109,9 @@ If extraction finds backport files and the game needs newer firmware, 1.8.3 show
 |---|---|---|
 | **exFAT** | `.exfat` image | ShadowMountPlus mounts it. Nothing to install. |
 | **FFPFSC** | `.ffpfsc` image | ShadowMountPlus mounts it. Nothing to install. |
-| **Game folder** | A folder of game files, from an archive | ShadowMountPlus mounts it. Nothing to install. |
+| **Game folder** | A folder of game files, from an archive | ShadowMountPlus mounts it, or Kraken Mount runs it. Nothing to install. |
 | **LZ4** | Game files containing LZ4-compressed assets, usually inside an archive | Orbit extracts the outer archive and preserves the LZ4 files. Use a compatible game loader; see [LZ4 games](downloads.md#lz4-games). |
-| **PKG**, **FPKG** | `.pkg` package | Choose **Install on PS5** in 1.5.0 and later, or use your compatible package installer on earlier versions. ShadowMountPlus does not mount `.pkg` files. |
+| **PKG**, **FPKG** | `.pkg` package | Choose **Install on PS5** in 1.5.0 and later, or use your compatible package installer on earlier versions. ShadowMountPlus does not mount `.pkg` files. With Kraken Mount running, PS5 options say **Runs with Kraken Mount**: Kraken Mount runs the game without installing it. |
 | **ZIP**, **RAR**, **7z** | Archive | Orbit extracts it after downloading. When its contents are identified, the label shows the format inside, for example `7z · exFAT`; follow that row. |
 
 Identified archives match both their content format and their archive type in Browse. For example, an inspected exFAT image inside a RAR appears under **exFAT** and **RAR**. Options whose contents are still unverified retain their archive label. Check the selected option’s download size and expected extracted size when planning drive space.
@@ -208,7 +220,7 @@ Zero can refresh an expired temporary TorBox link during a retry while preservin
 
 ## ZIP, RAR and 7z downloads
 
-**Requires 1.2.0 or later and matching apps.** Compressed options appear in the normal Format filter. Their displayed download size is the compressed archive size; keep space for both the archive and the extracted files. Multipart archives are not supported.
+**Requires 1.2.0 or later and matching apps.** Compressed options appear in the normal Format filter. Their displayed download size is the compressed archive size. Extracting needs room for both the archive and the extracted files. From **1.9.5**, a download only needs room for the archive when it starts; Orbit checks the room to extract just before extracting. If there isn’t enough, the download pauses and keeps the archive; free up space and select **Resume**. Multipart archives are not supported.
 
 Orbit Store extracts on the selected PS5 drive after downloading. Orbit Zero extracts on the computer first, then transfers the extracted files to your selected PS5 drive. Follow the **Extracting** progress in Downloads. Orbit tries the known source passwords automatically; see the [password list](../README.md#automatic-archive-extraction). If another password is needed, choose **Enter archive password**, then **Retry extraction**. This reuses the downloaded archive.
 
@@ -238,7 +250,7 @@ After deleting a cancelled partial, you can start the download again from its ga
 
 To remove a cancelled download and its partial file, use **Delete download** and confirm. If its drive is disconnected, reconnect it before deleting the file. If you already deleted the partial yourself, Orbit can clear the stale entry so you can start fresh. For completed history and the clear-history buttons, use the choices below.
 
-Keep the PS5 awake. Closing the TV app or control browser leaves the download worker running; stopping Orbit interrupts it. Unexpectedly interrupted transfers return paused for review. The **Restart Orbit** action resumes downloads that were active before that controlled restart. Orbit extracts supported archives after downloading. The 1.5.0 apps provide explicit **Install on PS5** controls and automatic ShadowMount scans for newly completed compatible images and folders; see [installing downloaded games](install-games.md). Orbit does not launch games or continue downloading in rest mode.
+Keep the PS5 awake. Closing the TV app or control browser leaves the download worker running; stopping Orbit interrupts it. Unexpectedly interrupted transfers return paused for review. The **Restart Orbit** action resumes downloads that were active before that controlled restart. Orbit extracts supported archives after downloading. The 1.5.0 apps provide explicit **Install on PS5** controls and automatic ShadowMount scans for newly completed compatible images and folders. From 1.9.5, a running Kraken Mount adds finished PS5 PKG/FPKG games and game folders instead; see [installing downloaded games](install-games.md). Orbit does not launch games or continue downloading in rest mode.
 
 **Notifications.** Open **App settings → Notifications** to choose PS5 alerts, phone/computer alerts through ntfy, or both. Select which download, installation and update events to report. PS5 messages use the console's language. See [notification setup](notifications.md).
 
@@ -284,7 +296,7 @@ Direct PS5 downloads and Orbit Zero transfers use the selected PS5 drive’s `ho
 
 USB numbering depends on how the console mounts your drives. Choose by the storage label shown in Orbit and keep that drive connected. Orbit creates `homebrew` when needed and checks write access before downloading or resuming. A drive attached only to your computer is not a PS5 destination.
 
-For downloads handled by Orbit Store, **Downloads → Finished → Location** shows the saved file or extracted folder path in both the browser and native app. This is the recorded save location; it does not check whether someone has since moved or deleted the file, and it does not mean the game is installed or listed by ShadowMount.
+For downloads handled by Orbit Store, **Downloads → Finished → Location** shows the saved file or extracted folder path in both the browser and native app. This is the recorded save location; it does not check whether someone has since moved or deleted the file, and it does not mean the game is installed or listed by ShadowMount or Kraken Mount.
 
 Orbit Zero also keeps a computer copy in your chosen [computer download folder](orbit-zero.md#choose-the-computer-download-folder), unless you enable cleanup after transfer. In 1.5.0 and later, **Install on PS5** becomes available after the package reaches the console. The PS5 uses its configured installation storage. The downloaded file stays on its original drive unless **Delete packages after installing** is enabled; see [installation steps](install-games.md).
 
@@ -292,7 +304,7 @@ Orbit Zero download details show **PS5 location** and **Computer location** whil
 
 ### Choose a drive with enough space
 
-Review the space estimate before starting. Orbit prefers your default drive while it is usable and has room; otherwise it suggests a suitable drive with more space. A drive you explicitly selected is not silently replaced. Archive and extracted files can need space at the same time, and installation may need additional console storage.
+Review the space estimate before starting. Orbit prefers your default drive while it is usable and has room; otherwise it suggests a suitable drive with more space. A drive you explicitly selected is not silently replaced. Archive and extracted files need space at the same time while extracting, and installation may need additional console storage. From 1.9.5, a drive only needs room for the archive to start; Orbit checks the room to extract just before extracting.
 
 Zero shows available space and the projected space after queued transfers, blocks a destination known to be too small and checks the computer's download space too. Unknown extraction sizes cannot be guaranteed in advance; Orbit checks again after inspecting the archive. For an existing Zero transfer, [Change drive](orbit-zero.md#change-the-ps5-drive) reuses the computer copy.
 

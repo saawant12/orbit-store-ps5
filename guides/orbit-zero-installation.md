@@ -182,7 +182,7 @@ When the status changes to **Connected**, your available PS5 drives appear in Co
 
 You're ready to download. In Browse, use **Platform** to choose PS4, PS5 or both. Open a game, choose a source and destination, and start the download. PS4 packages use the same transfer controls. **Downloads** shows the computer download and PS5 transfer separately.
 
-In **1.5.0**, after the files reach the console, open **Downloads → Downloaded files** and choose **Install on PS5** for a PKG/FPKG. Use the matching desktop app and PS5 service. Compatible exFAT, FFPFSC and game folders automatically request a ShadowMount scan when it is running. See [installing downloaded games](install-games.md).
+In **1.5.0**, after the files reach the console, open **Downloads → Downloaded files** and choose **Install on PS5** for a PKG/FPKG. Use the matching desktop app and PS5 service. Compatible exFAT, FFPFSC and game folders automatically request a ShadowMount scan when it is running. From **1.9.5**, a running Kraken Mount adds PS5 PKG/FPKG games and game folders instead; see [Kraken Mount](install-games.md#kraken-mount). See [installing downloaded games](install-games.md).
 
 ### Choose where downloads run
 
@@ -256,7 +256,7 @@ If a paused or failed Vikingfile or AkiraBox download needs a new link, select *
 
 ### Compressed downloads
 
-ZIP, RAR and 7z files extract on your computer before their contents transfer to the PS5. Keep space for the archive and extracted files. Known source passwords are tried automatically; use **Enter archive password → Retry extraction** if a different password is needed. This does not download the archive again. See [archive downloads and cleanup](downloads.md#zip-rar-and-7z-downloads).
+ZIP, RAR and 7z files extract on your computer before their contents transfer to the PS5. Keep space for the archive and extracted files; from **1.9.5**, Zero checks the room to extract just before extracting. Known source passwords are tried automatically; use **Enter archive password → Retry extraction** if a different password is needed. This does not download the archive again. See [archive downloads and cleanup](downloads.md#zip-rar-and-7z-downloads).
 
 ## Update Orbit Zero
 

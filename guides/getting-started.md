@@ -20,9 +20,9 @@ The Games and Media versions share the same downloads, favourites and service se
 - Internet access on the console for direct provider downloads.
 - Enough writable storage.
 - A phone or computer on the same local network, if you want to control Orbit from one.
-- For Library management, a compatible ShadowMount v1 local API.
+- For Library management, a compatible ShadowMount v1 local API, or from 1.9.5 a running [Kraken Mount](install-games.md#kraken-mount).
 
-The current published release pairs **Orbit Store 1.9.1**, **native app 1.13.1** and **Orbit Zero 1.9.1**.
+The current published release pairs **Orbit Store 1.9.5**, **native app 1.13.5** and **Orbit Zero 1.9.5**.
 
 The instructions below use the default Store layout. If you choose another interface, see [where to find its settings](appearance.md#find-settings-after-switching).
 
@@ -116,7 +116,7 @@ The catalogue includes both platforms. PS4 support starts with service 1.1.0, na
 
 Orbit itself runs on PS5. Downloading a PS4 PKG/FPKG saves a package to your selected drive; the **1.5.0** apps let you choose **Install on PS5** from the completed download. Earlier versions need a compatible package installer. New compatible images and game folders automatically request a ShadowMount scan in 1.5.0 when it is running. See [installing downloaded games](install-games.md) and [PS4 games on PS5](downloads.md#ps4-games-on-ps5).
 
-**DLC is available in 1.5.0.** Open **Add-ons** or **Add-ons (count)** on a game’s details to browse expansions, content packs, activation packages and bundles. Check the required base game before downloading or installing. See [the DLC guide](add-ons.md).
+**DLC is available in 1.5.0.** Open **Add-ons** or **Add-ons (count)** on a game’s details to browse expansions, content packs, activation packages and bundles. Check the required base game before downloading or installing. See [the DLC guide](add-ons.md). From **1.9.5**, [Get everything](downloads.md#get-everything) on a game’s page downloads the game with all its DLC in one go.
 
 ## Pair your phone or computer
 

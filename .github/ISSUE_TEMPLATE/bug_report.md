@@ -26,6 +26,7 @@ Describe what should have happened.
 - PS5 firmware:
 - etaHEN version:
 - Payload manager or ELF loader:
+- ShadowMount or Kraken Mount version, if used:
 - Where it happens: TV app (Games) / browser version (Media) / Orbit Zero desktop / paired phone or computer
 - Interface: Store / Crossbar / Cinema / Panorama
 - Input used: PS5 controller / keyboard / mouse / touch
@@ -44,7 +45,7 @@ Complete this section if relevant:
 - File format: PKG / FPKG / exFAT / FFPFSC / LZ4 / game folder / other
 - Archive, if applicable: ZIP / RAR / 7z
 - Download route: direct PS5 / Orbit Zero computer
-- Stage: computer download / transfer to PS5 / download on PS5 / archive extraction / game or DLC installation / ShadowMount scan
+- Stage: computer download / transfer to PS5 / download on PS5 / archive extraction / game or DLC installation / ShadowMount scan / Kraken Mount / Get everything
 - Destination: internal / M.2 / USB
 - Available space:
 - Connection: Wi-Fi / Ethernet

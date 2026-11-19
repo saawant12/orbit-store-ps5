@@ -34,7 +34,7 @@ Check **App settings → Downloads → Automatic PS5 shutdown**, or **Settings �
 
 ### The selected drive is too small
 
-Review free space and queued work in the download sheet. Archives may need room for the archive and extracted files together, and installation needs additional console storage. If Zero still has the computer files, use **Change drive** on that download to send them to another PS5 drive without downloading again. A completed copy on the old drive stays there. Direct PS5 downloads do not have this drive-change action. See [change the PS5 drive](orbit-zero.md#change-the-ps5-drive).
+Review free space and queued work in the download sheet. Archives may need room for the archive and extracted files together, and installation needs additional console storage. From **1.9.5**, a ZIP, 7z or RAR download only needs room for the archive to start; if there isn’t room to extract when it finishes, it pauses and keeps the archive. Free up space and select **Resume**. If Zero still has the computer files, use **Change drive** on that download to send them to another PS5 drive without downloading again. A completed copy on the old drive stays there. Direct PS5 downloads do not have this drive-change action. See [change the PS5 drive](orbit-zero.md#change-the-ps5-drive).
 
 ### An update says Orbit is already running
 
@@ -118,7 +118,7 @@ Update to the [latest matching Orbit apps](https://github.com/saawant12/orbit-st
 
 An available drive appears even if its `homebrew` folder has not been created yet. Orbit creates the folder when needed and checks actual write access when a download starts or resumes. If the destination cannot be written, the download stops and existing partial data is kept.
 
-If the drive still does not appear, include your firmware, Orbit and ShadowMount versions and a fresh diagnostic report in your bug report.
+If the drive still does not appear, include your firmware, Orbit and ShadowMount or Kraken Mount versions and a fresh diagnostic report in your bug report.
 
 ## Orbit Zero transfers
 
@@ -150,7 +150,7 @@ For downloads handled by Orbit Store, check **Downloads → Finished → Locatio
 
 Orbit Zero download details also show the full PS5 destination path and the computer path while a cached copy remains. Check the selected PS5 drive's [homebrew folder](downloads.md#where-downloads-are-saved). For **Send to PS5**, wait for **Transfer to PS5** to complete too. If you used **Stream & install**, check the installation result instead; it does not leave a full package in the PS5 download folder.
 
-If the file exists but does not appear in Library or on the home screen, check its format and the installation or mounting method supported by your console setup. A finished download is not automatically installed, and ShadowMount may not list every format. PKG and FPKG packages need installing first; see [below](#a-downloaded-pkg-or-fpkg-game-doesnt-appear). If the file is absent, include the app, game, source, format, destination and completion screen in your report; do not delete the queue or remaining files while investigating.
+If the file exists but does not appear in Library or on the home screen, check its format and the installation or mounting method supported by your console setup. A finished download is not automatically installed, and ShadowMount may not list every format. With Kraken Mount running, the download’s entry in Downloads shows whether Kraken Mount has added the game; see [below](#kraken-mount-hasnt-added-a-game). PKG and FPKG packages need installing first; see [below](#a-downloaded-pkg-or-fpkg-game-doesnt-appear). If the file is absent, include the app, game, source, format, destination and completion screen in your report; do not delete the queue or remaining files while investigating.
 
 ### ShadowMount does not find a game inside nested folders
 
@@ -169,6 +169,17 @@ Installation through Orbit does not change compatibility. PS5 FPKG games current
 If the game also offers exFAT or FFPFSC, those are mounted by ShadowMountPlus without installing. See [which format to pick](downloads.md#which-format-to-pick).
 
 If you report a problem, include the title ID (`CUSA` for PS4, `PPSA` for PS5), source, format, destination, app versions, any error code from the installer, and whether it fails during the computer download, PS5 transfer or package installation. Do not share temporary signed links. See [PS4 games on PS5](downloads.md#ps4-games-on-ps5).
+
+### Kraken Mount hasn’t added a game
+
+From **1.9.5**, with Kraken Mount running, Downloads shows its progress for each finished PS5 PKG/FPKG game or game folder in one of its folders.
+
+- **Waiting for Kraken Mount to add the game…** or **Kraken Mount is preparing the game…**: wait; Kraken Mount is still checking or preparing it.
+- **Kraken Mount stopped before it added this game:** start Kraken Mount again and it adds the game by itself.
+- **Kraken Mount couldn’t add this game:** check Kraken Mount’s page for details.
+- **Kraken Mount hasn’t added this game yet:** check Kraken Mount’s page, or restart Kraken Mount.
+
+Kraken Mount only finds games directly inside `homebrew` or `etaHEN/games`, or at the top of an M.2 or USB drive, and a game folder needs its `sce_sys/param.json`. If ShadowMount+ was running when Kraken Mount started, Kraken Mount waits and Orbit uses ShadowMount instead. See [Kraken Mount](install-games.md#kraken-mount).
 
 ### Add-ons are missing or do not work
 

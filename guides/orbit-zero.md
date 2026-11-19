@@ -105,6 +105,8 @@ Orbit 1.5.0 adds **Add-ons** next to Browse in all four interfaces. Search by DL
 
 Use **This computer** to save DLC without a connected PS5, then **Send to PS5** when ready. Once the files reach the console, choose **Install on PS5** for the individual packages you want. A bundle does not install everything automatically. See [the DLC guide](add-ons.md) for filters, activation packages and compatibility.
 
+From **1.9.5**, **Get everything** on a game’s page adds the game and all its DLC in one go, as on the PS5, for games your PS5 downloads itself (**Prefer PS5**). They install in order: the game first, then its DLC. See [Get everything](downloads.md#get-everything).
+
 ## Choose where downloads run
 
 | Preference | New downloads |
@@ -126,7 +128,7 @@ For **AkiraBox**, open the provider page, complete verification and wait without
 
 For an expired Vikingfile or AkiraBox link, select **Refresh download link**. Your PS5 can stay disconnected while Zero refreshes the computer download’s link. Zero checks that it still identifies the selected file before reusing partial data. Reconnect the PS5 when you are ready to transfer.
 
-For compressed downloads, **Extract on computer** appears between the download and transfer stages. Keep enough computer space for the archive and its extracted files together. **Settings → Storage & cleanup → Delete archives after extracting** is on by default and removes the archive after successful extraction. The extracted files follow the separate [Computer cache](#pause-reconnect-and-clean-up) preference.
+For compressed downloads, **Extract on computer** appears between the download and transfer stages. Keep enough computer space for the archive and its extracted files together. From **1.9.5**, Zero checks the room to extract just before extracting, so a download can start with room for the archive alone. **Settings → Storage & cleanup → Delete archives after extracting** is on by default and removes the archive after successful extraction. The extracted files follow the separate [Computer cache](#pause-reconnect-and-clean-up) preference.
 
 ## Follow your downloads
 
@@ -206,7 +208,7 @@ Keep Zero open while it has unfinished work. Disconnecting a busy computer does 
 
 In **1.7.0**, **Library → Files** manages the PS5’s drives: browse folders, copy, move, rename, delete, unpack and install supported items. Selecting a folder opens it; Circle or Escape returns to its parent. See [Files](files.md). Completed computer packages also offer [Stream & install](stream-install.md), without a full intermediate package copy on the PS5. Ordinary **Send to PS5 → Install on PS5** remains available. Zero does not launch games.
 
-New exFAT, FFPFSC and game-folder transfers automatically request a scan when the PS5 has a compatible ShadowMount version running. If ShadowMount was unavailable, start it and use **Scan with ShadowMount** in the completed download’s details when offered. See [installation and scan guidance](install-games.md).
+New exFAT, FFPFSC and game-folder transfers automatically request a scan when the PS5 has a compatible ShadowMount version running. If ShadowMount was unavailable, start it and use **Scan with ShadowMount** in the completed download’s details when offered. From **1.9.5**, with [Kraken Mount](install-games.md#kraken-mount) running on the PS5, finished PS5 PKG/FPKG games and game folders transferred into its folders go to Kraken Mount instead, and Downloads shows its progress. See [installation and scan guidance](install-games.md).
 
 Completed transfer details show **PS5 location**, plus **Computer location** while the cached copy remains. Files go to the selected PS5 drive's `homebrew` folder; archives may produce a file or an extracted folder. See [where downloads are saved](downloads.md#where-downloads-are-saved).
 

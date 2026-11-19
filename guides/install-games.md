@@ -9,7 +9,7 @@
 3. If it contains several packages, choose the one you want to install.
 4. Select **Install on PS5** and follow its installation status.
 
-The same controls are available in the browser, native PS5 app and Orbit Zero, in all four interfaces. Downloading and installation have separate progress: a finished download means the files are saved, not that the game is installed.
+The same controls are available in the browser, native PS5 app and Orbit Zero, in all four interfaces. Downloading and installation have separate progress: a finished download means the files are saved, not that the game is installed. Downloads added with [Get everything](downloads.md#get-everything) install by themselves in order: the game first, then its DLC.
 
 The PS5 uses its configured installation storage. Choosing a download drive does not choose the installation drive. Allow space for both copies during installation. Downloaded PKG/FPKG files stay on the drive by default.
 
@@ -41,7 +41,7 @@ Installation runs on the paired PS5, not on your computer. Keep the console awak
 
 ## exFAT, FFPFSC and game folders
 
-These use ShadowMount instead of the package installer. After a new download or transfer completes, Orbit **automatically requests a scan** when a compatible ShadowMount version is running with its local API enabled. It also handles compatible `.ffpkg` images this way; an `.ffpkg` image is different from an FPKG `.pkg` package.
+These use ShadowMount instead of the package installer. With Kraken Mount running, game folders can run through it instead; see [Kraken Mount](#kraken-mount). After a new download or transfer completes, Orbit **automatically requests a scan** when a compatible ShadowMount version is running with its local API enabled. It also handles compatible `.ffpkg` images this way; an `.ffpkg` image is different from an FPKG `.pkg` package.
 
 You do not normally need to run a scan yourself. Orbit checks ShadowMount's inventory before showing the game as registered. A scan request alone is not confirmation that registration succeeded.
 
@@ -53,20 +53,33 @@ In **1.9.0**, Orbit locates actual game roots inside nested folders, such as `ho
 
 For an [LZ4 download](downloads.md#lz4-games), Orbit extracts the outer archive and keeps the game’s LZ4 assets intact. Use a compatible game loader for the resulting files. The LZ4 label does not turn those assets into an installable package or confirm support on your console.
 
+## Kraken Mount
+
+**Requires 1.9.5 or later.** [Kraken Mount](https://github.com/quer3q/kraken-mount) is a payload that runs PS5 PKG/FPKG games and game folders without installing them, in ShadowMount+’s place. When it is running, Orbit works with it:
+
+- PS5 PKG and FPKG download options say **Runs with Kraken Mount**.
+- When a PS5 game finishes downloading or transferring into one of Kraken Mount’s folders, Orbit asks Kraken Mount to add it and shows the progress in Downloads, from **Waiting for Kraken Mount to add the game…** to **Added by Kraken Mount. Check your PS5 home screen.**
+- Library lists the games Kraken Mount has added, with their status. Kraken Mount manages its own games, so Library shows their details only.
+
+Kraken Mount finds games directly inside `homebrew` or `etaHEN/games` on any drive, or at the top of an M.2 or USB drive. Orbit saves downloads in `homebrew`. A game folder needs its `sce_sys/param.json`. DLC still installs through **Install on PS5**, and exFAT, FFPFSC and `.ffpkg` images still need ShadowMount+. If ShadowMount+ was running when Kraken Mount started, Kraken Mount waits and Orbit keeps using ShadowMount.
+
+Orbit only reads Kraken Mount’s status and asks it to scan. It doesn’t start Kraken Mount or change its settings or games.
+
 ## Add-ons and bundles
 
 Find DLC on **Add-ons**, or use **Add-ons (count)** from a game’s details. See [the DLC guide](add-ons.md) for the content types and download choices.
 
 Review the required base-game edition, title ID and known version requirements before installing DLC. A matching title ID alone does not confirm compatibility, and seeing the base game in Library does not mean its DLC is installed.
 
-For a bundle, select and install each package you intend to use. Orbit does not install the whole bundle automatically, fetch missing game updates or choose the installation order. Activation packages require their content to already be present in the base game.
+For a bundle, select and install each package you intend to use. Orbit does not install the whole bundle automatically, fetch missing game updates or choose the installation order. [Get everything](downloads.md#get-everything) is different: it downloads a game with its DLC and installs them in order. Activation packages require their content to already be present in the base game.
 
 ## If installation needs attention
 
-- **The button is missing:** check the running ELF as well as the app version. For ordinary installation the file must have finished reaching the PS5; Zero’s **Stream & install** uses the completed computer copy. Images and game folders use ShadowMount, including the **Install on PS5** action in Files.
+- **The button is missing:** check the running ELF as well as the app version. For ordinary installation the file must have finished reaching the PS5; Zero’s **Stream & install** uses the completed computer copy. Images and game folders use ShadowMount, including the **Install on PS5** action in Files. With Kraken Mount running, see [Kraken Mount](#kraken-mount).
 - **The original drive is unavailable:** reconnect the drive containing the downloaded file. Orbit keeps the download's original location rather than selecting a different copy.
 - **The installer reports an error:** follow the message and check space, package compatibility and your jailbreak. The downloaded file is kept for another attempt.
 - **Installation status is unconfirmed:** use **Check installation** when offered and check the PS5 home screen. Orbit does not automatically submit an uncertain installation again after a restart or lost response.
-- **A scanned game is missing:** check ShadowMount's status and the saved file path. See the [Library guide](library.md).
+- **A scanned game is missing:** check ShadowMount's or Kraken Mount's status and the saved file path. See the [Library guide](library.md).
+- **Kraken Mount hasn’t added a game:** follow the message in Downloads. If Kraken Mount stopped before adding it, start Kraken Mount again and it adds the game by itself. If Kraken Mount couldn’t add it, check Kraken Mount’s page for details.
 
 For a report, include the Orbit app and service versions, game or add-on, format, destination and exact installation or scan error. Keep the files while investigating.

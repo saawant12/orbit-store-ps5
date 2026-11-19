@@ -31,7 +31,7 @@ Downloads can continue, start or resume while you change files. Orbit keeps enou
 
 **Unpack here** supports ZIP, RAR and 7z. Orbit tries its known passwords, then asks for a password if needed. Files keeps the original archive. Existing extracted items are not overwritten.
 
-**Install on PS5** uses the console’s package installer for PKG/FPKG files. For game images and game folders it asks ShadowMount to register them. ShadowMount 1.7beta5 or newer can add supported games from folders outside `homebrew`; older versions may ask you to move them into `homebrew` first. Installation still depends on the game, firmware and jailbreak. See [installing games](install-games.md).
+**Install on PS5** uses the console’s package installer for PKG/FPKG files. For game images and game folders it asks ShadowMount to register them. ShadowMount 1.7beta5 or newer can add supported games from folders outside `homebrew`; older versions may ask you to move them into `homebrew` first. From **1.9.5**, a running [Kraken Mount](install-games.md#kraken-mount) finds PS5 PKG/FPKG games and game folders in its folders by itself, and Orbit asks it to scan when Files adds a game to `homebrew`. Installation still depends on the game, firmware and jailbreak. See [installing games](install-games.md).
 
 When Downloads identifies an included backport and warns about newer firmware, use Files to place its containing folder as shown in the warning. See [included backports](install-games.md#included-backports).
 
