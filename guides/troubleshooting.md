@@ -22,7 +22,7 @@ The Games-row app needs **kstuff and ShadowMountPlus**. Check that `PPSA99177.ff
 
 If the app says Orbit is not running, start your ELF loader on **port 9021** and choose **Try again**, or launch `orbit_store.elf` through your payload manager. The app never stops another running payload to make room.
 
-For missing artwork or crashes when opening a game page, use the [latest matching release](https://github.com/saawant12/orbit-store-ps5/releases/latest). Orbit 1.9.5 includes **native app 1.13.5** and service **1.9.5**, with the artwork memory fixes introduced in 1.8.0. Check both running versions in **Diagnostics & about**. Stop any older running service before reopening the app; if you start the service separately through Payload Manager, update that copy too. Orbit Zero 1.8.3 also fixes cached covers disappearing after changing Browse filters. Unavailable image hosts can still leave artwork missing. If a crash continues, include an existing diagnostic or crash log when reporting it.
+For missing artwork or crashes when opening a game page, use the [latest matching release](https://github.com/saawant12/orbit-store-ps5/releases/latest). Orbit 1.9.6 includes **native app 1.13.6** and service **1.9.6**, with the artwork memory fixes introduced in 1.8.0. Check both running versions in **Diagnostics & about**. Stop any older running service before reopening the app; if you start the service separately through Payload Manager, update that copy too. Orbit Zero 1.8.3 also fixes cached covers disappearing after changing Browse filters. Unavailable image hosts can still leave artwork missing. If a crash continues, include an existing diagnostic or crash log when reporting it.
 
 If ShadowMount reports **TitleDir bridge unavailable**, its app-registration bridge is not ready. Close active games, restart the console when convenient, run your usual jailbreak and ShadowMount setup, then retry registration of the existing FFPKG. If it persists, include ShadowMount's version and the relevant registration errors from its debug log in your report.
 
@@ -154,7 +154,7 @@ If the file exists but does not appear in Library or on the home screen, check i
 
 ### ShadowMount does not find a game inside nested folders
 
-Update the running PS5 service to **1.9.5**, and update the native app or Zero you use with it. A path such as `/data/homebrew/Game/Game-app` should be registered using its inner game root. Start a compatible ShadowMount version, open the completed download’s details and choose **Scan with ShadowMount**. This retries registration using the existing files; it does not redownload or flatten the folder.
+Update the running PS5 service to **1.9.6**, and update the native app or Zero you use with it. A path such as `/data/homebrew/Game/Game-app` should be registered using its inner game root. Start a compatible ShadowMount version, open the completed download’s details and choose **Scan with ShadowMount**. This retries registration using the existing files; it does not redownload or flatten the folder.
 
 If the download is no longer in history, locate the actual game folder in **Library → Files**, open its actions and choose **Install on PS5** when offered. If registration still fails, keep the files and attach the exact saved path, ShadowMount version and Orbit diagnostic report. See [game-folder checks](files.md#check-and-repair-a-game-folder) for separate permission or filename warnings.
 

@@ -217,15 +217,15 @@ The desktop app supports **ARM64 and x64** computers and the same **26 interface
 
 ## Beta status
 
-**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.9.5** have these version numbers:
+**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.9.6** have these version numbers:
 
 | Component | Version |
 | --- | --- |
-| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.9.5** |
-| Native TV app (`PPSA99177.ffpkg`) | **1.13.5** |
-| Orbit Zero for desktop | **1.9.5** |
+| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.9.6** |
+| Native TV app (`PPSA99177.ffpkg`) | **1.13.6** |
+| Orbit Zero for desktop | **1.9.6** |
 
-The TV app has its own version number; these files belong to the same release. Zero’s shared installers work with both PS5 and PS4. They include PS5 service **1.9.5** as an offline fallback and fetch newer compatible services from the official feed when online. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
+The TV app has its own version number; these files belong to the same release. Zero’s shared installers work with both PS5 and PS4. They include PS5 service **1.9.6** as an offline fallback and fetch newer compatible services from the official feed when online. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
 
 **Payload-manager setup is opt-in.** Choose **App settings → Updates & startup → Payload managers → Add Orbit** to let Orbit add and update a copy. Existing copies stay in place until you choose whether to allow updates. Auto-start is a separate choice, and Orbit leaves your manager's global Autoload switch unchanged.
 
