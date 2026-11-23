@@ -44,6 +44,8 @@ Explore **3,057 games: 1,323 PS5 games and 1,734 PS4 games**, with **6,037 game 
 - **One link per download.** FFPFSC, exFAT, LZ4, ZSTD, PKG, FPKG and game folders, with ZIP, RAR and 7z archives extracted automatically.
 - **Choose 1–64 connections per download**, with eight as the default. Active downloads share a limit of 64; TorBox uses at most four per game in Zero and eight on PS5. [Guide](guides/downloads.md#follow-your-queue)
 - **Download now, send later.** Zero can save games on your computer without a connected PS5. Transfer them when you’re ready. [Guide](guides/orbit-zero.md#download-now-and-send-to-your-ps5-later)
+- **Free up space.** When a game doesn’t fit, Orbit lists its own leftovers and the games ShadowMount can delete, deletes what you pick, then starts the download. Your saves are never touched.
+- **Download from your own links.** In Downloads, select **Download from links** and paste up to 20 direct links. If a link expires, **Replace link** carries on from where it stopped.
 - **Filter for TorBox.** With your account connected, choose **Source → TorBox available** to find supported options.
 - **Remember Direct or TorBox**, with an optional **Always use TorBox** setting.
 - **Optional accounts** for [TorBox](guides/downloads.md#optional-download-through-torbox), [Archive.org](guides/downloads.md#archiveorg-sign-in) and [Vikingfile](guides/vikingfile.md).
@@ -53,7 +55,7 @@ Explore **3,057 games: 1,323 PS5 games and 1,734 PS4 games**, with **6,037 game 
 **Install and manage**
 
 - **Install without leaving Orbit.** PKG and FPKG through Orbit, game images and folders through ShadowMount. [Guide](guides/install-games.md)
-- **PKG and FPKG support via Kraken Mount.** With [Kraken Mount](https://github.com/quer3q/kraken-mount) running, PS5 PKG and FPKG options are labelled **Runs with Kraken Mount**. Orbit hands downloaded PKG/FPKG games and game folders to Kraken Mount, which runs them without installing them. Downloads shows its progress, and Library lists the games it has added. [Guide](guides/install-games.md#kraken-mount)
+- **PKG and FPKG support via Kraken Mount.** With [Kraken Mount](https://github.com/quer3q/kraken-mount) running, PS5 PKG and FPKG options are labelled **Runs with Kraken Mount**. Orbit hands downloaded PKG/FPKG games and game folders to Kraken Mount, which runs them without installing them. Downloads shows its progress, and Library lists the games it has added. To run the TV app itself with Kraken Mount, use `PPSA99177.zip` from the release. [Guide](guides/install-games.md#kraken-mount)
 - **Stream & install from Zero.** Install a finished computer download without first copying the entire PKG or FPKG to the PS5. [Guide](guides/stream-install.md)
 - **Library** of installed games and game files on every drive, kept up to date automatically. [Library guide](guides/library.md)
 - **Game-folder checks.** Review and approve repairs to supported folder permissions and filename capitalization. [Guide](guides/files.md#check-and-repair-a-game-folder)
@@ -217,15 +219,15 @@ The desktop app supports **ARM64 and x64** computers and the same **26 interface
 
 ## Beta status
 
-**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.9.6** have these version numbers:
+**Orbit Store is an experimental beta.** [Download the latest release](https://github.com/saawant12/orbit-store-ps5/releases/latest). The matching components in release **1.9.7** have these version numbers:
 
 | Component | Version |
 | --- | --- |
-| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.9.6** |
-| Native TV app (`PPSA99177.ffpkg`) | **1.13.6** |
-| Orbit Zero for desktop | **1.9.6** |
+| Orbit Store download service and browser interface (`orbit_store.elf`) | **1.9.7** |
+| Native TV app (`PPSA99177.ffpkg`) | **1.13.7** |
+| Orbit Zero for desktop | **1.9.7** |
 
-The TV app has its own version number; these files belong to the same release. Zero’s shared installers work with both PS5 and PS4. They include PS5 service **1.9.6** as an offline fallback and fetch newer compatible services from the official feed when online. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
+The TV app has its own version number; these files belong to the same release. Zero’s shared installers work with both PS5 and PS4. They include PS5 service **1.9.7** as an offline fallback and fetch newer compatible services from the official feed when online. Use matching files when updating. Keep the PS5 awake while downloading or receiving transfers.
 
 **Payload-manager setup is opt-in.** Choose **App settings → Updates & startup → Payload managers → Add Orbit** to let Orbit add and update a copy. Existing copies stay in place until you choose whether to allow updates. Auto-start is a separate choice, and Orbit leaves your manager's global Autoload switch unchanged.
 
@@ -389,7 +391,7 @@ When reporting a bug, follow the [bug report format](.github/ISSUE_TEMPLATE/bug_
 
 - **No storage:** if internal storage or your M.2 SSD disappeared in 0.9.0, update to the latest release, restart Orbit and reopen **Library → Files**. Drive information refreshes automatically. For external drives, check that the drive is connected to the PS5. A drive connected to your computer is not PS5 storage.
 - **Drive disconnected:** reconnect the original destination. Orbit will not silently switch to internal storage.
-- **Not enough space:** free space on the selected destination before retrying. A ZIP, 7z or RAR download that paused for room to extract keeps its archive; select **Resume** once there’s space.
+- **Not enough space:** select **Free up space** to delete Orbit’s leftovers or games you choose, or free space on the selected destination yourself before retrying. A ZIP, 7z or RAR download that paused for room to extract keeps its archive; select **Resume** once there’s space.
 - **Archive.org asks for an account:** [sign in to Archive.org](guides/downloads.md#archiveorg-sign-in) in the app handling the download, then retry. Signing in cannot restore a file removed by its provider.
 - **Source changed:** preserve the partial file until you decide to remove it and restart. Orbit will not append a different file to it.
 - **“Provider returned a page” on an older version:** update to the latest release, restart Orbit, then open **Downloads → Failed → Retry download**. Existing partial files are checked before resuming. If the provider actually returns an error page, Orbit will still reject it.

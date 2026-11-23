@@ -2,7 +2,7 @@
 
 **In 1.7.0:** Library and Downloads in Cinema use Store’s layout with Cinema’s colours. Files and saved filters are available in all four interfaces. The older screenshots below retain their original version labels.
 
-Orbit Store 1.9.6 and Orbit Zero 1.9.6 offer four interfaces: **Store**, **Crossbar**, **Cinema** and **Panorama**. For the native PS5 app, use **1.13.6**, included in the same release. Each changes the layout and navigation while keeping your catalogue, favourites and download queue. Native app 1.12.5 fixes Chinese, Japanese and Korean text appearing as question marks.
+Orbit Store 1.9.7 and Orbit Zero 1.9.7 offer four interfaces: **Store**, **Crossbar**, **Cinema** and **Panorama**. For the native PS5 app, use **1.13.7**, included in the same release. Each changes the layout and navigation while keeping your catalogue, favourites and download queue. Native app 1.12.5 fixes Chinese, Japanese and Korean text appearing as question marks.
 
 ## Switch interfaces
 

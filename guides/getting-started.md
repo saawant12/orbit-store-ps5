@@ -22,7 +22,7 @@ The Games and Media versions share the same downloads, favourites and service se
 - A phone or computer on the same local network, if you want to control Orbit from one.
 - For Library management, a compatible ShadowMount v1 local API, or from 1.9.5 a running [Kraken Mount](install-games.md#kraken-mount).
 
-The current published release pairs **Orbit Store 1.9.6**, **native app 1.13.6** and **Orbit Zero 1.9.6**.
+The current published release pairs **Orbit Store 1.9.7**, **native app 1.13.7** and **Orbit Zero 1.9.7**.
 
 The instructions below use the default Store layout. If you choose another interface, see [where to find its settings](appearance.md#find-settings-after-switching).
 
@@ -32,11 +32,11 @@ Choose the app you use; you do not need to download every asset.
 
 | How you use Orbit | What to download |
 | --- | --- |
-| Native PS5 app | **`PPSA99177.ffpkg`** and its checksum. Native app **1.13.6** already includes service **1.9.6**. A compatible ELF loader on port **9021** lets the app start that bundled service. |
+| Native PS5 app | **`PPSA99177.ffpkg`** and its checksum. Native app **1.13.7** already includes service **1.9.7**. A compatible ELF loader on port **9021** lets the app start that bundled service. With Kraken Mount, download **`PPSA99177.zip`** instead, unzip it and copy the `PPSA99177` folder to `/data/homebrew/`. |
 | Service started separately through Payload Manager or an ELF loader | **`orbit_store.elf`** and its checksum. Update the copy your manager actually launches, even if you also use the native app. |
-| Orbit Zero | The desktop package for your computer. Zero checks the official feed and can upload the PS5 service through **Console → Start Orbit on PS5**. Its 1.9.6 installers include service 1.9.6 as an offline fallback; you can also choose another ELF under **Advanced → Choose another ELF**. The native FFPKG is optional if you also want TV controls. |
+| Orbit Zero | The desktop package for your computer. Zero checks the official feed and can upload the PS5 service through **Console → Start Orbit on PS5**. Its 1.9.7 installers include service 1.9.7 as an offline fallback; you can also choose another ELF under **Advanced → Choose another ELF**. The native FFPKG is optional if you also want TV controls. |
 
-Replacing an FFPKG or uploading an ELF does not replace an older service that is already running. Stop it with **Stop Orbit to restart** before starting the updated copy. In **Diagnostics & about**, the current versions are **native app 1.13.6** and **download service 1.9.6**; they intentionally have different version numbers. Keep your pairing, settings and queue in place.
+Replacing an FFPKG or uploading an ELF does not replace an older service that is already running. Stop it with **Stop Orbit to restart** before starting the updated copy. In **Diagnostics & about**, the current versions are **native app 1.13.7** and **download service 1.9.7**; they intentionally have different version numbers. Keep your pairing, settings and queue in place.
 
 ## Verify the PS5 files
 

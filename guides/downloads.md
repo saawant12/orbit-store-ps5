@@ -87,7 +87,7 @@ PS4 support starts with **Orbit Store 1.1.0**, **native app 1.4.0** and **Orbit 
 
 Files go to the selected drive’s `homebrew` folder, including `/data/homebrew/` for internal storage. In **1.5.0** and later, open a completed download and choose **Install on PS5** to install its PKG/FPKG. Earlier versions need a compatible package installer. Check the game’s requirements; downloading and installing remain separate steps. See [installing downloaded games](install-games.md). The instructions for installing Orbit’s own `PPSA99177.ffpkg` TV app do not install a downloaded game package.
 
-**This ELF and TV app run on PS5.** For a PS4 console, use the separate [Orbit Store for PS4](https://github.com/saawant12/orbit-store-ps4) release with the same Orbit Zero 1.9.6 desktop app. See [Library](library.md) for the distinction between downloaded files and installed games.
+**This ELF and TV app run on PS5.** For a PS4 console, use the separate [Orbit Store for PS4](https://github.com/saawant12/orbit-store-ps4) release with the same Orbit Zero 1.9.7 desktop app. See [Library](library.md) for the distinction between downloaded files and installed games.
 
 ## Pick a source, format and drive
 
