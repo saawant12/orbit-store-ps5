@@ -65,6 +65,8 @@ Kraken Mount finds games directly inside `homebrew` or `etaHEN/games` on any dri
 
 Orbit only reads Kraken Mount’s status and asks it to scan. It doesn’t start Kraken Mount or change its settings or games.
 
+To run Orbit’s TV app with Kraken Mount, download `PPSA99177.zip` and its `.sha256` from the release (1.9.7 or later), verify the checksum, unzip it and copy the `PPSA99177` folder to `/data/homebrew/`. Kraken Mount adds **Orbit Store** to the home screen. Kraken Mount doesn’t run the `.ffpkg` file.
+
 ## Add-ons and bundles
 
 Find DLC on **Add-ons**, or use **Add-ons (count)** from a game’s details. See [the DLC guide](add-ons.md) for the content types and download choices.

@@ -305,7 +305,7 @@ Run a compatible **ShadowMount with its v1 local HTTP API enabled** on the same 
 From **1.9.5**, if you run [Kraken Mount](https://github.com/quer3q/kraken-mount) instead, Library lists the games it has added and their status. Kraken Mount manages its own games, so Library shows their details only. Orbit never changes Kraken Mount’s settings or games.
 
 - Library and drive information refresh automatically, and game sizes are measured in the background. **Scan for games** remains a manual fallback.
-- Open a game to **mount or unmount** its compatible source. Orbit does not launch games or uninstall them.
+- Open a game to **mount or unmount** its compatible source. Orbit does not launch games. From 1.9.7, deleting a game through ShadowMount also removes its home-screen icon.
 - **Copy** keeps the original; **Move** asks ShadowMount to remove it after a successful transfer. Unmount the source first, select the destination and confirm. Pause active and queued Orbit downloads before starting.
 - Open **Library → Files** to browse drives and manage files. Folders open directly; their separate action controls let you copy, move, rename, delete, unpack and install. See the [Files guide](guides/files.md).
 
@@ -313,7 +313,7 @@ If ShadowMount is absent or its API is incompatible, and Kraken Mount isn’t ru
 
 ## Finding and saving games
 
-In **Browse**, combine platform, source, format, genre, tag, region and download-size filters, then choose a sort order. Size sorting uses the smallest option matching your filters. **Release date (newest first)** is the default. Games without a recorded date appear afterward, alphabetically. **Reset filters** restores this order.
+In **Browse**, combine platform, source, format, genre, tag, region and download-size filters, then choose a sort order. Size sorting uses the smallest option matching your filters. **Release date (newest first)** is the default; **Recently added** shows the games added to the catalogue most recently first. Games without a recorded date appear afterward, alphabetically. **Reset filters** restores this order.
 
 Open a game's details and choose **Add to favourites**, or use the favourite shortcut on a selected game in native Browse or Discover: **Square** in Store, **Triangle** in Crossbar, Cinema or Panorama. Your favourites are shared between the console and paired devices and stay saved after restarting Orbit. Disabling a source hides its games without forgetting your favourites.
 

@@ -34,7 +34,7 @@ Check **App settings → Downloads → Automatic PS5 shutdown**, or **Settings �
 
 ### The selected drive is too small
 
-Review free space and queued work in the download sheet. Archives may need room for the archive and extracted files together, and installation needs additional console storage. From **1.9.5**, a ZIP, 7z or RAR download only needs room for the archive to start; if there isn’t room to extract when it finishes, it pauses and keeps the archive. Free up space and select **Resume**. If Zero still has the computer files, use **Change drive** on that download to send them to another PS5 drive without downloading again. A completed copy on the old drive stays there. Direct PS5 downloads do not have this drive-change action. See [change the PS5 drive](orbit-zero.md#change-the-ps5-drive).
+Review free space and queued work in the download sheet. From **1.9.7**, select **Free up space** to let Orbit delete its own leftovers or games you choose, then start the download; see [Free up space](downloads.md#free-up-space). Archives may need room for the archive and extracted files together, and installation needs additional console storage. From **1.9.5**, a ZIP, 7z or RAR download only needs room for the archive to start; if there isn’t room to extract when it finishes, it pauses and keeps the archive. Free up space and select **Resume**. If Zero still has the computer files, use **Change drive** on that download to send them to another PS5 drive without downloading again. A completed copy on the old drive stays there. Direct PS5 downloads do not have this drive-change action. See [change the PS5 drive](orbit-zero.md#change-the-ps5-drive).
 
 ### An update says Orbit is already running
 

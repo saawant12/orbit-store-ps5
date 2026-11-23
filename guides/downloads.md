@@ -12,7 +12,7 @@ Settings paths in this guide use the Store layout. For the browser’s other lay
 
 *Store Discover in Orbit 1.5.0, rendered locally from the browser app. Crossbar, Cinema and Panorama arrange the same collections differently; see the [appearance guide](appearance.md).*
 
-Switch to **Browse** when you want search and filters. It defaults to **Release date (newest first)**. Games without a recorded date follow alphabetically. Search by game name or title ID, filter by platform, source, format, genre, tag, region or download size, and change the sort order. **Reset filters** restores the default. Missing dates and other metadata can be added later through catalogue updates.
+Switch to **Browse** when you want search and filters. It defaults to **Release date (newest first)**. Games without a recorded date follow alphabetically. Search by game name or title ID, filter by platform, source, format, genre, tag, region or download size, and change the sort order. From 1.9.7, **Recently added** shows the games added to the catalogue most recently first. **Reset filters** restores the default. Missing dates and other metadata can be added later through catalogue updates.
 
 ![Native Store Browse with Genre choices and matching game counts](https://github.com/saawant12/orbit-store-ps5/releases/download/v1.8.3/orbit-1.8.3-filters-store.png)
 
@@ -204,7 +204,7 @@ Orbit remembers whether you chose **Direct** or **TorBox**. In TorBox settings, 
 
 *Connect the account in the browser once. The native TV app and paired devices share that connection. If you are not connected, choose **Set up TorBox** under a game’s **Download using** options. In the TV app this opens the browser with your game, source and destination selected; connect in App settings, then return to the game.*
 
-In 1.8.4, TorBox downloads use at most four connections per game in Zero and eight for direct PS5 downloads, even when a higher count is selected. Selecting one connection in Zero uses a continuous transfer, including when resuming. Orbit respects provider cooldowns. A removed-source error means you need another download option; retrying cannot restore the original host’s file. If TorBox makes no progress on a file for five minutes, Orbit stops and says the source may be offline or the file removed.
+In 1.8.4, TorBox downloads use at most four connections per game in Zero and eight for direct PS5 downloads, even when a higher count is selected. Selecting one connection in Zero uses a continuous transfer, including when resuming. Orbit respects provider cooldowns. A removed-source error means you need another download option; retrying cannot restore the original host’s file. If TorBox makes no progress on a file for five minutes, Orbit stops and says the source may be offline or the file removed. From 1.9.7, when TorBox’s download server can’t be reached from your network, Orbit asks TorBox for a fresh link, which can point to another server. If that doesn’t help either, it asks you to try a different CDN in your TorBox settings, then select **Retry download**.
 
 Orbit submits supported requests to TorBox without rejecting them based on its advertised file-size limit. TorBox still decides whether the request is allowed; any returned limit or account error appears in Downloads.
 
@@ -231,6 +231,12 @@ If an archive puts a game folder inside extra empty folders, Orbit Store 1.4.0 a
 To extract archives yourself with another tool, turn off **Extract archives after downloading** in the same Orbit Store settings (Orbit 1.9.2 or later). ZIP, 7z and RAR downloads you add afterwards are saved as the archive under its own name and need room only for the archive. Downloads already in the queue keep the setting they were added with.
 
 In Zero, the extracted computer files follow the separate **Computer cache** setting. **Automatically remove after transfer** is off by default; enabling it removes those copies only after the PS5 confirms the transfer. Deleting an archive after extraction does not delete the extracted files. See [saved locations](#where-downloads-are-saved) to find the result.
+
+## Download from your own links
+
+**Requires 1.9.7 or later.** To download files that aren’t in the catalogue, open **Downloads** and select **Download from links**. Paste direct download links that start with `https://`, one per line, up to 20 at a time, and choose a drive. Orbit checks each link before adding it to Downloads, where it pauses, resumes and retries like a game. ZIP, 7z and RAR files unpack like games. Long links are easier to paste from a paired phone or computer.
+
+If a link stops working, for example because it expired, select **Replace link** on that download and paste a fresh link to the same file. Orbit keeps the part already downloaded and carries on; a link to a different file is refused and the partial file is kept. Orbit Zero offers the same in Transfers; your PS5 downloads the files itself.
 
 ## Your download queue
 
@@ -306,7 +312,16 @@ Orbit Zero download details show **PS5 location** and **Computer location** whil
 
 Review the space estimate before starting. Orbit prefers your default drive while it is usable and has room; otherwise it suggests a suitable drive with more space. A drive you explicitly selected is not silently replaced. Archive and extracted files need space at the same time while extracting, and installation may need additional console storage. From 1.9.5, a drive only needs room for the archive to start; Orbit checks the room to extract just before extracting.
 
-Zero shows available space and the projected space after queued transfers, blocks a destination known to be too small and checks the computer's download space too. Unknown extraction sizes cannot be guaranteed in advance; Orbit checks again after inspecting the archive. For an existing Zero transfer, [Change drive](orbit-zero.md#change-the-ps5-drive) reuses the computer copy.
+### Free up space
+
+**Requires 1.9.7 or later.** When a game doesn’t fit on its drive, Download no longer stays greyed out. Select **Free up space** to see what Orbit could delete to make room:
+
+- Orbit’s own leftovers are ticked for you: packages your PS5 has already installed, archives kept after unpacking and downloads you cancelled.
+- Games ShadowMount can delete are listed for you to choose; none is ticked. Deleting one also asks ShadowMount to remove its icon from the home screen. If ShadowMount can’t, Orbit says so and you can delete the icon from the home screen yourself.
+
+Orbit deletes what you pick, says how much it freed, then starts the download. Your saves are never touched. Without a compatible ShadowMount, only Orbit’s leftovers are listed. A game installed from a package isn’t listed: delete it from the PS5 home screen with the game’s **Options → Delete**. **Free up space** is also in Library and on a download that paused because there wasn’t room to unpack it.
+
+Zero shows available space and the projected space after queued transfers, offers **Free up space** for a destination known to be too small and checks the computer's download space too. It first checks that the download can start, so nothing is deleted for a download that can't. Unknown extraction sizes cannot be guaranteed in advance; Orbit checks again after inspecting the archive. For an existing Zero transfer, [Change drive](orbit-zero.md#change-the-ps5-drive) reuses the computer copy.
 
 ## Get new games and corrected metadata
 

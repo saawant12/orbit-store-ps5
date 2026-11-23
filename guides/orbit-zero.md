@@ -142,6 +142,10 @@ Orbit **1.5.0** adds estimated time remaining for each stage and direct PS5 down
 
 *Downloads in Orbit Zero 1.5.0, before adding a game.*
 
+## Free up space and download from links
+
+**Requires Zero 1.9.7 and PS5 service 1.9.7.** When a game doesn’t fit on its PS5 drive, Zero offers [Free up space](downloads.md#free-up-space), as on the PS5. For a download that goes through your computer, Zero first checks that it can start, so nothing is deleted for a download that can’t. In Transfers, [Download from links](downloads.md#download-from-your-own-links) and **Replace link** work as on the PS5. A PS4, or a PS5 running an older service, doesn’t show these options.
+
 ## Download settings
 
 ![Orbit Zero 1.5.0 download settings with simultaneous download and recovery controls](../assets/1.5.0/zero-download-settings.jpg)

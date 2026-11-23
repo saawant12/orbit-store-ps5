@@ -51,7 +51,7 @@ Follow copying and verification progress in Library. When it finishes, dismiss t
 
 Open **Library → Files** to check free space and manage files and folders. Select a folder to open it; Circle goes back one folder. See the [Files guide](files.md). Game sizes are measured automatically. Available actions depend on your ShadowMount version, drive format and free space. If an action is unavailable or fails, check the displayed message and see [Troubleshooting](troubleshooting.md).
 
-Orbit does not launch games or uninstall them. Downloads and Library actions are separate; a completed download is a saved file, not a promise that it is installed or ready to launch.
+Orbit does not launch games. From 1.9.7, deleting a game through ShadowMount also asks ShadowMount to remove its home-screen icon; a game installed from a package is deleted from the PS5 home screen instead. Downloads and Library actions are separate; a completed download is a saved file, not a promise that it is installed or ready to launch.
 
 ![Phone Library with status and filtering controls](../assets/0.9.0/phone-library.jpg)
 
